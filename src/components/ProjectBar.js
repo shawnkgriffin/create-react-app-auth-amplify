@@ -14,8 +14,7 @@ class ProjectBar extends Component {
       <Tabs defaultActiveKey="1" onSelect={handleButton} className="Tab-wrapper" id="uncontrolled-tab-example">
         {project.steps.map((step, index) => {
           return (
-            <Tab key={index + 1} value={index + 1} eventKey={index + 1} title={`Step ${index + 1}`} >({step.questions.reduce((acc, question) => { return question.answer === "" ? acc : acc + 1 }, 0)} / {step.questions.length})
-        }></Tab>
+            <Tab key={index + 1} value={index + 1} eventKey={index + 1} title={`Step ${index + 1}`} ></Tab>
           )
         })
         }
