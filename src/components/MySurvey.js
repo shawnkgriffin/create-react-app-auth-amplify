@@ -20,7 +20,7 @@ class MySurvey extends Component {
 
     return (
       <div className="MySurvey">
-        <h3 align="left" >{project.steps[currentStep].stepLabel}</h3>
+        <h3 align="left" >{currentStep+1}) {project.steps[currentStep].stepLabel}</h3>
         <table className="table table-bordered table-striped ">
           <thead>
             <tr>
@@ -30,9 +30,9 @@ class MySurvey extends Component {
               <th align="center" scope="col">Skip</th>
               <th align="center" scope="col">Later</th>
             </tr>
-            {tableRows}
           </thead>
           <tbody>
+            {tableRows}
           </tbody>
         </table>
       </div>
