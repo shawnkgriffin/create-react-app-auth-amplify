@@ -15,7 +15,7 @@ class Notes extends Component {
           <InputGroup.Prepend>
             <InputGroup.Text>Notes</InputGroup.Text>
           </InputGroup.Prepend>
-          <Form.Control as="textarea" rows="8" aria-label="Notes" />
+          <Form.Control as="textarea" rows="8" aria-label="Notes" defaultValue= {project.steps[currentStep].notes} />
         </InputGroup>
         </Form>
       </div>
