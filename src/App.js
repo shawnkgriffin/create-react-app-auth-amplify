@@ -6,6 +6,9 @@ import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
+import DashBoard from "./components/DashBoard"
+import ProjectBar from "./components/ProjectBar"
+import MySurvey from "./components/MySurvey"
 
 Amplify.configure(aws_exports);
 
@@ -76,13 +79,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Project Assistant coming soon.
-          </p>
-          
-        </header>
+        <div className="dashboard">
+          <DashBoard project={this.state.project} />
+        </div>
+        <div className="projectbar">
+          <ProjectBar project={this.state.project}
+            currentStep={this.state.currentStep}
+            handleButton={this.handleButton}
+          />
+        </div>
+        <div className="mysurvey">
+          <MySurvey
+            project={this.state.project}
+            currentStep={this.state.currentStep}
+            onQuestionAnswered={this.onQuestionAnswered}
+            currentUser={this.currentUser}
+          />
+        </div>
       </div>
     );
   }
