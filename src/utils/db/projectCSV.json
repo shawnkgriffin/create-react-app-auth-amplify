@@ -7,17 +7,19 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step One, Project Background",
+    "StepLabel": "Project Background",
     "StepNumber": 1,
     "QuestionNumber": null,
-    "Questions": "Step One, Gather & Assess the Project Background",
+    "Questions": "1. Gather & Assess the Project Background",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "How was this project initiated? Basic PM Slides\nWho will be the sponsor?\nWas this project type done before?\nWhat metric or goal will this project affect?\nHas the business problem been clearly stated?\nWhy are we doing this project?\n\nUnerstanding a project's background establishes a solid foundation for the project.\n\nAt a minimum, it would be important to know who initiated the project, how the project was initiated, and why it was initiated. \n\nThe more you know and understand about the background the better.  Has this project type been done before, if so what were the results? Are there any related successes that can be cloned or leveraged? What metric or goal will this project affect? Has the business problem been clearly stated?  The steps may change as your project evolves. Describing your project's background is the first title, or step in your project plan, (Changed 7-30-19, Not Uploaded)\n\nGather project background information.  Describe why this project is needed, how it supports the organization’s goals, what problem it will solve, & what the key requirements are.  Pre-launch information is preliminary, gather what’s available, expanded & clarify the information as the project progresses.\n\n Projects solve or minimize problems & or create new opportunities.  Having a clear description of the problem or problems to be addressed will create focus.  Ensuring that all team members have a common understanding of the problem will enable project success.  If key individuals don't agree with the problem, they won't agree with the proposed solution.\n\n​Gather project background information.  Describe why this project is needed, how it supports the organization’s goals, what problem it will solve, & what the key requirements are.  Pre-launch information is preliminary, gather what’s available, expanded & clarify the information as the project progresses.\n\n Brainstorm the presenting / initial idea to determine its scope & the viability of moving forward.  Ideas for projects & action items can come from many places.  They can be the result of senior management planning, customer requirements, employee suggestions, responses to daily problems, suggestions for leveraging new technology, etc., etc., etc.  Recognize that the presenting idea can change as you apply the project management process,  How ideas are handled are determined by the organization's culture.  An open & collaborative culture will welcome new ideas & have a way to process the idea while closed organizations may limit & even discourage new ideas.\n\n​\n\nThe key question to automatically ask whenever a new idea surfaces is: What problem will this solve?  Recognize that how the problem is defined will determine the direction of the proposed solution.\n\n​\n\nGuidance Questions Small Project: \n\n    Where did the idea come from?\n    Who's idea was it?\n    Is this part of a broader plan?\n    Does this idea support to organization's long term goals?\n    Will the person who came up with the idea continue to be involved to help ensure success?\n    Are there any key people who will disagree with the idea?\n    Are there any major barriers to moving forward with the idea?\n    Is this really a project, an action item, or someone's daily activity?\n    What problem will this solve?\n    Is this a new idea or has it been proposed before?\n    If it was proposed before why did it come up again?\n    Is now the right time to move forward with this idea?\n\nGuidance Questions Medium Project:\n    What do we need before we can start this work?\n    Have we done this type of project before?\n    Have we gathered & reviewed all available information from previous similar project(s).\n    Have we assessed the results, comments. problems, & lessons learned from previous similar project(s).\n    Review problems encountered & suggested solutions.\n    Review lessons learned & recommendations.\n    Does the company have a defined project commissioning process that senior management follows for business planning, project identification & vetting, & project monitoring?\n    Does the company have a defined Project Management Process?​\n    Was senior management involved in vetting and initiating this project?\n    Does the company have a defined format for project plans?​\n    Who is the project sponsor?\n    What business strategy or initiative does it support?\n    Who will be the project manager?\n    What departments or stakeholders need to be represented on the core team?\n    What’s the current business environment?\n    What’s the organization’s current status, are there any major issues?\n    Is the organization in crisis, business as usual, or growth?\n    What’s the project’s priority?\n    What’s the project’s background / history?\n    What’s the proposed business problem?\n    Are there defined business goals & objectives?\n    What are the expected measurable business results?\n    How will project success be determined?\n    Are there any budget limits?\n    Are there any scheduling issues?\n    Will the project requirements & potential solution fit with the organization’s maturity & culture?\n\n\nGuidance Questions: Brazonics\n    What problem or problems need to be solved?\n    What's the opportunity to be created?\n    Is there more than one problem?\n    Has this problem been previously addressed? \n    Why does this problem need to be solved?\n    How will we know this task was completed?\n\nGuidance Questions: Large Project\n    What do we need before we can start this work?\n    Who is the project sponsor?\n    What business strategy or initiative does it support?\n    Who will be the project manager?\n    What departments or stakeholders need to be represented on the core team?\n    What’s the current business environment?\n    What’s the organization’s current status, are there any major issues?\n    Is the organization in crisis, business as usual, or growth?\n    What’s the project’s priority?\n    What’s the project’s background / history?\n    What’s the proposed business problem?\n    Are there defined business goals & objectives?\n    What are the expected measurable business results?\n    How will project success be determined?\n    Are there any budget limits?\n    Are there any scheduling issues?\n    Will the project requirements & potential solution fit with the organization’s maturity & culture?\n    How will we know this deliverable was completed?\n\nRecord your findings along with any other appropriate information for this step in a shared document. Update the document with each subsequent step's information. This will be the team's working project plan (Changed 7-30-19, Not Uploaded)\n\nRecord your findings in the project plan document, a template is available at www dot, continuous, business change, dot com, slash alexa, project plan, store the document so it can be accessed by the project teams, and track progress through each of your project's steps.\n"
   },
   {
     "StepLabel": "",
@@ -27,7 +29,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -37,7 +40,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -47,7 +51,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -57,7 +62,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -67,7 +73,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -77,7 +84,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -87,7 +95,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -97,7 +106,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -107,7 +117,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -117,7 +128,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -127,7 +139,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -137,7 +150,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -147,7 +161,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -157,7 +172,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -167,7 +183,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -177,17 +194,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Two, Launch the Project and Establish the Teams:",
+    "StepLabel": "Project Launch",
     "StepNumber": 2,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "2. Launch the Project & Establish the Teams",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "\nEvery Project requires a Project Manager who…..\n\n    Takes the lead position in the project\n\n    Facilitates the team process\n\n    Collaborates with the team to create and execute the project plan\n\n    Monitors and documents the progress of all project work\n\n    Reports to the Sponsor on Project Process\n\n    Facilitates & develops reporting updates to the cross-functional Project Management Steering Committee\n\n \n\nThe larger, the more complex, the more critical the project the more the project manager needs to be a planner, manager, negotiator, facilitator, & communicator & not a doer.\n\n​\n\nProject managers get things done.  The difference between effective and less effective project managers is whether the most important things get done.  While it would be great for all the identified work within a project to be completed on time, on budget, & per specifications; sometimes that’s just not feasible.  For that reason it’s important to identify & ensure that the most important or critical work is completed producing the most important or critical deliverables.\n\n​\n\nWhat’s absolutely necessary before the solution can go-live?\n\n​​\n\nHow can project managers ensure predictable results?\n\n    Follow a defined process\n\n    Develop effective habits\n\n    Ask probing open ended questions\n\n    Influence required behavior change\n\n​\n\nVideo clip of Peter Falk as Columbo, example of asking open ended probing questions.\n\nhttps://www.youtube.com/watch?v=pZiv8vkxMac \n\n    Acts as though he's confused & in a hurry\n\n    Asks seemingly dumb questions\n\n    No ego\n\n    Makes it appear that the questions he asks occurred to him on the fly when in fact he planned each question prior to the meeting\n\n    ​Included a balance between fact oriented questions & relationship oriented statements & questions\n\n​\n\nIdentify the project manager, describe the involvement in previous projects, background in project management, time required for this project, & time availability to meet the requirements.\n\n \n\nGuidance Questions:\n\n    What do we need before we can start this work?\n\n    Who will be the project manager?\n\n    Has this person managed previous projects?\n\n    Has this person been involved in this type of project?\n\n    Is this person familiar with the project process & tools that will be required?\n\n    Will the project manager require help & coaching from the sponsor?\n\n    Will the project manager need help facilitating team meetings?\n\n    Will the project manager need administrative support?\n\n    Will the project manager need help with project communication?\n\n    Will the project manager need help from technical experts?\n\n    Will the project manager need help from financial experts?\n\n    Will the project manager need help in dealing with difficult people?\n\n    How will we know this deliverable has been completed?\n\n​\n\n- Understand Team member styles\n- Sponsors will generally be Senior Managers who have ultimate responsibility for the successful completion of Business Initiatives….. \n- Sponsor Responsibilities Gives direction to the project\nObtains necessary resources including commitment of people & hours across the organization\nSecures management agreements\nProvides regular reports to management team\nIs committed to ensuring results are achieved\nProvides assistance / guidance to project manager\nProvides political support\nCreates project profile \nSponsors will generally be Senior Managers who have ultimate responsibility for the successful completion of the project. The sponsor will usually be involved in launching the project. It is recommended that all projects have a sponsor.  The sponsor helps set the project’s direction, goals, & objectives, obtains necessary resources, commitments for participation across departments, secures management agreements, provides regular updates to the management team, provides assistance, guidance, & coaching to the project manager, & provides political support.\n\n​\n\nGuidance Questions: \n\n    What do we need before we can start this work?\n\n    Who is the project sponsor?\n\n    Is the sponsor a senior manager?\n\n    Has the sponsor been a previous project sponsor?\n\n    Will the sponsor need some coaching on being a project sponsor?\n\n    Will the sponsor be involved in launching the project?\n\n    What will be the sponsor’s involvement in the project?\n\n    What meetings will the sponsor attend?\n\n    What information will the sponsor require & how often?\n\n    Will the sponsor help resolve cross-functional issues that may arise?\n\n    How will we know this deliverable has been completed?\n\n    How will we know this task was completed?\n\n​\n\nEvery Project requires a Project Manager who….. \nTakes the lead position in the project\nFacilitates the team process \nCollaborates with the team to create and execute the project plan\nMonitors and documents the progress of the project\nReports to the Sponsor on Project Process\n\n\nWhat Do PM Do?\n1. Defines project goals, objectives, and requirements (with sponsor)\n3. Defines the project scope, WBS, & Network Diagram (if required) \n5. Forms and leads the project team & publishes all plans\n8. Recognizes and rewards accomplishments and successes\n10. Monitors delivery against all plans and commitments\n12. Identifies & mitigates risk\n13. Controls changes\n15. Chairs project team meetings\n17. Involved in all project communication\n19. Manages activities during each stage\n2. Builds consensus and facilitates conflict resolution\n4. Sets priorities and makes recommendations\n6. Ensures completion of all deliverables\n7. Minimize surprises\n9. Provides direct communication with the sponsor\n11. Coordinates and supports the project team\n14. Focal point for issues, questions, and enhancements\n16. Facilitates problem resolution\n18. Maintains focus on behavior change required to produce the committed results\n20. Rewards team performance\n\nThe Bottom Line:\nProject managers get things done. \n The difference between effective and less\n   effective project managers is whether the most\n   important things get done.\n\nHow can you ensure predictable results?\nFollow a defined process\nDevelop effective habits\nAsk questions\n\nTeam Member Responsibilities:\nUnderstand, help develop, and support project direction, business results, & goals\nParticipate in planning, as needed\nAccountable for completing tasks\nSupport each other and the project manager\nParticipate in problem resolution\nReport status, uncover issues, & communicate\nKeep your supervisor / manager informed of your work & time commitments \nParticipate in all reviews and audits\n\nTeam Conflict Resolution\n\nTeam Operating Procedures:\nRoles and responsibilities\nExpectations\nMeeting schedules\nMeeting process\nAutomated & manual tools\nDecision making & escalation process\nIndividual feedback\nPerformance management\nDocumentation\nTeam training and development\n(Other)\n\nWho Are the Stakeholders?\n\n\nBrainstorm the presenting / initial idea to determine its scope & the viability of moving forward.  Ideas for projects & action items can come from many places.  They can be the result of senior management planning, customer requirements, employee suggestions, responses to daily problems, suggestions for leveraging new technology, etc., etc., etc.  Recognize that the presenting idea can change as you apply the project management process,  How ideas are handled are determined by the organization's culture.  An open & collaborative culture will welcome new ideas & have a way to process the idea while closed organizations may limit & even discourage new ideas.\n\n​\n\nThe key question to automatically ask whenever a new idea surfaces is: What problem will this solve?  Recognize that how the problem is defined will determine the direction of the proposed solution.\n\n​\n\nGuidance Questions: \n\n    What do we need before we can start this work?\n\n    Where did the idea come from?\n\n    Who's idea was it?\n\n    Is this part of a broader plan?\n\n    Does this idea support to organization's long term goals?\n\n    Will the person who came up with the idea continue to be involved to help ensure success?\n\n    Are there any key people who will disagree with the idea?\n\n    Are there any major barriers to moving forward with the idea?\n\n    Is this really a project, an action item, or someone's daily activity?\n\n    What problem will this solve?\n\n    Is this a new idea or has it been proposed before?\n\n    If it was proposed before why did it come up again?\n\n    Is now the right time to move forward with this idea?\n\n\n\nWhen projects are launched it’s common for the key players to have different views of the project’s purpose, problem to be solved, direction, and expected results.  The project manager’s role is to help move everyone to a common understanding & agreement.  The project process is designed to enable gaining consensus on the project’s elements.\n\n \n\nDefine the teams required & each team member’s role and specific responsibilities for the project.  Define how the project team will operate regarding meetings, decision making, escalation, performance management, communication, etc.  List key stakeholders and their role and responsibilities within the project.\n\n \n\nTeam Member Responsibilities:\n\n    Understand, help develop, and support project direction, business results, & goals\n\n    Participate in planning, as needed\n\n    Accountable for completing tasks\n\n    Support each other and the project manager\n\n    Participate in problem resolution\n\n    Report status, uncover issues, & communicate\n\n    Keep your supervisor / manager informed of your work & time commitments\n\n    Participate in all reviews and audits\n\n​\n\nGuidance Questions: \n\n    What do we need before we can start this work?\n\n    How many & what kind of teams will be required?\n\n    Who’s the project sponsor & what’s the sponsor’s involvement in the project?\n\n    Who are key project stakeholders & what’s their involvement in the project?\n\n    Who’s the project manager & team leader for each team or sub-team?\n\n    What departments need to be represented on the project core team?\n\n    Who are the core team members & what are their roles & responsibilities?\n\n    What skills are required on the project core team?\n\n    How often & when will project team meetings be held?\n\n    Who will be required to participate in project team meetings?\n\n    How will project team decisions be made?\n\n    How will project team meetings be managed?\n\n    What’s the escalation process?\n\n    How will project team performance issues be handled?\n\n    Who will record & track the schedule, action items & issues?\n\n    Who will record assumptions?\n\n    What automated tools will be used?\n\n    Do team members need any training?\n\n    How will we know this deliverable was completed?\n\n\nDescribe how the project will be launched, who will be involved in launching it, and what information will be made available or has been made available for the launch.\n\n \n\nGuidance Questions: \n\n    What do we need before we can start this work?\n\n    How will the project be launched?\n\n    Will it be a formal or informal launch?\n\n    Is this a standalone project or is it part of a larger program or business initiative?\n\n    Who will be involved in launching the project?\n\n    Who was involved in launching the project?\n\n    What information will be provided to the project leader and project team?\n\n    What information was provided to the project leader and project team?\n\n    Is there any additional information that the team believes they need?\n\n    How will we know this deliverable was completed?\n\n​\n​\n\nLarge Project\nDescribe how the project will be launched, who will be involved in launching it, and what information will be made available or has been made available for the launch.\n \n\nGuidance Questions: \n    What do we need before we can start this work?\n    How will the project be launched?\n    Will it be a formal or informal launch?\n    Is this a standalone project or is it part of a larger program or business initiative?\n    Who will be involved in launching the project?\n    Who was involved in launching the project?\n    What information will be provided to the project leader and project team?\n    What information was provided to the project leader and project team?\n    Is there any additional information that the team believes they need?\n    How will we know this deliverable was completed?\n\nStep two, launch the project, and establish the teams detail. Verify you have all required background information and are ready to launch the project. Projects started in haste without adequate information typically become problem projects. Describe how the project will be launched. Define the teams, at a minimum you'll have a core team, with the members that will be actively involved throughout the entire project. Many projects, also require extended teams, that work on specific portions of the project. Your project team can be your biggest asset, it can also be your biggest risk. Take the time to get to know every team member, and develop effective relationships. If you would like more detail for this step, say Project Launch or Teams. When you have sufficient information, continue to the next step by saying, Step Three. (Changed 8-02-19, Not Uploaded)\n\n"
   },
   {
     "StepLabel": "",
@@ -197,7 +216,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -207,7 +227,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -217,7 +238,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -227,7 +249,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -237,7 +260,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -247,7 +271,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -257,7 +282,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -267,7 +293,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -277,7 +304,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -287,7 +315,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -297,7 +326,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -307,7 +337,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -317,7 +348,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -327,7 +359,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -337,7 +370,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -347,17 +381,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Three, Project Purpose:",
+    "StepLabel": "Project Purpose",
     "StepNumber": 3,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "3. Define the Project's Purpose",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Projects are never done for their own purpose, they are always part of or support a higher goal, or objective.  Describe the business strategies or initiatives that this project supports and how it supports them.\n\n​Describe the business problem & opportunity the project is intended to address.  Include a description of any market and / or internal conditions and dynamics that might affect consideration of the project, as well as any prior attempts to address the underlying business problem.  The described problem determines your approach.\n\nWhat’s the business problem / opportunity\n“If we don’t agree on the problem we won’t agree on the solution.”\nDefine proposed solution\nDevelop goals & objectives\nDefine measurable business results\nIdentify proposed deliverables\nRecord & validate assumptions\n(Define & share the project process\n\n Describe what the project is expected to produce, create, or do. Describe the future state, what it will look and feel like, what will be in place.  Create goals and or objectives that are measurable.\n\n Define and quantify the tangible business results that this project is expected to produce (example; increased revenue, decreased expenses, increased market share, increased customer satisfaction, etc.) \n\nDefine the key factors that will be used to determine and measure project success from the users or customer’s perspective and describe what the organization stands to gain (or not lose) by implementing the project.\n\nProject Launch: Describe how the project will be launched, who will be involved in launching it, and what information will be made available or has been made available for the launch.\n\nProject Teams: Define the teams required & each team member’s role and specific responsibilities for the project.  Define how the project team will operate regarding meetings, decision making, escalation, performance management, communication, etc.  List key stakeholders and their role and responsibilities within the project.\n\nBusiness Problem & Opportunity: Describe the business problem & opportunity the project is intended to address.  Include a description of any market and / or internal conditions and dynamics that might affect consideration of the project, as well as any prior attempts to address the underlying business problem.  The described problem determines your approach.\n\nGoals & Objectives: Describe what the project is expected to produce, create, or do. Describe the future state, what it will look and feel like, what will be in place.  Create goals and or objectives that are measurable\n\nMeasurable Business Results: Define and quantify the tangible business results that this project is expected to produce (example; increased revenue, decreased expenses, increased market share, increased customer satisfaction, etc.) \n\nCritical Success Factors: Define the key factors that will be used to determine and measure project success from the user's or customer’s perspective and describe what the organization stands to gain (or not lose) by implementing the project.\n\nBrainstorm the presenting / initial idea to determine its scope & the viability of moving forward.  Ideas for projects & action items can come from many places.  They can be the result of senior management planning, customer requirements, employee suggestions, responses to daily problems, suggestions for leveraging new technology, etc., etc., etc.  Recognize that the presenting idea can change as you apply the project management process,  How ideas are handled are determined by the organization's culture.  An open & collaborative culture will welcome new ideas & have a way to process the idea while closed organizations may limit & even discourage new ideas.\n\n​Describe why this project is needed, how it supports the organization’s goals, what problem it will solve, & what the key requirements are.  This is typically preliminary information & may change as you apply the steps in the project management process, gather what’s available, expand & clarify the information as the project progresses.\n\n​\n\nGather background information, perform research, brainstorm to understand & validate the need for the project.\n\n​\n\nGuidance Questions: \n\n    What do we need before we can start this work?​\n\n    Have we done this type of project before?\n\n    Have we gathered & reviewed all available information from previous similar project(s).\n\n    Have we assessed the results, comments. problems, & lessons learned from previous similar project(s).\n\n    Review problems encountered & suggested solutions.\n\n    Review lessons learned & recommendations.\n\n    Was senior management involved in vetting and initiating this project?\n\n    Is this project part of a broader initiative?\n\n    What's the potential scope of this project?\n\n    What's the potential duration of this project?\n\n    Does the company have a defined format for project plans?​\n\n    Who is the project sponsor?\n\n    What business strategy or initiative does it support?\n\n    Do we have the capacity to do this project now?\n\n    Do we have the resources to do this project now?\n\n    Is this a high, medium, or low priority project?\n\n    Does this project have any unique schedule requirements?\n\n    Does this project have any unique budget requirements?\n\n    Who will be the project manager?\n\n    What departments or stakeholders need to be represented on the core team?\n\n    What’s the current business environment?\n\n    Is the organization in crisis, business as usual, or growth?\n\n    What’s the project’s priority?\n\n    What’s the proposed business problem?\n\n    Are there defined business goals & objectives?\n\n    What are the expected measurable business results?\n\n    How will project success be determined?\n\n    Are there any budget limits?\n\n    Are there any scheduling issues?\n\n\nThe key question to automatically ask whenever a new idea surfaces is: What problem will this solve?  Recognize that how the problem is defined will determine the direction of the proposed solution.\n\n​\n\nGuidance Questions: \n\n    What do we need before we can start this work?\n\n    Where did the idea come from?\n\n    Who's idea was it?\n\n    Is this part of a broader plan?\n\n    Does this idea support to organization's long term goals?\n\n    Will the person who came up with the idea continue to be involved to help ensure success?\n\n    Are there any key people who will disagree with the idea?\n\n    Are there any major barriers to moving forward with the idea?\n\n    Is this really a project, an action item, or someone's daily activity?\n\n    What problem will this solve?\n\n    Is this a new idea or has it been proposed before?\n\n    If it was proposed before why did it come up again?\n\n    Is now the right time to move forward with this idea?\n\n​\n\nGuidance Questions\n\nProject Launch:\n\n    What do we need before we can start this work?\n    How will the project be launched?\n    Will it be a formal or informal launch?\n    Is this a standalone project or is it part of a larger program or business initiative?\n    Who will be involved in launching the project?\n    Who was involved in launching the project?\n    What information will be provided to the project leader and project team?\n    What information was provided to the project leader and project team?\n    Is there any additional information that the team believes they need?\n\nProject Teams:\n\n    How many & what kind of teams will be required?\n    Who’s the project sponsor & what’s the sponsor’s involvement in the project?\n    Who are key project stakeholders & what’s their involvement in the project?\n    Who’s the project manager & team leader for each team or sub-team?\n    What departments need to be represented on the project core team?\n    Who are the core team members & what are their roles & responsibilities?\n    What skills are required on the project core team?\n    How often & when will project team meetings be held?\n    Who will be required to participate in project team meetings?\n    How will project team decisions be made?\n    How will project team meetings be managed?\n    What’s the escalation process?\n    How will project team performance issues be handled?\n    Who will record & track the schedule, action items & issues?\n    Who will record assumptions?\n    What automated tools will be used?\n    Do team members need any training?\n\nBusiness Problem & Opportunity:\n    What’s been the history?\n    Why are we doing this project?\n    What’s the external need to do the project?\n    What’s the internal need to do the project?\n    How will this project help?\n    What will it produce that we can build on?\n    Have there been previous attempts at doing a similar project?\n    What were the results & learnings of any previous attempts?\n\nGoals & Objectives:\n    What is the proposed business solution?\n    What are the goals of the project?\n    What are the project objectives?\n    What will the project produce?\n    Are the goals and or objectives specific?\n    Are the goals and or objectives measurable?\n    Are the goals and or objectives attainable?\n    Are the goals and or objectives realistic?\n    Are the goals and or objectives time based?\n\nMeasurable Business Results:\n    What business metrics will be impacted or affected?\n    If the project is successful, what are the business results that will be realized?\n    How will the expected results be monitored and tracked?\n    What will happen if the results are not as expected?\n    Are there any new metrics that need to be established or tracked?\n    What will the intangible results or by-products be?\n\nCritical Success Factors:\n\n    What will determine project success?\n    How will project success me measured?\n    Why should senior management approve this project?\n    What will the people or impacted groups experience as benefits?\n    What will the intangible results or by-products be?\n    How will we know this deliverable was completed?\n \n\nGuidance Questions: \n    What do we need before we can start this work?\n    What will determine project success?\n    How will project success me measured?\n    Why should senior management approve this project?\n    What will the people or impacted groups experience as benefits?\n    What will the intangible results or by-products be?\n    How will we know this deliverable was completed?\n\nGuidance Questions: \n    What do we need before we can start this work?\n    What business goals / metrics will be impacted or affected?\n    If the project is successful, what are the business results that will be realized?\n    How will the expected results be monitored and tracked?\n    What will happen if the results are not as expected?\n    Are there any new metrics that need to be established or tracked?\n    What will the intangible results or by-products be?\n    How will we know this deliverable was completed?\n​\n\nGuidance Questions: \n    What do we need before we can start this work?\n    What is the proposed business solution?\n    What are the goals of the project?\n    What are the project objectives?\n    What will the project produce?\n    Are the goals and or objectives specific?\n    Are the goals and or objectives measurable?\n    Are the goals and or objectives attainable?\n    Are the goals and or objectives realistic?\n    Are the goals and or objectives time based?\n    How will we know this deliverable was completed?\n\n\nGuidance Questions:\n    What do we need before we can start this work?\n    What’s been the history?\n    Why are we doing this project?\n    What’s the external need to do the project?\n    What’s the internal need to do the project?\n    How will this project help?\n    What will it produce that we can build on?\n    Have there been previous attempts at doing a similar project?\n    What were the results & learnings of any previous attempts?\n    How will we know this deliverable was completed?\n\nGuidance Questions: \n    What do we need before we can start this work?\n    What business strategy or strategies does this project support?\n    Will business initiative or initiatives will this project support?\n    Is this a standalone project or are there other active projects supporting initiative?\n    How will this project support or help the identified strategies or initiatives?\n    How will we know this task was completed?\n\n\n\nStep three, project purpose summary. At a minimum the project's purpose will include the problem to be solved, proposed solution, goals, and expected measurable results. (Changed 7-30-19, Not Uploaded)\n\nStep three, project purpose detail, update the project plan document with your Project's Purpose. At a minimum the project's purpose will include the problem to be solved, proposed solution, goals, expected measurable results, and the the process steps for the remainder of this project. Gaining agreement on the problem to be solved is the foundation for any project. If we don't agree on the problem, we won't agree on the solution. If you would like more detail for this step, say Project Purpose. When you have sufficient information, continue to the next step by saying, step four. (Changed 7-30-19, Not Uploaded)\n\n"
   },
   {
     "StepLabel": "",
@@ -367,7 +403,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -377,7 +414,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -387,7 +425,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -397,7 +436,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -407,7 +447,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -417,7 +458,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -427,7 +469,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -437,7 +480,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -447,7 +491,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -457,7 +502,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -467,7 +513,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -477,7 +524,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -487,7 +535,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -497,17 +546,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Four, Preliminary Schedule:",
+    "StepLabel": "Preliminary Schedule",
     "StepNumber": 4,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "4. Develop the Preliminary Schedule",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "\nCreate the initial schedule in an appropriate tool; Excel, Smartsheet, other, for the project based on the WBS ensuring all work has been identified & accounted for including the project management work.  Using the WBS and schedule identify & describe the project’s milestones.\n\n​\n\nGuidance Questions: \n    What do we need before we can start this work?\n    Has the assigned resource for each task verified the start & completion?\n    What are the key milestones?\n    How will personnel assignments impact cost?\n    Has enough float been built into the schedule?\n    What’s the impact If the project completion date is missed?\n    How will we know this deliverable was completed?\n\nCreate the initial schedule in an appropriate tool; Excel, Smartsheet, other, for the project based on the WBS ensuring all work has been identified & accounted for including the project management work.  Using the WBS and schedule identify & describe the project’s milestones.  When you have multiple tasks or work packages under a particular deliverable or sub-deliverable the task with the earliest start date is the start for the deliverable & the latest finish date is the deliverables finish date.\n\n​\n\nGuidance Questions: \n    What do we need before we can start this work?\n    Has the assigned resource for each task verified the start & completion?\n    What are the key milestones?\n    How will personnel assignments impact cost?\n    Has enough float been built into the schedule?\n    What’s the impact If the project completion date is missed?\n    How will we know this deliverable was completed?\n\n\nSchedule:\n\nCreate the initial schedule in an appropriate tool; Excel, Smartsheet, other, for the project based on the WBS ensuring all work has been identified & accounted for including the project management work.  Using the WBS and schedule identify & describe the project’s milestones.  If a specific schedule must be met constantly monitor commitment dates.  \n\nStep four, preliminary schedule summary, Begin creating the preliminary project schedule. Select a scheduling tool that's appropriate for your project. The preliminary schedule should follow the steps defined in the project process you intend to use. If you would like more detail for this step, say detail, When you have sufficient information, continue to the next step by saying, Step Five. (Changed 7-30-19, Not Uploaded)\n\nStep Four, preliminary schedule detail, Begin creating the preliminary project schedule. Projects have a beginning and an end, and are therefore date or schedule driven. Select a scheduling tool that's appropriate for your project. The preliminary schedule should follow the steps defined in the project process you intend to use. Focus on specific dates for the first six steps. Include a proposed schedule for the rest of the expected steps. At this point in your project consider the schedule as preliminary, or a wish, until you have accomplished the first six steps. If you would like more detail for this step, say Preliminary Schedule, When you have sufficient information, continue to the next step by saying, Step Five. (Changed 7-30-19, Not Uploaded)\n\n"
   },
   {
     "StepLabel": "",
@@ -517,7 +568,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -527,7 +579,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -537,7 +590,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -547,7 +601,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -557,7 +612,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -567,7 +623,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -577,7 +634,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -587,7 +645,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -597,7 +656,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -607,7 +667,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -617,17 +678,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Five, Deliverables:",
+    "StepLabel": "Solution Deliverables",
     "StepNumber": 5,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "5. Define the Solution Deliverables",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Step five, project deliverables summary, Projects produce, create, and implement deliverables. A deliverable is a thing, and should sound like a noun. We create deliverables by doing work, or tasks, Tasks start with a verb. Develop, design, initiate, etc, The most effective way to identify project deliverables, and the required tasks, is to facilitate the core team in creating a graphical Work Breakdown Structure W B S, using post-it notes. The tasks to produce a deliverable have a beginning and an end, rolling up the dates for all the project's deliverables becomes the project's estimated schedule. Completion criteria for this step is to have identified the project's deliverables, and the key tasks for producing each deliverable. If you would like more detail for this step, say Project Deliverables, When you have sufficient information, continue to the next step by saying, Step Six. (Changed 7-30-19, Not Uploaded)\n\nCreate a graphical view or hierarchical outline of what the project will deliver.  Develop the project Work Breakdown Structure by identifying the project’s deliverables, sub-deliverables, tasks & or work packages.  View the WBS video\n\n \n\nGuidance Questions: \n    What do we need before we can start this work?\n    What things need to be created or changed?\n    What things are needed to accomplish the objectives & measurable results?\n    What behaviors need to be influenced or changed?\n    What things need to be created to influence the required behaviors?\n    What are the Deliverables, Sub-deliverables, & Tasks / Work Packages?\n    Will anything in the current culture need to change to ensure project success?\n    How will we know this deliverable was completed?\n\n\n​\nHow to Create the WBS\n\n\n\n"
   },
   {
     "StepLabel": "",
@@ -637,7 +700,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -647,7 +711,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -657,7 +722,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -667,7 +733,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -677,7 +744,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -687,7 +755,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -697,7 +766,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -707,7 +777,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -717,7 +788,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -727,7 +799,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -737,7 +810,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -747,7 +821,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -757,7 +832,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -767,7 +843,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -777,7 +854,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -787,17 +865,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Six, Preliminary Approval:",
+    "StepLabel": "Preliminary Approval",
     "StepNumber": 6,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "6. Gain Preliminary Approval",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "\nRemember:\nThe further into a project you go, the more expensive the Go – No/Go decision\n\n\nDistribute Information Prior to the Meeting\nPresentation Format\nProgress\nSeek Go – No/Go Recommendation\n\n\nProject Team Reviews\nDepartment Reviews\nCross-functional Reviews\n  Define the purpose for each type of review\n  Agree on the information to be presented\n  Identify the participants\n  Establish the timing\n  Track action items and update plans\n\nDescribe the process that will be used to approve the project plan.  List who will be involved and if it will require a formal or informal approval.  Describe who will need to be involved in reviewing & approving on-going project progress, results, and changes.  Define how issues that cannot be resolved / decided by the project team will be escalated & how the project sponsor is expected to participate in removing barriers. \n\n \n\nGuidance Questions: \n\n    What do we need before we can start this work?\n    What is the Definition Phase approval process for this project?\n    Who will be involved in reviewing and approving the project’s Definition Phase?\n    Are any pre-approvals required?\n    Are there any individuals or groups that need to preview specific information?\n    What information will need to be prepared in order to gain approval?\n    Has the approval process been built into the schedule and budget?\n    How will the sponsor be involved in the project approvals?\n    Who will be involved in the implementation phase approvals?\n    How will issues or change requests be escalated?\n    How will changes to the project be handled and approved?\n    How will we know this task was completed?\n\n\nDescribe the process that will be used to approve the project description & schedule.  List who will be involved and if it will require a formal or informal approval.  Describe who will need to be involved in reviewing & approving on-going project progress, results, and changes.  Define how issues that cannot be resolved / decided by the project team will be escalated & how the project sponsor is expected to participate in removing barriers. \n\n \n\nGuidance Questions: \n\n    What do we need before we can start this work?\n    What is the approval process for this project?\n    Who will be involved in reviewing and approving the project’s plan & schedule?\n    Are any pre-approvals required?\n    Are there any individuals or groups that need to preview specific information?\n    What information will need to be prepared in order to gain approval?\n    Has the approval process been built into the schedule and budget?\n    How will the sponsor be involved in the project approvals?\n    How will issues or change requests be escalated?\n    How will changes to the project be handled and approved?\n    How will we know this deliverable was completed?\n\n\nDescribe the process that will be used to approve the project plan.  List who will be involved and if it will require a formal or informal approval.  Describe who will need to be involved in reviewing & approving on-going project progress, results, and changes.  Define how issues that cannot be resolved / decided by the project team will be escalated & how the project sponsor is expected to participate in removing barriers. \n\n \n\nGuidance Questions: \n    What do we need before we can start this work?\n    What is the Definition Phase approval process for this project?\n    Who will be involved in reviewing and approving the project’s Definition Phase?\n    Are any pre-approvals required?\n    Are there any individuals or groups that need to preview specific information?\n    What information will need to be prepared in order to gain approval?\n    Has the approval process been built into the schedule and budget?\n    How will the sponsor be involved in the project approvals?\n    Who will be involved in the implementation phase approvals?\n    How will issues or change requests be escalated?\n    How will changes to the project be handled and approved?\n    How will we know this deliverable was completed?\n\n\nDescribe the process that will be used to approve the definition phase of the project.  List who will be involved and if it will require a formal or informal approval.\n\nDescribe who will need to be involved in reviewing & approving on-going project progress, results, and changes.  Define how issues that cannot be resolved / decided by the project team will be escalated & how the project sponsor is expected to participate in removing barriers. \n\n \n\nGuidance Questions: \n    What do we need before we can start this work?\n    What is the Definition Phase approval process for this project?\n    Who will be involved in reviewing and approving the project’s Definition Phase?\n    Are any pre-approvals required?\n    Are there any individuals or groups that need to preview specific information?\n    What information will need to be prepared in order to gain approval?\n    Has the approval process been built into the schedule and budget?\n    How will the sponsor be involved in the project approvals?\n    Who will be involved in the other phase approvals?\n    Which future phases will need approvals?\n    How will issues or change requests be escalated?\n    How will changes to the project be handled and approved?\n    How will we know this deliverable was completed?\n\n\nStep six, preliminary approval summary. best practice would be to share and gain agreement or approval for the project work up to this point. All business projects should have gone through these six steps. Depending on the scope of the project, and organizational needs, the approval may be formal or informal, in person or virtual. Compile the project information appropriate for the audience. Provide summary information for management and general stakeholders, and detailed for core team members. If you would like more detail for this step, say Preliminary Approval, When you have sufficient information, continue to the next step by saying, Step Seven. (Changed 7-30-19, Not Uploaded)\n\n\n"
   },
   {
     "StepLabel": "",
@@ -807,7 +887,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -817,7 +898,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -827,7 +909,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -837,7 +920,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -847,7 +931,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -857,7 +942,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -867,7 +953,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -877,7 +964,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -887,7 +975,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -897,7 +986,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -907,17 +997,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Seven, Additional Requirements:",
+    "StepLabel": "Additional Requirements",
     "StepNumber": 7,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "7. Gather & Validate Additional Requirements",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "\n\n\nIdentify the departments and / or groups most impacted by the project and whose requirements will need to be considered and understood in order to ensure project success.  The elements to discuss & gather from each group include their view of the project’s goals, their needs & wants, current business state, key assumptions, technology requirements, quality requirements & organizational considerations. \n\n \n\nGuidance Questions: \n    What do we need before we can start working on this item?\n    What departments will be most impacted by the project?\n    Which department’s requirements will significantly drive the project’s direction?\n    What are each key group’s goals & objectives for the project?\n    How involved does each key group intend to be in the project?\n    How involved does each key group need to be in the project?\n    What are the key group’s needs?\n    What are the key group’s wants?\n    What’s the key group’s current state?\n    What are their assumptions?\n    Why do they believe that…?\n    It appears that they are assuming…?\n    What are the assumptions that appear to be driving resistance within the groups?\n    What are the assumptions that appear to be driving support within the groups?\n    What’s the risk of proceeding with certain assumptions?\n    What are the group’s requirements and specifications?\n    How will we assess and validate the requirements and specifications?\n    What are the technology requirements and specifications?\n    How will we assess and validate the technology requirements and specifications?\n    What are the quality / performance requirements?\n    How will we assess and validate the quality requirements and specifications?\n    How will we know this item has been completed?\n​\n\nStep seven, Additional Requirements, Depending on the project, initial requirements have already been shared during the first six steps. Additional requirements can come from multiple groups, such as customers, management, project sponsor, stakeholders, users of the intended solution, groups impacted by the problem and proposed solution, regulators, citizens, and local, state, and federal government. Identify the groups that will be providing the summary and detailed requirements for your project. Consider meeting with representatives from the key groups, facilitate a session for gathering the following information, group's goals and objective for the project, their needs and wants, their current state, key assumptions, solution requirements, technology requirements, quality requirements, and organizational considerations.  Ask open ended questions, document the requirements, review each requirement, decide which ones will be met, provide feedback to the groups explaining the results of the meetings, decisions and reasons for the actions to be taken. If you would like more detail for this step, say Project Requirements, When you have sufficient information, continue to the next step by saying, Step Eight.\n\n\n"
   },
   {
     "StepLabel": "",
@@ -927,7 +1019,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -937,7 +1030,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -947,7 +1041,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -957,7 +1052,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -967,7 +1063,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -977,7 +1074,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -987,7 +1085,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -997,7 +1096,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1007,7 +1107,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1017,7 +1118,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1027,7 +1129,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1037,7 +1140,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1047,7 +1151,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1057,7 +1162,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1067,7 +1173,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1077,7 +1184,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1087,7 +1195,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1097,7 +1206,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1107,7 +1217,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1117,7 +1228,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1127,7 +1239,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1137,7 +1250,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1147,17 +1261,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Eight, Task Dependencies",
+    "StepLabel": "Dependencies",
     "StepNumber": 8,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "8. Define Task / Work Package Dependencies",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Task Dependencies\n\n\n"
   },
   {
     "StepLabel": "",
@@ -1167,7 +1283,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1177,7 +1294,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1187,7 +1305,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1197,7 +1316,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1207,7 +1327,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1217,7 +1338,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1227,7 +1349,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1237,7 +1360,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1247,7 +1371,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1257,7 +1382,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1267,7 +1393,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1277,7 +1404,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1287,7 +1415,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1297,7 +1426,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1307,7 +1437,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1317,7 +1448,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1327,7 +1459,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1337,17 +1470,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Nine, Risk and Mitigation Plan",
+    "StepLabel": "Risk and Mitigation",
     "StepNumber": 9,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "9. Identify Project Risk & Develop Mitigation Plans",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Risk & Mitigation\n\n\n"
   },
   {
     "StepLabel": "",
@@ -1357,7 +1492,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1367,7 +1503,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1377,7 +1514,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1387,7 +1525,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1397,7 +1536,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1407,7 +1547,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1417,7 +1558,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1427,7 +1569,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1437,7 +1580,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1447,7 +1591,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1457,7 +1602,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1467,7 +1613,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1477,7 +1624,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1487,7 +1635,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1497,7 +1646,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1507,7 +1657,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1517,17 +1668,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Ten, Organizational Impact and Training",
+    "StepLabel": "Organizational Impact",
     "StepNumber": 10,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "10. Assess Organizational Impact & Define Training Requirements",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Organizational Impact & Training Requirements\n\n\n"
   },
   {
     "StepLabel": "",
@@ -1537,7 +1690,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1547,7 +1701,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1557,7 +1712,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1567,7 +1723,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1577,7 +1734,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1587,7 +1745,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1597,7 +1756,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1607,7 +1767,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1617,7 +1778,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1627,7 +1789,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1637,7 +1800,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1647,7 +1811,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1657,7 +1822,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1667,7 +1833,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1677,7 +1844,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1687,7 +1855,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1697,17 +1866,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Eleven, Resources",
+    "StepLabel": "Resource Requirements",
     "StepNumber": 11,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "11. Define Resource Requirements",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Resource Requirements\n\n\n"
   },
   {
     "StepLabel": "",
@@ -1717,7 +1888,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1727,7 +1899,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1737,7 +1910,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1747,7 +1921,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1757,7 +1932,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1767,7 +1943,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1777,7 +1954,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1787,7 +1965,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1797,7 +1976,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1807,7 +1987,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1817,7 +1998,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1827,7 +2009,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1837,7 +2020,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1847,7 +2031,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1857,7 +2042,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1867,7 +2053,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1877,17 +2064,19 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Twelve, Updated Plan Approval and Project Communication",
+    "StepLabel": "Updated Approval",
     "StepNumber": 12,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "12. Gain Updated Plan Approval & Identify Communication Requirements",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Updated Plan Approvel\n\n\n"
   },
   {
     "StepLabel": "",
@@ -1897,7 +2086,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1907,7 +2097,8 @@
     "Weight": 2,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1917,7 +2108,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1927,7 +2119,8 @@
     "Weight": 1,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1937,7 +2130,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1947,7 +2141,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1957,7 +2152,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1967,7 +2163,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1977,7 +2174,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1987,7 +2185,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -1997,7 +2196,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2007,7 +2207,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2017,7 +2218,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2027,7 +2229,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2037,7 +2240,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2047,7 +2251,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2057,17 +2262,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Thirteen, Solution Design",
+    "StepLabel": "Solution Design",
     "StepNumber": 13,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "13. Create Solution Designs",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Solution Designs\n\n\n"
   },
   {
     "StepLabel": "",
@@ -2077,7 +2284,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2087,7 +2295,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2097,7 +2306,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2107,7 +2317,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2117,7 +2328,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2127,7 +2339,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2137,7 +2350,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2147,7 +2361,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2157,7 +2372,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2167,7 +2383,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2177,7 +2394,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2187,7 +2405,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2197,7 +2416,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2207,7 +2427,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2217,7 +2438,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2227,7 +2449,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2237,7 +2460,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2247,7 +2471,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2257,17 +2482,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Fourteen, Solution Development",
+    "StepLabel": "Solution Development",
     "StepNumber": 14,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "14. Develop the Solution",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Solution Developed\n\n\n"
   },
   {
     "StepLabel": "",
@@ -2277,7 +2504,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2287,7 +2515,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2297,7 +2526,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2307,7 +2537,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2317,7 +2548,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2327,7 +2559,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2337,7 +2570,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2347,7 +2581,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2357,7 +2592,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2367,7 +2603,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2377,7 +2614,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2387,7 +2625,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2397,7 +2636,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2407,7 +2647,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2417,7 +2658,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2427,7 +2669,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2437,7 +2680,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2447,7 +2691,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2457,7 +2702,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2467,7 +2713,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2477,17 +2724,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Fifteen, Testing",
+    "StepLabel": "Solution Testing",
     "StepNumber": 15,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "15. Test the Solution",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Testing\n\n"
   },
   {
     "StepLabel": "",
@@ -2497,7 +2746,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2507,7 +2757,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2517,7 +2768,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2527,7 +2779,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2537,7 +2790,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2547,7 +2801,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2557,7 +2812,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2567,7 +2823,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2577,7 +2834,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2587,7 +2845,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2597,7 +2856,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2607,7 +2867,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2617,7 +2878,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2627,7 +2889,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2637,7 +2900,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2647,7 +2911,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2657,7 +2922,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2667,7 +2933,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2677,17 +2944,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Sixteen, Solution Communication, Documentation, Training and Maintenance Development",
+    "StepLabel": "Behavior Deliverables Developed",
     "StepNumber": 16,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "16. Develop Communication, Documantation, Training, & Maintenance",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Behavior Deliverables Developed\n\n\n"
   },
   {
     "StepLabel": "",
@@ -2697,7 +2966,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2707,7 +2977,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2717,7 +2988,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2727,7 +2999,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2737,7 +3010,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2747,7 +3021,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2757,7 +3032,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2767,7 +3043,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2777,7 +3054,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2787,7 +3065,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2797,7 +3076,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2807,7 +3087,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2817,7 +3098,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2827,7 +3109,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2837,7 +3120,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2847,7 +3131,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2857,17 +3142,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Seventeen, Deliver Communication, Training, and Coaching",
+    "StepLabel": "Behavior Deiverables Delivered",
     "StepNumber": 17,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "17. Deliver Communication, Training, & Coaching",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Behavior Deliverables Delivered\n\n\n"
   },
   {
     "StepLabel": "",
@@ -2877,7 +3164,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2887,7 +3175,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2897,7 +3186,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2907,7 +3197,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2917,7 +3208,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2927,7 +3219,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2937,7 +3230,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2947,7 +3241,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2957,7 +3252,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2967,7 +3263,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -2977,17 +3274,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Eighteen, Pilot",
+    "StepLabel": "Pilot",
     "StepNumber": 18,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "18. Pilot the Solution",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Pilot\n\n\n"
   },
   {
     "StepLabel": "",
@@ -2997,7 +3296,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3007,7 +3307,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3017,7 +3318,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3027,7 +3329,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3037,7 +3340,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3047,7 +3351,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3057,7 +3362,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3067,7 +3373,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3077,7 +3384,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3087,7 +3395,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3097,7 +3406,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3107,7 +3417,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3117,7 +3428,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3127,17 +3439,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Nineteen, Implement",
+    "StepLabel": "Implement",
     "StepNumber": 19,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "19. Implement the Solution",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Implement\n\n\n"
   },
   {
     "StepLabel": "",
@@ -3147,7 +3461,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3157,7 +3472,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3167,7 +3483,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3177,7 +3494,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3187,7 +3505,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3197,7 +3516,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3207,7 +3527,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3217,7 +3538,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3227,7 +3549,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3237,7 +3560,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3247,7 +3571,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3257,7 +3582,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3267,7 +3593,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3277,7 +3604,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3287,17 +3615,19 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
-    "StepLabel": "Step Twenty, Post-op",
+    "StepLabel": "Post-op",
     "StepNumber": 20,
     "QuestionNumber": null,
-    "Questions": "",
+    "Questions": "20. Gather Feedback, Results, & Perform Post-op",
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": "Post-op\n\n\n"
   },
   {
     "StepLabel": "",
@@ -3307,7 +3637,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3317,7 +3648,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3327,7 +3659,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3337,7 +3670,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3347,7 +3681,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3357,7 +3692,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3367,7 +3703,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3377,7 +3714,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3387,7 +3725,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3397,7 +3736,8 @@
     "Weight": null,
     "Answers": "",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3407,7 +3747,8 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   },
   {
     "StepLabel": "",
@@ -3417,6 +3758,7 @@
     "Weight": 3,
     "Answers": "Later",
     "Who": "",
-    "Date": ""
+    "Date": "",
+    "Tips": ""
   }
  ]
