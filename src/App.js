@@ -6,6 +6,7 @@ import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
+
 Amplify.configure(aws_exports);
 
 
