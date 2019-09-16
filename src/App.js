@@ -6,7 +6,7 @@ import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
 import DashBoard from "./components/DashBoard"
-import ProjectBar from "./components/ProjectBar"
+// import ProjectBar from "./components/ProjectBar"
 import MySurvey from "./components/MySurvey"
 
 Amplify.configure(aws_exports);
@@ -27,6 +27,7 @@ class App extends Component {
     this.onSelectStep = this.onSelectStep.bind(this);
     this.onQuestionAnswered = this.onQuestionAnswered.bind(this);
     this.handleButton = this.handleButton.bind(this);
+    this.updateStep = this.updateStep.bind(this);
   }
   onSelectStep(stepNumber) {
     if (this.state !== undefined) {
@@ -47,6 +48,21 @@ class App extends Component {
   handleButton(result) {
     if (this.state !== undefined) {
       const stepNumber = parseInt(result, 10) - 1;
+      if (stepNumber >= 0 && stepNumber < this.state.project.steps.length)
+        this.setState({ currentStep: stepNumber })
+    }
+  }
+  
+  updateStep(result) {
+    if (this.state !== undefined) {
+      console.log(`updateStep(${result.target.outerText})`)
+      const answerArray = result.target.outerText.split(")");
+      if (answerArray.length === 0) {
+        console.log(`updateStep Bad result${result.target.outerText}`)
+        return;
+      }
+      const stepNumber = parseInt(answerArray[0], 10) - 1;
+      console.log(`updateStep(${stepNumber + 1 })`)
       if (stepNumber >= 0 && stepNumber < this.state.project.steps.length)
         this.setState({ currentStep: stepNumber })
     }
@@ -80,13 +96,14 @@ class App extends Component {
       <div className="App">
         <div className="dashboard">
           <DashBoard
-            project={this.state.project} />
+            project={this.state.project} 
+            updateStep = {this.updateStep}/>
         </div>
-        <div className="projectbar">
+        {/* <div className="projectbar">
           <ProjectBar project={this.state.project}
             handleButton={this.handleButton}
           />
-        </div>
+        </div> */}
         <div className="mysurvey">
           <MySurvey
             project={this.state.project}
