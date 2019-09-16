@@ -6,7 +6,6 @@ class MySurvey extends Component {
   render() {
     const { project, currentStep, onQuestionAnswered } = this.props;
 
-    console.log('project.steps', project.steps)
     const tableRows = project.steps[currentStep].questions.map((question, _index) => {
       return (
         <tr key={_index + 1}>
