@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Tabs, Tab } from 'react-bootstrap'
 
 class ProjectBar extends Component {
+  constructor (props){
+    super(props);
+  }
 
 
   render() {
