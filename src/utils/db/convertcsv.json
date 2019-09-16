@@ -1,0 +1,3422 @@
+[
+ {
+   "StepLabel": "Steps",
+   "StepNumber": null,
+   "QuestionNumber": null,
+   "Questions": "Master Questions",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step One, Project Background",
+   "StepNumber": 1,
+   "QuestionNumber": null,
+   "Questions": "Step One, Gather & Assess the Project Background",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step is completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 5,
+   "Questions": "Do you Know who Initiated the Project?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 6,
+   "Questions": "Do you know why the project was initiated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 7,
+   "Questions": "Do you know how the project supports the company's goals?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 8,
+   "Questions": "Do you know the priority of the project?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 9,
+   "Questions": "Has this project type been done before?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 10,
+   "Questions": "Are you aware of the results of previous projects?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 11,
+   "Questions": "Have the key stakeholders been identified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 12,
+   "Questions": "Do you know what metrics this project will affect?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 13,
+   "Questions": "Does this project have an assigned sponsor?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 14,
+   "Questions": "Are there any significant risks that may impact project success?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 15,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 1,
+   "QuestionNumber": 16,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Two, Launch the Project and Establish the Teams:",
+   "StepNumber": 2,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 5,
+   "Questions": "Do you have a plan for launching the project?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 6,
+   "Questions": "Do you know how many teams will be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 7,
+   "Questions": "Do you know the departments or functions that need to be represented on the core team?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 8,
+   "Questions": "Have the team members been identified and confirmed?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 9,
+   "Questions": "Have you identified how often, how, and where the teams will meet?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 10,
+   "Questions": "Have you identified a general estimate of the time required for each team member?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 11,
+   "Questions": "Has team member responsibilities been assigned?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 12,
+   "Questions": "Do any of the teams or individual members need specific training?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 13,
+   "Questions": "Have team norms been established?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 14,
+   "Questions": "Have team operating procedures been defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 15,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 2,
+   "QuestionNumber": 16,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Three, Project Purpose:",
+   "StepNumber": 3,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started? ",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 5,
+   "Questions": "Has the problem to be solved been clearly stated?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 6,
+   "Questions": "Is there agreement on the Problem to be solved?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 7,
+   "Questions": "Has the proposed solution been defined? ",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 8,
+   "Questions": "Have the project goals been established? ",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 9,
+   "Questions": "Have the expected measurable results been identified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 10,
+   "Questions": "Does this project have a specific budget constraint?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 11,
+   "Questions": "Does this project have a specific schedule constraint?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 12,
+   "Questions": "Has the project process been defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 13,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 3,
+   "QuestionNumber": 14,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Four, Preliminary Schedule:",
+   "StepNumber": 4,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 5,
+   "Questions": "Have you selected an appropriate scheduling tool?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 6,
+   "Questions": "Do any of the team members need training on the scheduling tool?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 7,
+   "Questions": "Has the preliminary schedule been developed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 8,
+   "Questions": "Has the preliminary schedule been shared?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 9,
+   "Questions": "Has the schedule update process been defined?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 10,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 4,
+   "QuestionNumber": 11,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Five, Deliverables:",
+   "StepNumber": 5,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed? ",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started? ",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 5,
+   "Questions": "Have the solution deliverables been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 6,
+   "Questions": "Have communication deliverables been Identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 7,
+   "Questions": "Are there any behavior change deliverables required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 8,
+   "Questions": "Are there any project management deliverables required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 9,
+   "Questions": "Have all tasks or work packages for each deliverable been identified? ",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 10,
+   "Questions": "Have all deliverables been assigned and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 11,
+   "Questions": "Have all tasks and work packages been assigned and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 12,
+   "Questions": "Has the start and completion criteria been validated for key tasks and work packages?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 13,
+   "Questions": "Have estimated start and finish dates been identified for tasks and work packages?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 14,
+   "Questions": "Has the estimated project schedule been created and shared?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 15,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 5,
+   "QuestionNumber": 16,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Six, Preliminary Approval:",
+   "StepNumber": 6,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 5,
+   "Questions": "Has the requirement for project plan approval been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 6,
+   "Questions": "Have the people involved in the approval been identified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 7,
+   "Questions": "Has the approval date, time, and location established?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 8,
+   "Questions": "Has the material and information required for the approval been developed?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 9,
+   "Questions": "Has the feedback and recommendations from the approval been processed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 10,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 6,
+   "QuestionNumber": 11,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Seven, Additional Requirements:",
+   "StepNumber": 7,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 5,
+   "Questions": "Have you identified the departments most impacted by the project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 6,
+   "Questions": "Do you know which department’s requirements will significantly drive the project’s direction?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 7,
+   "Questions": "Do you know the most impacted group’s goals and objectives for the project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 8,
+   "Questions": "Are the most impacted groups adequately involved in the project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 9,
+   "Questions": "Have the most impacted group's needs been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 10,
+   "Questions": "Have the most impacted group's wants been identified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 11,
+   "Questions": "Are you aware of any major issues that may impact the project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 12,
+   "Questions": "Are there any significant assumptions that may impact the project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 13,
+   "Questions": "Are there any assumptions that appear to be driving resistance within the groups?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 14,
+   "Questions": "Are there any assumptions that appear to be driving support within the groups?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 15,
+   "Questions": "Is there risk in proceeding with the project due to certain assumptions?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 16,
+   "Questions": "Do you know the most impacted roup’s requirements and specifications?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 17,
+   "Questions": "Do you know how you will assess and validate the requirements and specifications?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 18,
+   "Questions": "Do you know the technology requirements and specifications?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 19,
+   "Questions": "Do you know how you will assess and validate the technology requirements and specifications?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 20,
+   "Questions": "Do you know the quality / performance requirements?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 21,
+   "Questions": "Do you know how you will assess and validate the quality requirements and specifications?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 22,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 7,
+   "QuestionNumber": 23,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Eight, Task Dependencies",
+   "StepNumber": 8,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 5,
+   "Questions": "Have all the solution deliverables been identified and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 6,
+   "Questions": "Have all the communication deliverables been identified and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 7,
+   "Questions": "Have all the training, coaching, and documentation deliverables been identified and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 8,
+   "Questions": "Have all the maintenance and support deliverables been identified and validated?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 9,
+   "Questions": "Have all the tasks or work packages for all deliverables been identified and validated?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 10,
+   "Questions": "Is it critical that the project is completed by a specific date?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 11,
+   "Questions": "Is it critical that the project stay within the established budget?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 12,
+   "Questions": "Have all the resources for performing the work been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 13,
+   "Questions": "Have task or work package owners verified where their work fits in the flow?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 14,
+   "Questions": "Have task or work package owners verified their predecessors and successors?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 15,
+   "Questions": "Is it critical to continually monitor and update dependencies throughout the project?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 16,
+   "Questions": "Do you have what you need to record and monitor dependencies?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 17,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 8,
+   "QuestionNumber": 18,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Nine, Risk and Mitigation Plan",
+   "StepNumber": 9,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 5,
+   "Questions": "Have all the risk items been identified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 6,
+   "Questions": "Are there any impacted user’s risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 7,
+   "Questions": "Are there any scheduling or resource related risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 8,
+   "Questions": "Are there any resource related risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 9,
+   "Questions": "Are there any project team related risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 10,
+   "Questions": "Are there any stakeholder related risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 11,
+   "Questions": "Are there any customer related risks?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 12,
+   "Questions": "Have all risk items been quantified?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 13,
+   "Questions": "Have all risk items been prioritized?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 14,
+   "Questions": "Have the top scoring risk items been identified and agreed to?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 15,
+   "Questions": "Have mitigation plans been created and included in the WBS and schedule",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 16,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 9,
+   "QuestionNumber": 17,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Ten, Organizational Impact and Training",
+   "StepNumber": 10,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 5,
+   "Questions": "Is this project congruent with the organization’s culture and values?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 6,
+   "Questions": "Is this project expected to change the organization's culture?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 7,
+   "Questions": "Will any organizational items need to be modified or changed as a result of doing this project?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 8,
+   "Questions": "Are there any behaviors that this project is expected to change?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 9,
+   "Questions": "Will this project require behaviors to change for it to be successful?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 10,
+   "Questions": "Will this project require formal or informal training to be delivered?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 11,
+   "Questions": "Will this project require on-the-job training to be delivered?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 12,
+   "Questions": "Are there any organizational elements that may change as a result of the project?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 13,
+   "Questions": "Are there any organizational issues that may impact this project's success",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 14,
+   "Questions": "Are there any potential unintended consequences or impacts?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 15,
+   "Questions": "Do we know who will be impacted by this project?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 16,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 10,
+   "QuestionNumber": 17,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Eleven, Resources",
+   "StepNumber": 11,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 5,
+   "Questions": "Will this project require any special knowledge or skills?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 6,
+   "Questions": "Will this project require active management involvement?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 7,
+   "Questions": "Will this project require active key stakeholder involvement?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 8,
+   "Questions": "Are all skills and competencies available internally?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 9,
+   "Questions": "Are the team members available to participate in meetings and perform required work?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 10,
+   "Questions": "Do we know what external skills, knowledge, and competencies need to acquired?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 11,
+   "Questions": "Do we know who will manage any outside resources?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 12,
+   "Questions": "Does this project have defined budget constraints?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 13,
+   "Questions": "Does this project require special software?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 14,
+   "Questions": "Will this project require special materials?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 15,
+   "Questions": "Will this project require special tools?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 16,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 11,
+   "QuestionNumber": 17,
+   "Questions": "Has this step been completed?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Twelve, Updated Plan Approval and Project Communication",
+   "StepNumber": 12,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 2,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 1,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 5,
+   "Questions": "Will this project require formal or informal plan approval and or review?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 6,
+   "Questions": "Has the approval and or the review process been defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 7,
+   "Questions": "Do you know who will be involved in the plan approval and or review?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 8,
+   "Questions": "Will any pre-approvals be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 9,
+   "Questions": "Are there any individuals or groups that need to preview specific information?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 10,
+   "Questions": "Do you know what information will need to be prepared in order to gain approval?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 11,
+   "Questions": "Has the approval process been built into the schedule and budget?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 12,
+   "Questions": "Do you know how the sponsor will be involved in the project review and approvals?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 13,
+   "Questions": "Will any other approvals or reviews be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 14,
+   "Questions": "Do you have a way to handle the recommendations & feedback from the review?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 15,
+   "Questions": "Do you know how changes to the plan will be handled as a result of the review and or approvals?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 16,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 12,
+   "QuestionNumber": 17,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Thirteen, Solution Design",
+   "StepNumber": 13,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 5,
+   "Questions": "Are all project deliverables clearly defined & understood?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 6,
+   "Questions": "Do any solution designs need to be created?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 7,
+   "Questions": "Do any communication designs need to be created?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 8,
+   "Questions": "Do any marketing designs need to be created?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 9,
+   "Questions": "Have design resources been identified and gained commitment?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 10,
+   "Questions": "Will external design resources be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 11,
+   "Questions": "Will any special skills, software or tools be needed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 12,
+   "Questions": "Will any specific processes, procedures, or documentation be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 13,
+   "Questions": "Will budget approval be required for any of the resources required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 14,
+   "Questions": "Will preliminary and final designs be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 15,
+   "Questions": "Will multiple design iterations be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 16,
+   "Questions": "Do you know who will approve the preliminary and final designs?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 17,
+   "Questions": "Has the design approval criteria been defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 18,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 13,
+   "QuestionNumber": 19,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Fourteen, Solution Development",
+   "StepNumber": 14,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 5,
+   "Questions": "Have any additional requirements been added to any of the deliverables?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 6,
+   "Questions": "Is the development process defined and understood?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 7,
+   "Questions": "Have development resources been identified and gained commitment?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 8,
+   "Questions": "Will external development resources be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 9,
+   "Questions": "Will any special skills, software or tools be needed to develop any of the deliverables?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 10,
+   "Questions": "Will any procedures, or documentation be required to develop any of the deliverables?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 11,
+   "Questions": "Will budget approval be required for any of the resources required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 12,
+   "Questions": "Will development need to be done in phases?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 13,
+   "Questions": "Will multiple development iterations be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 14,
+   "Questions": "Will interim approvals be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 15,
+   "Questions": "Do you know who will approve the preliminary and final development?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 16,
+   "Questions": "Has the development approval criteria been defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 17,
+   "Questions": "Are scheduling estimates realistic?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 18,
+   "Questions": "Have the responsible resources verified the schedule estimates?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 19,
+   "Questions": "Have you included time in the schedule to do rework, deal with surprises, or develop unknowns?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 20,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 14,
+   "QuestionNumber": 21,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Fifteen, Testing",
+   "StepNumber": 15,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 5,
+   "Questions": "Will deliverables need to be tested as they are developed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 6,
+   "Questions": "Have tests been clearly defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 7,
+   "Questions": "Have the testing resources been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 8,
+   "Questions": "Have the functions that need to be tested been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 9,
+   "Questions": "Have testing tolerances been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 10,
+   "Questions": "Have the people doing the testing been trained in the testing process?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 11,
+   "Questions": "Has it been defined who will decide if a test passed or failed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 12,
+   "Questions": "Have contingencies been defined if critical tests fail?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 13,
+   "Questions": "Will unit testing be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 14,
+   "Questions": "Will functional testing be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 15,
+   "Questions": "Will user testing be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 16,
+   "Questions": "Have the people been identified who will review tests results?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 17,
+   "Questions": "Has it been identified what will happen if tests fail?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 18,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 15,
+   "QuestionNumber": 19,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Sixteen, Solution Communication, Documentation, Training and Maintenance Development",
+   "StepNumber": 16,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 5,
+   "Questions": "Have all audiences been identified that need project communication, documentation, training, & maintenance procedures?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 6,
+   "Questions": "Are all communication artifacts identified?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 7,
+   "Questions": "Are the requirements for communication, documentation, training, & maintenance doable?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 8,
+   "Questions": "Will unique skills be required to develop the commuinication, documentation, training, & maintenance procedures?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 9,
+   "Questions": "Will the development of communication, documantation, training, & maintenance procedures be itterative?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 10,
+   "Questions": "As the communication, documentation, training, & maintenance procedures are developed have testing & approval requirements & resources been identified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 11,
+   "Questions": "Will training material need to be developed?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 12,
+   "Questions": "Have the training delivery resources been identified?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 13,
+   "Questions": "Has the training delivery approach been defined?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 14,
+   "Questions": "Will individual coaching be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 15,
+   "Questions": "As the documentation is developed have testing & approvals been defined?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 16,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 16,
+   "QuestionNumber": 17,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Seventeen, Deliver Communication, Training, and Coaching",
+   "StepNumber": 17,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 5,
+   "Questions": "Is there a delivery plan for communication, training, & coaching?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 6,
+   "Questions": "Has the delivery plan for communication, training, & coaching been approved?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 7,
+   "Questions": "Are the delivery resources for communication, training, & coaching trainied & available?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 8,
+   "Questions": "Are feedback tools & or processes for communication, training, & coaching available?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 9,
+   "Questions": "Are all communication, training, & coaching impacted groups or individuals aware & available?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 10,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 17,
+   "QuestionNumber": 11,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Eighteen, Pilot",
+   "StepNumber": 18,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 5,
+   "Questions": "Do you have a pilot plan?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 6,
+   "Questions": "Have you defined what will be piloted & what won't?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 7,
+   "Questions": "Are the pilot resources identified & available?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 8,
+   "Questions": "Have you defied how success of the pilot will be determined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 9,
+   "Questions": "Have you defined what will will happen if the results are not as expected?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 10,
+   "Questions": "Have the people involved in the pilot been trained?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 11,
+   "Questions": "Have you identified who will decide pilot success?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 12,
+   "Questions": "Have you determined who will receive the results of the pilot?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 13,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 18,
+   "QuestionNumber": 14,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Nineteen, Implement",
+   "StepNumber": 19,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 5,
+   "Questions": "Do you have an implementation plan?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 6,
+   "Questions": "Have you defined what will & will not be implemented?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 7,
+   "Questions": "Are all groups & people who will be impacted by implementation aware?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 8,
+   "Questions": "Are implementation resources identified & available?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 9,
+   "Questions": "Has implementation success been clearly defined?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 10,
+   "Questions": "Have you defined what will happen if the results are not as expected?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 11,
+   "Questions": "Has documentation, training, & coaching been delivered?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 12,
+   "Questions": "Have you defined who will decide implementation success?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 13,
+   "Questions": "Have you determined who will receive the results of the implementation?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 14,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 19,
+   "QuestionNumber": 15,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "Step Twenty, Post-op",
+   "StepNumber": 20,
+   "QuestionNumber": null,
+   "Questions": "",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 1,
+   "Questions": "Is someone assigned to ensure this step in completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 2,
+   "Questions": "Do you have what you need before you can start this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 3,
+   "Questions": "Are there any tasks that need to be completed before this step can start?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 4,
+   "Questions": "Has work on this step started?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 5,
+   "Questions": "Has user feedback been gathered?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 6,
+   "Questions": "Do you have before & after measurable results?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 7,
+   "Questions": "Have you determined if a formal post-op will be held?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 8,
+   "Questions": "Have the people involved in the post-op been identified & notified?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 9,
+   "Questions": "Will a formal post-op report be required?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 10,
+   "Questions": "Have you identified who will receive the results of the post-op?",
+   "Weight": null,
+   "Answers": "",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 11,
+   "Questions": "Have you determined the completion criteria for this step?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ },
+ {
+   "StepLabel": "",
+   "StepNumber": 20,
+   "QuestionNumber": 12,
+   "Questions": "Has this step been completed?",
+   "Weight": 3,
+   "Answers": "Later",
+   "Who": "",
+   "Date": ""
+ }
+]

@@ -1,0 +1,2394 @@
+{
+  "name": "Project Assistant",
+  "background": "background",
+  "creator": "stephen@continuousbusinesschange.com",
+  "steps": [
+    {
+      "stepLabel": "Step One, Project Background",
+      "stepNumber": 1,
+      "skip": false,
+      "questions": [
+        {
+          "number": "1.1",
+          "question": "1. Is someone assigned to ensure this step is completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.5",
+          "question": "5. Do you Know who Initiated the Project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.6",
+          "question": "6. Do you know why the project was initiated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.7",
+          "question": "7. Do you know how the project supports the company's goals?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.8",
+          "question": "8. Do you know the priority of the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.9",
+          "question": "9. Has this project type been done before?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.10",
+          "question": "10. Are you aware of the results of previous projects?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.11",
+          "question": "11. Have the key stakeholders been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.12",
+          "question": "12. Do you know what metrics this project will affect?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.13",
+          "question": "13. Does this project have an assigned sponsor?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.14",
+          "question": "14. Are there any significant risks that may impact project success?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.15",
+          "question": "15. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "1.16",
+          "question": "16. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Two, Launch the Project and Establish the Teams:",
+      "stepNumber": 2,
+      "skip": false,
+      "questions": [
+        {
+          "number": "2.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.5",
+          "question": "5. Do you have a plan for launching the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.6",
+          "question": "6. Do you know how many teams will be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.7",
+          "question": "7. Do you know the departments or functions that need to be represented on the core team?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.8",
+          "question": "8. Have the team members been identified and confirmed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.9",
+          "question": "9. Have you identified how often, how, and where the teams will meet?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.10",
+          "question": "10. Have you identified a general estimate of the time required for each team member?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.11",
+          "question": "11. Has team member responsibilities been assigned?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.12",
+          "question": "12. Do any of the teams or individual members need specific training?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.13",
+          "question": "13. Have team norms been established?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.14",
+          "question": "14. Have team operating procedures been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.15",
+          "question": "15. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "2.16",
+          "question": "16. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Three, Project Purpose:",
+      "stepNumber": 3,
+      "skip": false,
+      "questions": [
+        {
+          "number": "3.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.4",
+          "question": "4. Has work on this step started? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.5",
+          "question": "5. Has the problem to be solved been clearly stated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.6",
+          "question": "6. Is there agreement on the Problem to be solved?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.7",
+          "question": "7. Has the proposed solution been defined? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.8",
+          "question": "8. Have the project goals been established? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.9",
+          "question": "9. Have the expected measurable results been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.10",
+          "question": "10. Does this project have a specific budget constraint?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.11",
+          "question": "11. Does this project have a specific schedule constraint?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.12",
+          "question": "12. Has the project process been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.13",
+          "question": "13. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "3.14",
+          "question": "14. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Four, Preliminary Schedule:",
+      "stepNumber": 4,
+      "skip": false,
+      "questions": [
+        {
+          "number": "4.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.5",
+          "question": "5. Have you selected an appropriate scheduling tool?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.6",
+          "question": "6. Do any of the team members need training on the scheduling tool?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.7",
+          "question": "7. Has the preliminary schedule been developed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.8",
+          "question": "8. Has the preliminary schedule been shared?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.9",
+          "question": "9. Has the schedule update process been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.10",
+          "question": "10. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "4.11",
+          "question": "11. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Five, Deliverables:",
+      "stepNumber": 5,
+      "skip": false,
+      "questions": [
+        {
+          "number": "5.1",
+          "question": "1. Is someone assigned to ensure this step in completed? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.4",
+          "question": "4. Has work on this step started? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.5",
+          "question": "5. Have the solution deliverables been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.6",
+          "question": "6. Have communication deliverables been Identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.7",
+          "question": "7. Are there any behavior change deliverables required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.8",
+          "question": "8. Are there any project management deliverables required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.9",
+          "question": "9. Have all tasks or work packages for each deliverable been identified? ",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.10",
+          "question": "10. Have all deliverables been assigned and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.11",
+          "question": "11. Have all tasks and work packages been assigned and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.12",
+          "question": "12. Has the start and completion criteria been validated for key tasks and work packages?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.13",
+          "question": "13. Have estimated start and finish dates been identified for tasks and work packages?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.14",
+          "question": "14. Has the estimated project schedule been created and shared?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.15",
+          "question": "15. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "5.16",
+          "question": "16. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Six, Preliminary Approval:",
+      "stepNumber": 6,
+      "skip": false,
+      "questions": [
+        {
+          "number": "6.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.5",
+          "question": "5. Has the requirement for project plan approval been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.6",
+          "question": "6. Have the people involved in the approval been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.7",
+          "question": "7. Has the approval date, time, and location established?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.8",
+          "question": "8. Has the material and information required for the approval been developed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.9",
+          "question": "9. Has the feedback and recommendations from the approval been processed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.10",
+          "question": "10. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "6.11",
+          "question": "11. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Seven, Additional Requirements:",
+      "stepNumber": 7,
+      "skip": false,
+      "questions": [
+        {
+          "number": "7.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.5",
+          "question": "5. Have you identified the departments most impacted by the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.6",
+          "question": "6. Do you know which department’s requirements will significantly drive the project’s direction?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.7",
+          "question": "7. Do you know the most impacted group’s goals and objectives for the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.8",
+          "question": "8. Are the most impacted groups adequately involved in the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.9",
+          "question": "9. Have the most impacted group's needs been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.10",
+          "question": "10. Have the most impacted group's wants been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.11",
+          "question": "11. Are you aware of any major issues that may impact the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.12",
+          "question": "12. Are there any significant assumptions that may impact the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.13",
+          "question": "13. Are there any assumptions that appear to be driving resistance within the groups?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.14",
+          "question": "14. Are there any assumptions that appear to be driving support within the groups?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.15",
+          "question": "15. Is there risk in proceeding with the project due to certain assumptions?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.16",
+          "question": "16. Do you know the most impacted roup’s requirements and specifications?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.17",
+          "question": "17. Do you know how you will assess and validate the requirements and specifications?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.18",
+          "question": "18. Do you know the technology requirements and specifications?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.19",
+          "question": "19. Do you know how you will assess and validate the technology requirements and specifications?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.20",
+          "question": "20. Do you know the quality / performance requirements?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.21",
+          "question": "21. Do you know how you will assess and validate the quality requirements and specifications?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.22",
+          "question": "22. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "7.23",
+          "question": "23. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Eight, Task Dependencies",
+      "stepNumber": 8,
+      "skip": false,
+      "questions": [
+        {
+          "number": "8.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.5",
+          "question": "5. Have all the solution deliverables been identified and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.6",
+          "question": "6. Have all the communication deliverables been identified and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.7",
+          "question": "7. Have all the training, coaching, and documentation deliverables been identified and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.8",
+          "question": "8. Have all the maintenance and support deliverables been identified and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.9",
+          "question": "9. Have all the tasks or work packages for all deliverables been identified and validated?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.10",
+          "question": "10. Is it critical that the project is completed by a specific date?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.11",
+          "question": "11. Is it critical that the project stay within the established budget?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.12",
+          "question": "12. Have all the resources for performing the work been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.13",
+          "question": "13. Have task or work package owners verified where their work fits in the flow?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.14",
+          "question": "14. Have task or work package owners verified their predecessors and successors?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.15",
+          "question": "15. Is it critical to continually monitor and update dependencies throughout the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.16",
+          "question": "16. Do you have what you need to record and monitor dependencies?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.17",
+          "question": "17. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "8.18",
+          "question": "18. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Nine, Risk and Mitigation Plan",
+      "stepNumber": 9,
+      "skip": false,
+      "questions": [
+        {
+          "number": "9.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.5",
+          "question": "5. Have all the risk items been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.6",
+          "question": "6. Are there any impacted user’s risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.7",
+          "question": "7. Are there any scheduling or resource related risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.8",
+          "question": "8. Are there any resource related risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.9",
+          "question": "9. Are there any project team related risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.10",
+          "question": "10. Are there any stakeholder related risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.11",
+          "question": "11. Are there any customer related risks?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.12",
+          "question": "12. Have all risk items been quantified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.13",
+          "question": "13. Have all risk items been prioritized?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.14",
+          "question": "14. Have the top scoring risk items been identified and agreed to?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.15",
+          "question": "15. Have mitigation plans been created and included in the WBS and schedule",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.16",
+          "question": "16. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "9.17",
+          "question": "17. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Ten, Organizational Impact and Training",
+      "stepNumber": 10,
+      "skip": false,
+      "questions": [
+        {
+          "number": "10.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.5",
+          "question": "5. Is this project congruent with the organization’s culture and values?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.6",
+          "question": "6. Is this project expected to change the organization's culture?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.7",
+          "question": "7. Will any organizational items need to be modified or changed as a result of doing this project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.8",
+          "question": "8. Are there any behaviors that this project is expected to change?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.9",
+          "question": "9. Will this project require behaviors to change for it to be successful?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.10",
+          "question": "10. Will this project require formal or informal training to be delivered?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.11",
+          "question": "11. Will this project require on-the-job training to be delivered?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.12",
+          "question": "12. Are there any organizational elements that may change as a result of the project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.13",
+          "question": "13. Are there any organizational issues that may impact this project's success",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.14",
+          "question": "14. Are there any potential unintended consequences or impacts?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.15",
+          "question": "15. Do we know who will be impacted by this project?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.16",
+          "question": "16. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "10.17",
+          "question": "17. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Eleven, Resources",
+      "stepNumber": 11,
+      "skip": false,
+      "questions": [
+        {
+          "number": "11.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.5",
+          "question": "5. Will this project require any special knowledge or skills?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.6",
+          "question": "6. Will this project require active management involvement?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.7",
+          "question": "7. Will this project require active key stakeholder involvement?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.8",
+          "question": "8. Are all skills and competencies available internally?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.9",
+          "question": "9. Are the team members available to participate in meetings and perform required work?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.10",
+          "question": "10. Do we know what external skills, knowledge, and competencies need to acquired?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.11",
+          "question": "11. Do we know who will manage any outside resources?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.12",
+          "question": "12. Does this project have defined budget constraints?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.13",
+          "question": "13. Does this project require special software?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.14",
+          "question": "14. Will this project require special materials?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.15",
+          "question": "15. Will this project require special tools?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.16",
+          "question": "16. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "11.17",
+          "question": "17. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Twelve, Updated Plan Approval and Project Communication",
+      "stepNumber": 12,
+      "skip": false,
+      "questions": [
+        {
+          "number": "12.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.5",
+          "question": "5. Will this project require formal or informal plan approval and or review?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.6",
+          "question": "6. Has the approval and or the review process been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.7",
+          "question": "7. Do you know who will be involved in the plan approval and or review?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.8",
+          "question": "8. Will any pre-approvals be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.9",
+          "question": "9. Are there any individuals or groups that need to preview specific information?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.10",
+          "question": "10. Do you know what information will need to be prepared in order to gain approval?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.11",
+          "question": "11. Has the approval process been built into the schedule and budget?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.12",
+          "question": "12. Do you know how the sponsor will be involved in the project review and approvals?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.13",
+          "question": "13. Will any other approvals or reviews be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.14",
+          "question": "14. Do you have a way to handle the recommendations & feedback from the review?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.15",
+          "question": "15. Do you know how changes to the plan will be handled as a result of the review and or approvals?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.16",
+          "question": "16. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "12.17",
+          "question": "17. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Thirteen, Solution Design",
+      "stepNumber": 13,
+      "skip": false,
+      "questions": [
+        {
+          "number": "13.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.5",
+          "question": "5. Are all project deliverables clearly defined & understood?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.6",
+          "question": "6. Do any solution designs need to be created?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.7",
+          "question": "7. Do any communication designs need to be created?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.8",
+          "question": "8. Do any marketing designs need to be created?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.9",
+          "question": "9. Have design resources been identified and gained commitment?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.10",
+          "question": "10. Will external design resources be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.11",
+          "question": "11. Will any special skills, software or tools be needed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.12",
+          "question": "12. Will any specific processes, procedures, or documentation be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.13",
+          "question": "13. Will budget approval be required for any of the resources required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.14",
+          "question": "14. Will preliminary and final designs be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.15",
+          "question": "15. Will multiple design iterations be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.16",
+          "question": "16. Do you know who will approve the preliminary and final designs?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.17",
+          "question": "17. Has the design approval criteria been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.18",
+          "question": "18. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "13.19",
+          "question": "19. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Fourteen, Solution Development",
+      "stepNumber": 14,
+      "skip": false,
+      "questions": [
+        {
+          "number": "14.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.5",
+          "question": "5. Have any additional requirements been added to any of the deliverables?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.6",
+          "question": "6. Is the development process defined and understood?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.7",
+          "question": "7. Have development resources been identified and gained commitment?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.8",
+          "question": "8. Will external development resources be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.9",
+          "question": "9. Will any special skills, software or tools be needed to develop any of the deliverables?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.10",
+          "question": "10. Will any procedures, or documentation be required to develop any of the deliverables?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.11",
+          "question": "11. Will budget approval be required for any of the resources required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.12",
+          "question": "12. Will development need to be done in phases?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.13",
+          "question": "13. Will multiple development iterations be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.14",
+          "question": "14. Will interim approvals be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.15",
+          "question": "15. Do you know who will approve the preliminary and final development?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.16",
+          "question": "16. Has the development approval criteria been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.17",
+          "question": "17. Are scheduling estimates realistic?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.18",
+          "question": "18. Have the responsible resources verified the schedule estimates?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.19",
+          "question": "19. Have you included time in the schedule to do rework, deal with surprises, or develop unknowns?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.20",
+          "question": "20. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "14.21",
+          "question": "21. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Fifteen, Testing",
+      "stepNumber": 15,
+      "skip": false,
+      "questions": [
+        {
+          "number": "15.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.5",
+          "question": "5. Will deliverables need to be tested as they are developed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.6",
+          "question": "6. Have tests been clearly defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.7",
+          "question": "7. Have the testing resources been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.8",
+          "question": "8. Have the functions that need to be tested been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.9",
+          "question": "9. Have testing tolerances been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.10",
+          "question": "10. Have the people doing the testing been trained in the testing process?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.11",
+          "question": "11. Has it been defined who will decide if a test passed or failed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.12",
+          "question": "12. Have contingencies been defined if critical tests fail?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.13",
+          "question": "13. Will unit testing be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.14",
+          "question": "14. Will functional testing be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.15",
+          "question": "15. Will user testing be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.16",
+          "question": "16. Have the people been identified who will review tests results?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.17",
+          "question": "17. Has it been identified what will happen if tests fail?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.18",
+          "question": "18. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "15.19",
+          "question": "19. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Sixteen, Solution Communication, Documentation, Training and Maintenance Development",
+      "stepNumber": 16,
+      "skip": false,
+      "questions": [
+        {
+          "number": "16.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.5",
+          "question": "5. Have all audiences been identified that need project communication, documentation, training, & maintenance procedures?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.6",
+          "question": "6. Are all communication artifacts identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.7",
+          "question": "7. Are the requirements for communication, documentation, training, & maintenance doable?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.8",
+          "question": "8. Will unique skills be required to develop the commuinication, documentation, training, & maintenance procedures?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.9",
+          "question": "9. Will the development of communication, documantation, training, & maintenance procedures be itterative?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.10",
+          "question": "10. As the communication, documentation, training, & maintenance procedures are developed have testing & approval requirements & resources been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.11",
+          "question": "11. Will training material need to be developed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.12",
+          "question": "12. Have the training delivery resources been identified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.13",
+          "question": "13. Has the training delivery approach been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.14",
+          "question": "14. Will individual coaching be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.15",
+          "question": "15. As the documentation is developed have testing & approvals been defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.16",
+          "question": "16. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "16.17",
+          "question": "17. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Seventeen, Deliver Communication, Training, and Coaching",
+      "stepNumber": 17,
+      "skip": false,
+      "questions": [
+        {
+          "number": "17.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.5",
+          "question": "5. Is there a delivery plan for communication, training, & coaching?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.6",
+          "question": "6. Has the delivery plan for communication, training, & coaching been approved?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.7",
+          "question": "7. Are the delivery resources for communication, training, & coaching trainied & available?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.8",
+          "question": "8. Are feedback tools & or processes for communication, training, & coaching available?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.9",
+          "question": "9. Are all communication, training, & coaching impacted groups or individuals aware & available?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.10",
+          "question": "10. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "17.11",
+          "question": "11. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Eighteen, Pilot",
+      "stepNumber": 18,
+      "skip": false,
+      "questions": [
+        {
+          "number": "18.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.5",
+          "question": "5. Do you have a pilot plan?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.6",
+          "question": "6. Have you defined what will be piloted & what won't?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.7",
+          "question": "7. Are the pilot resources identified & available?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.8",
+          "question": "8. Have you defied how success of the pilot will be determined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.9",
+          "question": "9. Have you defined what will will happen if the results are not as expected?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.10",
+          "question": "10. Have the people involved in the pilot been trained?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.11",
+          "question": "11. Have you identified who will decide pilot success?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.12",
+          "question": "12. Have you determined who will receive the results of the pilot?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.13",
+          "question": "13. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "18.14",
+          "question": "14. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Nineteen, Implement",
+      "stepNumber": 19,
+      "skip": false,
+      "questions": [
+        {
+          "number": "19.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.5",
+          "question": "5. Do you have an implementation plan?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.6",
+          "question": "6. Have you defined what will & will not be implemented?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.7",
+          "question": "7. Are all groups & people who will be impacted by implementation aware?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.8",
+          "question": "8. Are implementation resources identified & available?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.9",
+          "question": "9. Has implementation success been clearly defined?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.10",
+          "question": "10. Have you defined what will happen if the results are not as expected?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.11",
+          "question": "11. Has documentation, training, & coaching been delivered?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.12",
+          "question": "12. Have you defined who will decide implementation success?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.13",
+          "question": "13. Have you determined who will receive the results of the implementation?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.14",
+          "question": "14. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "19.15",
+          "question": "15. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    },
+    {
+      "stepLabel": "Step Twenty, Post-op",
+      "stepNumber": 20,
+      "skip": false,
+      "questions": [
+        {
+          "number": "20.1",
+          "question": "1. Is someone assigned to ensure this step in completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.2",
+          "question": "2. Do you have what you need before you can start this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.3",
+          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.4",
+          "question": "4. Has work on this step started?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.5",
+          "question": "5. Has user feedback been gathered?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.6",
+          "question": "6. Do you have before & after measurable results?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.7",
+          "question": "7. Have you determined if a formal post-op will be held?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.8",
+          "question": "8. Have the people involved in the post-op been identified & notified?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.9",
+          "question": "9. Will a formal post-op report be required?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.10",
+          "question": "10. Have you identified who will receive the results of the post-op?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.11",
+          "question": "11. Have you determined the completion criteria for this step?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        },
+        {
+          "number": "20.12",
+          "question": "12. Has this step been completed?",
+          "validAnswers": "",
+          "answer": "",
+          "answerHistory": []
+        }
+      ]
+    }
+  ]
+}
