@@ -79,12 +79,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="dashboard">
-          <DashBoard 
-          project={this.state.project} />
+          <DashBoard
+            project={this.state.project} />
         </div>
         <div className="projectbar">
           <ProjectBar project={this.state.project}
-            currentStep={this.state.currentStep}
             handleButton={this.handleButton}
           />
         </div>
