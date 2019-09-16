@@ -28,6 +28,7 @@ function convertCSVtoProject(){
         stepNumber : project.steps.length + 1,
         skip : false,
         tip : row.Tips,
+        notes: "",
         "questions": []
       });
     } else if (row.StepNumber && row.QuestionNumber) { // push the question info
