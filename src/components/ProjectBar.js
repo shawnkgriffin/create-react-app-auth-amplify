@@ -8,8 +8,6 @@ class ProjectBar extends Component {
   render() {
     const { project, handleButton } = this.props;
 
-    console.log('ProjectBar', project.steps)
-
     return (
       <Tabs defaultActiveKey="1" onSelect={handleButton} className="Tab-wrapper" id="uncontrolled-tab-example">
         {project.steps.map((step, index) => {
