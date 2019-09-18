@@ -19,7 +19,6 @@ class DashBoard extends Component {
 
     return (
       <div className="dashboard">
-        <h3>{this.props.project.name}</h3>
         <table className="table table-bordered table-striped ">
           <thead>
             <tr>

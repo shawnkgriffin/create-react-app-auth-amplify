@@ -76,6 +76,7 @@ class ProjectInfo extends Component {
           </Form.Row>
 
         </Form>
+        <p></p>
       </div>
     );
   }
