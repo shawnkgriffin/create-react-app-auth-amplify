@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
 
 class ProjectList extends Component {
 
