@@ -9,7 +9,7 @@ class ProjectInfo extends Component {
 
 
   render() {
-    const { project, currentStep } = this.props;
+    const { project } = this.props;
 
     return (
       <div className="ProjectInfo">

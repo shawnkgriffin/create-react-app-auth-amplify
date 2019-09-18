@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as utils from "../utils/generalUtilities.js";
 
 class MySurvey extends Component {
 
@@ -20,7 +21,7 @@ class MySurvey extends Component {
 
     return (
       <div className="MySurvey">
-        <h3 align="left" >{currentStep+1}) {project.steps[currentStep].stepLabel}</h3>
+        <h3 align="left" >{currentStep+1}) {project.steps[currentStep].stepLabel} {utils.percentageQuestionsYes(project.steps[currentStep].questions)}</h3>
         <table className="table table-bordered table-striped ">
           <thead>
             <tr>
