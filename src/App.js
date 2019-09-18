@@ -106,7 +106,6 @@ class App extends Component {
         <div className="projectInfo">
           <ProjectInfo
             project={this.state.project}
-            currentStep={this.state.currentStep}
           />
         </div>
         <div className="dashboard">
@@ -114,11 +113,6 @@ class App extends Component {
             project={this.state.project} 
             updateStep = {this.updateStep}/>
         </div>
-        {/* <div className="projectbar">
-          <ProjectBar project={this.state.project}
-            handleButton={this.handleButton}
-          />
-        </div> */}
         <div className="mysurvey">
           <MySurvey
             project={this.state.project}

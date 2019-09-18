@@ -5,6 +5,21 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 
 class ProjectList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleNew = this.handleNew.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleNew(event) {
+    console.log('handleNew(' + this.state.value);
+  }
+
+  handleDelete(event) {
+    console.log('handleDelete' + this.state.value);
+    event.preventDefault();
+  }
 
 
   render() {
@@ -25,18 +40,23 @@ class ProjectList extends Component {
                 </Form.Control>
               </Col>
               <Col sm={2}>
-                <Button variant="primary" type="new">
+                <Button variant="success" type="new" onClick={this.handleNew}>
                   New
               </Button>
               </Col>
               <Col sm={2}>
-                <Button variant="danger" type="delete">
+                <Button variant="danger" type="new" onClick={this.handleDelete}>
                   Delete
               </Button>
               </Col>
+              {/* <Col sm={2}>
+                <Button variant="danger" type="delete">
+                  Delete
+              </Button>
+              </Col> */}
             </Form.Group>
           </Form.Row>
-          </Form>
+        </Form>
 
         <p></p>
       </div>
