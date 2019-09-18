@@ -15,8 +15,8 @@ class DashBoard extends Component {
       tableRows1to6.push(
         <tr key={`Row${i}`}>
           <td key={i + 1} style={{ textAlign: "left" }} onClick={updateStep}>{i + 1}) {project.steps[i].stepLabel} {utils.percentageQuestionsYes(project.steps[i].questions)}</td>
-          <td key={i + 7} style={{ textAlign: "left" }} onClick={updateStep}>{i + 7}) {project.steps[i + 6].stepLabel} {utils.percentageQuestionsYes(project.steps[i].questions)}</td>
-          <td key={i + 13} style={{ textAlign: "left" }} onClick={updateStep}>{i + 13}) {project.steps[i + 12].stepLabel} {utils.percentageQuestionsYes(project.steps[i].questions)}</td>
+          <td key={i + 7} style={{ textAlign: "left" }} onClick={updateStep}>{i + 7}) {project.steps[i + 6].stepLabel} {utils.percentageQuestionsYes(project.steps[i+ 6].questions)}</td>
+          <td key={i + 13} style={{ textAlign: "left" }} onClick={updateStep}>{i + 13}) {project.steps[i + 12].stepLabel} {utils.percentageQuestionsYes(project.steps[i+13].questions)}</td>
         </tr>
       )
     }
