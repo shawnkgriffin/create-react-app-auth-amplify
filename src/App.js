@@ -10,6 +10,7 @@ import DashBoard from "./components/DashBoard"
 import MySurvey from "./components/MySurvey"
 import Notes from "./components/Notes"
 import ProjectInfo from "./components/ProjectInfo"
+import ProjectList from "./components/ProjectList"
 
 Amplify.configure(aws_exports);
 
@@ -96,6 +97,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="projectList">
+          <ProjectList
+            project={this.state.project}
+            currentStep={this.state.currentStep}
+          />
+        </div>
         <div className="projectInfo">
           <ProjectInfo
             project={this.state.project}

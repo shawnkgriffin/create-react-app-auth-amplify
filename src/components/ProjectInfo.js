@@ -15,36 +15,12 @@ class ProjectInfo extends Component {
       <div className="ProjectInfo">
         <Form>
           <Form.Row>
-            <Form.Group as={Row} controlId="formHorizontalEmail">
-              <Form.Label column sm={3}>
-                Project List
-              </Form.Label>
-              <Col sm={4}>
-                <Form.Control as="select">
-                  <option>{project.name}</option>
-                  <option>Second Project</option>
-                </Form.Control>
-              </Col>
-              <Col sm={2}>
-                <Button variant="primary" type="new">
-                  New
-              </Button>
-              </Col>
-              <Col sm={2}>
-                <Button variant="danger" type="delete">
-                  Delete
-              </Button>
-              </Col>
-            </Form.Group>
-          </Form.Row>
-
-          <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label className="align-left" >Project Name</Form.Label>
               <Form.Control defaultValue={project.name}/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridProjectManager">
-              <Form.Label align >Project Manager</Form.Label>
+              <Form.Label align="left" >Project Manager</Form.Label>
               <Form.Control defaultValue={project.projectManager}/>
             </Form.Group>
             <Form.Group as={Col} controlId="formGridSponsor">
