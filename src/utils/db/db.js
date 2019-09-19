@@ -1,3 +1,5 @@
+const NUMBER_PROJECTS = 3;
+
 /**
  * Description
  * @function initProject
@@ -110,6 +112,29 @@ function readProject() {
 }
 /**
 * Description
+* @function readProjects
+* @param {integer}  
+* @param {function} callback 
+* @param {string}  
+* @returns {string} status 200 success.
+**/
+
+function readProjects() {
+  let project = require('./project.json');
+  let projects = [];
+  projects.name = `Project 1`
+  projects.push(project)
+
+  for (let i = 0; i < NUMBER_PROJECTS; i++ ){
+
+    projects.push(Object.create(project))
+    projects[projects.length - 1].name = `Project ${i+1}`
+  }
+  
+  return (projects);
+}
+/**
+* Description
 * @function updateProject
 * @param {integer}  
 * @param {function} callback 
@@ -134,4 +159,4 @@ function deleteProject() {
 }
 
 
-export { initProject, createProject, readSurvey, readProject, updateProject, deleteProject }
+export { initProject, createProject, readSurvey, readProjects, readProject, updateProject, deleteProject }

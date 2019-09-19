@@ -23,7 +23,8 @@ class ProjectList extends Component {
 
 
   render() {
-    const { project } = this.props;
+    const { projects, currentProject } = this.props;
+    const projectList = projects.map((project,i) => <option key={i.toString()}>{project.name}</option>);
 
     return (
       <div className="ProjectList">
@@ -35,8 +36,7 @@ class ProjectList extends Component {
               </Form.Label>
               <Col sm={4}>
                 <Form.Control as="select">
-                  <option>{project.name}</option>
-                  <option>Second Project</option>
+                  {projectList}
                 </Form.Control>
               </Col>
               <Col sm={2}>

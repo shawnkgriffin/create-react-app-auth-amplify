@@ -19,7 +19,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: db.readProject(),
+      projects: db.readProjects(),
+      currentProject :0,
       currentStep: 0,
       currentUser: 'shawn@shawngriffin.com',
       isAuthenticated: false,
@@ -94,28 +95,30 @@ class App extends Component {
       this.setState({ project: projectCopy })
     }
   }
+
   render() {
+    const project = this.state.projects[this.state.currentProject];
     return (
       <div className="App">
         <div className="projectList">
           <ProjectList
-            project={this.state.project}
-            currentStep={this.state.currentStep}
+            projects={this.state.projects}
+            currentProject={this.state.currentProject}
           />
         </div>
         <div className="projectInfo">
           <ProjectInfo
-            project={this.state.project}
+            project={project}
           />
         </div>
         <div className="dashboard">
           <DashBoard
-            project={this.state.project} 
+            project={project} 
             updateStep = {this.updateStep}/>
         </div>
         <div className="mysurvey">
           <MySurvey
-            project={this.state.project}
+            project={project}
             currentStep={this.state.currentStep}
             onQuestionAnswered={this.onQuestionAnswered}
             currentUser={this.currentUser}
@@ -123,7 +126,7 @@ class App extends Component {
         </div>
         <div className="notes">
           <Notes
-            project={this.state.project}
+            project={project}
             currentStep={this.state.currentStep}
           />
         </div>
