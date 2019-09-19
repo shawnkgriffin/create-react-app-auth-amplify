@@ -8,9 +8,9 @@ import * as db from "./utils/db/db.js";
 import DashBoard from "./components/DashBoard"
 // import ProjectBar from "./components/ProjectBar"
 import MySurvey from "./components/MySurvey"
-import Notes from "./components/Notes"
+// import Notes from "./components/Notes"
 import ProjectInfo from "./components/ProjectInfo"
-import ProjectList from "./components/ProjectList"
+// import ProjectList from "./components/ProjectList"
 
 Amplify.configure(aws_exports);
 
@@ -97,12 +97,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="projectList">
+        {/* <div className="projectList">
           <ProjectList
             project={this.state.project}
             currentStep={this.state.currentStep}
           />
-        </div>
+        </div> */}
         <div className="projectInfo">
           <ProjectInfo
             project={this.state.project}
@@ -121,12 +121,12 @@ class App extends Component {
             currentUser={this.currentUser}
           />
         </div>
-        <div className="notes">
+        {/* <div className="notes">
           <Notes
             project={this.state.project}
             currentStep={this.state.currentStep}
           />
-        </div>
+        </div> */}
       </div>
     );
   }

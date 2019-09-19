@@ -1,10 +1,28 @@
 import React, { Component } from "react";
-import Form from 'react-bootstrap/Form'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
+import { makeStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
+  dense: {
+    marginTop: theme.spacing(2),
+  },
+  menu: {
+    width: 200,
+  },
+}));
 
 class ProjectInfo extends Component {
+  
+
   constructor(props) {
     super(props);
     this.state = { saveButton: false,
@@ -25,15 +43,31 @@ class ProjectInfo extends Component {
     this.setState({ saveButton: false });
   }
 
-
+  
   render() {
+    const classes = useStyles();
+  const [values, setValues] = React.useState({
+    name: 'Cat in the Hat',
+    age: '',
+    multiline: 'Controlled',
+    currency: 'EUR',
+  });
     const disabled = !this.state.saveButton;
     const { project } = this.props;
 
     return (
       <div className="ProjectInfo">
-        <Form onSubmit={this.handleSubmit} onChange={this.handleChange} >
-          <Form.Row>
+        <form onSubmit={this.handleSubmit} onChange={this.handleChange} >
+        <TextField
+        id="outlined-name"
+        label="Project Name"
+        className={classes.textField}
+        value={values.name}
+        onChange={this.handleChange('name')}
+        margin="normal"
+        variant="outlined"
+      />
+          {/* <Form.Row>
             <Form.Group onChange={this.handleChange} as={Col} controlId="formGridName" >
               <Form.Label className="align-left" >Project Name</Form.Label>
               <Form.Control defaultValue={project.name} />
@@ -74,9 +108,9 @@ class ProjectInfo extends Component {
                 Save
               </Button>
             </Col>
-          </Form.Row>
+          </Form.Row> */}
 
-        </Form>
+        </form>
         <p></p>
       </div>
     );
