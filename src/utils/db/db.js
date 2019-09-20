@@ -121,11 +121,11 @@ function readProject() {
 
 function readProjects() {
   let project = require('./project.json');
+  project.name = `Project 1`
   let projects = [];
-  projects.name = `Project 1`
   projects.push(project)
 
-  for (let i = 0; i < NUMBER_PROJECTS; i++ ){
+  for (let i = 1; i < NUMBER_PROJECTS; i++ ){
 
     projects.push(Object.create(project))
     projects[projects.length - 1].name = `Project ${i+1}`

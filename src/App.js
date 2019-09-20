@@ -32,10 +32,18 @@ class App extends Component {
     this.onQuestionAnswered = this.onQuestionAnswered.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.updateStep = this.updateStep.bind(this);
+    this.selectProject = this.selectProject.bind(this);
   }
   onSelectStep(stepNumber) {
     if (this.state !== undefined) {
       this.setState({ currentStep: stepNumber })
+    }
+
+  }
+  selectProject(projectNumber) {
+    if (this.state !== undefined) {
+      console.log(`SelectProject${projectNumber}`)
+      this.setState({ currentProject: projectNumber })
     }
 
   }
@@ -104,6 +112,7 @@ class App extends Component {
           <ProjectList
             projects={this.state.projects}
             currentProject={this.state.currentProject}
+            onSelectProject={this.SelectProject}
           />
         </div>
         <div className="projectInfo">
