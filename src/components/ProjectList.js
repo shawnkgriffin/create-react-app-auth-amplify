@@ -10,10 +10,14 @@ class ProjectList extends Component {
 
     this.handleNew = this.handleNew.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
   handleNew(event) {
     console.log('handleNew(' + this.state.value);
+  }
+  onSelect(event) {
+    console.log('onSelect(',event.currentTarget.value, event.currentTarget.dataset.id);
   }
 
   handleDelete(event) {
@@ -24,7 +28,7 @@ class ProjectList extends Component {
 
   render() {
     const { projects, currentProject } = this.props;
-    const projectList = projects.map((project,i) => <option key={i.toString()}>{project.name}</option>);
+    const projectList = projects.map((project, i) => <option key={i.toString()} data-id={i.toString()}>{project.name}</option>);
 
     return (
       <div className="ProjectList">
@@ -35,7 +39,7 @@ class ProjectList extends Component {
                 Project List
               </Form.Label>
               <Col sm={4}>
-                <Form.Control as="select">
+                <Form.Control as="select" onChange={this.onSelect}>
                   {projectList}
                 </Form.Control>
               </Col>
@@ -49,11 +53,6 @@ class ProjectList extends Component {
                   Delete
               </Button>
               </Col>
-              {/* <Col sm={2}>
-                <Button variant="danger" type="delete">
-                  Delete
-              </Button>
-              </Col> */}
             </Form.Group>
           </Form.Row>
         </Form>
