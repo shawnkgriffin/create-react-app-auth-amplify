@@ -16,8 +16,9 @@ class ProjectList extends Component {
   handleNew(event) {
     console.log('handleNew(' + this.state.value);
   }
-  onSelect(event) {
-    console.log('onSelect(',event.currentTarget.value, event.currentTarget.dataset.id);
+  onSelect(event, eventKey) {
+    console.log('onSelect(',event.currentTarget.value);
+    event.preventDefault();
   }
 
   handleDelete(event) {
@@ -28,7 +29,7 @@ class ProjectList extends Component {
 
   render() {
     const { projects, currentProject } = this.props;
-    const projectList = projects.map((project, i) => <option key={i.toString()} data-id={i.toString()}>{project.name}</option>);
+    const projectList = projects.map((project, i) => <option key={i.toString()} id={i.toString()}>{project.name}</option>);
 
     return (
       <div className="ProjectList">

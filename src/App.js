@@ -40,10 +40,10 @@ class App extends Component {
     }
 
   }
-  selectProject(projectNumber) {
+  selectProject(projectName) {
     if (this.state !== undefined) {
-      console.log(`SelectProject${projectNumber}`)
-      this.setState({ currentProject: projectNumber })
+      console.log(`SelectProject${projectName}`)
+      this.setState({ currentProject: projectName })
     }
 
   }
@@ -112,7 +112,7 @@ class App extends Component {
           <ProjectList
             projects={this.state.projects}
             currentProject={this.state.currentProject}
-            onSelectProject={this.SelectProject}
+            onSelect={this.SelectProject}
           />
         </div>
         <div className="projectInfo">
