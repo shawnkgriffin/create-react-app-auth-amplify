@@ -28,7 +28,7 @@ class ProjectList extends Component {
 
 
   render() {
-    const { projects, currentProject } = this.props;
+    const { projects } = this.props;
     const projectList = projects.map((project, i) => <option key={i.toString()} id={i.toString()}>{project.name}</option>);
 
     return (
