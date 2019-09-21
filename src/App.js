@@ -75,7 +75,7 @@ class App extends Component {
       }
       const stepNumber = parseInt(answerArray[0], 10) - 1;
       console.log(`updateStep(${stepNumber + 1 })`)
-      if (stepNumber >= 0 && stepNumber < this.state.project.steps.length)
+      if (stepNumber >= 0 && stepNumber < this.state.projects[this.state.currentProject].steps.length)
         this.setState({ currentStep: stepNumber })
     }
   }
@@ -92,15 +92,16 @@ class App extends Component {
       const answer = answerArray[2];
       const date = new Date();
       const timestamp = date.getTime();
-      let projectCopy = this.state.project;
-      projectCopy.steps[stepNumber - 1].questions[questionNumber - 1].answer = answer;
-      projectCopy.steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
+      let projectsCopy = this.state.projects;
+      let currentProject = this.state.currentProject;
+      projectsCopy[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answer = answer;
+      projectsCopy[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
         {
           timestamp: timestamp,
           answer: answer,
           user: this.state.currentUser
         });
-      this.setState({ project: projectCopy })
+      this.setState({ projects: projectsCopy })
     }
   }
 
