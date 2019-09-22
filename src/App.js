@@ -8,7 +8,6 @@ import * as db from "./utils/db/db.js";
 import DashBoard from "./components/DashBoard"
 // import ProjectBar from "./components/ProjectBar"
 import MySurvey from "./components/MySurvey"
-import Notes from "./components/Notes"
 import ProjectInfo from "./components/ProjectInfo"
 import ProjectList from "./components/ProjectList"
 
@@ -154,17 +153,12 @@ class App extends Component {
             updateStep={this.updateStep} />
         </div>
         <div className="mysurvey">
+        
           <MySurvey
             project={this.state.projects[this.state.currentProject]}
             currentStep={this.state.currentStep}
             onQuestionAnswered={this.onQuestionAnswered}
             currentUser={this.currentUser}
-          />
-        </div>
-        <div className="notes">
-          <Notes
-            project={this.state.projects[this.state.currentProject]}
-            currentStep={this.state.currentStep}
           />
         </div>
       </div>
