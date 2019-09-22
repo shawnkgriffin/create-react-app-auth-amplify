@@ -28,8 +28,7 @@ class ProjectInfo extends Component {
 
   render() {
     const disabled = !this.state.saveButton;
-    const { projects, currentProject } = this.props;
-    let project = projects[currentProject];
+    let {project} = {...this.props};
 
     return (
       <div className="ProjectInfo">

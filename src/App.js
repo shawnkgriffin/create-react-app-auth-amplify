@@ -60,7 +60,6 @@ class App extends Component {
 
   handleNew(e)  {
     console.log(`handleNew()`);
-    return;
     let project = db.readProject();
     let projects = this.state.projects
     project.name = `New Project ${projects.length + 2}`
@@ -133,7 +132,6 @@ class App extends Component {
   }
 
   render() {
-    let project = this.state.projects[this.state.currentProject];
     return (
       <div className="App">
         <div className="projectList">
@@ -147,18 +145,17 @@ class App extends Component {
         </div>
         <div className="projectInfo">
           <ProjectInfo
-            projects={this.state.projects}
-            currentProject={this.state.currentProject}
+            project={this.state.projects[this.state.currentProject]}
           />
         </div>
         <div className="dashboard">
           <DashBoard
-            project={project}
+            project={this.state.projects[this.state.currentProject]}
             updateStep={this.updateStep} />
         </div>
         <div className="mysurvey">
           <MySurvey
-            project={project}
+            project={this.state.projects[this.state.currentProject]}
             currentStep={this.state.currentStep}
             onQuestionAnswered={this.onQuestionAnswered}
             currentUser={this.currentUser}
@@ -166,7 +163,7 @@ class App extends Component {
         </div>
         <div className="notes">
           <Notes
-            project={project}
+            project={this.state.projects[this.state.currentProject]}
             currentStep={this.state.currentStep}
           />
         </div>

@@ -5,9 +5,6 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 
 class ProjectList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const { projects } = this.props;
@@ -27,12 +24,12 @@ class ProjectList extends Component {
                 </Form.Control>
               </Col>
               <Col sm={2}>
-                <Button variant="success" type="new" onClick={this.props.handleNew}>
+                <Button variant="success" type="new" onClick={this.props.handleNew} disabled>
                   New
               </Button>
               </Col>
               <Col sm={2}>
-                <Button variant="danger" type="new" onClick={this.props.handleDelete}>
+                <Button variant="danger" type="new" onClick={this.props.handleDelete} disabled>
                   Delete
               </Button>
               </Col>
