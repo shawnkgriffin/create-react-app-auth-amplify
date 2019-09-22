@@ -33,6 +33,8 @@ class App extends Component {
     this.handleButton = this.handleButton.bind(this);
     this.updateStep = this.updateStep.bind(this);
     this.selectProject = this.selectProject.bind(this);
+    this.handleNew = this.handleNew.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   onSelectStep(stepNumber) {
     if (this.state !== undefined) {
@@ -56,6 +58,22 @@ class App extends Component {
 
   }
 
+  handleNew(e)  {
+    console.log(`handleNew()`);
+    return;
+    let project = db.readProject();
+    let projects = this.state.projects
+    project.name = `New Project ${projects.length + 2}`
+    projects.push(project);
+    let currentProject = projects.length;
+    this.setState({projects : projects, currentProject : currentProject})
+    console.log(`handleNew(${this.state.projects})`);
+
+  }
+
+  handleDelete(e)  {
+    console.log(`handleDelete(${e.target.value})`)
+  }
 
   onValueChanged(result) {
     if (this.state !== undefined) {
@@ -123,6 +141,8 @@ class App extends Component {
             projects={this.state.projects}
             currentProject={this.state.currentProject}
             onSelect={this.selectProject}
+            handleNew={this.handleNew}
+            handleDelete={this.handleDelete}
             />
         </div>
         <div className="projectInfo">

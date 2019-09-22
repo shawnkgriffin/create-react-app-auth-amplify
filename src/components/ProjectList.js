@@ -7,26 +7,7 @@ import Button from 'react-bootstrap/Button'
 class ProjectList extends Component {
   constructor(props) {
     super(props);
-
-    this.handleNew = this.handleNew.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.onSelect = this.onSelect.bind(this);
   }
-
-  handleNew(event) {
-    console.log('handleNew(' + this.state.value);
-  }
-  onSelect(event, eventKey) {
-    console.log('onSelect(',event.currentTarget.value, event.currentTarget.name);
-    event.preventDefault();
-    this.props.onSelect(event.currentTarget.value)
-  }
-
-  handleDelete(event) {
-    console.log('handleDelete' + this.state.value);
-    event.preventDefault();
-  }
-
 
   render() {
     const { projects } = this.props;
@@ -46,12 +27,12 @@ class ProjectList extends Component {
                 </Form.Control>
               </Col>
               <Col sm={2}>
-                <Button variant="success" type="new" onClick={this.handleNew}>
+                <Button variant="success" type="new" onClick={this.props.handleNew}>
                   New
               </Button>
               </Col>
               <Col sm={2}>
-                <Button variant="danger" type="new" onClick={this.handleDelete}>
+                <Button variant="danger" type="new" onClick={this.props.handleDelete}>
                   Delete
               </Button>
               </Col>
