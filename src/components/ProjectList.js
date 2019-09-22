@@ -17,8 +17,9 @@ class ProjectList extends Component {
     console.log('handleNew(' + this.state.value);
   }
   onSelect(event, eventKey) {
-    console.log('onSelect(',event.currentTarget.value);
+    console.log('onSelect(',event.currentTarget.value, event.currentTarget.name);
     event.preventDefault();
+    this.props.onSelect(event.currentTarget.value)
   }
 
   handleDelete(event) {
@@ -29,18 +30,18 @@ class ProjectList extends Component {
 
   render() {
     const { projects } = this.props;
-    const projectList = projects.map((project, i) => <option key={i.toString()} id={i.toString()}>{project.name}</option>);
+    const projectList = projects.map((project, i) => <option key={i.toString()} id={i.toString()} name={i.toString()} ref={i.toString()}>{project.name}</option>);
 
     return (
       <div className="ProjectList">
         <Form>
           <Form.Row>
-            <Form.Group as={Row} controlId="formHorizontalEmail">
+            <Form.Group as={Row} controlId="formProjectList">
               <Form.Label column sm={3}>
                 Project List
               </Form.Label>
               <Col sm={4}>
-                <Form.Control as="select" onChange={this.onSelect}>
+                <Form.Control as="select" onChange={this.props.onSelect}>
                   {projectList}
                 </Form.Control>
               </Col>

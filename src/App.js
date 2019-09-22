@@ -20,7 +20,7 @@ class App extends Component {
     super(props);
     this.state = {
       projects: db.readProjects(),
-      currentProject :0,
+      currentProject: 0,
       currentStep: 0,
       currentUser: 'shawn@shawngriffin.com',
       isAuthenticated: false,
@@ -40,10 +40,18 @@ class App extends Component {
     }
 
   }
-  selectProject(projectName) {
+  selectProject(e) {
     if (this.state !== undefined) {
-      console.log(`SelectProject${projectName}`)
-      this.setState({ currentProject: projectName })
+      let newProject = e && e.currentTarget && e.currentTarget.value;
+      if (newProject) {
+        const projects = this.state.projects;
+        let projectNumber = projects.findIndex(project => project.name === newProject);
+        if ((projectNumber >= 0) && (projectNumber < projects.length)) {
+          console.log(`selectProject(${newProject}, ${projectNumber}`)
+          this.setState({ currentProject: projectNumber })
+        }
+
+      }
     }
 
   }
@@ -51,9 +59,9 @@ class App extends Component {
 
   onValueChanged(result) {
     if (this.state !== undefined) {
-      let projectCopy = this.state.project;
-      projectCopy.steps[0].questions[0].answers.push("Yes");
-      this.setState({ project: projectCopy })
+      let projectsCopy = this.state.projects;
+      projectsCopy.steps[0].questions[0].answers.push("Yes");
+      this.setState({ projects: projectsCopy })
     }
   }
 
@@ -64,7 +72,7 @@ class App extends Component {
         this.setState({ currentStep: stepNumber })
     }
   }
-  
+
   updateStep(result) {
     if (this.state !== undefined) {
       console.log(`updateStep(${result.target.outerText})`)
@@ -74,9 +82,10 @@ class App extends Component {
         return;
       }
       const stepNumber = parseInt(answerArray[0], 10) - 1;
-      console.log(`updateStep(${stepNumber + 1 })`)
-      if (stepNumber >= 0 && stepNumber < this.state.projects[this.state.currentProject].steps.length)
+      if (stepNumber >= 0 && stepNumber < this.state.projects[this.state.currentProject].steps.length) {
+        console.log(`updateStep(${stepNumber + 1})`)
         this.setState({ currentStep: stepNumber })
+      }
     }
   }
 
@@ -92,39 +101,40 @@ class App extends Component {
       const answer = answerArray[2];
       const date = new Date();
       const timestamp = date.getTime();
-      let projectsCopy = this.state.projects;
+      let projects = this.state.projects;
       let currentProject = this.state.currentProject;
-      projectsCopy[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answer = answer;
-      projectsCopy[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
+      projects[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answer = answer;
+      projects[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
         {
           timestamp: timestamp,
           answer: answer,
           user: this.state.currentUser
         });
-      this.setState({ projects: projectsCopy })
+      this.setState({ projects: projects })
     }
   }
 
   render() {
-    const project = this.state.projects[this.state.currentProject];
+    let project = this.state.projects[this.state.currentProject];
     return (
       <div className="App">
         <div className="projectList">
           <ProjectList
             projects={this.state.projects}
             currentProject={this.state.currentProject}
-            onSelect={this.SelectProject}
-          />
+            onSelect={this.selectProject}
+            />
         </div>
         <div className="projectInfo">
           <ProjectInfo
-            project={project}
+            projects={this.state.projects}
+            currentProject={this.state.currentProject}
           />
         </div>
         <div className="dashboard">
           <DashBoard
-            project={project} 
-            updateStep = {this.updateStep}/>
+            project={project}
+            updateStep={this.updateStep} />
         </div>
         <div className="mysurvey">
           <MySurvey
