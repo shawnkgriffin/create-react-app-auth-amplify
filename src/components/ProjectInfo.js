@@ -38,13 +38,13 @@ class ProjectInfo extends Component {
               <Form.Label className="align-left" >Project Name</Form.Label>
               <Form.Control defaultValue={project.name} />
             </Form.Group>
-            <Form.Group as={Col} controlId="formGridProjectManager">
-              <Form.Label>Project Manager</Form.Label>
-              <Form.Control onChange={this.handleChange} defaultValue={project.projectManager} />
-            </Form.Group>
             <Form.Group as={Col} controlId="formGridSponsor">
               <Form.Label >Project Sponsor</Form.Label>
               <Form.Control onChange={this.handleChange} defaultValue={project.sponsor} />
+            </Form.Group>
+            <Form.Group as={Col} controlId="formGridProjectManager">
+              <Form.Label>Project Manager</Form.Label>
+              <Form.Control onChange={this.handleChange} defaultValue={project.projectManager} />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridProjectType">
               <Form.Label >Project Type</Form.Label>
