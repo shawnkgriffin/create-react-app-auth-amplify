@@ -66,7 +66,7 @@ class ProjectInfo extends Component {
                 <InputGroup.Prepend>
                   <InputGroup.Text>Presenting Problem / Opportunity</InputGroup.Text>
                 </InputGroup.Prepend>
-                <Form.Control onChange={this.handleChange} as="textarea" rows="1" aria-label="Notes" defaultValue={project.background} />
+                <Form.Control onChange={this.handleChange} as="textarea" rows="1" aria-label="Notes" defaultValue={project.problemOpportunity} />
               </InputGroup>
             </Col>
             <Col sm={2}>
