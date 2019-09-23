@@ -36,7 +36,7 @@ class MySurvey extends Component {
           <thead>
             <tr>
               <th align="left" scope="col">Question</th>
-              <th align="center" scope="col">Yes</th>
+              <th align="center" scope="col">Yes %</th>
               <th align="center" scope="col">No</th>
               <th align="center" scope="col">Skip</th>
               <th align="center" scope="col">Later</th>

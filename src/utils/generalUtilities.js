@@ -14,7 +14,7 @@ function percentageQuestionsYes(questions) {
 
   if (numberQuestions > 0 ) {
     let percentageResult = numberYes/numberQuestions*100.
-    return(`(Y=${percentageResult.toFixed(0)}%)`)
+    return(`(${percentageResult.toFixed(0)}%)`)
 
   } else {
     return('?/?')
