@@ -42,6 +42,7 @@ class App extends Component {
 
   }
   selectProject(e) {
+    e.preventDefault();
     if (this.state !== undefined) {
       let newProject = e && e.currentTarget && e.currentTarget.value;
       if (newProject) {
@@ -49,7 +50,7 @@ class App extends Component {
         let projectNumber = projects.findIndex(project => project.name === newProject);
         if ((projectNumber >= 0) && (projectNumber < projects.length)) {
           console.log(`selectProject(${newProject}, ${projectNumber}`)
-          this.setState({ currentProject: projectNumber })
+          this.setState(prevState => {return{ ...prevState, currentProject: projectNumber }})
         }
 
       }
@@ -131,20 +132,22 @@ class App extends Component {
   }
 
   render() {
+    const project = this.state.projects[this.state.currentProject];
     return (
       <div className="App">
         <div className="projectList">
           <ProjectList
             projects={this.state.projects}
             currentProject={this.state.currentProject}
-            onSelect={this.selectProject}
+            onChange={this.selectProject}
             handleNew={this.handleNew}
             handleDelete={this.handleDelete}
             />
         </div>
         <div className="projectInfo">
           <ProjectInfo
-            project={this.state.projects[this.state.currentProject]}
+            project={project}
+            currentProject = {this.state.currentProject}
           />
         </div>
         <div className="dashboard">

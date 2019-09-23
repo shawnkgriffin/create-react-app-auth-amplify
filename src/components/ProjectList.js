@@ -19,7 +19,7 @@ class ProjectList extends Component {
                 Project List
               </Form.Label>
               <Col sm={4}>
-                <Form.Control as="select" onChange={this.props.onSelect}>
+                <Form.Control as="select" onChange={this.props.onChange}>
                   {projectList}
                 </Form.Control>
               </Col>
