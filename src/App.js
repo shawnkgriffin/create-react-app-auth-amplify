@@ -29,6 +29,7 @@ class App extends Component {
     this.onValueChanged = this.onValueChanged.bind(this);
     this.onSelectStep = this.onSelectStep.bind(this);
     this.onQuestionAnswered = this.onQuestionAnswered.bind(this);
+    this.onQuestionSkipped = this.onQuestionSkipped.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.updateStep = this.updateStep.bind(this);
     this.selectProject = this.selectProject.bind(this);
@@ -127,7 +128,32 @@ class App extends Component {
           answer: answer,
           user: this.state.currentUser
         });
-      this.setState({ projects: projects })
+      this.setState(() => ({ projects: projects }));
+    }
+  }
+
+  onQuestionSkipped(result) {
+    if (this.state !== undefined) {
+      const answerArray = result.target.value.split(".");
+      if (answerArray.length !== 3) {
+        console.log(`onQuestionSkipped Bad result${result.target.value}`)
+        return;
+      }
+      const stepNumber = parseInt(answerArray[0], 10);
+      const questionNumber = parseInt(answerArray[1], 10);
+      const answer = answerArray[2];
+      const date = new Date();
+      const timestamp = date.getTime();
+      let projects = this.state.projects;
+      let currentProject = this.state.currentProject;
+      projects[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].skip = !projects[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].skip;
+      projects[currentProject].steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
+        {
+          timestamp: timestamp,
+          answer: answer,
+          user: this.state.currentUser
+        });
+      this.setState(() => ({ projects: projects }));
     }
   }
 
@@ -161,6 +187,7 @@ class App extends Component {
             project={this.state.projects[this.state.currentProject]}
             currentStep={this.state.currentStep}
             onQuestionAnswered={this.onQuestionAnswered}
+            onQuestionSkipped={this.onQuestionSkipped}
             currentUser={this.currentUser}
           />
         </div>
