@@ -8,7 +8,7 @@
  **/
 
 function percentageQuestionsYes(questions) {
-  let numberYes = questions.map((question) => question.answer.toUpperCase() === "YES" ? 1 : 0 ).reduce((acc, val) => acc + val);;
+  let numberYes = questions.map((question) => (!question.skip && question.answer.toUpperCase() === "YES") ? 1 : 0 ).reduce((acc, val) => acc + val);;
   let numberSkipped = questions.map((question) => question.skip ? 1 : 0 ).reduce((acc, val) => acc + val);
   let numberQuestions = questions.length - numberSkipped;
 
