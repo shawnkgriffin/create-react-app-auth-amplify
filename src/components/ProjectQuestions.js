@@ -8,7 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
 import TextField from "@material-ui/core/TextField";
-import MenuQuestions from "./MenuQuestions";
+import MenuSteps from "./MenuSteps";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -28,18 +28,22 @@ const StyledTableRow = withStyles(theme => ({
   }
 }))(TableRow);
 
-export default function ProjectStepQuestions({
+
+
+export default function ProjectQuestions({
   classes,
   project,
   currentStep,
-  handleQuestionChange
+  handleQuestionChange,
+  handleMenu
 }) {
+  
   const tableRows = project.steps[currentStep].questions.map(
     (question, index) => {
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
           <TableCell>
-            <MenuQuestions menuType="question" />
+          <MenuSteps typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
             {index + 1}) {question.question}
           </TableCell>
           <TableCell>
@@ -81,10 +85,10 @@ export default function ProjectStepQuestions({
         </StyledTableRow>
       );
     }
-  );
-
-  return (
-    <Paper className={classes.paper}>
+    );
+    
+    return (
+      <Paper className={classes.paper}>
       <form className={classes.container} noValidate autoComplete="off">
         <TextField
           id="outlined-full-width"

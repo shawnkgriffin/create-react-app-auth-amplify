@@ -86,7 +86,7 @@ class App extends Component {
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleStepChange = this.handleStepChange.bind(this);
-    this.handleMenuStep = this.handleMenuStep.bind(this);
+    this.handleMenu = this.handleMenu.bind(this);
   }
   handleQuestionChange(e) {
     if (this.state != null) {
@@ -95,7 +95,7 @@ class App extends Component {
       const questionNumber = parseInt(questionString, 10);
       console.log(
         `handleQuestionChange(${
-          e.target.value
+        e.target.value
         },${stepNumber},${questionNumber})`
       );
       let project = this.state.project;
@@ -113,7 +113,6 @@ class App extends Component {
     }
   }
   handleStepChange(e) {
-    e.preventDefault();
     if (this.state != null) {
       const stepString = e.target.value.split(")");
       const stepNumber = parseInt(stepString[0], 10) - 1;
@@ -126,20 +125,51 @@ class App extends Component {
       }
     }
   }
-  handleMenuStep(e) {
+  handleMenu(commandString) {
     if (this.state != null) {
-      console.log(`handleMenuStep(${e})`);
-      switch (e) {
-        case "Add a step above this one.":
-        case "Add a step below this one.":
-          break;
-        case "Edit this step.":
-          break;
-        case "Delete this step.":
-          break;
-        case "Help.":
-          break;
-        default:
+      console.log(`handleMenu(${commandString})`);
+      const commands = commandString.toUpperCase().split(".");
+      const actionObject = commands[0];
+      const actionIndex = parseInt(commands[1], 10);
+      const actionVerb = commands[2];
+      const actionLocation = commands.length === 4 ? commands[3] : "";
+      if (actionObject === "QUESTION") {
+
+        switch (actionVerb) {
+          case "ADD":
+            break;
+          case "EDIT":
+            break;
+          case "DELETE":
+            // TODO add an are you sure?
+            console.log(`handleMenu(DeleteQuestion(${actionIndex})`);
+            let { project, currentStep } = this.state;
+            project.steps[currentStep].questions.splice(actionIndex, 1)
+            this.setState(prevState => {
+              return { ...prevState, project:project };
+            });
+
+            break;
+          case "HELP":
+            break;
+          default:
+        }
+      } else if (actionObject === "step") {
+        switch (commandString) {
+          case "Add a step above this one.":
+          case "Add a step below this one.":
+            break;
+          case "Edit this step.":
+            break;
+          case "Delete this step.":
+            // TODO add an are you sure?
+            console.log(`handleMenu(Delete${commandString})`);
+
+            break;
+          case "Help.":
+            break;
+          default:
+        }
       }
     }
   }
@@ -155,7 +185,7 @@ class App extends Component {
           classes={classes}
           project={project}
           handleStepChange={this.handleStepChange}
-          handleMenu={this.handleMenuStep}
+          handleMenu={this.handleMenu}
         />
         <br />
         <ProjectQuestions
@@ -163,7 +193,7 @@ class App extends Component {
           project={project}
           currentStep={currentStep}
           handleQuestionChange={this.handleQuestionChange}
-          handleMenu={this.handleMenuQuestion}
+          handleMenu={this.handleMenu}
         />
       </div>
     );

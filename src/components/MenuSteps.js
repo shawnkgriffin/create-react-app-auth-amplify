@@ -43,7 +43,7 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-export default function CustomizedMenus({ typeOfMenu, handleMenu }) {
+export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -51,6 +51,7 @@ export default function CustomizedMenus({ typeOfMenu, handleMenu }) {
   };
 
   const handleSelect = (event, value) => {
+    event.preventDefault();
     console.log(`CustomizedMenus.handleSelect(${event.currentTarget.id})`);
     handleMenu(event.currentTarget.id);
     handleClose();
@@ -61,7 +62,7 @@ export default function CustomizedMenus({ typeOfMenu, handleMenu }) {
 
   return (
     <Fragment>
-      <Tooltip title="Skip/Edit/Delete/Add/Help">
+      <Tooltip title="Add/Edit/Delete/Help">
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
@@ -83,37 +84,40 @@ export default function CustomizedMenus({ typeOfMenu, handleMenu }) {
       >
         <StyledMenuItem
           key={"1"}
-          id="Add a step below this one."
+          id={`${typeOfMenu}.${menuIndex}.Add.Above`}
           onClick={handleSelect}
         >
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText primary="Add a step below this one." />
+          <ListItemText primary={`Add a ${typeOfMenu} above this one.`} />
         </StyledMenuItem>
         <StyledMenuItem
           key={"2"}
-          id="Add a step above this one."
+          id={`${typeOfMenu}.${menuIndex}.Add.Below`}
           onClick={handleSelect}
         >
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText primary="Add a step above this one." />
+          <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"3"} id="Edit this step." onClick={handleSelect}>
+        <StyledMenuItem
+          key={"3"}
+          id={`${typeOfMenu}.${menuIndex}.Edit`}
+          onClick={handleSelect}>
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>
-          <ListItemText primary="Edit this step." />
+          <ListItemText primary={`Edit this ${typeOfMenu}.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"4"} id="Delete this step." onClick={handleSelect}>
+        <StyledMenuItem key={"4"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
-          <ListItemText primary="Delete this step." />
+          <ListItemText primary={`Delete this ${typeOfMenu}`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} id="Help." onClick={handleSelect}>
+        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
           <ListItemIcon>
             <HelpIcon />
           </ListItemIcon>
