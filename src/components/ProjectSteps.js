@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import MenuSteps from "./MenuSteps";
 import Input from "@material-ui/core/Input";
+import * as utils from "../utils/generalUtilities.js";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -34,7 +35,7 @@ export default function ProjectSteps({
   handleMenu
 }) {
   const stepStrings = project.steps.map(
-    (step, index) => `${index + 1}) ${step.stepLabel}`
+    (step, index) => `${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`
   );
   let tableRows1to6 = []; // the three columns have different numbers of steps associated with them
   for (let i = 0; i < 6; i++) {

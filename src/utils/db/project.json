@@ -1,6 +1,6 @@
 {
   "name": "New Project",
-  "background": "background",
+  "problemOpportunity": "Presenting problem / Opportunity",
   "creator": "Shawn Griffin",
   "notes": "notes",
   "sponsor": "Stephen Stofanak",
@@ -17,7 +17,7 @@
       "questions": [
         {
           "number": "1.1",
-          "question": "1. Is someone assigned to ensure this step is completed?",
+          "question": "Is someone assigned to ensure this step is completed?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -26,7 +26,7 @@
         },
         {
           "number": "1.2",
-          "question": "2. Do you have what you need before you can start this step?",
+          "question": "Do you have what you need before you can start this step?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -35,7 +35,7 @@
         },
         {
           "number": "1.3",
-          "question": "3. Are there any tasks that need to be completed before this step can start?",
+          "question": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -44,7 +44,7 @@
         },
         {
           "number": "1.4",
-          "question": "4. Has work on this step started?",
+          "question": "Has work on this step started?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -53,7 +53,7 @@
         },
         {
           "number": "1.5",
-          "question": "5. Do you Know who Initiated the Project?",
+          "question": "Do you Know who Initiated the Project?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -62,7 +62,7 @@
         },
         {
           "number": "1.6",
-          "question": "6. Do you know why the project was initiated?",
+          "question": "Do you know why the project was initiated?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -71,7 +71,7 @@
         },
         {
           "number": "1.7",
-          "question": "7. Do you know how the project supports the company's goals?",
+          "question": "Do you know how the project supports the company's goals?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -80,7 +80,7 @@
         },
         {
           "number": "1.8",
-          "question": "8. Do you know the priority of the project?",
+          "question": "Do you know the priority of the project?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -89,7 +89,7 @@
         },
         {
           "number": "1.9",
-          "question": "9. Has this project type been done before?",
+          "question": "Has this project type been done before?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -98,7 +98,7 @@
         },
         {
           "number": "1.10",
-          "question": "10. Are you aware of the results of previous projects?",
+          "question": "Are you aware of the results of previous projects?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -107,7 +107,7 @@
         },
         {
           "number": "1.11",
-          "question": "11. Have the key stakeholders been identified?",
+          "question": "Have the key stakeholders been identified?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -116,7 +116,7 @@
         },
         {
           "number": "1.12",
-          "question": "12. Do you know what metrics this project will affect?",
+          "question": "Do you know what metrics this project will affect?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -125,7 +125,7 @@
         },
         {
           "number": "1.13",
-          "question": "13. Does this project have an assigned sponsor?",
+          "question": "Does this project have an assigned sponsor?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -134,7 +134,7 @@
         },
         {
           "number": "1.14",
-          "question": "14. Are there any significant risks that may impact project success?",
+          "question": "Are there any significant risks that may impact project success?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -143,7 +143,7 @@
         },
         {
           "number": "1.15",
-          "question": "15. Have you determined the completion criteria for this step?",
+          "question": "Have you determined the completion criteria for this step?",
           "validAnswers": "",
           "answer": "",
           "tip": "",
@@ -152,7 +152,7 @@
         },
         {
           "number": "1.16",
-          "question": "16. Has this step been completed?",
+          "question": "Has this step been completed?",
           "validAnswers": "",
           "answer": "",
           "tip": "",

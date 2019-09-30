@@ -5,12 +5,11 @@ import Amplify from 'aws-amplify';  // comment out , { Auth } until needed
 import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
-import ReactDOM from "react-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
-import ProjectStepQuestions from "./components/ProjectStepQuestions";
+import ProjectQuestions from "./components/ProjectQuestions";
 
 Amplify.configure(aws_exports);
 
@@ -159,7 +158,7 @@ class App extends Component {
           handleMenu={this.handleMenuStep}
         />
         <br />
-        <ProjectStepQuestions
+        <ProjectQuestions
           classes={classes}
           project={project}
           currentStep={currentStep}
