@@ -6,7 +6,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import MenuSteps from "./MenuSteps";
+import ProjectMenu from "./ProjectMenu";
 import Input from "@material-ui/core/Input";
 import * as utils from "../utils/generalUtilities.js";
 
@@ -42,7 +42,7 @@ export default function ProjectSteps({
     tableRows1to6.push(
       <StyledTableRow key={`Row${i}`}>
         <TableCell variant="body">
-          <MenuSteps typeOfMenu="step" stepNumber={i} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" stepNumber={i} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -50,7 +50,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <MenuSteps typeOfMenu="step" stepNumber={i+ 6} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" stepNumber={i+ 6} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -58,7 +58,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <MenuSteps typeOfMenu="step" stepNumber={i+ 12} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" stepNumber={i+ 12} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -90,7 +90,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <MenuSteps typeOfMenu="step" stepNumber={18} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" stepNumber={18} handleMenu={handleMenu}/>
               <Input
                 onClick={handleStepChange}
                 disableUnderline
@@ -102,7 +102,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <MenuSteps typeOfMenu="step" stepNumber={19} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" stepNumber={19} handleMenu={handleMenu}/>
               <Input
                 onClick={handleStepChange}
                 disableUnderline

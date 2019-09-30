@@ -8,7 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
 import TextField from "@material-ui/core/TextField";
-import MenuSteps from "./MenuSteps";
+import ProjectMenu from "./ProjectMenu";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -43,7 +43,7 @@ export default function ProjectQuestions({
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
           <TableCell>
-          <MenuSteps typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
             {index + 1}) {question.question}
           </TableCell>
           <TableCell>
