@@ -52,7 +52,7 @@ export default function ProjectStepQuestions({
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
               disableRipple
-            />
+              />
           </TableCell>
           <TableCell>
             <Radio
@@ -63,7 +63,8 @@ export default function ProjectStepQuestions({
               name={`${currentStep}.${index}.NO`}
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
-            />
+              disableRipple
+              />
           </TableCell>
           <TableCell>
             <Radio
@@ -74,6 +75,7 @@ export default function ProjectStepQuestions({
               name={`${currentStep}.${index}.LATER`}
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
+              disableRipple
             />
           </TableCell>
         </StyledTableRow>
