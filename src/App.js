@@ -5,128 +5,167 @@ import Amplify from 'aws-amplify';  // comment out , { Auth } until needed
 import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
-import DashBoard from "./components/DashBoard"
-// import ProjectBar from "./components/ProjectBar"
-import MySurvey from "./components/MySurvey"
-// import Notes from "./components/Notes"
-import ProjectInfo from "./components/ProjectInfo"
-// import ProjectList from "./components/ProjectList"
+import ReactDOM from "react-dom";
+import { makeStyles } from "@material-ui/core/styles";
+
+import ProjectInfo from "./components/ProjectInfo";
+import ProjectSteps from "./components/ProjectSteps";
+import ProjectStepQuestions from "./components/ProjectStepQuestions";
 
 Amplify.configure(aws_exports);
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: "100%"
+  },
+  formControl: {
+    marginTop: 5,
+    minWidth: 300,
+    padding: 20,
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200
+  },
+  buttonList: {
+    width: 64,
+    height: 64,
+    paddingTop: 50
+  },
+  button: {
+    margin: theme.spacing(0),
+    width: "100%",
+    overflowX: "auto"
+  },
+  paper: {
+    margin: 10,
+    width: "100%",
+    overflowX: "auto",
+    padding: 20
+  },
+  inputLabel: {
+    padding: 30,
+    margin: 20
+  },
+  table: {
+    marginTop: 10,
+    marginBottom: 10,
+    minWidth: 650
+  },
+  container: {
+    margin: 10,
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  textField: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2)
+  },
+  dense: {
+    marginTop: theme.spacing(2)
+  },
+  fab: {
+    margin: theme.spacing(2)
+  },
+  absolute: {
+    position: "absolute",
+    bottom: theme.spacing(2),
+    right: theme.spacing(3)
+  }
+}));
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: db.readProject(),
+      project: require("./utils/db/project.json"),
+      currentProject: 0,
       currentStep: 0,
-      currentUser: 'shawn@shawngriffin.com',
+      currentUser: "shawn@shawngriffin.com",
       isAuthenticated: false,
       isAuthenticating: true,
       user: null
     };
-    this.onValueChanged = this.onValueChanged.bind(this);
-    this.onSelectStep = this.onSelectStep.bind(this);
-    this.onQuestionAnswered = this.onQuestionAnswered.bind(this);
-    this.handleButton = this.handleButton.bind(this);
-    this.updateStep = this.updateStep.bind(this);
+    this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    this.handleStepChange = this.handleStepChange.bind(this);
+    this.handleMenuStep = this.handleMenuStep.bind(this);
   }
-  onSelectStep(stepNumber) {
-    if (this.state !== undefined) {
-      this.setState({ currentStep: stepNumber })
-    }
-
-  }
-
-
-  onValueChanged(result) {
-    if (this.state !== undefined) {
-      let projectCopy = this.state.project;
-      projectCopy.steps[0].questions[0].answers.push("Yes");
-      this.setState({ project: projectCopy })
-    }
-  }
-
-  handleButton(result) {
-    if (this.state !== undefined) {
-      const stepNumber = parseInt(result, 10) - 1;
-      if (stepNumber >= 0 && stepNumber < this.state.project.steps.length)
-        this.setState({ currentStep: stepNumber })
-    }
-  }
-  
-  updateStep(result) {
-    if (this.state !== undefined) {
-      console.log(`updateStep(${result.target.outerText})`)
-      const answerArray = result.target.outerText.split(")");
-      if (answerArray.length === 0) {
-        console.log(`updateStep Bad result${result.target.outerText}`)
-        return;
-      }
-      const stepNumber = parseInt(answerArray[0], 10) - 1;
-      console.log(`updateStep(${stepNumber + 1 })`)
-      if (stepNumber >= 0 && stepNumber < this.state.project.steps.length)
-        this.setState({ currentStep: stepNumber })
-    }
-  }
-
-  onQuestionAnswered(result) {
-    if (this.state !== undefined) {
-      const answerArray = result.target.value.split(".");
-      if (answerArray.length !== 3) {
-        console.log(`onQuestionAnswered Bad result${result.target.value}`)
-        return;
-      }
-      const stepNumber = parseInt(answerArray[0], 10);
-      const questionNumber = parseInt(answerArray[1], 10);
-      const answer = answerArray[2];
-      const date = new Date();
-      const timestamp = date.getTime();
-      let projectCopy = this.state.project;
-      projectCopy.steps[stepNumber - 1].questions[questionNumber - 1].answer = answer;
-      projectCopy.steps[stepNumber - 1].questions[questionNumber - 1].answerHistory.push(
-        {
-          timestamp: timestamp,
-          answer: answer,
-          user: this.state.currentUser
+  handleQuestionChange(e) {
+    if (this.state != null) {
+      const [stepString, questionString, answer] = e.target.value.split(".");
+      const stepNumber = parseInt(stepString, 10);
+      const questionNumber = parseInt(questionString, 10);
+      console.log(
+        `handleQuestionChange(${
+          e.target.value
+        },${stepNumber},${questionNumber})`
+      );
+      let project = this.state.project;
+      if (
+        stepNumber >= 0 &&
+        stepNumber < project.steps.length &&
+        questionNumber >= 0 &&
+        questionNumber < project.steps[stepNumber].questions.length
+      ) {
+        project.steps[stepNumber].questions[questionNumber].answer = answer;
+        this.setState(prevState => {
+          return { ...prevState, project: project };
         });
-      this.setState({ project: projectCopy })
+      }
     }
   }
+  handleStepChange(e) {
+    if (this.state != null) {
+      const stepString = e.target.value.split(")");
+      const stepNumber = parseInt(stepString[0], 10) - 1;
+      console.log(`handleStepChange(${e.target.value}, ${stepNumber})`);
+
+      let project = this.state.project;
+      if (stepNumber >= 0 && stepNumber < project.steps.length) {
+        this.setState(prevState => {
+          return { ...prevState, currentStep: stepNumber };
+        });
+      }
+    }
+  }
+  handleMenuStep(e) {
+    if (this.state != null) {
+      console.log(`handleMenuStep(${e})`);
+      switch (e) {
+        case "Add a step above this one.":
+        case "Add a step below this one.":
+          break;
+        case "Edit this step.":
+          break;
+        case "Delete this step.":
+          break;
+        case "Help.":
+          break;
+        default:
+      }
+    }
+  }
+
   render() {
+    const classes = useStyles;
+    const { project, currentStep } = this.state;
     return (
-      <div className="App">
-        {/* <div className="projectList">
-          <ProjectList
-            project={this.state.project}
-            currentStep={this.state.currentStep}
-          />
-        </div> */}
-        <div className="projectInfo">
-          <ProjectInfo
-            project={this.state.project}
-          />
-        </div>
-        <div className="dashboard">
-          <DashBoard
-            project={this.state.project} 
-            updateStep = {this.updateStep}/>
-        </div>
-        <div className="mysurvey">
-          <MySurvey
-            project={this.state.project}
-            currentStep={this.state.currentStep}
-            onQuestionAnswered={this.onQuestionAnswered}
-            currentUser={this.currentUser}
-          />
-        </div>
-        {/* <div className="notes">
-          <Notes
-            project={this.state.project}
-            currentStep={this.state.currentStep}
-          />
-        </div> */}
+      <div>
+        <ProjectInfo classes={classes} project={project} />
+        <br />
+        <ProjectSteps
+          classes={classes}
+          project={project}
+          handleStepChange={this.handleStepChange}
+          handleMenu={this.handleMenuStep}
+        />
+        <br />
+        <ProjectStepQuestions
+          classes={classes}
+          project={project}
+          currentStep={currentStep}
+          handleQuestionChange={this.handleQuestionChange}
+          handleMenu={this.handleMenuQuestion}
+        />
       </div>
     );
   }
