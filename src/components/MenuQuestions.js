@@ -10,7 +10,6 @@ import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SkipIcon from "@material-ui/icons/NotInterested";
 import HelpIcon from "@material-ui/icons/Help";
 
 const StyledMenu = withStyles({
@@ -77,12 +76,6 @@ export default function CustomizedMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem>
-          <ListItemIcon>
-            <SkipIcon />
-          </ListItemIcon>
-          <ListItemText primary="Skip this question." />
-        </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>
             <AddIcon />

@@ -51,6 +51,7 @@ export default function ProjectStepQuestions({
               name={`${currentStep}.${index}.YES`}
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
+              disableRipple
             />
           </TableCell>
           <TableCell>

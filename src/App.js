@@ -76,7 +76,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: require("./utils/db/project.json"),
+      project: db.readProject(),
       currentProject: 0,
       currentStep: 0,
       currentUser: "shawn@shawngriffin.com",
@@ -113,10 +113,10 @@ class App extends Component {
     }
   }
   handleStepChange(e) {
+    e.preventDefault();
     if (this.state != null) {
       const stepString = e.target.value.split(")");
       const stepNumber = parseInt(stepString[0], 10) - 1;
-      console.log(`handleStepChange(${e.target.value}, ${stepNumber})`);
 
       let project = this.state.project;
       if (stepNumber >= 0 && stepNumber < project.steps.length) {
