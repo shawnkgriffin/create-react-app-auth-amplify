@@ -42,7 +42,7 @@ export default function ProjectSteps({
     tableRows1to6.push(
       <StyledTableRow key={`Row${i}`}>
         <TableCell variant="body">
-          <ProjectMenu typeOfMenu="step" stepNumber={i} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" menuIndex={i} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -50,7 +50,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" stepNumber={i+ 6} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" menuIndex={i+ 6} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -58,7 +58,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" stepNumber={i+ 12} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" menuIndex={i+ 12} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -90,7 +90,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <ProjectMenu typeOfMenu="step" stepNumber={18} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" menuIndex={18} handleMenu={handleMenu}/>
               <Input
                 onClick={handleStepChange}
                 disableUnderline
@@ -102,7 +102,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <ProjectMenu typeOfMenu="step" stepNumber={19} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" menuIndex={19} handleMenu={handleMenu}/>
               <Input
                 onClick={handleStepChange}
                 disableUnderline

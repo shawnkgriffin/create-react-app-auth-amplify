@@ -7,11 +7,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function Help({ open, title, text, answerYes, answerNo }) {
-  const [scroll, setScroll] = React.useState('paper');
-
-  const handleClickOpen = scrollType => () => {
-    setScroll(scrollType);
-  };
 
   const handleClose = () => {
     answerNo();
@@ -22,20 +17,12 @@ export default function Help({ open, title, text, answerYes, answerNo }) {
       <Dialog
         open={open}
         onClose={handleClose}
-        scroll={scroll}
         aria-labelledby="scroll-dialog-title"
       >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogTitle id="scroll-dialog-title">{title}</DialogTitle>
+        <DialogContent dividers={true}>
           <DialogContentText>
-            {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-              )
-              .join('\n')}
+            {text}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

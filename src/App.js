@@ -160,8 +160,8 @@ class App extends Component {
         alert: false,
         form: false,
         help: false,
-        title:"",
-        text:"",
+        title: "",
+        text: "",
         commandString: ""
       };
     });
@@ -207,29 +207,41 @@ class App extends Component {
             });
             break;
           case "HELP":
-            console.log("Help")
-            this.setState(prevState => {
-              return {
-                ...prevState, help: true
-
-              };
-            });
+              console.log("Help")
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  help: true,
+                  title: project.steps[currentStep].questions[actionIndex].question,
+                  text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no help is available."
+  
+                };
+              });
             break;
           default:
         }
-      } else if (actionObject === "step") {
-        switch (commandString) {
-          case "Add a step above this one.":
-          case "Add a step below this one.":
+      } else if (actionObject === "STEP") {
+        switch (actionVerb) {
+          case "ADD":
             break;
-          case "Edit this step.":
+          case "EDIT":
             break;
-          case "Delete this step.":
+          case "DELETE":
             // TODO add an are you sure?
             console.log(`handleMenu(Delete${commandString})`);
 
             break;
-          case "Help.":
+          case "HELP":
+            console.log("Help")
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                help: true,
+                title: project.steps[currentStep].stepLabel,
+                text: project.steps[currentStep].tip.length > 0 ? project.steps[currentStep].tip : "Sorry, no help is available."
+
+              };
+            });
             break;
           default:
         }
@@ -264,7 +276,7 @@ class App extends Component {
           text={this.state.text}
           answerYes={this.handleYes}
           answerNo={this.handleNo}
-          />
+        />
         <Help
           open={this.state.help}
           title={this.state.title}
