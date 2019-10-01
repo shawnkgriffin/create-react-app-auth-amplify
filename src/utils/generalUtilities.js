@@ -6,7 +6,17 @@
  * @param {string}  
  * @returns {string} status 200 success.
  **/
+function parseCommand(commandString) {
+  const commands = commandString.toUpperCase().split(".");
+  let action = {
+    actionObject: commands[0],
+    actionIndex: parseInt(commands[1], 10),
+    actionVerb: commands[2],
+    actionLocation: commands.length === 4 ? commands[3] : ""
+  }
+  return (action);
 
+}
 function percentageQuestionsYes(questions) {
   let numberYes = questions.map((question) => (!question.skip && question.answer.toUpperCase() === "YES") ? 1 : 0 ).reduce((acc, val) => acc + val);;
   let numberSkipped = questions.map((question) => question.skip ? 1 : 0 ).reduce((acc, val) => acc + val);
@@ -22,4 +32,4 @@ function percentageQuestionsYes(questions) {
 
 }
 
-export { percentageQuestionsYes }
+export { percentageQuestionsYes, parseCommand }

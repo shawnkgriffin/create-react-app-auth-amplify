@@ -5,6 +5,7 @@ import Amplify from 'aws-amplify';  // comment out , { Auth } until needed
 import aws_exports from './aws-exports';
 
 import * as db from "./utils/db/db.js";
+import * as utils from "./utils/generalUtilities"
 import { makeStyles } from "@material-ui/core/styles";
 
 import ProjectInfo from "./components/ProjectInfo";
@@ -84,7 +85,7 @@ class App extends Component {
       isAuthenticated: false,
       isAuthenticating: true,
       user: null,
-      pendingAction: "",
+      commandString: "",
       alert: false,
       alertTitle: "",
       alertText: ""
@@ -93,6 +94,7 @@ class App extends Component {
     this.handleStepChange = this.handleStepChange.bind(this);
     this.handleMenu = this.handleMenu.bind(this);
     this.handleYes = this.handleYes.bind(this);
+    this.handleNo = this.handleNo.bind(this);
   }
   handleQuestionChange(e) {
     if (this.state != null) {
@@ -132,22 +134,35 @@ class App extends Component {
     }
   }
   handleYes(e) {
-    console.log(`handleYes(${this.state.pendingAction}`)
+    console.log(`handleYes(${this.state.commandString}`)
+    let { project, currentStep, commandString } = this.state;
+    let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
+    project.steps[currentStep].questions.splice(actionIndex, 1)
     this.setState(prevState => {
       return {
-        ...prevState, alert: false,
-        pendingAction: ""
+        ...prevState, 
+        project: project, 
+        alert: false,
+        commandString: ""
       };
     });
   }
+  handleNo(e) {
+    console.log(`handleNo(${this.state.commandString}`)
+    
+    this.setState(prevState => {
+      return {
+        ...prevState, 
+        alert: false,
+        commandString: ""
+      };
+    });
+  }
+
   handleMenu(commandString) {
     if (this.state != null) {
       console.log(`handleMenu(${commandString})`);
-      const commands = commandString.toUpperCase().split(".");
-      const actionObject = commands[0];
-      let actionIndex = parseInt(commands[1], 10);
-      const actionVerb = commands[2];
-      const actionLocation = commands.length === 4 ? commands[3] : "";
+      let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
       let { project, currentStep } = this.state;
       if (actionObject === "QUESTION") {
         switch (actionVerb) {
@@ -175,15 +190,10 @@ class App extends Component {
               return {
                 ...prevState, alert: true,
                 alertTitle: "Delete the following question?",
-                alertText: `${actionIndex+1}) ${project.steps[currentStep].questions[actionIndex].question}`,
-                pendingAction: commandString
+                alertText: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                commandString: commandString
               };
             });
-            project.steps[currentStep].questions.splice(actionIndex, 1)
-            this.setState(prevState => {
-              return { ...prevState, project: project };
-            });
-
             break;
           case "HELP":
             break;
