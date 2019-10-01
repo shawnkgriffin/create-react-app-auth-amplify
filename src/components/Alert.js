@@ -40,11 +40,11 @@ export default function AlertDialog({ open, title, text, answerYes, answerNo }) 
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleNo} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleYes} color="primary" autoFocus>
+          <Button onClick={handleYes} color="primary" variant="contained" autoFocus>
             Yes
+          </Button>
+          <Button variant="contained" onClick={handleNo} color="secondary">
+            Cancel
           </Button>
         </DialogActions>
       </Dialog>
