@@ -130,23 +130,35 @@ class App extends Component {
       console.log(`handleMenu(${commandString})`);
       const commands = commandString.toUpperCase().split(".");
       const actionObject = commands[0];
-      const actionIndex = parseInt(commands[1], 10);
+      let actionIndex = parseInt(commands[1], 10);
       const actionVerb = commands[2];
       const actionLocation = commands.length === 4 ? commands[3] : "";
+      let { project, currentStep } = this.state;
       if (actionObject === "QUESTION") {
-
         switch (actionVerb) {
           case "ADD":
+            const newQuestion = {
+              "number": "",
+              "question": "This is a new question",
+              "validAnswers": "",
+              "answer": "",
+              "tip": "",
+              "skip": false,
+              "answerHistory": []
+            }
+            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+            project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+            this.setState(prevState => {
+              return { ...prevState, project: project };
+            });
             break;
           case "EDIT":
             break;
           case "DELETE":
             // TODO add an are you sure?
-            console.log(`handleMenu(DeleteQuestion(${actionIndex})`);
-            let { project, currentStep } = this.state;
             project.steps[currentStep].questions.splice(actionIndex, 1)
             this.setState(prevState => {
-              return { ...prevState, project:project };
+              return { ...prevState, project: project };
             });
 
             break;
