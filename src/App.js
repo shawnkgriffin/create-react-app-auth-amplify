@@ -12,6 +12,8 @@ import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";
 import Alert from "./components/Alert";
+import FormDialog from "./components/FormDialog";
+import Help from "./components/Help";
 
 Amplify.configure(aws_exports);
 
@@ -87,8 +89,10 @@ class App extends Component {
       user: null,
       commandString: "",
       alert: false,
-      alertTitle: "",
-      alertText: ""
+      title: "",
+      text: "",
+      form: false,
+      help: false
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleStepChange = this.handleStepChange.bind(this);
@@ -140,20 +144,24 @@ class App extends Component {
     project.steps[currentStep].questions.splice(actionIndex, 1)
     this.setState(prevState => {
       return {
-        ...prevState, 
-        project: project, 
+        ...prevState,
+        project: project,
         alert: false,
+        form: false,
         commandString: ""
       };
     });
   }
   handleNo(e) {
     console.log(`handleNo(${this.state.commandString}`)
-    
     this.setState(prevState => {
       return {
-        ...prevState, 
+        ...prevState,
         alert: false,
+        form: false,
+        help: false,
+        title:"",
+        text:"",
         commandString: ""
       };
     });
@@ -167,19 +175,22 @@ class App extends Component {
       if (actionObject === "QUESTION") {
         switch (actionVerb) {
           case "ADD":
-            const newQuestion = {
-              "number": "",
-              "question": "This is a new question",
-              "validAnswers": "",
-              "answer": "",
-              "tip": "",
-              "skip": false,
-              "answerHistory": []
-            }
+            // const newQuestion = {
+            //   "number": "",
+            //   "question": "This is a new question",
+            //   "validAnswers": "",
+            //   "answer": "",
+            //   "tip": "",
+            //   "skip": false,
+            //   "answerHistory": []
+            // }
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
-            project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+            // project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
             this.setState(prevState => {
-              return { ...prevState, project: project };
+              return {
+                ...prevState, form: true, title: `Add question #${actionIndex + 1})`, text: "",
+                commandString: commandString
+              }
             });
             break;
           case "EDIT":
@@ -189,13 +200,20 @@ class App extends Component {
             this.setState(prevState => {
               return {
                 ...prevState, alert: true,
-                alertTitle: "Delete the following question?",
-                alertText: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                title: "Delete the following question?",
+                text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
                 commandString: commandString
               };
             });
             break;
           case "HELP":
+            console.log("Help")
+            this.setState(prevState => {
+              return {
+                ...prevState, help: true
+
+              };
+            });
             break;
           default:
         }
@@ -235,8 +253,22 @@ class App extends Component {
         <br />
         <Alert
           open={this.state.alert}
-          title={this.state.alertTitle}
-          text={this.state.alertText}
+          title={this.state.title}
+          text={this.state.text}
+          answerYes={this.handleYes}
+          answerNo={this.handleNo}
+        />
+        <FormDialog
+          open={this.state.form}
+          title={this.state.title}
+          text={this.state.text}
+          answerYes={this.handleYes}
+          answerNo={this.handleNo}
+          />
+        <Help
+          open={this.state.help}
+          title={this.state.title}
+          text={this.state.text}
           answerYes={this.handleYes}
           answerNo={this.handleNo}
         />
