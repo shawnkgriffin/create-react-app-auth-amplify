@@ -77,8 +77,8 @@ export default function ProjectSteps({
               <h2>Define the Project</h2>
             </StyledTableCell>
             <StyledTableCell align="center">
-            </StyledTableCell>
               <h2>Analyze the Project</h2>
+            </StyledTableCell>
             <StyledTableCell align="center">
               <h2>Implement the Project</h2>
             </StyledTableCell>
