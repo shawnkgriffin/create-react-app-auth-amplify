@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";
+import Alert from "./components/Alert";
 
 Amplify.configure(aws_exports);
 
@@ -82,11 +83,16 @@ class App extends Component {
       currentUser: "shawn@shawngriffin.com",
       isAuthenticated: false,
       isAuthenticating: true,
-      user: null
+      user: null,
+      pendingAction: "",
+      alert: false,
+      alertTitle: "",
+      alertText: ""
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleStepChange = this.handleStepChange.bind(this);
     this.handleMenu = this.handleMenu.bind(this);
+    this.handleYes = this.handleYes.bind(this);
   }
   handleQuestionChange(e) {
     if (this.state != null) {
@@ -125,6 +131,15 @@ class App extends Component {
       }
     }
   }
+  handleYes(e) {
+    console.log(`handleYes(${this.state.pendingAction}`)
+    this.setState(prevState => {
+      return {
+        ...prevState, alert: false,
+        pendingAction: ""
+      };
+    });
+  }
   handleMenu(commandString) {
     if (this.state != null) {
       console.log(`handleMenu(${commandString})`);
@@ -156,6 +171,14 @@ class App extends Component {
             break;
           case "DELETE":
             // TODO add an are you sure?
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                alertTitle: "Delete the following question?",
+                alertText: `${actionIndex+1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                pendingAction: commandString
+              };
+            });
             project.steps[currentStep].questions.splice(actionIndex, 1)
             this.setState(prevState => {
               return { ...prevState, project: project };
@@ -200,6 +223,13 @@ class App extends Component {
           handleMenu={this.handleMenu}
         />
         <br />
+        <Alert
+          open={this.state.alert}
+          title={this.state.alertTitle}
+          text={this.state.alertText}
+          answerYes={this.handleYes}
+          answerNo={this.handleNo}
+        />
         <ProjectQuestions
           classes={classes}
           project={project}
