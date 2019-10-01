@@ -74,11 +74,11 @@ export default function ProjectSteps({
         <TableHead>
           <TableRow>
             <StyledTableCell align="center">
-              <h2>Analyze</h2>
-            </StyledTableCell>
-            <StyledTableCell align="center">
               <h2>Define</h2>
             </StyledTableCell>
+            <StyledTableCell align="center">
+            </StyledTableCell>
+              <h2>Analyze</h2>
             <StyledTableCell align="center">
               <h2>Implement</h2>
             </StyledTableCell>
