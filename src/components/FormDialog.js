@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -7,22 +7,19 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function FormDialog({ open, title, text, answerYes, answerNo }) {
+  const [newText,setText] = useState(text);
   
-  const handleYes = (e) => {
-    console.log(`Form.handleYes${e.target.value}`)
-    answerYes();
+  const handleYes = () => {
+    answerYes(newText);
   };
   const handleNo = () => {
-    console.log(`Form.handleNo`)
     answerNo();
   };
   
-  const handleClickOpen = () => {
-  };
-
-  const handleClose = () => {
-  };
+  
   const onChange = (e) => {
+    setText(e.target.value);
+    console.log(`onChange${newText}`)
     
   }
 

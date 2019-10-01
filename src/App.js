@@ -137,17 +137,52 @@ class App extends Component {
       }
     }
   }
-  handleYes(e) {
-    console.log(`handleYes(${this.state.commandString}`)
+  handleYes(newText) {
+    console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
     let { project, currentStep, commandString } = this.state;
     let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
-    project.steps[currentStep].questions.splice(actionIndex, 1)
+    if (actionObject === "QUESTION") {
+      switch (actionVerb) {
+        case "ADD":
+          const newQuestion = {
+            "number": "",
+            "question": newText,
+            "validAnswers": "",
+            "answer": "",
+            "tip": "",
+            "skip": false,
+            "answerHistory": []
+          }
+          actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+          project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+          break;
+        case "EDIT":
+          break;
+        case "DELETE":
+          project.steps[currentStep].questions.splice(actionIndex, 1)
+          break;
+        default:
+      }
+    } else if (actionObject === "STEP") {
+      switch (actionVerb) {
+        case "ADD":
+          break;
+        case "EDIT":
+          break;
+        case "DELETE":
+          break;
+        case "HELP":
+          break;
+        default:
+      }
+    }
     this.setState(prevState => {
       return {
         ...prevState,
         project: project,
         alert: false,
         form: false,
+        help: false,
         commandString: ""
       };
     });
@@ -184,8 +219,8 @@ class App extends Component {
             //   "skip": false,
             //   "answerHistory": []
             // }
-            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             // project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
                 ...prevState, form: true, title: `Add question #${actionIndex + 1})`, text: "",
@@ -207,16 +242,16 @@ class App extends Component {
             });
             break;
           case "HELP":
-              console.log("Help")
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  help: true,
-                  title: project.steps[currentStep].questions[actionIndex].question,
-                  text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no help is available."
-  
-                };
-              });
+            console.log("Help")
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                help: true,
+                title: project.steps[currentStep].questions[actionIndex].question,
+                text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no help is available."
+
+              };
+            });
             break;
           default:
         }
