@@ -35,56 +35,44 @@ export default function ProjectSteps({
   handleMenu
 }) {
   // project.stepTypes determines the number of columns. 
+  // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
   let stepStrings = [];
   project.stepTypes.map((stepType, index) => stepStrings[index] = []);
+  
   // Build each Step label for each step type as we have to lay them out in rows.  
-  project.steps.map((step, index) => stepStrings[step.stepType].push(`${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`));
+  project.steps.map((step, index) => stepStrings[step.stepType].push({stepIndex:index, stepString:`${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`}));
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
 
   let tableRows = []; // the three columns have different numbers of steps associated with them
-  for (let i = 0; i < maxStepTableRows; i++) {
+  for (let rowIndex = 0; rowIndex < maxStepTableRows; rowIndex++) {
     tableRows.push(
-      <StyledTableRow key={`Row${i}`}>
-        <TableCell variant="body">
-          {i < stepStrings[0].length &&
-            <Fragment>
-              <ProjectMenu typeOfMenu="step" menuIndex={i} handleMenu={handleMenu} />
+      <StyledTableRow key={`Row${rowIndex}`}>
+        {project.stepTypes.map((stepType, stepIndex) => {
+          return (
 
-              <Input
-                onClick={handleStepChange}
-                disableUnderline
-                value={stepStrings[0][i]}
-              />
-            </Fragment>
-          }
-        </TableCell>
-        <TableCell>
-          {i < stepStrings[1].length &&
-            <Fragment>
-              <ProjectMenu typeOfMenu="step" menuIndex={i + stepStrings[0].length} handleMenu={handleMenu} />
-              <Input
+            < TableCell variant="body" >
+              {
+                rowIndex < stepStrings[stepIndex].length &&
+                <Fragment>
+                  <ProjectMenu typeOfMenu="step" menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu} />
 
-                onClick={handleStepChange}
-                disableUnderline
-                value={stepStrings[1][i]}
-              />
-            </Fragment>
-          }
-        </TableCell>
-        <TableCell>
-          {i < stepStrings[2].length &&
-            <Fragment>
+                  <Input
+                    onClick={handleStepChange}
+                    disableUnderline
+                    value={stepStrings[stepIndex][rowIndex].stepString}
 
-              <ProjectMenu typeOfMenu="step" menuIndex={i + stepStrings[0].length + stepStrings[1].length} handleMenu={handleMenu} />
-              <Input
-                onClick={handleStepChange}
-                disableUnderline
-                value={stepStrings[2][i]}
-              />
-            </Fragment>
-          }
-        </TableCell>
-      </StyledTableRow>
+
+
+
+                    
+                  />
+                </Fragment>
+              }
+            </TableCell>
+          )
+        })}
+
+      </StyledTableRow >
     );
   }
   return (
