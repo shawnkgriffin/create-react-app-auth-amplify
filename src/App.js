@@ -170,6 +170,8 @@ class App extends Component {
         case "EDIT":
           break;
         case "DELETE":
+          project.steps.splice(actionIndex, 1)
+          currentStep = 0;
           break;
         case "HELP":
           break;
@@ -183,7 +185,8 @@ class App extends Component {
         alert: false,
         form: false,
         help: false,
-        commandString: ""
+        commandString: "",
+        currentStep: currentStep
       };
     });
   }
@@ -264,8 +267,16 @@ class App extends Component {
           case "DELETE":
             // TODO add an are you sure?
             console.log(`handleMenu(Delete${commandString})`);
-
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: "Delete the following step?",
+                text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                commandString: commandString
+              };
+            });
             break;
+
           case "HELP":
             console.log("Help")
             this.setState(prevState => {
