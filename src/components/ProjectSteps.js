@@ -38,9 +38,9 @@ export default function ProjectSteps({
   // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
   let stepStrings = [];
   project.stepTypes.map((stepType, index) => stepStrings[index] = []);
-  
+
   // Build each Step label for each step type as we have to lay them out in rows.  
-  project.steps.map((step, index) => stepStrings[step.stepType].push({stepIndex:index, stepString:`${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`}));
+  project.steps.map((step, index) => stepStrings[step.stepType].push({ stepIndex: index, stepString: `${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}` }));
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
 
   let tableRows = []; // the three columns have different numbers of steps associated with them
@@ -50,7 +50,7 @@ export default function ProjectSteps({
         {project.stepTypes.map((stepType, stepIndex) => {
           return (
 
-            < TableCell variant="body" >
+            < TableCell variant="body" key={rowIndex*project.stepTypes.length + stepIndex}>
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
@@ -60,11 +60,6 @@ export default function ProjectSteps({
                     onClick={handleStepChange}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
-
-
-
-
-                    
                   />
                 </Fragment>
               }
