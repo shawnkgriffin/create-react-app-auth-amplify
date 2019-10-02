@@ -34,13 +34,15 @@ export default function ProjectSteps({
   handleStepChange,
   handleMenu
 }) {
-  // count the max number of steps for a given project
-  let stepStrings = [[], [], []]; // hard code for now
-  const maxStepTypes = 8; //hard code for now
-  // then build the rows accordingly. 
+  // project.stepTypes determines the number of columns. 
+  let stepStrings = [];
+  project.stepTypes.map((stepType, index) => stepStrings[index] = []);
+  // Build each Step label for each step type as we have to lay them out in rows.  
   project.steps.map((step, index) => stepStrings[step.stepType].push(`${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`));
+  const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
+
   let tableRows = []; // the three columns have different numbers of steps associated with them
-  for (let i = 0; i < maxStepTypes; i++) {
+  for (let i = 0; i < maxStepTableRows; i++) {
     tableRows.push(
       <StyledTableRow key={`Row${i}`}>
         <TableCell variant="body">
