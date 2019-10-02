@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Paper from "@material-ui/core/Paper";
 import { Table } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
@@ -35,40 +35,52 @@ export default function ProjectSteps({
   handleMenu
 }) {
   // count the max number of steps for a given project
-  let stepTypesCount = Array(project.stepTypes.length).fill(0);
-  project.steps.map(step => stepTypesCount[step.stepType]++);
-  const maxStepTypes = Math.max(...stepTypesCount)
+  let stepStrings = [[], [], []]; // hard code for now
+  const maxStepTypes = 8; //hard code for now
   // then build the rows accordingly. 
-  const stepStrings = project.steps.map(
-    (step, index) => `${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`
-  );
-  let tableRows1to6 = []; // the three columns have different numbers of steps associated with them
-  for (let i = 0; i < 6; i++) {
-    tableRows1to6.push(
+  project.steps.map((step, index) => stepStrings[step.stepType].push(`${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`));
+  let tableRows = []; // the three columns have different numbers of steps associated with them
+  for (let i = 0; i < maxStepTypes; i++) {
+    tableRows.push(
       <StyledTableRow key={`Row${i}`}>
         <TableCell variant="body">
-          <ProjectMenu typeOfMenu="step" menuIndex={i} handleMenu={handleMenu} />
-          <Input
-            onClick={handleStepChange}
-            disableUnderline
-            value={stepStrings[i]}
-          />
+          {i < stepStrings[0].length &&
+            <Fragment>
+              <ProjectMenu typeOfMenu="step" menuIndex={i} handleMenu={handleMenu} />
+
+              <Input
+                onClick={handleStepChange}
+                disableUnderline
+                value={stepStrings[0][i]}
+              />
+            </Fragment>
+          }
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" menuIndex={i + 6} handleMenu={handleMenu} />
-          <Input
-            onClick={handleStepChange}
-            disableUnderline
-            value={stepStrings[i + 6]}
-          />
+          {i < stepStrings[1].length &&
+            <Fragment>
+              <ProjectMenu typeOfMenu="step" menuIndex={i + 6} handleMenu={handleMenu} />
+              <Input
+
+                onClick={handleStepChange}
+                disableUnderline
+                value={stepStrings[1][i]}
+              />
+            </Fragment>
+          }
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" menuIndex={i + 12} handleMenu={handleMenu} />
-          <Input
-            onClick={handleStepChange}
-            disableUnderline
-            value={stepStrings[i + 12]}
-          />
+          {i < stepStrings[2].length &&
+            <Fragment>
+
+              <ProjectMenu typeOfMenu="step" menuIndex={i + 12} handleMenu={handleMenu} />
+              <Input
+                onClick={handleStepChange}
+                disableUnderline
+                value={stepStrings[2][i]}
+              />
+            </Fragment>
+          }
         </TableCell>
       </StyledTableRow>
     );
@@ -90,31 +102,8 @@ export default function ProjectSteps({
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableRows1to6}
-          <StyledTableRow>
-            <TableCell />
-            <TableCell />
-            <TableCell>
-              <ProjectMenu typeOfMenu="step" menuIndex={18} handleMenu={handleMenu} />
-              <Input
-                onClick={handleStepChange}
-                disableUnderline
-                value={stepStrings[18]}
-              />
-            </TableCell>
-          </StyledTableRow>
-          <StyledTableRow>
-            <TableCell />
-            <TableCell />
-            <TableCell>
-              <ProjectMenu typeOfMenu="step" menuIndex={19} handleMenu={handleMenu} />
-              <Input
-                onClick={handleStepChange}
-                disableUnderline
-                value={stepStrings[19]}
-              />
-            </TableCell>
-          </StyledTableRow>
+          {tableRows}
+
         </TableBody>
       </Table>
     </Paper>
