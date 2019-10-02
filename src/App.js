@@ -245,15 +245,27 @@ class App extends Component {
           case "EDIT":
             break;
           case "DELETE":
-            // TODO add an are you sure?
-            this.setState(prevState => {
+            if (project.steps[currentStep].questions.length > 1){
+
+              this.setState(prevState => {
+                return {
+                  ...prevState, alert: true,
+                  title: "Delete the following question?",
+                  text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                  commandString: commandString
+                };
+              });
+            } else
+            {this.setState(prevState => {
               return {
                 ...prevState, alert: true,
-                title: "Delete the following question?",
-                text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                title: "Cannot delete the last question.",
+                text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
                 commandString: commandString
               };
             });
+
+            }
             break;
           case "HELP":
             console.log("Help")
@@ -271,8 +283,8 @@ class App extends Component {
         }
       } else if (actionObject === "STEP") {
         switch (actionVerb) {
-          case "ADD":
 
+          case "ADD":
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
@@ -281,19 +293,32 @@ class App extends Component {
               }
             });
             break;
+
           case "EDIT":
             break;
+            
           case "DELETE":
-            // TODO add an are you sure?
-            console.log(`handleMenu(Delete${commandString})`);
-            this.setState(prevState => {
-              return {
-                ...prevState, alert: true,
-                title: "Delete the following step?",
-                text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
-                commandString: commandString
-              };
-            });
+            //cannot delete last step
+            if (project.steps.length > 1) {
+              this.setState(prevState => {
+                return {
+                  ...prevState, alert: true,
+                  title: "Delete the following step?",
+                  text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                  commandString: commandString
+                };
+              });
+            }
+            else {
+              this.setState(prevState => {
+                return {
+                  ...prevState, alert: true,
+                  title: "Cannot delete the last step.",
+                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                  commandString: ""
+                };
+              });
+            }
             break;
 
           case "HELP":
