@@ -166,6 +166,26 @@ class App extends Component {
     } else if (actionObject === "STEP") {
       switch (actionVerb) {
         case "ADD":
+          const newStep = {
+            "stepLabel": newText,
+            "stepType": project.steps[actionIndex].stepType,
+            "stepNumber": 20,
+            "skip": false,
+            "tip": "",
+            "questions": [
+              {
+                "number": "",
+                "question": "First question.",
+                "validAnswers": "",
+                "answer": "",
+                "tip": "",
+                "skip": false,
+                "answerHistory": []
+              }]
+          };
+          actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+          project.steps.splice(actionIndex, 0, newStep);
+          currentStep = actionIndex;
           break;
         case "EDIT":
           break;
@@ -213,16 +233,7 @@ class App extends Component {
       if (actionObject === "QUESTION") {
         switch (actionVerb) {
           case "ADD":
-            // const newQuestion = {
-            //   "number": "",
-            //   "question": "This is a new question",
-            //   "validAnswers": "",
-            //   "answer": "",
-            //   "tip": "",
-            //   "skip": false,
-            //   "answerHistory": []
-            // }
-            // project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
@@ -261,6 +272,14 @@ class App extends Component {
       } else if (actionObject === "STEP") {
         switch (actionVerb) {
           case "ADD":
+
+            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+            this.setState(prevState => {
+              return {
+                ...prevState, form: true, title: `Add step #${actionIndex + 1})`, text: "",
+                commandString: commandString
+              }
+            });
             break;
           case "EDIT":
             break;
@@ -283,8 +302,8 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
-                title: project.steps[currentStep].stepLabel,
-                text: project.steps[currentStep].tip.length > 0 ? project.steps[currentStep].tip : "Sorry, no help is available."
+                title: project.steps[actionIndex].stepLabel,
+                text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no help is available."
 
               };
             });
