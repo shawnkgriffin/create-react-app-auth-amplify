@@ -61,7 +61,7 @@ export default function ProjectSteps({
         <TableCell>
           {i < stepStrings[1].length &&
             <Fragment>
-              <ProjectMenu typeOfMenu="step" menuIndex={i + 6} handleMenu={handleMenu} />
+              <ProjectMenu typeOfMenu="step" menuIndex={i + stepStrings[0].length} handleMenu={handleMenu} />
               <Input
 
                 onClick={handleStepChange}
@@ -75,7 +75,7 @@ export default function ProjectSteps({
           {i < stepStrings[2].length &&
             <Fragment>
 
-              <ProjectMenu typeOfMenu="step" menuIndex={i + 12} handleMenu={handleMenu} />
+              <ProjectMenu typeOfMenu="step" menuIndex={i + stepStrings[0].length + stepStrings[1].length} handleMenu={handleMenu} />
               <Input
                 onClick={handleStepChange}
                 disableUnderline
