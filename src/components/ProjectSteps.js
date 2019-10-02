@@ -34,6 +34,11 @@ export default function ProjectSteps({
   handleStepChange,
   handleMenu
 }) {
+  // count the max number of steps for a given project
+  let stepTypesCount = Array(project.stepTypes.length).fill(0);
+  project.steps.map(step => stepTypesCount[step.stepType]++);
+  const maxStepTypes = Math.max(...stepTypesCount)
+  // then build the rows accordingly. 
   const stepStrings = project.steps.map(
     (step, index) => `${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}`
   );
@@ -50,7 +55,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" menuIndex={i+ 6} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" menuIndex={i + 6} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -58,7 +63,7 @@ export default function ProjectSteps({
           />
         </TableCell>
         <TableCell>
-          <ProjectMenu typeOfMenu="step" menuIndex={i+ 12} handleMenu={handleMenu} />
+          <ProjectMenu typeOfMenu="step" menuIndex={i + 12} handleMenu={handleMenu} />
           <Input
             onClick={handleStepChange}
             disableUnderline
@@ -74,13 +79,13 @@ export default function ProjectSteps({
         <TableHead>
           <TableRow>
             <StyledTableCell align="center">
-              <h2>Define the Project</h2>
+              <h2>{project.stepTypes[0]}</h2>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <h2>Analyze the Project</h2>
+              <h2>{project.stepTypes[1]}</h2>
             </StyledTableCell>
             <StyledTableCell align="center">
-              <h2>Implement the Project</h2>
+              <h2>{project.stepTypes[2]}</h2>
             </StyledTableCell>
           </TableRow>
         </TableHead>
@@ -90,7 +95,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <ProjectMenu typeOfMenu="step" menuIndex={18} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" menuIndex={18} handleMenu={handleMenu} />
               <Input
                 onClick={handleStepChange}
                 disableUnderline
@@ -102,7 +107,7 @@ export default function ProjectSteps({
             <TableCell />
             <TableCell />
             <TableCell>
-              <ProjectMenu typeOfMenu="step" menuIndex={19} handleMenu={handleMenu}/>
+              <ProjectMenu typeOfMenu="step" menuIndex={19} handleMenu={handleMenu} />
               <Input
                 onClick={handleStepChange}
                 disableUnderline
