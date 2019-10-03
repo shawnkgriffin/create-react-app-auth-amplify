@@ -305,7 +305,7 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title: project.steps[currentStep].questions[actionIndex].question,
-                text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no help is available."
+                text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no guidance is available."
 
               };
             });
@@ -382,7 +382,7 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title: project.steps[actionIndex].stepLabel,
-                text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no help is available."
+                text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no guidance is available."
 
               };
             });
