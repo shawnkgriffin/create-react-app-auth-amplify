@@ -12,6 +12,7 @@ import * as utils from "../utils/generalUtilities.js";
 
 const stepLabelStyle = {
   width:300,
+  fontSize: 16
 };
 
 const StyledTableCell = withStyles(theme => ({
@@ -20,7 +21,7 @@ const StyledTableCell = withStyles(theme => ({
     color: theme.palette.common.white
   },
   body: {
-    fontSize: 14
+    fontSize: 16
   }
 }))(TableCell);
 
