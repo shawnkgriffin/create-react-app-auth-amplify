@@ -157,6 +157,7 @@ class App extends Component {
           project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
           break;
         case "EDIT":
+          project.steps[currentStep].questions[actionIndex].question = newText;
           break;
         case "DELETE":
           project.steps[currentStep].questions.splice(actionIndex, 1)
@@ -237,15 +238,26 @@ class App extends Component {
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
-                ...prevState, form: true, title: `Add question #${actionIndex + 1})`, text: "",
+                ...prevState,
+                form: true,
+                title: `Add question #${actionIndex + 1})`, text: "",
                 commandString: commandString
               }
             });
             break;
           case "EDIT":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Edit question #${actionIndex + 1}) below.`,
+                text: project.steps[currentStep].questions[actionIndex].question,
+                commandString: commandString
+              }
+            });
             break;
           case "DELETE":
-            if (project.steps[currentStep].questions.length > 1){
+            if (project.steps[currentStep].questions.length > 1) {
 
               this.setState(prevState => {
                 return {
@@ -255,15 +267,15 @@ class App extends Component {
                   commandString: commandString
                 };
               });
-            } else
-            {this.setState(prevState => {
-              return {
-                ...prevState, alert: true,
-                title: "Cannot delete the last question.",
-                text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
-                commandString: commandString
-              };
-            });
+            } else {
+              this.setState(prevState => {
+                return {
+                  ...prevState, alert: true,
+                  title: "Cannot delete the last question.",
+                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                  commandString: commandString
+                };
+              });
 
             }
             break;
@@ -295,8 +307,16 @@ class App extends Component {
             break;
 
           case "EDIT":
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: `Edit step #${actionIndex + 1}) below.`,
+                text: project.steps[actionIndex].stepLabel,
+                commandString: commandString
+              };
+            });
             break;
-            
+
           case "DELETE":
             //cannot delete last step
             if (project.steps.length > 1) {
