@@ -6,7 +6,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function FormDialog({ open, title, text, answerYes, answerNo }) {
+const style = {
+  width:500,
+};
+
+export default function FormDialog({ open, title, text, answerYes, answerNo, classes }) {
   const [newText,setText] = useState(text);
   
   const handleYes = () => {
@@ -36,6 +40,7 @@ export default function FormDialog({ open, title, text, answerYes, answerNo }) {
             defaultValue={text}
             fullWidth
             onChange={onChange}
+            style={style}
           />
         </DialogContent>
         <DialogActions>

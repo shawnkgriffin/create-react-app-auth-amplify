@@ -61,7 +61,8 @@ const useStyles = makeStyles(theme => ({
   },
   textField: {
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
+    width: 400,
   },
   dense: {
     marginTop: theme.spacing(2)
@@ -189,6 +190,7 @@ class App extends Component {
           currentStep = actionIndex;
           break;
         case "EDIT":
+          project.steps[actionIndex].stepLabel = newText;
           break;
         case "DELETE":
           project.steps.splice(actionIndex, 1)
@@ -307,9 +309,11 @@ class App extends Component {
             break;
 
           case "EDIT":
+
             this.setState(prevState => {
               return {
-                ...prevState, alert: true,
+                ...prevState,
+                form: true,
                 title: `Edit step #${actionIndex + 1}) below.`,
                 text: project.steps[actionIndex].stepLabel,
                 commandString: commandString
@@ -371,7 +375,7 @@ class App extends Component {
           project={project}
           handleStepChange={this.handleStepChange}
           handleMenu={this.handleMenu}
-        />
+          />
         <br />
         <Alert
           open={this.state.alert}
@@ -379,14 +383,15 @@ class App extends Component {
           text={this.state.text}
           answerYes={this.handleYes}
           answerNo={this.handleNo}
-        />
+          />
         <FormDialog
           open={this.state.form}
           title={this.state.title}
           text={this.state.text}
           answerYes={this.handleYes}
           answerNo={this.handleNo}
-        />
+          classes={classes}
+          />
         <Help
           open={this.state.help}
           title={this.state.title}

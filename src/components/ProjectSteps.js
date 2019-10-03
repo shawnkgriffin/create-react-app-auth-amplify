@@ -10,6 +10,10 @@ import ProjectMenu from "./ProjectMenu";
 import Input from "@material-ui/core/Input";
 import * as utils from "../utils/generalUtilities.js";
 
+const stepLabelStyle = {
+  width:300,
+};
+
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -60,6 +64,7 @@ export default function ProjectSteps({
                     onClick={handleStepChange}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
+                    style={stepLabelStyle}
                   />
                 </Fragment>
               }
