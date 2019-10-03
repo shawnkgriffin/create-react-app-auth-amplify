@@ -160,6 +160,9 @@ class App extends Component {
         case "EDIT":
           project.steps[currentStep].questions[actionIndex].question = newText;
           break;
+        case "EDITHELP":
+          project.steps[currentStep].questions[actionIndex].tip = newText;
+          break;
         case "DELETE":
           project.steps[currentStep].questions.splice(actionIndex, 1)
           break;
@@ -191,6 +194,9 @@ class App extends Component {
           break;
         case "EDIT":
           project.steps[actionIndex].stepLabel = newText;
+          break;
+        case "EDITHELP":
+          project.steps[actionIndex].tip = newText;
           break;
         case "DELETE":
           project.steps.splice(actionIndex, 1)
@@ -258,6 +264,17 @@ class App extends Component {
               }
             });
             break;
+          case "EDITHELP":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Edit guidance for #${actionIndex + 1}) below.`,
+                text: project.steps[currentStep].questions[actionIndex].tip,
+                commandString: commandString
+              }
+            });
+            break;
           case "DELETE":
             if (project.steps[currentStep].questions.length > 1) {
 
@@ -321,6 +338,19 @@ class App extends Component {
             });
             break;
 
+          case "EDITHELP":
+
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Edit guidance for step #${actionIndex + 1}) below.`,
+                text: project.steps[actionIndex].tip,
+                commandString: commandString
+              };
+            });
+            break;
+
           case "DELETE":
             //cannot delete last step
             if (project.steps.length > 1) {
@@ -375,7 +405,7 @@ class App extends Component {
           project={project}
           handleStepChange={this.handleStepChange}
           handleMenu={this.handleMenu}
-          />
+        />
         <br />
         <Alert
           open={this.state.alert}
@@ -383,7 +413,7 @@ class App extends Component {
           text={this.state.text}
           answerYes={this.handleYes}
           answerNo={this.handleNo}
-          />
+        />
         <FormDialog
           open={this.state.form}
           title={this.state.title}
@@ -391,7 +421,7 @@ class App extends Component {
           answerYes={this.handleYes}
           answerNo={this.handleNo}
           classes={classes}
-          />
+        />
         <Help
           open={this.state.help}
           title={this.state.title}

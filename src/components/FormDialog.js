@@ -27,6 +27,8 @@ export default function FormDialog({ open, title, text, answerYes, answerNo, cla
     
   }
 
+  const numberLines = text.split(/\r\n|\r|\n/).length;
+
   return (
     <div>
       <Dialog open={open} onClose={handleNo} aria-labelledby="form-dialog-title">
@@ -37,6 +39,7 @@ export default function FormDialog({ open, title, text, answerYes, answerNo, cla
             margin="dense"
             id="name"
             type="text"
+            multiline={numberLines>0}
             defaultValue={text}
             fullWidth
             onChange={onChange}

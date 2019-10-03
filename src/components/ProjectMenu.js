@@ -111,17 +111,26 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           </ListItemIcon>
           <ListItemText primary={`Edit this ${typeOfMenu}.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"4"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+        <StyledMenuItem
+          key={"4"}
+          id={`${typeOfMenu}.${menuIndex}.EditHelp`}
+          onClick={handleSelect}>
+          <ListItemIcon>
+            <EditIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
+        </StyledMenuItem>
+        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
           <ListItemText primary={`Delete this ${typeOfMenu}`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
+        <StyledMenuItem key={"6"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
           <ListItemIcon>
             <HelpIcon />
           </ListItemIcon>
-          <ListItemText primary="Help." />
+          <ListItemText primary="Guidance." />
         </StyledMenuItem>
       </StyledMenu>
     </Fragment>
