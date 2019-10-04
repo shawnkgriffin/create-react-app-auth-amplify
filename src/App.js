@@ -105,6 +105,8 @@ class App extends Component {
   }
   handleQuestionChange(e) {
     if (this.state != null) {
+      let { projects, currentProject } = this.state;
+      let project = projects[currentProject];
       const [stepString, questionString, answer] = e.target.value.split(".");
       const stepNumber = parseInt(stepString, 10);
       const questionNumber = parseInt(questionString, 10);
@@ -113,7 +115,6 @@ class App extends Component {
         e.target.value
         },${stepNumber},${questionNumber})`
       );
-      let project = this.state.project;
       if (
         stepNumber >= 0 &&
         stepNumber < project.steps.length &&
@@ -121,8 +122,9 @@ class App extends Component {
         questionNumber < project.steps[stepNumber].questions.length
       ) {
         project.steps[stepNumber].questions[questionNumber].answer = answer;
+        projects[currentProject] = project;
         this.setState(prevState => {
-          return { ...prevState, project: project };
+          return { ...prevState, projects: projects };
         });
       }
     }
@@ -141,8 +143,9 @@ class App extends Component {
           project[key] = changedProjectInfo[key]
         }
       })
+      projects[currentProject] = project;
       this.setState(prevState => {
-        return { ...prevState, project: project, projectInfoEdit: false };
+        return { ...prevState, projects: projects, projectInfoEdit: false };
       });
       if (!changed) this.forceUpdate();
     }
@@ -150,10 +153,11 @@ class App extends Component {
 
   handleStepChange(e) {
     if (this.state != null) {
+      let { projects, currentProject } = this.state;
+      let project = projects[currentProject];
       const stepString = e.target.value.split(")");
       const stepNumber = parseInt(stepString[0], 10) - 1;
 
-      let project = this.state.project;
       if (stepNumber >= 0 && stepNumber < project.steps.length) {
         this.setState(prevState => {
           return { ...prevState, currentStep: stepNumber };
@@ -408,7 +412,8 @@ class App extends Component {
             else {
               this.setState(prevState => {
                 return {
-                  ...prevState, alert: true,
+                  ...prevState, 
+                  alert: true,
                   title: "Cannot delete the last step.",
                   text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
                   commandString: ""
@@ -437,6 +442,17 @@ class App extends Component {
 
           case "ADD":
 
+            break;
+          case "SELECT":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                currentProject: actionIndex,
+                title: "",
+                text: "",
+                commandString: ""
+              };
+            });
             break;
 
           case "EDIT":

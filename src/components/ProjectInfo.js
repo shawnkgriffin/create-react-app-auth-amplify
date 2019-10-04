@@ -45,7 +45,7 @@ class ProjectInfo extends Component {
     this.setState({ saveButton: true });
   }
   render(props) {
-    const { projects, currentProject, edit, handleMenu, classes } = this.props;
+    let { projects, currentProject, edit, handleMenu, classes } = this.props;
     let project = projects[currentProject];
     console.log(`ProjectInfo(${project.name})`);
     const buttonStyle = {
@@ -74,7 +74,7 @@ class ProjectInfo extends Component {
             label="Name"
             name="name"
             className={classes.textField}
-            defaultValue={project.name}
+            value={project.name}
             margin="normal"
             variant="outlined"
             style={{ paddingRight: 5, width: 300 }}
@@ -106,7 +106,7 @@ class ProjectInfo extends Component {
             label="Sponsor"
             name="sponsor"
             className={classes.textField}
-            defaultValue={project.sponsor}
+            value={project.sponsor}
             margin="normal"
             variant="outlined"
             style={{ paddingRight: 5 }}
@@ -118,7 +118,7 @@ class ProjectInfo extends Component {
             label="Manager"
             name="projectManager"
             className={classes.textField}
-            defaultValue={project.projectManager}
+            value={project.projectManager}
             margin="normal"
             style={{ paddingRight: 5 }}
             variant="outlined"
@@ -130,7 +130,7 @@ class ProjectInfo extends Component {
             name="projectType"
             className={classes.textField}
             disabled={!edit}
-            defaultValue={project.projectType}
+            value={project.projectType}
             margin="normal"
             style={{ paddingRight: 5 }}
             variant="outlined"
@@ -154,7 +154,7 @@ class ProjectInfo extends Component {
             className={classes.textField}
             name="start"
             disabled={!edit}
-            defaultValue="2019/09/01"
+            value="2019/09/01"
             margin="normal"
             style={{ width: 150, paddingRight: 5 }}
             variant="outlined"
@@ -165,7 +165,7 @@ class ProjectInfo extends Component {
             label="End"
             className={classes.textField}
             name="end"
-            defaultValue="2019/10/30"
+            value="2019/10/30"
             style={{ width: 150, paddingRight: 5 }}
             disabled={!edit}
             margin="normal"
@@ -178,7 +178,7 @@ class ProjectInfo extends Component {
             id="outlined-full-width"
             label="Presenting problem / Opportunity"
             name="problemOpportunity"
-            defaultValue={project.problemOpportunity}
+            value={project.problemOpportunity}
             disabled={!edit}
             margin="normal"
             variant="outlined"
