@@ -26,7 +26,7 @@ class ProjectInfo extends Component {
     this.props.handleProjectInfoChange(newProjectInfo)
     this.setState({ saveButton: false });
   }
-  
+
   handleClick(event) {
     event.preventDefault();
     this.setState({ saveButton: false });
@@ -45,7 +45,8 @@ class ProjectInfo extends Component {
     this.setState({ saveButton: true });
   }
   render(props) {
-    const { project, classes, edit  } = this.props;
+    const { projects, currentProject, edit, handleMenu, classes } = this.props;
+    let project = projects[currentProject];
     console.log(`ProjectInfo(${project.name})`);
     const buttonStyle = {
       marginTop: 25,
@@ -60,23 +61,24 @@ class ProjectInfo extends Component {
           autoComplete="off"
           onSubmit={this.handleSubmit}
         >
-          <ProjectMenu 
-          project={project}
-          typeOfMenu="project" 
-          menuIndex={1} 
-          handleMenu={this.props.handleMenu} />
-         
+          <ProjectMenu
+            projects={projects}
+            currentProject={currentProject}
+            typeOfMenu="project"
+            menuIndex={1}
+            handleMenu={handleMenu} />
+
           <TextField
-          disabled = {!edit}
-          id="outlined-name"
-          label="Name"
-          name="name"
-          className={classes.textField}
-          defaultValue={project.name}
-          margin="normal"
-          variant="outlined"
-          style={{ paddingRight: 5, width:300 }}
-          onChange={this.handleInputChange}
+            disabled={!edit}
+            id="outlined-name"
+            label="Name"
+            name="name"
+            className={classes.textField}
+            defaultValue={project.name}
+            margin="normal"
+            variant="outlined"
+            style={{ paddingRight: 5, width: 300 }}
+            onChange={this.handleInputChange}
           />
           <Button
             type="submit"
@@ -84,7 +86,7 @@ class ProjectInfo extends Component {
             variant="contained"
             color="primary"
             style={buttonStyle}
-            >
+          >
             Save
           </Button>
           <Button
@@ -94,13 +96,13 @@ class ProjectInfo extends Component {
             color="secondary"
             style={buttonStyle}
             onClick={this.handleClick}
-            >
+          >
             Cancel
           </Button>
           <br />
           <TextField
             id="outlined-sponsor"
-            disabled = {!edit}
+            disabled={!edit}
             label="Sponsor"
             name="sponsor"
             className={classes.textField}
@@ -109,10 +111,10 @@ class ProjectInfo extends Component {
             variant="outlined"
             style={{ paddingRight: 5 }}
             onChange={this.handleInputChange}
-            />
+          />
           <TextField
             id="outlined-manager"
-            disabled = {!edit}
+            disabled={!edit}
             label="Manager"
             name="projectManager"
             className={classes.textField}
@@ -121,19 +123,19 @@ class ProjectInfo extends Component {
             style={{ paddingRight: 5 }}
             variant="outlined"
             onChange={this.handleInputChange}
-            />
+          />
           <TextField
             id="outlined-project-type"
             label="Type"
             name="projectType"
             className={classes.textField}
-            disabled = {!edit}
+            disabled={!edit}
             defaultValue={project.projectType}
             margin="normal"
             style={{ paddingRight: 5 }}
             variant="outlined"
             onChange={this.handleInputChange}
-            />
+          />
           <TextField
             id="outlined-project-type"
             label="Creator"
@@ -145,19 +147,19 @@ class ProjectInfo extends Component {
             style={{ paddingRight: 5 }}
             variant="outlined"
             onChange={this.handleInputChange}
-            />
+          />
           <TextField
             id="outlined-start"
             label="Start"
             className={classes.textField}
             name="start"
-            disabled = {!edit}
+            disabled={!edit}
             defaultValue="2019/09/01"
             margin="normal"
             style={{ width: 150, paddingRight: 5 }}
             variant="outlined"
             onChange={this.handleInputChange}
-            />
+          />
           <TextField
             id="outlined-end"
             label="End"
@@ -165,11 +167,11 @@ class ProjectInfo extends Component {
             name="end"
             defaultValue="2019/10/30"
             style={{ width: 150, paddingRight: 5 }}
-            disabled = {!edit}
+            disabled={!edit}
             margin="normal"
             variant="outlined"
             onChange={this.handleInputChange}
-            />
+          />
 
           <br />
           <TextField
@@ -177,7 +179,7 @@ class ProjectInfo extends Component {
             label="Presenting problem / Opportunity"
             name="problemOpportunity"
             defaultValue={project.problemOpportunity}
-            disabled = {!edit}
+            disabled={!edit}
             margin="normal"
             variant="outlined"
             multiline={true}

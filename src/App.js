@@ -81,7 +81,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      project: db.readProject(),
+      projects: db.readProjects(),
       currentProject: 0,
       currentStep: 0,
       currentUser: "shawn@shawngriffin.com",
@@ -129,8 +129,9 @@ class App extends Component {
   }
   handleProjectInfoChange(changedProjectInfo) {
     if (this.state != null) {
+      let { projects, currentProject } = this.state;
+      let project = projects[currentProject];
       console.log(`handleProjectInfoChange(${Object.keys(changedProjectInfo)})`);
-      let project = this.state.project;
       const projectKeys = Object.keys(project);
       const changedKeys = Object.keys(changedProjectInfo);
       let changed = false;
@@ -162,7 +163,8 @@ class App extends Component {
   }
   handleYes(newText) {
     console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
-    let { project, currentStep, commandString } = this.state;
+    let { projects, currentStep, currentProject, commandString } = this.state;
+    let project = projects[currentProject];
     let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
     if (actionObject === "QUESTION") {
       switch (actionVerb) {
@@ -244,10 +246,11 @@ class App extends Component {
         default:
       }
     }
+    projects[currentProject] = project;
     this.setState(prevState => {
       return {
         ...prevState,
-        project: project,
+        projects: projects,
         alert: false,
         form: false,
         help: false,
@@ -275,7 +278,8 @@ class App extends Component {
     if (this.state != null) {
       console.log(`handleMenu(${commandString})`);
       let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
-      let { project, currentStep } = this.state;
+      let { projects, currentStep, currentProject } = this.state;
+      let project = projects[currentProject];
       if (actionObject === "QUESTION")
         switch (actionVerb) {
           case "ADD":
@@ -449,15 +453,15 @@ class App extends Component {
             break;
 
           case "EDITHELP":
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  form: true,
-                  title: `Edit guidance for project "${project.name}" below.`,
-                  text: project.tip,
-                  commandString: commandString
-                };
-              });
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Edit guidance for project "${project.name}" below.`,
+                text: project.tip,
+                commandString: commandString
+              };
+            });
 
             break;
 
@@ -466,14 +470,14 @@ class App extends Component {
             break;
 
           case "HELP":
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  help: true,
-                  title: project.name,
-                  text: project.tip.length > 0 ? project.tip : "Sorry, no guidance is available."
-                };
-              });
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                help: true,
+                title: project.name,
+                text: project.tip.length > 0 ? project.tip : "Sorry, no guidance is available."
+              };
+            });
 
             break;
           default:
@@ -483,22 +487,24 @@ class App extends Component {
   }
   render() {
     const classes = useStyles;
-    const { project, currentStep } = this.state;
+    let { projects, currentProject, currentStep } = this.state;
     return (
       <div>
         <ProjectInfo
-          classes={classes}
-          project={project}
+          projects={projects}
+          currentProject={currentProject}
           handleProjectInfoChange={this.handleProjectInfoChange}
           edit={this.state.projectInfoEdit}
           handleMenu={this.handleMenu}
+          classes={classes}
         />
         <br />
         <ProjectSteps
-          classes={classes}
-          project={project}
+          projects={projects}
+          currentProject={currentProject}
           handleStepChange={this.handleStepChange}
           handleMenu={this.handleMenu}
+          classes={classes}
         />
         <br />
         <Alert
@@ -524,11 +530,12 @@ class App extends Component {
           answerNo={this.handleNo}
         />
         <ProjectQuestions
-          classes={classes}
-          project={project}
+          projects={projects}
+          currentProject={currentProject}
           currentStep={currentStep}
           handleQuestionChange={this.handleQuestionChange}
           handleMenu={this.handleMenu}
+          classes={classes}
         />
       </div>
     );

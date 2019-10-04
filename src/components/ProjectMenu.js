@@ -45,15 +45,15 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-export default function CustomizedMenus({ project, typeOfMenu, menuIndex, handleMenu }) {
+export default function CustomizedMenus({ projects, currentProject, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
   const style = projectMenu ? { marginTop: 20 } : { marginTop: 0 }
-
+  
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
-
+  
   const handleSelect = (event, value) => {
     event.preventDefault();
     console.log(`CustomizedMenus.handleSelect(${event.currentTarget.id})`);
@@ -63,10 +63,10 @@ export default function CustomizedMenus({ project, typeOfMenu, menuIndex, handle
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
+  
   // TODO placeholder till I implement multiple projects. 
-  const projectList = [project.name, "Placeholder Project 2", "Placeholder Project 3"]
-  const projectMenuList = projectList.map((projectName, index) => {
+  const projectMenuList = projects.map((project, index) => {
     return (
       <StyledMenuItem
         key={`project.${index}.Select`}
@@ -76,7 +76,7 @@ export default function CustomizedMenus({ project, typeOfMenu, menuIndex, handle
         <ListItemIcon>
           <AssignmentIcon />
         </ListItemIcon>
-        <ListItemText primary={`${index + 1}) ${projectName}`} />
+        <ListItemText primary={`${index + 1}) ${project.name}`} />
       </StyledMenuItem>
     )
   })

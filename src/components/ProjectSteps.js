@@ -11,7 +11,7 @@ import Input from "@material-ui/core/Input";
 import * as utils from "../utils/generalUtilities.js";
 
 const stepLabelStyle = {
-  width:300,
+  width: 300,
   fontSize: 16
 };
 
@@ -34,11 +34,13 @@ const StyledTableRow = withStyles(theme => ({
 }))(TableRow);
 
 export default function ProjectSteps({
-  classes,
-  project,
+  projects,
+  currentProject,
   handleStepChange,
-  handleMenu
+  handleMenu,
+  classes
 }) {
+  let project = projects[currentProject];
   // project.stepTypes determines the number of columns. 
   // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
   let stepStrings = [];
@@ -55,11 +57,16 @@ export default function ProjectSteps({
         {project.stepTypes.map((stepType, stepIndex) => {
           return (
 
-            < TableCell variant="body" key={rowIndex*project.stepTypes.length + stepIndex}>
+            < TableCell variant="body" key={rowIndex * project.stepTypes.length + stepIndex}>
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
-                  <ProjectMenu project={project} typeOfMenu="step" menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu} />
+                  <ProjectMenu
+                    projects={projects}
+                    currentProject={currentProject}
+                    typeOfMenu="step"
+                    menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu}
+                  />
 
                   <Input
                     onClick={handleStepChange}

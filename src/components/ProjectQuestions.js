@@ -32,19 +32,26 @@ const StyledTableRow = withStyles(theme => ({
 
 
 export default function ProjectQuestions({
-  classes,
-  project,
+  projects,
+  currentProject,
   currentStep,
   handleQuestionChange,
-  handleMenu
+  handleMenu,
+  classes
 }) {
+  let project = projects[currentProject];
 
   const tableRows = project.steps[currentStep].questions.map(
     (question, index) => {
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
           <TableCell>
-            <ProjectMenu project={project} typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
+            <ProjectMenu
+              projects={projects}
+              currentProject={currentProject}
+              typeOfMenu="question"
+              menuIndex={index}
+              handleMenu={handleMenu} />
             {index + 1}) {question.question}
           </TableCell>
           <TableCell>
