@@ -234,9 +234,17 @@ class App extends Component {
           break;
         default:
       }
-    } else if (actionObject === "PROJECT") {
+    }
+    // we set this here since for step or question we are not potentially deleting the current project
+    projects[currentProject] = project;
+
+    if (actionObject === "PROJECT") {
       switch (actionVerb) {
         case "ADD":
+          let newProject = db.readProject();
+          newProject.name = newText;
+          projects.push(newProject);
+          currentProject = projects.length - 1;
           break;
         case "EDIT":
           break;
@@ -244,13 +252,14 @@ class App extends Component {
           project.tip = newText;
           break;
         case "DELETE":
+          projects.splice(currentProject, 1)
+          currentProject = 0;
           break;
         case "HELP":
           break;
         default:
       }
     }
-    projects[currentProject] = project;
     this.setState(prevState => {
       return {
         ...prevState,
@@ -259,7 +268,8 @@ class App extends Component {
         form: false,
         help: false,
         commandString: "",
-        currentStep: currentStep
+        currentStep: currentStep,
+        currentProject: currentProject
       };
     });
   }
@@ -412,7 +422,7 @@ class App extends Component {
             else {
               this.setState(prevState => {
                 return {
-                  ...prevState, 
+                  ...prevState,
                   alert: true,
                   title: "Cannot delete the last step.",
                   text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
@@ -441,7 +451,15 @@ class App extends Component {
         switch (actionVerb) {
 
           case "ADD":
-
+            actionIndex = projects.length;
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Add new project #${actionIndex + 1})`, text: "",
+                commandString: commandString
+              }
+            });
             break;
           case "SELECT":
             this.setState(prevState => {
@@ -482,7 +500,28 @@ class App extends Component {
             break;
 
           case "DELETE":
-
+            //cannot delete last step
+            if (projects.length > 1) {
+              this.setState(prevState => {
+                return {
+                  ...prevState, alert: true,
+                  title: "Delete the following project?",
+                  text: `${currentProject + 1}) ${project.name}`,
+                  commandString: commandString
+                };
+              });
+            }
+            else {
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  alert: true,
+                  title: "Cannot delete the last project.",
+                  text: `Cannot delete ${currentProject + 1}) ${project.name}`,
+                  commandString: ""
+                };
+              });
+            }
             break;
 
           case "HELP":

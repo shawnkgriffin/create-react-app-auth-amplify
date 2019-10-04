@@ -112,7 +112,6 @@ export default function CustomizedMenus({ projects, currentProject, typeOfMenu, 
         {projectMenu &&
           <StyledMenuItem
             key={"2"}
-            disabled
             id={`${typeOfMenu}.${menuIndex}.Add`}
             onClick={handleSelect}
           >
@@ -164,7 +163,7 @@ export default function CustomizedMenus({ projects, currentProject, typeOfMenu, 
           </ListItemIcon>
           <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} disabled = {projectMenu} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
