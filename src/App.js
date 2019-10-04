@@ -93,7 +93,8 @@ class App extends Component {
       title: "",
       text: "",
       form: false,
-      help: false
+      help: false,
+      projectInfoEdit:false
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(this);
@@ -416,6 +417,7 @@ render() {
         classes={classes}
         project={project}
         handleProjectInfoChange={this.handleProjectInfoChange}
+        edit={this.state.projectInfoEdit}
       />
       <br />
       <ProjectSteps
