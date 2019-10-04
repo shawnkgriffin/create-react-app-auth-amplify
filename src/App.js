@@ -196,6 +196,8 @@ class App extends Component {
           break;
         default:
       }
+      projects[currentProject] = project;
+
     } else if (actionObject === "STEP") {
       switch (actionVerb) {
         case "ADD":
@@ -234,9 +236,8 @@ class App extends Component {
           break;
         default:
       }
+      projects[currentProject] = project;
     }
-    // we set this here since for step or question we are not potentially deleting the current project
-    projects[currentProject] = project;
 
     if (actionObject === "PROJECT") {
       switch (actionVerb) {
