@@ -12,6 +12,7 @@ class ProjectInfo extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(event) {
@@ -19,7 +20,18 @@ class ProjectInfo extends Component {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const id = target.id;
-    console.log(`handleSubmit(target:${target},value:${value}, id:${id})`);
+    const name = target.name;
+    console.log(`handleSubmit(target:${target},value:${value}, name:${name}, id:${id})`);
+    let newProjectInfo = this.state;
+    this.props.handleProjectInfoChange(newProjectInfo)
+    this.setState({ saveButton: false });
+  }
+  
+  handleClick(event) {
+    event.preventDefault();
+    this.setState({ saveButton: false });
+    let newProjectInfo = {};
+    this.props.handleProjectInfoChange(newProjectInfo)
   }
   handleInputChange(event) {
     const target = event.target;
@@ -58,22 +70,25 @@ class ProjectInfo extends Component {
             defaultValue={project.name}
             margin="normal"
             variant="outlined"
-            style={{ paddingRight: 5 }}
+            style={{ paddingRight: 5, width:300 }}
             onChange={this.handleInputChange}
           />
           <Button
             type="submit"
+            name="submit"
             variant="contained"
             color="primary"
             style={buttonStyle}
-          >
+            >
             Save
           </Button>
           <Button
-            type="submit"
+            type="button"
+            name="cancel"
             variant="contained"
             color="secondary"
             style={buttonStyle}
+            onClick={this.handleClick}
           >
             Cancel
           </Button>
@@ -106,6 +121,18 @@ class ProjectInfo extends Component {
             name="projectType"
             className={classes.textField}
             defaultValue={project.projectType}
+            margin="normal"
+            style={{ paddingRight: 5 }}
+            variant="outlined"
+            onChange={this.handleInputChange}
+          />
+          <TextField
+            id="outlined-project-type"
+            label="Creator"
+            name="creator"
+            disabled
+            className={classes.textField}
+            value={project.creator}
             margin="normal"
             style={{ paddingRight: 5 }}
             variant="outlined"

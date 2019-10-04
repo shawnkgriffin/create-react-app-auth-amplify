@@ -96,6 +96,7 @@ class App extends Component {
       help: false
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    this.handleProjectInfoChange = this.handleProjectInfoChange.bind(this);
     this.handleStepChange = this.handleStepChange.bind(this);
     this.handleMenu = this.handleMenu.bind(this);
     this.handleYes = this.handleYes.bind(this);
@@ -125,320 +126,337 @@ class App extends Component {
       }
     }
   }
-  handleStepChange(e) {
+  handleProjectInfoChange(changedProjectInfo) {
     if (this.state != null) {
-      const stepString = e.target.value.split(")");
-      const stepNumber = parseInt(stepString[0], 10) - 1;
-
+      console.log(`handleProjectInfoChange(${Object.keys(changedProjectInfo)})`);
       let project = this.state.project;
-      if (stepNumber >= 0 && stepNumber < project.steps.length) {
-        this.setState(prevState => {
-          return { ...prevState, currentStep: stepNumber };
-        });
-      }
+      const projectKeys = Object.keys(project);
+      const changedKeys = Object.keys(changedProjectInfo);
+      changedKeys.forEach(key => {if ( projectKeys.includes(key)) project[key]= changedProjectInfo[key]} )
+      this.setState(prevState => {
+        return { ...prevState, project: project };
+      });
     }
   }
-  handleYes(newText) {
-    console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
-    let { project, currentStep, commandString } = this.state;
+
+handleStepChange(e) {
+  if (this.state != null) {
+    const stepString = e.target.value.split(")");
+    const stepNumber = parseInt(stepString[0], 10) - 1;
+
+    let project = this.state.project;
+    if (stepNumber >= 0 && stepNumber < project.steps.length) {
+      this.setState(prevState => {
+        return { ...prevState, currentStep: stepNumber };
+      });
+    }
+  }
+}
+handleYes(newText) {
+  console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
+  let { project, currentStep, commandString } = this.state;
+  let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
+  if (actionObject === "QUESTION") {
+    switch (actionVerb) {
+      case "ADD":
+        const newQuestion = {
+          "number": "",
+          "question": newText,
+          "validAnswers": "",
+          "answer": "",
+          "tip": "",
+          "skip": false,
+          "answerHistory": []
+        }
+        actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+        project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+        break;
+      case "EDIT":
+        project.steps[currentStep].questions[actionIndex].question = newText;
+        break;
+      case "EDITHELP":
+        project.steps[currentStep].questions[actionIndex].tip = newText;
+        break;
+      case "DELETE":
+        project.steps[currentStep].questions.splice(actionIndex, 1)
+        break;
+      default:
+    }
+  } else if (actionObject === "STEP") {
+    switch (actionVerb) {
+      case "ADD":
+        const newStep = {
+          "stepLabel": newText,
+          "stepType": project.steps[actionIndex].stepType,
+          "stepNumber": 20,
+          "skip": false,
+          "tip": "",
+          "questions": [
+            {
+              "number": "",
+              "question": "First question.",
+              "validAnswers": "",
+              "answer": "",
+              "tip": "",
+              "skip": false,
+              "answerHistory": []
+            }]
+        };
+        actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+        project.steps.splice(actionIndex, 0, newStep);
+        currentStep = actionIndex;
+        break;
+      case "EDIT":
+        project.steps[actionIndex].stepLabel = newText;
+        break;
+      case "EDITHELP":
+        project.steps[actionIndex].tip = newText;
+        break;
+      case "DELETE":
+        project.steps.splice(actionIndex, 1)
+        currentStep = 0;
+        break;
+      case "HELP":
+        break;
+      default:
+    }
+  }
+  this.setState(prevState => {
+    return {
+      ...prevState,
+      project: project,
+      alert: false,
+      form: false,
+      help: false,
+      commandString: "",
+      currentStep: currentStep
+    };
+  });
+}
+handleNo(e) {
+  console.log(`handleNo(${this.state.commandString}`)
+  this.setState(prevState => {
+    return {
+      ...prevState,
+      alert: false,
+      form: false,
+      help: false,
+      title: "",
+      text: "",
+      commandString: ""
+    };
+  });
+}
+
+handleMenu(commandString) {
+  if (this.state != null) {
+    console.log(`handleMenu(${commandString})`);
     let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
+    let { project, currentStep } = this.state;
     if (actionObject === "QUESTION") {
       switch (actionVerb) {
         case "ADD":
-          const newQuestion = {
-            "number": "",
-            "question": newText,
-            "validAnswers": "",
-            "answer": "",
-            "tip": "",
-            "skip": false,
-            "answerHistory": []
-          }
+
           actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
-          project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              form: true,
+              title: `Add question #${actionIndex + 1})`, text: "",
+              commandString: commandString
+            }
+          });
           break;
         case "EDIT":
-          project.steps[currentStep].questions[actionIndex].question = newText;
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              form: true,
+              title: `Edit question #${actionIndex + 1}) below.`,
+              text: project.steps[currentStep].questions[actionIndex].question,
+              commandString: commandString
+            }
+          });
           break;
         case "EDITHELP":
-          project.steps[currentStep].questions[actionIndex].tip = newText;
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              form: true,
+              title: `Edit guidance for #${actionIndex + 1}) below.`,
+              text: project.steps[currentStep].questions[actionIndex].tip,
+              commandString: commandString
+            }
+          });
           break;
         case "DELETE":
-          project.steps[currentStep].questions.splice(actionIndex, 1)
+          if (project.steps[currentStep].questions.length > 1) {
+
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: "Delete the following question?",
+                text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                commandString: commandString
+              };
+            });
+          } else {
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: "Cannot delete the last question.",
+                text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                commandString: commandString
+              };
+            });
+
+          }
+          break;
+        case "HELP":
+          console.log("Help")
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              help: true,
+              title: project.steps[currentStep].questions[actionIndex].question,
+              text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no guidance is available."
+
+            };
+          });
           break;
         default:
       }
     } else if (actionObject === "STEP") {
       switch (actionVerb) {
+
         case "ADD":
-          const newStep = {
-            "stepLabel": newText,
-            "stepType": project.steps[actionIndex].stepType,
-            "stepNumber": 20,
-            "skip": false,
-            "tip": "",
-            "questions": [
-              {
-                "number": "",
-                "question": "First question.",
-                "validAnswers": "",
-                "answer": "",
-                "tip": "",
-                "skip": false,
-                "answerHistory": []
-              }]
-          };
           actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
-          project.steps.splice(actionIndex, 0, newStep);
-          currentStep = actionIndex;
+          this.setState(prevState => {
+            return {
+              ...prevState, form: true, title: `Add step #${actionIndex + 1})`, text: "",
+              commandString: commandString
+            }
+          });
           break;
+
         case "EDIT":
-          project.steps[actionIndex].stepLabel = newText;
+
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              form: true,
+              title: `Edit step #${actionIndex + 1}) below.`,
+              text: project.steps[actionIndex].stepLabel,
+              commandString: commandString
+            };
+          });
           break;
+
         case "EDITHELP":
-          project.steps[actionIndex].tip = newText;
+
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              form: true,
+              title: `Edit guidance for step #${actionIndex + 1}) below.`,
+              text: project.steps[actionIndex].tip,
+              commandString: commandString
+            };
+          });
           break;
+
         case "DELETE":
-          project.steps.splice(actionIndex, 1)
-          currentStep = 0;
+          //cannot delete last step
+          if (project.steps.length > 1) {
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: "Delete the following step?",
+                text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                commandString: commandString
+              };
+            });
+          }
+          else {
+            this.setState(prevState => {
+              return {
+                ...prevState, alert: true,
+                title: "Cannot delete the last step.",
+                text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                commandString: ""
+              };
+            });
+          }
           break;
+
         case "HELP":
+          console.log("Help")
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              help: true,
+              title: project.steps[actionIndex].stepLabel,
+              text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no guidance is available."
+
+            };
+          });
           break;
         default:
       }
     }
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        project: project,
-        alert: false,
-        form: false,
-        help: false,
-        commandString: "",
-        currentStep: currentStep
-      };
-    });
   }
-  handleNo(e) {
-    console.log(`handleNo(${this.state.commandString}`)
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        alert: false,
-        form: false,
-        help: false,
-        title: "",
-        text: "",
-        commandString: ""
-      };
-    });
-  }
+}
 
-  handleMenu(commandString) {
-    if (this.state != null) {
-      console.log(`handleMenu(${commandString})`);
-      let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
-      let { project, currentStep } = this.state;
-      if (actionObject === "QUESTION") {
-        switch (actionVerb) {
-          case "ADD":
-
-            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Add question #${actionIndex + 1})`, text: "",
-                commandString: commandString
-              }
-            });
-            break;
-          case "EDIT":
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit question #${actionIndex + 1}) below.`,
-                text: project.steps[currentStep].questions[actionIndex].question,
-                commandString: commandString
-              }
-            });
-            break;
-          case "EDITHELP":
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit guidance for #${actionIndex + 1}) below.`,
-                text: project.steps[currentStep].questions[actionIndex].tip,
-                commandString: commandString
-              }
-            });
-            break;
-          case "DELETE":
-            if (project.steps[currentStep].questions.length > 1) {
-
-              this.setState(prevState => {
-                return {
-                  ...prevState, alert: true,
-                  title: "Delete the following question?",
-                  text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
-                  commandString: commandString
-                };
-              });
-            } else {
-              this.setState(prevState => {
-                return {
-                  ...prevState, alert: true,
-                  title: "Cannot delete the last question.",
-                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
-                  commandString: commandString
-                };
-              });
-
-            }
-            break;
-          case "HELP":
-            console.log("Help")
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                help: true,
-                title: project.steps[currentStep].questions[actionIndex].question,
-                text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no guidance is available."
-
-              };
-            });
-            break;
-          default:
-        }
-      } else if (actionObject === "STEP") {
-        switch (actionVerb) {
-
-          case "ADD":
-            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
-            this.setState(prevState => {
-              return {
-                ...prevState, form: true, title: `Add step #${actionIndex + 1})`, text: "",
-                commandString: commandString
-              }
-            });
-            break;
-
-          case "EDIT":
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit step #${actionIndex + 1}) below.`,
-                text: project.steps[actionIndex].stepLabel,
-                commandString: commandString
-              };
-            });
-            break;
-
-          case "EDITHELP":
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit guidance for step #${actionIndex + 1}) below.`,
-                text: project.steps[actionIndex].tip,
-                commandString: commandString
-              };
-            });
-            break;
-
-          case "DELETE":
-            //cannot delete last step
-            if (project.steps.length > 1) {
-              this.setState(prevState => {
-                return {
-                  ...prevState, alert: true,
-                  title: "Delete the following step?",
-                  text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
-                  commandString: commandString
-                };
-              });
-            }
-            else {
-              this.setState(prevState => {
-                return {
-                  ...prevState, alert: true,
-                  title: "Cannot delete the last step.",
-                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
-                  commandString: ""
-                };
-              });
-            }
-            break;
-
-          case "HELP":
-            console.log("Help")
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                help: true,
-                title: project.steps[actionIndex].stepLabel,
-                text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no guidance is available."
-
-              };
-            });
-            break;
-          default:
-        }
-      }
-    }
-  }
-
-  render() {
-    const classes = useStyles;
-    const { project, currentStep } = this.state;
-    return (
-      <div>
-        <ProjectInfo classes={classes} project={project} />
-        <br />
-        <ProjectSteps
-          classes={classes}
-          project={project}
-          handleStepChange={this.handleStepChange}
-          handleMenu={this.handleMenu}
-        />
-        <br />
-        <Alert
-          open={this.state.alert}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-        />
-        <FormDialog
-          open={this.state.form}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-          classes={classes}
-        />
-        <Help
-          open={this.state.help}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-        />
-        <ProjectQuestions
-          classes={classes}
-          project={project}
-          currentStep={currentStep}
-          handleQuestionChange={this.handleQuestionChange}
-          handleMenu={this.handleMenu}
-        />
-      </div>
-    );
-  }
+render() {
+  const classes = useStyles;
+  const { project, currentStep } = this.state;
+  return (
+    <div>
+      <ProjectInfo
+        classes={classes}
+        project={project}
+        handleProjectInfoChange={this.handleProjectInfoChange}
+      />
+      <br />
+      <ProjectSteps
+        classes={classes}
+        project={project}
+        handleStepChange={this.handleStepChange}
+        handleMenu={this.handleMenu}
+      />
+      <br />
+      <Alert
+        open={this.state.alert}
+        title={this.state.title}
+        text={this.state.text}
+        answerYes={this.handleYes}
+        answerNo={this.handleNo}
+      />
+      <FormDialog
+        open={this.state.form}
+        title={this.state.title}
+        text={this.state.text}
+        answerYes={this.handleYes}
+        answerNo={this.handleNo}
+        classes={classes}
+      />
+      <Help
+        open={this.state.help}
+        title={this.state.title}
+        text={this.state.text}
+        answerYes={this.handleYes}
+        answerNo={this.handleNo}
+      />
+      <ProjectQuestions
+        classes={classes}
+        project={project}
+        currentStep={currentStep}
+        handleQuestionChange={this.handleQuestionChange}
+        handleMenu={this.handleMenu}
+      />
+    </div>
+  );
+}
 }
 
 export default withAuthenticator(App, true);
