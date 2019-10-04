@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
-import MenuProjects from "../components/MenuProjects";
+import ProjectMenu from "./ProjectMenu";
 import { TextField, Button } from "@material-ui/core";
 
 class ProjectInfo extends Component {
@@ -60,7 +60,11 @@ class ProjectInfo extends Component {
           autoComplete="off"
           onSubmit={this.handleSubmit}
         >
-          <MenuProjects />
+          <ProjectMenu 
+          typeOfMenu="project" 
+          menuIndex={1} 
+          handleMenu={this.props.handleMenu} />
+         
           <TextField
           disabled = {!edit}
           id="outlined-name"

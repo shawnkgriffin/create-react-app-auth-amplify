@@ -45,6 +45,8 @@ const StyledMenuItem = withStyles(theme => ({
 
 export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
+  const style = projectMenu ? { marginTop: 20 } : { marginTop: 0 }
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -70,7 +72,7 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           padding-top="30px"
           onClick={handleClick}
           size="small"
-          style={{ marginTop: 0 }}
+          style={style}
         >
           <MoreVertIcon />
         </IconButton>
@@ -82,26 +84,42 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem
-          key={"1"}
-          id={`${typeOfMenu}.${menuIndex}.Add.Above`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <AddIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Add a ${typeOfMenu} above this one.`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          key={"2"}
-          id={`${typeOfMenu}.${menuIndex}.Add.Below`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <AddIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
-        </StyledMenuItem>
+        {!projectMenu &&
+          <StyledMenuItem
+            key={"1"}
+            id={`${typeOfMenu}.${menuIndex}.Add.Above`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary={`Add a ${typeOfMenu} above this one.`} />
+          </StyledMenuItem>
+        }
+        {!projectMenu &&
+          <StyledMenuItem
+            key={"2"}
+            id={`${typeOfMenu}.${menuIndex}.Add.Below`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
+          </StyledMenuItem>
+        }
+        {projectMenu &&
+          <StyledMenuItem
+            key={"2"}
+            id={`${typeOfMenu}.${menuIndex}.Add`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary={`Add a new ${typeOfMenu}.`} />
+          </StyledMenuItem>
+        }
         <StyledMenuItem
           key={"3"}
           id={`${typeOfMenu}.${menuIndex}.Edit`}
