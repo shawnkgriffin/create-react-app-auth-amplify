@@ -8,9 +8,11 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
+import AssignmentIcon from "@material-ui/icons/Assignment";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import HelpIcon from "@material-ui/icons/Help";
+import { Divider } from "@material-ui/core";
 
 const StyledMenu = withStyles({
   paper: {
@@ -43,7 +45,7 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
+export default function CustomizedMenus({ project, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
   const style = projectMenu ? { marginTop: 20 } : { marginTop: 0 }
@@ -61,6 +63,23 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  // TODO placeholder till I implement multiple projects. 
+  const projectList = [project.name, "Placeholder Project 2", "Placeholder Project 3"]
+  const projectMenuList = projectList.map((projectName, index) => {
+    return (
+      <StyledMenuItem
+        key={`project.${index}.Select`}
+        id={`project.${index}.Select`}
+        onClick={handleSelect}
+      >
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary={`${index + 1}) ${projectName}`} />
+      </StyledMenuItem>
+    )
+  })
 
   return (
     <Fragment>
@@ -84,6 +103,25 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        {projectMenu &&
+          projectMenuList
+        }
+        {projectMenu &&
+          <Divider />
+        }
+        {projectMenu &&
+          <StyledMenuItem
+            key={"2"}
+            disabled
+            id={`${typeOfMenu}.${menuIndex}.Add`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary={`Add a new ${typeOfMenu}.`} />
+          </StyledMenuItem>
+        }
         {!projectMenu &&
           <StyledMenuItem
             key={"1"}
@@ -108,18 +146,6 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
             <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
           </StyledMenuItem>
         }
-        {projectMenu &&
-          <StyledMenuItem
-            key={"2"}
-            id={`${typeOfMenu}.${menuIndex}.Add`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a new ${typeOfMenu}.`} />
-          </StyledMenuItem>
-        }
         <StyledMenuItem
           key={"3"}
           id={`${typeOfMenu}.${menuIndex}.Edit`}
@@ -138,7 +164,7 @@ export default function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           </ListItemIcon>
           <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+        <StyledMenuItem key={"5"} disabled = {projectMenu} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>

@@ -59,7 +59,7 @@ export default function ProjectSteps({
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
-                  <ProjectMenu typeOfMenu="step" menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu} />
+                  <ProjectMenu project={project} typeOfMenu="step" menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu} />
 
                   <Input
                     onClick={handleStepChange}

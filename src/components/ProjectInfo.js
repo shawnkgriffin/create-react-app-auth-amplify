@@ -61,6 +61,7 @@ class ProjectInfo extends Component {
           onSubmit={this.handleSubmit}
         >
           <ProjectMenu 
+          project={project}
           typeOfMenu="project" 
           menuIndex={1} 
           handleMenu={this.props.handleMenu} />

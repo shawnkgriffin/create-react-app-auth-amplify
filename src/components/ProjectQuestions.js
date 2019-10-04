@@ -38,13 +38,13 @@ export default function ProjectQuestions({
   handleQuestionChange,
   handleMenu
 }) {
-  
+
   const tableRows = project.steps[currentStep].questions.map(
     (question, index) => {
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
           <TableCell>
-          <ProjectMenu typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
+            <ProjectMenu project={project} typeOfMenu="question" menuIndex={index} handleMenu={handleMenu} />
             {index + 1}) {question.question}
           </TableCell>
           <TableCell>
@@ -57,7 +57,7 @@ export default function ProjectQuestions({
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
               disableRipple
-              />
+            />
           </TableCell>
           <TableCell>
             <Radio
@@ -69,7 +69,7 @@ export default function ProjectQuestions({
               inputProps={{ "aria-label": "A" }}
               onChange={handleQuestionChange}
               disableRipple
-              />
+            />
           </TableCell>
           <TableCell>
             <Radio
@@ -86,10 +86,10 @@ export default function ProjectQuestions({
         </StyledTableRow>
       );
     }
-    );
-    
-    return (
-      <Paper className={classes.paper}>
+  );
+
+  return (
+    <Paper className={classes.paper}>
       <form className={classes.container} noValidate autoComplete="off">
         <TextField
           id="outlined-full-width"
