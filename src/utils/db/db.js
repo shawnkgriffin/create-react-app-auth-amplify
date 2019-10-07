@@ -108,7 +108,8 @@ function readSurvey() {
 
 function readProject() {
   let project = require('./project.json');
-  return (project);
+  let newProject = Object.create(project)
+  return (newProject);
 }
 /**
 * Description

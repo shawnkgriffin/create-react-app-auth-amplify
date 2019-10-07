@@ -245,6 +245,7 @@ class App extends Component {
           let newProject = db.readProject();
           newProject.name = newText;
           projects.push(newProject);
+          currentStep = 0;
           currentProject = projects.length - 1;
           break;
         case "EDIT":
