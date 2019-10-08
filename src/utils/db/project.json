@@ -160,7 +160,7 @@
       "help": "Help",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -168,7 +168,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -176,7 +176,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -184,7 +184,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -192,7 +192,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Do you have a plan for launching the project?",
+          "name": "Do you have a plan for launching the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -200,7 +200,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Do you know how many teams will be required?",
+          "name": "Do you know how many teams will be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -208,7 +208,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Do you know the departments or functions that need to be represented on the core team?",
+          "name": "Do you know the departments or functions that need to be represented on the core team?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -216,7 +216,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have the team members been identified and confirmed?",
+          "name": "Have the team members been identified and confirmed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -224,7 +224,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have you identified how often, how, and where the teams will meet?",
+          "name": "Have you identified how often, how, and where the teams will meet?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -232,7 +232,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you identified a general estimate of the time required for each team member?",
+          "name": "Have you identified a general estimate of the time required for each team member?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -240,7 +240,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has team member responsibilities been assigned?",
+          "name": "Has team member responsibilities been assigned?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -248,7 +248,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Do any of the teams or individual members need specific training?",
+          "name": "Do any of the teams or individual members need specific training?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -256,7 +256,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have team norms been established?",
+          "name": "Have team norms been established?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -264,7 +264,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Have team operating procedures been defined?",
+          "name": "Have team operating procedures been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -272,7 +272,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -280,7 +280,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -297,7 +297,7 @@
       "help": "Projects are never done for their own purpose, they are always part of or support a higher goal,",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -305,7 +305,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -313,7 +313,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -321,7 +321,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started? ",
+          "name": "Has work on this step started? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -329,7 +329,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Has the problem to be solved been clearly stated?",
+          "name": "Has the problem to be solved been clearly stated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -337,7 +337,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Is there agreement on the Problem to be solved?",
+          "name": "Is there agreement on the Problem to be solved?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -345,7 +345,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Has the proposed solution been defined? ",
+          "name": "Has the proposed solution been defined? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -353,7 +353,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have the project goals been established? ",
+          "name": "Have the project goals been established? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -361,7 +361,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have the expected measurable results been identified?",
+          "name": "Have the expected measurable results been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -369,7 +369,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Does this project have a specific budget constraint?",
+          "name": "Does this project have a specific budget constraint?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -377,7 +377,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Does this project have a specific schedule constraint?",
+          "name": "Does this project have a specific schedule constraint?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -385,7 +385,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Has the project process been defined?",
+          "name": "Has the project process been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -393,7 +393,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -401,7 +401,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -418,7 +418,7 @@
       "help": "\nCreate the initial schedule in an appropriate tool; ",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -426,7 +426,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -434,7 +434,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -442,7 +442,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -450,7 +450,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have you selected an appropriate scheduling tool?",
+          "name": "Have you selected an appropriate scheduling tool?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -458,7 +458,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Do any of the team members need training on the scheduling tool?",
+          "name": "Do any of the team members need training on the scheduling tool?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -466,7 +466,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Has the preliminary schedule been developed?",
+          "name": "Has the preliminary schedule been developed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -474,7 +474,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Has the preliminary schedule been shared?",
+          "name": "Has the preliminary schedule been shared?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -482,7 +482,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Has the schedule update process been defined?",
+          "name": "Has the schedule update process been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -490,7 +490,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -498,7 +498,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -515,7 +515,7 @@
       "help": "Step five, project deliverables summary, Projects produce, create, and implement deliverables.",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed? ",
+          "name": "Is someone assigned to ensure this step in completed? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -523,7 +523,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -531,7 +531,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -539,7 +539,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started? ",
+          "name": "Has work on this step started? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -547,7 +547,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have the solution deliverables been identified?",
+          "name": "Have the solution deliverables been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -555,7 +555,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have communication deliverables been Identified?",
+          "name": "Have communication deliverables been Identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -563,7 +563,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are there any behavior change deliverables required?",
+          "name": "Are there any behavior change deliverables required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -571,7 +571,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are there any project management deliverables required?",
+          "name": "Are there any project management deliverables required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -579,7 +579,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have all tasks or work packages for each deliverable been identified? ",
+          "name": "Have all tasks or work packages for each deliverable been identified? ",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -587,7 +587,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have all deliverables been assigned and validated?",
+          "name": "Have all deliverables been assigned and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -595,7 +595,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Have all tasks and work packages been assigned and validated?",
+          "name": "Have all tasks and work packages been assigned and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -603,7 +603,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Has the start and completion criteria been validated for key tasks and work packages?",
+          "name": "Has the start and completion criteria been validated for key tasks and work packages?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -611,7 +611,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have estimated start and finish dates been identified for tasks and work packages?",
+          "name": "Have estimated start and finish dates been identified for tasks and work packages?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -619,7 +619,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Has the estimated project schedule been created and shared?",
+          "name": "Has the estimated project schedule been created and shared?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -627,7 +627,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -635,7 +635,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -652,7 +652,7 @@
       "help": "\nRemember:\nThe further into a project you go, the more expensive the Go – No/Go decision",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -660,7 +660,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -668,7 +668,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -676,7 +676,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -684,7 +684,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Has the requirement for project plan approval been identified?",
+          "name": "Has the requirement for project plan approval been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -692,7 +692,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have the people involved in the approval been identified?",
+          "name": "Have the people involved in the approval been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -700,7 +700,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Has the approval date, time, and location established?",
+          "name": "Has the approval date, time, and location established?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -708,7 +708,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Has the material and information required for the approval been developed?",
+          "name": "Has the material and information required for the approval been developed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -716,7 +716,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Has the feedback and recommendations from the approval been processed?",
+          "name": "Has the feedback and recommendations from the approval been processed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -724,7 +724,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -732,7 +732,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -749,7 +749,7 @@
       "help": "\n\n\nIdentify the departments and / or groups most impacted by the project and whose requirements will need to be considered and understood in order to ensure project success.  The elements to discuss & gather from each group include their view of the project’s goals, their needs & wants, current business state, key assumptions, technology requirements, quality requirements & organizational considerations. \n\n \n\nGuidance Questions: \n    What do we need before we can start working on this item?\n    What departments will be most impacted by the project?\n    Which department’s requirements will significantly drive the project’s direction?\n    What are each key group’s goals & objectives for the project?\n    How involved does each key group intend to be in the project?\n    How involved does each key group need to be in the project?\n    What are the key group’s needs?\n    What are the key group’s wants?\n    What’s the key group’s current state?\n    What are their assumptions?\n    Why do they believe that…?\n    It appears that they are assuming…?\n    What are the assumptions that appear to be driving resistance within the groups?\n    What are the assumptions that appear to be driving support within the groups?\n    What’s the risk of proceeding with certain assumptions?\n    What are the group’s requirements and specifications?\n    How will we assess and validate the requirements and specifications?\n    What are the technology requirements and specifications?\n    How will we assess and validate the technology requirements and specifications?\n    What are the quality / performance requirements?\n    How will we assess and validate the quality requirements and specifications?\n    How will we know this item has been completed?\n​\n\nStep seven, Additional Requirements, Depending on the project, initial requirements have already been shared during the first six steps. Additional requirements can come from multiple groups, such as customers, management, project sponsor, stakeholders, users of the intended solution, groups impacted by the problem and proposed solution, regulators, citizens, and local, state, and federal government. Identify the groups that will be providing the summary and detailed requirements for your project. Consider meeting with representatives from the key groups, facilitate a session for gathering the following information, group's goals and objective for the project, their needs and wants, their current state, key assumptions, solution requirements, technology requirements, quality requirements, and organizational considerations.  Ask open ended questions, document the requirements, review each requirement, decide which ones will be met, provide feedback to the groups explaining the results of the meetings, decisions and reasons for the actions to be taken. If you would like more detail for this step, say Project Requirements, When you have sufficient information, continue to the next step by saying, Step Eight.\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -757,7 +757,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -765,7 +765,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -773,7 +773,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -781,7 +781,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have you identified the departments most impacted by the project?",
+          "name": "Have you identified the departments most impacted by the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -789,7 +789,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Do you know which department’s requirements will significantly drive the project’s direction?",
+          "name": "Do you know which department’s requirements will significantly drive the project’s direction?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -797,7 +797,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Do you know the most impacted group’s goals and objectives for the project?",
+          "name": "Do you know the most impacted group’s goals and objectives for the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -805,7 +805,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are the most impacted groups adequately involved in the project?",
+          "name": "Are the most impacted groups adequately involved in the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -813,7 +813,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have the most impacted group's needs been identified?",
+          "name": "Have the most impacted group's needs been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -821,7 +821,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have the most impacted group's wants been identified?",
+          "name": "Have the most impacted group's wants been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -829,7 +829,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Are you aware of any major issues that may impact the project?",
+          "name": "Are you aware of any major issues that may impact the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -837,7 +837,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Are there any significant assumptions that may impact the project?",
+          "name": "Are there any significant assumptions that may impact the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -845,7 +845,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Are there any assumptions that appear to be driving resistance within the groups?",
+          "name": "Are there any assumptions that appear to be driving resistance within the groups?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -853,7 +853,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Are there any assumptions that appear to be driving support within the groups?",
+          "name": "Are there any assumptions that appear to be driving support within the groups?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -861,7 +861,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Is there risk in proceeding with the project due to certain assumptions?",
+          "name": "Is there risk in proceeding with the project due to certain assumptions?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -869,7 +869,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Do you know the most impacted roup’s requirements and specifications?",
+          "name": "Do you know the most impacted roup’s requirements and specifications?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -877,7 +877,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Do you know how you will assess and validate the requirements and specifications?",
+          "name": "Do you know how you will assess and validate the requirements and specifications?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -885,7 +885,7 @@
           "answerHistory": []
         },
         {
-          "name": "18. Do you know the technology requirements and specifications?",
+          "name": "Do you know the technology requirements and specifications?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -893,7 +893,7 @@
           "answerHistory": []
         },
         {
-          "name": "19. Do you know how you will assess and validate the technology requirements and specifications?",
+          "name": "Do you know how you will assess and validate the technology requirements and specifications?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -901,7 +901,7 @@
           "answerHistory": []
         },
         {
-          "name": "20. Do you know the quality / performance requirements?",
+          "name": "Do you know the quality / performance requirements?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -909,7 +909,7 @@
           "answerHistory": []
         },
         {
-          "name": "21. Do you know how you will assess and validate the quality requirements and specifications?",
+          "name": "Do you know how you will assess and validate the quality requirements and specifications?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -917,7 +917,7 @@
           "answerHistory": []
         },
         {
-          "name": "22. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -925,7 +925,7 @@
           "answerHistory": []
         },
         {
-          "name": "23. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -942,7 +942,7 @@
       "help": "Task Dependencies\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -950,7 +950,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -958,7 +958,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -966,7 +966,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -974,7 +974,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have all the solution deliverables been identified and validated?",
+          "name": "Have all the solution deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -982,7 +982,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have all the communication deliverables been identified and validated?",
+          "name": "Have all the communication deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -990,7 +990,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Have all the training, coaching, and documentation deliverables been identified and validated?",
+          "name": "Have all the training, coaching, and documentation deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -998,7 +998,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have all the maintenance and support deliverables been identified and validated?",
+          "name": "Have all the maintenance and support deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1006,7 +1006,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have all the tasks or work packages for all deliverables been identified and validated?",
+          "name": "Have all the tasks or work packages for all deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1014,7 +1014,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Is it critical that the project is completed by a specific date?",
+          "name": "Is it critical that the project is completed by a specific date?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1022,7 +1022,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Is it critical that the project stay within the established budget?",
+          "name": "Is it critical that the project stay within the established budget?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1030,7 +1030,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have all the resources for performing the work been identified?",
+          "name": "Have all the resources for performing the work been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1038,7 +1038,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have task or work package owners verified where their work fits in the flow?",
+          "name": "Have task or work package owners verified where their work fits in the flow?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1046,7 +1046,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Have task or work package owners verified their predecessors and successors?",
+          "name": "Have task or work package owners verified their predecessors and successors?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1054,7 +1054,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Is it critical to continually monitor and update dependencies throughout the project?",
+          "name": "Is it critical to continually monitor and update dependencies throughout the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1062,7 +1062,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Do you have what you need to record and monitor dependencies?",
+          "name": "Do you have what you need to record and monitor dependencies?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1070,7 +1070,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1078,7 +1078,7 @@
           "answerHistory": []
         },
         {
-          "name": "18. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1095,7 +1095,7 @@
       "help": "Risk & Mitigation\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1103,7 +1103,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1111,7 +1111,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1119,7 +1119,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1127,7 +1127,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have all the risk items been identified?",
+          "name": "Have all the risk items been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1135,7 +1135,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Are there any impacted user’s risks?",
+          "name": "Are there any impacted user’s risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1143,7 +1143,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are there any scheduling or resource related risks?",
+          "name": "Are there any scheduling or resource related risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1151,7 +1151,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are there any resource related risks?",
+          "name": "Are there any resource related risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1159,7 +1159,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Are there any project team related risks?",
+          "name": "Are there any project team related risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1167,7 +1167,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Are there any stakeholder related risks?",
+          "name": "Are there any stakeholder related risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1175,7 +1175,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Are there any customer related risks?",
+          "name": "Are there any customer related risks?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1183,7 +1183,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have all risk items been quantified?",
+          "name": "Have all risk items been quantified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1191,7 +1191,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have all risk items been prioritized?",
+          "name": "Have all risk items been prioritized?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1199,7 +1199,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Have the top scoring risk items been identified and agreed to?",
+          "name": "Have the top scoring risk items been identified and agreed to?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1207,7 +1207,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Have mitigation plans been created and included in the WBS and schedule",
+          "name": "Have mitigation plans been created and included in the WBS and schedule",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1215,7 +1215,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1223,7 +1223,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1240,7 +1240,7 @@
       "help": "Organizational Impact & Training Requirements\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1248,7 +1248,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1256,7 +1256,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1264,7 +1264,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1272,7 +1272,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Is this project congruent with the organization’s culture and values?",
+          "name": "Is this project congruent with the organization’s culture and values?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1280,7 +1280,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Is this project expected to change the organization's culture?",
+          "name": "Is this project expected to change the organization's culture?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1288,7 +1288,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Will any organizational items need to be modified or changed as a result of doing this project?",
+          "name": "Will any organizational items need to be modified or changed as a result of doing this project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1296,7 +1296,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are there any behaviors that this project is expected to change?",
+          "name": "Are there any behaviors that this project is expected to change?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1304,7 +1304,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Will this project require behaviors to change for it to be successful?",
+          "name": "Will this project require behaviors to change for it to be successful?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1312,7 +1312,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Will this project require formal or informal training to be delivered?",
+          "name": "Will this project require formal or informal training to be delivered?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1320,7 +1320,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Will this project require on-the-job training to be delivered?",
+          "name": "Will this project require on-the-job training to be delivered?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1328,7 +1328,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Are there any organizational elements that may change as a result of the project?",
+          "name": "Are there any organizational elements that may change as a result of the project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1336,7 +1336,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Are there any organizational issues that may impact this project's success",
+          "name": "Are there any organizational issues that may impact this project's success",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1344,7 +1344,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Are there any potential unintended consequences or impacts?",
+          "name": "Are there any potential unintended consequences or impacts?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1352,7 +1352,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Do we know who will be impacted by this project?",
+          "name": "Do we know who will be impacted by this project?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1360,7 +1360,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1368,7 +1368,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1385,7 +1385,7 @@
       "help": "Resource Requirements\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1393,7 +1393,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1401,7 +1401,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1409,7 +1409,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1417,7 +1417,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Will this project require any special knowledge or skills?",
+          "name": "Will this project require any special knowledge or skills?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1425,7 +1425,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Will this project require active management involvement?",
+          "name": "Will this project require active management involvement?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1433,7 +1433,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Will this project require active key stakeholder involvement?",
+          "name": "Will this project require active key stakeholder involvement?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1441,7 +1441,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are all skills and competencies available internally?",
+          "name": "Are all skills and competencies available internally?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1449,7 +1449,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Are the team members available to participate in meetings and perform required work?",
+          "name": "Are the team members available to participate in meetings and perform required work?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1457,7 +1457,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Do we know what external skills, knowledge, and competencies need to acquired?",
+          "name": "Do we know what external skills, knowledge, and competencies need to acquired?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1465,7 +1465,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Do we know who will manage any outside resources?",
+          "name": "Do we know who will manage any outside resources?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1473,7 +1473,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Does this project have defined budget constraints?",
+          "name": "Does this project have defined budget constraints?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1481,7 +1481,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Does this project require special software?",
+          "name": "Does this project require special software?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1489,7 +1489,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Will this project require special materials?",
+          "name": "Will this project require special materials?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1497,7 +1497,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Will this project require special tools?",
+          "name": "Will this project require special tools?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1505,7 +1505,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1513,7 +1513,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1530,7 +1530,7 @@
       "help": "Updated Plan Approvel\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1538,7 +1538,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1546,7 +1546,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1554,7 +1554,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1562,7 +1562,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Will this project require formal or informal plan approval and or review?",
+          "name": "Will this project require formal or informal plan approval and or review?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1570,7 +1570,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Has the approval and or the review process been defined?",
+          "name": "Has the approval and or the review process been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1578,7 +1578,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Do you know who will be involved in the plan approval and or review?",
+          "name": "Do you know who will be involved in the plan approval and or review?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1586,7 +1586,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Will any pre-approvals be required?",
+          "name": "Will any pre-approvals be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1594,7 +1594,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Are there any individuals or groups that need to preview specific information?",
+          "name": "Are there any individuals or groups that need to preview specific information?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1602,7 +1602,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Do you know what information will need to be prepared in order to gain approval?",
+          "name": "Do you know what information will need to be prepared in order to gain approval?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1610,7 +1610,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has the approval process been built into the schedule and budget?",
+          "name": "Has the approval process been built into the schedule and budget?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1618,7 +1618,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Do you know how the sponsor will be involved in the project review and approvals?",
+          "name": "Do you know how the sponsor will be involved in the project review and approvals?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1626,7 +1626,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Will any other approvals or reviews be required?",
+          "name": "Will any other approvals or reviews be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1634,7 +1634,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Do you have a way to handle the recommendations & feedback from the review?",
+          "name": "Do you have a way to handle the recommendations & feedback from the review?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1642,7 +1642,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Do you know how changes to the plan will be handled as a result of the review and or approvals?",
+          "name": "Do you know how changes to the plan will be handled as a result of the review and or approvals?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1650,7 +1650,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1658,7 +1658,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1675,7 +1675,7 @@
       "help": "Solution Designs\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1683,7 +1683,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1691,7 +1691,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1699,7 +1699,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1707,7 +1707,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Are all project deliverables clearly defined & understood?",
+          "name": "Are all project deliverables clearly defined & understood?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1715,7 +1715,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Do any solution designs need to be created?",
+          "name": "Do any solution designs need to be created?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1723,7 +1723,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Do any communication designs need to be created?",
+          "name": "Do any communication designs need to be created?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1731,7 +1731,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Do any marketing designs need to be created?",
+          "name": "Do any marketing designs need to be created?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1739,7 +1739,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have design resources been identified and gained commitment?",
+          "name": "Have design resources been identified and gained commitment?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1747,7 +1747,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Will external design resources be required?",
+          "name": "Will external design resources be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1755,7 +1755,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Will any special skills, software or tools be needed?",
+          "name": "Will any special skills, software or tools be needed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1763,7 +1763,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Will any specific processes, procedures, or documentation be required?",
+          "name": "Will any specific processes, procedures, or documentation be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1771,7 +1771,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Will budget approval be required for any of the resources required?",
+          "name": "Will budget approval be required for any of the resources required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1779,7 +1779,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Will preliminary and final designs be required?",
+          "name": "Will preliminary and final designs be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1787,7 +1787,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Will multiple design iterations be required?",
+          "name": "Will multiple design iterations be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1795,7 +1795,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Do you know who will approve the preliminary and final designs?",
+          "name": "Do you know who will approve the preliminary and final designs?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1803,7 +1803,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has the design approval criteria been defined?",
+          "name": "Has the design approval criteria been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1811,7 +1811,7 @@
           "answerHistory": []
         },
         {
-          "name": "18. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1819,7 +1819,7 @@
           "answerHistory": []
         },
         {
-          "name": "19. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1836,7 +1836,7 @@
       "help": "Solution Developed\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1844,7 +1844,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1852,7 +1852,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1860,7 +1860,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1868,7 +1868,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have any additional requirements been added to any of the deliverables?",
+          "name": "Have any additional requirements been added to any of the deliverables?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1876,7 +1876,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Is the development process defined and understood?",
+          "name": "Is the development process defined and understood?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1884,7 +1884,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Have development resources been identified and gained commitment?",
+          "name": "Have development resources been identified and gained commitment?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1892,7 +1892,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Will external development resources be required?",
+          "name": "Will external development resources be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1900,7 +1900,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Will any special skills, software or tools be needed to develop any of the deliverables?",
+          "name": "Will any special skills, software or tools be needed to develop any of the deliverables?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1908,7 +1908,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Will any procedures, or documentation be required to develop any of the deliverables?",
+          "name": "Will any procedures, or documentation be required to develop any of the deliverables?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1916,7 +1916,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Will budget approval be required for any of the resources required?",
+          "name": "Will budget approval be required for any of the resources required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1924,7 +1924,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Will development need to be done in phases?",
+          "name": "Will development need to be done in phases?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1932,7 +1932,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Will multiple development iterations be required?",
+          "name": "Will multiple development iterations be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1940,7 +1940,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Will interim approvals be required?",
+          "name": "Will interim approvals be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1948,7 +1948,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Do you know who will approve the preliminary and final development?",
+          "name": "Do you know who will approve the preliminary and final development?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1956,7 +1956,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Has the development approval criteria been defined?",
+          "name": "Has the development approval criteria been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1964,7 +1964,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Are scheduling estimates realistic?",
+          "name": "Are scheduling estimates realistic?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1972,7 +1972,7 @@
           "answerHistory": []
         },
         {
-          "name": "18. Have the responsible resources verified the schedule estimates?",
+          "name": "Have the responsible resources verified the schedule estimates?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1980,7 +1980,7 @@
           "answerHistory": []
         },
         {
-          "name": "19. Have you included time in the schedule to do rework, deal with surprises, or develop unknowns?",
+          "name": "Have you included time in the schedule to do rework, deal with surprises, or develop unknowns?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1988,7 +1988,7 @@
           "answerHistory": []
         },
         {
-          "name": "20. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -1996,7 +1996,7 @@
           "answerHistory": []
         },
         {
-          "name": "21. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2013,7 +2013,7 @@
       "help": "Testing\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2021,7 +2021,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2029,7 +2029,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2037,7 +2037,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2045,7 +2045,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Will deliverables need to be tested as they are developed?",
+          "name": "Will deliverables need to be tested as they are developed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2053,7 +2053,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have tests been clearly defined?",
+          "name": "Have tests been clearly defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2061,7 +2061,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Have the testing resources been identified?",
+          "name": "Have the testing resources been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2069,7 +2069,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have the functions that need to be tested been identified?",
+          "name": "Have the functions that need to be tested been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2077,7 +2077,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have testing tolerances been identified?",
+          "name": "Have testing tolerances been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2085,7 +2085,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have the people doing the testing been trained in the testing process?",
+          "name": "Have the people doing the testing been trained in the testing process?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2093,7 +2093,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has it been defined who will decide if a test passed or failed?",
+          "name": "Has it been defined who will decide if a test passed or failed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2101,7 +2101,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have contingencies been defined if critical tests fail?",
+          "name": "Have contingencies been defined if critical tests fail?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2109,7 +2109,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Will unit testing be required?",
+          "name": "Will unit testing be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2117,7 +2117,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Will functional testing be required?",
+          "name": "Will functional testing be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2125,7 +2125,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Will user testing be required?",
+          "name": "Will user testing be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2133,7 +2133,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have the people been identified who will review tests results?",
+          "name": "Have the people been identified who will review tests results?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2141,7 +2141,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has it been identified what will happen if tests fail?",
+          "name": "Has it been identified what will happen if tests fail?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2149,7 +2149,7 @@
           "answerHistory": []
         },
         {
-          "name": "18. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2157,7 +2157,7 @@
           "answerHistory": []
         },
         {
-          "name": "19. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2174,7 +2174,7 @@
       "help": "Behavior Deliverables Developed\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2182,7 +2182,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2190,7 +2190,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2198,7 +2198,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2206,7 +2206,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Have all audiences been identified that need project communication, documentation, training, & maintenance procedures?",
+          "name": "Have all audiences been identified that need project communication, documentation, training, & maintenance procedures?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2214,7 +2214,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Are all communication artifacts identified?",
+          "name": "Are all communication artifacts identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2222,7 +2222,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are the requirements for communication, documentation, training, & maintenance doable?",
+          "name": "Are the requirements for communication, documentation, training, & maintenance doable?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2230,7 +2230,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Will unique skills be required to develop the commuinication, documentation, training, & maintenance procedures?",
+          "name": "Will unique skills be required to develop the commuinication, documentation, training, & maintenance procedures?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2238,7 +2238,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Will the development of communication, documantation, training, & maintenance procedures be itterative?",
+          "name": "Will the development of communication, documantation, training, & maintenance procedures be itterative?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2246,7 +2246,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. As the communication, documentation, training, & maintenance procedures are developed have testing & approval requirements & resources been identified?",
+          "name": "As the communication, documentation, training, & maintenance procedures are developed have testing & approval requirements & resources been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2254,7 +2254,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Will training material need to be developed?",
+          "name": "Will training material need to be developed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2262,7 +2262,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have the training delivery resources been identified?",
+          "name": "Have the training delivery resources been identified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2270,7 +2270,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Has the training delivery approach been defined?",
+          "name": "Has the training delivery approach been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2278,7 +2278,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Will individual coaching be required?",
+          "name": "Will individual coaching be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2286,7 +2286,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. As the documentation is developed have testing & approvals been defined?",
+          "name": "As the documentation is developed have testing & approvals been defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2294,7 +2294,7 @@
           "answerHistory": []
         },
         {
-          "name": "16. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2302,7 +2302,7 @@
           "answerHistory": []
         },
         {
-          "name": "17. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2319,7 +2319,7 @@
       "help": "Behavior Deliverables Delivered\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2327,7 +2327,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2335,7 +2335,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2343,7 +2343,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2351,7 +2351,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Is there a delivery plan for communication, training, & coaching?",
+          "name": "Is there a delivery plan for communication, training, & coaching?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2359,7 +2359,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Has the delivery plan for communication, training, & coaching been approved?",
+          "name": "Has the delivery plan for communication, training, & coaching been approved?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2367,7 +2367,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are the delivery resources for communication, training, & coaching trainied & available?",
+          "name": "Are the delivery resources for communication, training, & coaching trainied & available?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2375,7 +2375,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are feedback tools & or processes for communication, training, & coaching available?",
+          "name": "Are feedback tools & or processes for communication, training, & coaching available?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2383,7 +2383,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Are all communication, training, & coaching impacted groups or individuals aware & available?",
+          "name": "Are all communication, training, & coaching impacted groups or individuals aware & available?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2391,7 +2391,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2399,7 +2399,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2416,7 +2416,7 @@
       "help": "Pilot\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2424,7 +2424,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2432,7 +2432,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2440,7 +2440,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2448,7 +2448,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Do you have a pilot plan?",
+          "name": "Do you have a pilot plan?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2456,7 +2456,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have you defined what will be piloted & what won't?",
+          "name": "Have you defined what will be piloted & what won't?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2464,7 +2464,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are the pilot resources identified & available?",
+          "name": "Are the pilot resources identified & available?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2472,7 +2472,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have you defied how success of the pilot will be determined?",
+          "name": "Have you defied how success of the pilot will be determined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2480,7 +2480,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Have you defined what will will happen if the results are not as expected?",
+          "name": "Have you defined what will will happen if the results are not as expected?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2488,7 +2488,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have the people involved in the pilot been trained?",
+          "name": "Have the people involved in the pilot been trained?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2496,7 +2496,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Have you identified who will decide pilot success?",
+          "name": "Have you identified who will decide pilot success?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2504,7 +2504,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have you determined who will receive the results of the pilot?",
+          "name": "Have you determined who will receive the results of the pilot?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2512,7 +2512,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2520,7 +2520,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2537,7 +2537,7 @@
       "help": "Implement\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2545,7 +2545,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2553,7 +2553,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2561,7 +2561,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2569,7 +2569,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Do you have an implementation plan?",
+          "name": "Do you have an implementation plan?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2577,7 +2577,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Have you defined what will & will not be implemented?",
+          "name": "Have you defined what will & will not be implemented?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2585,7 +2585,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Are all groups & people who will be impacted by implementation aware?",
+          "name": "Are all groups & people who will be impacted by implementation aware?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2593,7 +2593,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Are implementation resources identified & available?",
+          "name": "Are implementation resources identified & available?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2601,7 +2601,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Has implementation success been clearly defined?",
+          "name": "Has implementation success been clearly defined?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2609,7 +2609,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you defined what will happen if the results are not as expected?",
+          "name": "Have you defined what will happen if the results are not as expected?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2617,7 +2617,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Has documentation, training, & coaching been delivered?",
+          "name": "Has documentation, training, & coaching been delivered?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2625,7 +2625,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Have you defined who will decide implementation success?",
+          "name": "Have you defined who will decide implementation success?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2633,7 +2633,7 @@
           "answerHistory": []
         },
         {
-          "name": "13. Have you determined who will receive the results of the implementation?",
+          "name": "Have you determined who will receive the results of the implementation?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2641,7 +2641,7 @@
           "answerHistory": []
         },
         {
-          "name": "14. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2649,7 +2649,7 @@
           "answerHistory": []
         },
         {
-          "name": "15. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2666,7 +2666,7 @@
       "help": "Post-op\n\n\n",
       "questions": [
         {
-          "name": "1. Is someone assigned to ensure this step in completed?",
+          "name": "Is someone assigned to ensure this step in completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2674,7 +2674,7 @@
           "answerHistory": []
         },
         {
-          "name": "2. Do you have what you need before you can start this step?",
+          "name": "Do you have what you need before you can start this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2682,7 +2682,7 @@
           "answerHistory": []
         },
         {
-          "name": "3. Are there any tasks that need to be completed before this step can start?",
+          "name": "Are there any tasks that need to be completed before this step can start?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2690,7 +2690,7 @@
           "answerHistory": []
         },
         {
-          "name": "4. Has work on this step started?",
+          "name": "Has work on this step started?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2698,7 +2698,7 @@
           "answerHistory": []
         },
         {
-          "name": "5. Has user feedback been gathered?",
+          "name": "Has user feedback been gathered?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2706,7 +2706,7 @@
           "answerHistory": []
         },
         {
-          "name": "6. Do you have before & after measurable results?",
+          "name": "Do you have before & after measurable results?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2714,7 +2714,7 @@
           "answerHistory": []
         },
         {
-          "name": "7. Have you determined if a formal post-op will be held?",
+          "name": "Have you determined if a formal post-op will be held?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2722,7 +2722,7 @@
           "answerHistory": []
         },
         {
-          "name": "8. Have the people involved in the post-op been identified & notified?",
+          "name": "Have the people involved in the post-op been identified & notified?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2730,7 +2730,7 @@
           "answerHistory": []
         },
         {
-          "name": "9. Will a formal post-op report be required?",
+          "name": "Will a formal post-op report be required?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2738,7 +2738,7 @@
           "answerHistory": []
         },
         {
-          "name": "10. Have you identified who will receive the results of the post-op?",
+          "name": "Have you identified who will receive the results of the post-op?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2746,7 +2746,7 @@
           "answerHistory": []
         },
         {
-          "name": "11. Have you determined the completion criteria for this step?",
+          "name": "Have you determined the completion criteria for this step?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
@@ -2754,7 +2754,7 @@
           "answerHistory": []
         },
         {
-          "name": "12. Has this step been completed?",
+          "name": "Has this step been completed?",
           "validAnswers": " ",
           "answer": " ",
           "help": " ",

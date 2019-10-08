@@ -12,7 +12,7 @@ class ProjectInfo extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleCancelClick = this.handleCancelClick.bind(this);
   }
 
   handleSubmit(event) {
@@ -27,7 +27,7 @@ class ProjectInfo extends Component {
     this.setState({ saveButton: false });
   }
 
-  handleClick(event) {
+  handleCancelClick(event) {
     event.preventDefault();
     this.setState({ saveButton: false });
     let newProjectInfo = {};
@@ -46,13 +46,47 @@ class ProjectInfo extends Component {
   }
   render(props) {
     let { projects, currentProject, edit, handleMenu, classes } = this.props;
+    edit = true;
     let project = projects[currentProject];
     console.log(`ProjectInfo(${project.name})`);
+
     const buttonStyle = {
       marginTop: 25,
       marginLeft: 10,
       visibility: this.state.saveButton ? "visible" : "hidden"
     };
+
+    const textField = (label, field, text) => {
+      if (edit) {
+        return (
+          <TextField
+            id={`outlined-${field}`}
+            label={label}
+            name={field}
+            defaultValue={text}
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            style={{ paddingRight: 5, width: 300 }}
+            onChange={this.handleInputChange}
+          />
+        )
+      } else
+        return (
+          <TextField
+            id={`outlined-${field}`}
+            label={label}
+            name={field}
+            value={text}
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            style={{ paddingRight: 5, width: 300 }}
+            onChange={this.handleInputChange}
+          />
+        )
+    }
+
     return (
       <Paper className={classes.paper}>
         <form
@@ -67,19 +101,7 @@ class ProjectInfo extends Component {
             typeOfMenu="project"
             menuIndex={1}
             handleMenu={handleMenu} />
-
-          <TextField
-            disabled={!edit}
-            id="outlined-name"
-            label="Name"
-            name="name"
-            className={classes.textField}
-            value={project.name}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5, width: 300 }}
-            onChange={this.handleInputChange}
-          />
+          {textField("Name", "name", project.name)}
           <Button
             type="submit"
             name="submit"
@@ -95,49 +117,17 @@ class ProjectInfo extends Component {
             variant="contained"
             color="secondary"
             style={buttonStyle}
-            onClick={this.handleClick}
+            onClick={this.handleCancelClick}
           >
             Cancel
           </Button>
           <br />
+          {textField("Sponsor", "sponsor", project.sponsor)}
+          {textField("Manager", "projectManager", project.projectManager)}
+          {textField("Type", "projectType", project.projectType)}
+
           <TextField
-            id="outlined-sponsor"
-            disabled={!edit}
-            label="Sponsor"
-            name="sponsor"
-            className={classes.textField}
-            value={project.sponsor}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5 }}
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            id="outlined-manager"
-            disabled={!edit}
-            label="Manager"
-            name="projectManager"
-            className={classes.textField}
-            value={project.projectManager}
-            margin="normal"
-            style={{ paddingRight: 5 }}
-            variant="outlined"
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            id="outlined-project-type"
-            label="Type"
-            name="projectType"
-            className={classes.textField}
-            disabled={!edit}
-            value={project.projectType}
-            margin="normal"
-            style={{ paddingRight: 5 }}
-            variant="outlined"
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            id="outlined-project-type"
+            id="outlined-creator"
             label="Creator"
             name="creator"
             disabled
@@ -148,30 +138,8 @@ class ProjectInfo extends Component {
             variant="outlined"
             onChange={this.handleInputChange}
           />
-          <TextField
-            id="outlined-start"
-            label="Start"
-            className={classes.textField}
-            name="start"
-            disabled={!edit}
-            value="2019/09/01"
-            margin="normal"
-            style={{ width: 150, paddingRight: 5 }}
-            variant="outlined"
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            id="outlined-end"
-            label="End"
-            className={classes.textField}
-            name="end"
-            value="2019/10/30"
-            style={{ width: 150, paddingRight: 5 }}
-            disabled={!edit}
-            margin="normal"
-            variant="outlined"
-            onChange={this.handleInputChange}
-          />
+          {textField("Start", "start", "2019/09/01")}
+          {textField("End", "end", "2019/09/01")}
 
           <br />
           <TextField

@@ -94,3 +94,21 @@ export const onDeleteProject = `subscription OnDeleteProject {
   }
 }
 `;
+export const onCreateProjectTable = `subscription OnCreateProjectTable($id: String) {
+  onCreateProjectTable(id: $id) {
+    id
+  }
+}
+`;
+export const onUpdateProjectTable = `subscription OnUpdateProjectTable($id: String) {
+  onUpdateProjectTable(id: $id) {
+    id
+  }
+}
+`;
+export const onDeleteProjectTable = `subscription OnDeleteProjectTable($id: String) {
+  onDeleteProjectTable(id: $id) {
+    id
+  }
+}
+`;

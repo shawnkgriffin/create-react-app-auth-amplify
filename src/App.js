@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
-import Amplify from 'aws-amplify';  // comment out , { Auth } until needed
-import aws_exports from './aws-exports';
+import Amplify, { API, graphqlOperation } from 'aws-amplify';  // comment out , { Auth } until needed
+import * as queries from './graphql/queries';
+import * as mutations from './graphql/mutations';
+import * as subscriptions from './graphql/subscriptions';
 
 import * as db from "./utils/db/db.js";
 import * as utils from "./utils/generalUtilities"
@@ -15,7 +17,10 @@ import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
 
+import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
+API.configure(aws_exports);
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,8 +82,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const listProjects = `query listProjects {
+  listProjects{
+    items{
+      id
+      name
+      steps
+    }
+  }
+}`;
+
 class App extends Component {
   constructor(props) {
+    
     super(props);
     this.state = {
       projects: db.readProjects(),
@@ -102,7 +118,34 @@ class App extends Component {
     this.handleMenu = this.handleMenu.bind(this);
     this.handleYes = this.handleYes.bind(this);
     this.handleNo = this.handleNo.bind(this);
+    this.post=this.post.bind(this);
+    this.get=this.post.bind(this);
+    this.list=this.list.bind(this);
   }
+
+  //graphQL components
+
+  post = async () => {
+    console.log('calling api');
+    const response = await API.post('projectAPI', '/items', {
+      body: {
+        id: '1',
+        name: 'hello amplify!'
+      }
+    });
+    console.log(JSON.stringify(response, null, 2));
+  };
+  get = async () => {
+    console.log('calling api');
+    const response = await API.get('projectAPI', '/items/object/1');
+    console.log(JSON.stringify(response, null, 2));
+  };
+  list = async () => {
+    console.log('calling api');
+    const dbProjects = await API.graphQL(graphqlOperation(listProjects));
+    console.log(dbProjects.length);
+  };
+
   handleQuestionChange(e) {
     if (this.state != null) {
       let { projects, currentProject } = this.state;
@@ -543,6 +586,7 @@ class App extends Component {
     }
   }
   render() {
+    this.list();
     const classes = useStyles;
     let { projects, currentProject, currentStep } = this.state;
     return (

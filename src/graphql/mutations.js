@@ -94,3 +94,21 @@ export const deleteProject = `mutation DeleteProject($input: DeleteProjectInput!
   }
 }
 `;
+export const createProjectTable = `mutation CreateProjectTable($input: CreateProjectTableInput!) {
+  createProjectTable(input: $input) {
+    id
+  }
+}
+`;
+export const updateProjectTable = `mutation UpdateProjectTable($input: UpdateProjectTableInput!) {
+  updateProjectTable(input: $input) {
+    id
+  }
+}
+`;
+export const deleteProjectTable = `mutation DeleteProjectTable($input: DeleteProjectTableInput!) {
+  deleteProjectTable(input: $input) {
+    id
+  }
+}
+`;

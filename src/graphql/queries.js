@@ -55,8 +55,34 @@ export const listProjects = `query ListProjects(
         note
         skip
         stepType
+        questions {
+          name
+          help
+          answer
+          note
+          skip
+        }
       }
       stepTypes
+    }
+    nextToken
+  }
+}
+`;
+export const getProjectTable = `query GetProjectTable($id: String!) {
+  getProjectTable(id: $id) {
+    id
+  }
+}
+`;
+export const listProjectTables = `query ListProjectTables(
+  $filter: TableProjectTableFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectTables(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
     }
     nextToken
   }
