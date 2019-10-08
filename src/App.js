@@ -175,10 +175,10 @@ class App extends Component {
         case "ADD":
           const newQuestion = {
             "number": "",
-            "question": newText,
+            "name": newText,
             "validAnswers": "",
             "answer": "",
-            "tip": "",
+            "help": "",
             "skip": false,
             "answerHistory": []
           }
@@ -186,10 +186,10 @@ class App extends Component {
           project.steps[currentStep].questions.splice(actionIndex, 0, newQuestion)
           break;
         case "EDIT":
-          project.steps[currentStep].questions[actionIndex].question = newText;
+          project.steps[currentStep].questions[actionIndex].name = newText;
           break;
         case "EDITHELP":
-          project.steps[currentStep].questions[actionIndex].tip = newText;
+          project.steps[currentStep].questions[actionIndex].help = newText;
           break;
         case "DELETE":
           project.steps[currentStep].questions.splice(actionIndex, 1)
@@ -202,18 +202,18 @@ class App extends Component {
       switch (actionVerb) {
         case "ADD":
           const newStep = {
-            "stepLabel": newText,
+            "name": newText,
             "stepType": project.steps[actionIndex].stepType,
             "stepNumber": 20,
             "skip": false,
-            "tip": "",
+            "help": "",
             "questions": [
               {
                 "number": "",
                 "question": "First question.",
                 "validAnswers": "",
                 "answer": "",
-                "tip": "",
+                "help": "",
                 "skip": false,
                 "answerHistory": []
               }]
@@ -223,10 +223,10 @@ class App extends Component {
           currentStep = actionIndex;
           break;
         case "EDIT":
-          project.steps[actionIndex].stepLabel = newText;
+          project.steps[actionIndex].name = newText;
           break;
         case "EDITHELP":
-          project.steps[actionIndex].tip = newText;
+          project.steps[actionIndex].help = newText;
           break;
         case "DELETE":
           project.steps.splice(actionIndex, 1)
@@ -251,7 +251,7 @@ class App extends Component {
         case "EDIT":
           break;
         case "EDITHELP":
-          project.tip = newText;
+          project.help = newText;
           break;
         case "DELETE":
           projects.splice(currentProject, 1)
@@ -316,7 +316,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit question #${actionIndex + 1}) below.`,
-                text: project.steps[currentStep].questions[actionIndex].question,
+                text: project.steps[currentStep].questions[actionIndex].name,
                 commandString: commandString
               }
             });
@@ -327,7 +327,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit guidance for #${actionIndex + 1}) below.`,
-                text: project.steps[currentStep].questions[actionIndex].tip,
+                text: project.steps[currentStep].questions[actionIndex].help,
                 commandString: commandString
               }
             });
@@ -339,7 +339,7 @@ class App extends Component {
                 return {
                   ...prevState, alert: true,
                   title: "Delete the following question?",
-                  text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                  text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].name}`,
                   commandString: commandString
                 };
               });
@@ -360,8 +360,8 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
-                title: project.steps[currentStep].questions[actionIndex].question,
-                text: project.steps[currentStep].questions[actionIndex].tip.length > 0 ? project.steps[currentStep].questions[actionIndex].tip : "Sorry, no guidance is available."
+                title: project.steps[currentStep].questions[actionIndex].name,
+                text: project.steps[currentStep].questions[actionIndex].help.length > 1 ? project.steps[currentStep].questions[actionIndex].help : "Sorry, no guidance is available."
               };
             });
             break;
@@ -390,7 +390,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit step #${actionIndex + 1}) below.`,
-                text: project.steps[actionIndex].stepLabel,
+                text: project.steps[actionIndex].name,
                 commandString: commandString
               };
             });
@@ -403,7 +403,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit guidance for step #${actionIndex + 1}) below.`,
-                text: project.steps[actionIndex].tip,
+                text: project.steps[actionIndex].help,
                 commandString: commandString
               };
             });
@@ -416,7 +416,7 @@ class App extends Component {
                 return {
                   ...prevState, alert: true,
                   title: "Delete the following step?",
-                  text: `${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                  text: `${actionIndex + 1}) ${project.steps[actionIndex].name}`,
                   commandString: commandString
                 };
               });
@@ -427,7 +427,7 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   title: "Cannot delete the last step.",
-                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].stepLabel}`,
+                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].name}`,
                   commandString: ""
                 };
               });
@@ -440,8 +440,8 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
-                title: project.steps[actionIndex].stepLabel,
-                text: project.steps[actionIndex].tip.length > 0 ? project.steps[actionIndex].tip : "Sorry, no guidance is available."
+                title: project.steps[actionIndex].name,
+                text: project.steps[actionIndex].help.length > 1 ? project.steps[actionIndex].help : "Sorry, no guidance is available."
 
               };
             });
@@ -494,7 +494,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit guidance for project "${project.name}" below.`,
-                text: project.tip,
+                text: project.help,
                 commandString: commandString
               };
             });
@@ -532,7 +532,7 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title: project.name,
-                text: project.tip.length > 0 ? project.tip : "Sorry, no guidance is available."
+                text: project.help.length > 1 ? project.help : "Sorry, no guidance is available."
               };
             });
 

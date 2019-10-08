@@ -1,0 +1,197 @@
+type Project {
+  id: ID!
+  name: String!
+  help: String
+  creator: String
+  end: String
+  start: String
+  note: String
+  problemOpportunity: String
+  projectManager: String
+  sponsor: String
+  steps: [Step!]!
+  stepTypes: [String!]!
+}
+
+type Step {
+  name: String!
+  help: String
+  note: String
+  skip: Boolean
+  stepType: String
+  questions: [Question!]!
+}
+
+type Question {
+  name: String!
+  help: String
+  note: String
+  skip: Boolean
+  answer: String
+  answers: [Answer]
+  validAnswers: String
+}
+
+type Answer {
+  answer: String
+  dateTime: String
+  creator: String
+}
+
+input StepInput {
+  name: String!
+  help: String
+  note: String
+  skip: Boolean
+  stepType: String
+  questions: [QuestionInput!]!
+}
+
+input QuestionInput {
+  name: String!
+  help: String
+  note: String
+  skip: Boolean
+  answer: String
+  answers: [AnswerInput]
+  validAnswers: String
+}
+
+input AnswerInput {
+  answer: String
+  dateTime: String
+  creator: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelProjectConnection {
+  items: [Project]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelProjectFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  help: ModelStringFilterInput
+  creator: ModelStringFilterInput
+  end: ModelStringFilterInput
+  start: ModelStringFilterInput
+  note: ModelStringFilterInput
+  problemOpportunity: ModelStringFilterInput
+  projectManager: ModelStringFilterInput
+  sponsor: ModelStringFilterInput
+  stepTypes: ModelStringFilterInput
+  and: [ModelProjectFilterInput]
+  or: [ModelProjectFilterInput]
+  not: ModelProjectFilterInput
+}
+
+type Query {
+  getProject(id: ID!): Project
+  listProjects(filter: ModelProjectFilterInput, limit: Int, nextToken: String): ModelProjectConnection
+}
+
+input CreateProjectInput {
+  id: ID
+  name: String!
+  help: String
+  creator: String
+  end: String
+  start: String
+  note: String
+  problemOpportunity: String
+  projectManager: String
+  sponsor: String
+  steps: [StepInput!]!
+  stepTypes: [String!]!
+}
+
+input UpdateProjectInput {
+  id: ID!
+  name: String
+  help: String
+  creator: String
+  end: String
+  start: String
+  note: String
+  problemOpportunity: String
+  projectManager: String
+  sponsor: String
+  steps: [StepInput!]
+  stepTypes: [String!]
+}
+
+input DeleteProjectInput {
+  id: ID
+}
+
+type Mutation {
+  createProject(input: CreateProjectInput!): Project
+  updateProject(input: UpdateProjectInput!): Project
+  deleteProject(input: DeleteProjectInput!): Project
+}
+
+type Subscription {
+  onCreateProject: Project @aws_subscribe(mutations: ["createProject"])
+  onUpdateProject: Project @aws_subscribe(mutations: ["updateProject"])
+  onDeleteProject: Project @aws_subscribe(mutations: ["deleteProject"])
+}

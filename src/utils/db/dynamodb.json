@@ -1,0 +1,40 @@
+{
+  "creator": "Shawn Griffin",
+  "end": "Tue Sep 17 2019 13:03:00 GMT-0700 (PDT)2592000000",
+  "help": "Project Help",
+  "id": "123",
+  "name": "DynamoDB Project",
+  "note": "Project note.",
+  "problemOpportunity": "Presenting problem / Opportunity",
+  "projectManager": "Harry Belafonte",
+  "projectType": "Standard",
+  "sponsor": "Stephen Stofanak",
+  "start": "2019-09-17T20:03:00.040Z",
+  "steps": [
+    {
+      "help": "Step Help",
+      "name": "Project Background",
+      "note": "Step note.",
+      "questions": [
+        {
+          "answer": "None",
+          "answerHistory": [
+
+          ],
+          "help": "Question Help",
+          "name": "Is someone assigned to ensure this step is completed?",
+          "note": "Question note.",
+          "skip": false,
+          "validAnswers": "Yes, No, Later"
+        }
+      ],
+      "skip": false,
+      "stepType": 0
+    }
+  ],
+  "stepTypes": [
+    "Define the Project",
+    "Analyze the Project",
+    "Implement the Project"
+  ]
+}

@@ -1,0 +1,38 @@
+type Project @model {
+	id: ID!
+	name: String!
+	help: String
+	creator: String
+	end: String
+	start:String
+	note:String
+	problemOpportunity:String
+	projectManager:String
+	sponsor:String
+	steps:[Step!]!
+	stepTypes:[String!]!
+}
+
+type Step {
+	name: String!
+	help: String
+	note:String
+	skip:Boolean
+	stepType:String
+	questions: [Question!]!
+}
+
+type Question {
+	name: String!
+	help: String
+	note:String
+	skip:Boolean
+	answer:String
+	answers:[Answer]
+	validAnswers:String
+}
+type Answer {
+	answer:String
+	dateTime: String
+	creator:String
+}

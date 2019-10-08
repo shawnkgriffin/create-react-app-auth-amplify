@@ -47,7 +47,7 @@ export default function ProjectSteps({
   project.stepTypes.map((stepType, index) => stepStrings[index] = []);
 
   // Build each Step label for each step type as we have to lay them out in rows.  
-  project.steps.map((step, index) => stepStrings[step.stepType].push({ stepIndex: index, stepString: `${index + 1}) ${step.stepLabel} ${utils.percentageQuestionsYes(step.questions)}` }));
+  project.steps.map((step, index) => stepStrings[step.stepType].push({ stepIndex: index, stepString: `${index + 1}) ${step.name} ${utils.percentageQuestionsYes(step.questions)}` }));
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
 
   let tableRows = []; // the three columns have different numbers of steps associated with them

@@ -52,7 +52,7 @@ export default function ProjectQuestions({
               typeOfMenu="question"
               menuIndex={index}
               handleMenu={handleMenu} />
-            {index + 1}) {question.question}
+            {index + 1}) {question.name}
           </TableCell>
           <TableCell>
             <Radio
