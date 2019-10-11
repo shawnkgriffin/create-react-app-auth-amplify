@@ -271,6 +271,14 @@ class App extends Component {
           project.help = newText;
           break;
         case "DELETE":
+            axios
+            .delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`)
+            .then(response => { 
+              console.log(`Project Delete ${response}`)
+            })
+            .catch(error => {
+              console.log(`Project Delete Error ${error}`)
+            });
           projects.splice(currentProject, 1)
           currentProject = 0;
           break;
@@ -519,8 +527,9 @@ class App extends Component {
             break;
 
           case "DELETE":
-            //cannot delete last step
+            //cannot delete last project
             if (projects.length > 1) {
+              
               this.setState(prevState => {
                 return {
                   ...prevState, alert: true,
