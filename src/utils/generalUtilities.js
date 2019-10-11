@@ -31,5 +31,9 @@ function percentageQuestionsYes(questions) {
   }
 
 }
+function createNewProject() {
+  let project = require('./db/project.json');
+  return (project);
+}
 
-export { percentageQuestionsYes, parseCommand }
+export { percentageQuestionsYes, createNewProject, parseCommand }

@@ -3,9 +3,8 @@ import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
 
-import * as db from "./utils/db/db.js";
 import axios from "axios";
-import * as utils from "./utils/generalUtilities"
+import * as utils from "./utils/generalUtilities.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ProjectInfo from "./components/ProjectInfo";
@@ -259,11 +258,22 @@ class App extends Component {
     if (actionObject === "PROJECT") {
       switch (actionVerb) {
         case "ADD":
-          let newProject = db.readProject();
+          let newProject = utils.createNewProject();
           newProject.name = newText;
+          newProject.start = new Date().toISOString();
+          newProject.end = new Date().toISOString();
+          newProject.creator = this.state.currentUser;
           projects.push(newProject);
           currentStep = 0;
           currentProject = projects.length - 1;
+          axios
+            .post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject )
+            .then(response => { 
+              console.log(`Project add ${response}`)
+            })
+            .catch(error => {
+              console.log(`Project add Error ${error}`)
+            });
           break;
         case "EDIT":
           break;
