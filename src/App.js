@@ -4,6 +4,7 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
 
 import * as db from "./utils/db/db.js";
+import axios from "axios";
 import * as utils from "./utils/generalUtilities"
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -86,7 +87,7 @@ class App extends Component {
     
     super(props);
     this.state = {
-      projects: db.readProjects(),
+      projects:[],
       currentProject: 0,
       currentStep: 0,
       currentUser: "shawn@shawngriffin.com",
@@ -109,7 +110,16 @@ class App extends Component {
     this.handleNo = this.handleNo.bind(this);
   }
 
-
+   componentDidMount() {
+    axios
+      .get('https://us-central1-project-534d9.cloudfunctions.net/api/projects')
+      .then(data => {
+        console.log(`componentDidMount${data.data}`);
+        this.setState(prevState => {
+          return { ...prevState, projects: data.data };
+        }) })
+      
+}
   handleQuestionChange(e) {
     if (this.state != null) {
       let { projects, currentProject } = this.state;
@@ -554,56 +564,64 @@ class App extends Component {
     let { projects, currentProject, currentStep } = this.state;
     return (
       <div>
-        <ProjectInfo
-          projects={projects}
-          currentProject={currentProject}
-          handleProjectInfoChange={this.handleProjectInfoChange}
-          edit={this.state.projectInfoEdit}
-          handleMenu={this.handleMenu}
-          classes={classes}
-        />
-        <br />
-        <ProjectSteps
-          projects={projects}
-          currentProject={currentProject}
-          handleStepChange={this.handleStepChange}
-          handleMenu={this.handleMenu}
-          classes={classes}
-        />
-        <br />
-        <Alert
-          open={this.state.alert}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-        />
-        <FormDialog
-          open={this.state.form}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-          classes={classes}
-        />
-        <Help
-          open={this.state.help}
-          title={this.state.title}
-          text={this.state.text}
-          answerYes={this.handleYes}
-          answerNo={this.handleNo}
-        />
-        <ProjectQuestions
-          projects={projects}
-          currentProject={currentProject}
-          currentStep={currentStep}
-          handleQuestionChange={this.handleQuestionChange}
-          handleMenu={this.handleMenu}
-          classes={classes}
-        />
-      </div>
-    );
-  }
+     
+        {this.state.projects.length === 0 ? (
+          <div>Loading</div>
+        ) : (
+            <div>
+              <ProjectInfo
+                projects={projects}
+                currentProject={currentProject}
+                handleProjectInfoChange={this.handleProjectInfoChange}
+                edit={this.state.projectInfoEdit}
+                handleMenu={this.handleMenu}
+                classes={classes}
+              />
+              <br />
+              <ProjectSteps
+                projects={projects}
+                currentProject={currentProject}
+                handleStepChange={this.handleStepChange}
+                handleMenu={this.handleMenu}
+                classes={classes}
+              />
+              <br />
+              <Alert
+                open={this.state.alert}
+                title={this.state.title}
+                text={this.state.text}
+                answerYes={this.handleYes}
+                answerNo={this.handleNo}
+              />
+              <FormDialog
+                open={this.state.form}
+                title={this.state.title}
+                text={this.state.text}
+                answerYes={this.handleYes}
+                answerNo={this.handleNo}
+                classes={classes}
+              />
+              <Help
+                open={this.state.help}
+                title={this.state.title}
+                text={this.state.text}
+                answerYes={this.handleYes}
+                answerNo={this.handleNo}
+              />
+              <ProjectQuestions
+                projects={projects}
+                currentProject={currentProject}
+                currentStep={currentStep}
+                handleQuestionChange={this.handleQuestionChange}
+                handleMenu={this.handleMenu}
+                classes={classes}
+              />
+            </div>
+          )}
+        </div>
+            
+        );
+      }
 }
 
 export default withAuthenticator(App, true);

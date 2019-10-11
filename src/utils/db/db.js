@@ -1,4 +1,10 @@
-const NUMBER_PROJECTS = 3;
+
+import axios from "axios";
+
+axios.create({
+  baseURL:"https://us-central1-project-534d9.cloudfunctions.net/api",
+  responseType: "json"
+});
 
 /**
  * Description
@@ -120,17 +126,11 @@ function readProject() {
 * @returns {string} status 200 success.
 **/
 
-function readProjects() {
-  let project = require('./project.json');
-  project.name = `Project 1`
-  let projects = [];
-  projects.push(project)
+async function readProjects  () {
 
-  for (let i = 1; i < NUMBER_PROJECTS; i++ ){
-
-    projects.push(Object.create(project))
-    projects[projects.length - 1].name = `Project ${i+1}`
-  }
+  let response = await axios.get('https://us-central1-project-534d9.cloudfunctions.net/api/projects');
+  console.log(`readProjects(${response}, ${response.data})`)
+  let projects = response.data;
   
   return (projects);
 }
