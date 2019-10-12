@@ -6,20 +6,24 @@ import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until nee
 import axios from "axios";
 import * as utils from "./utils/generalUtilities.js";
 import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import ProjectInfo from "./components/ProjectInfo";
-import ProjectSteps from "./components/ProjectSteps";
-import ProjectQuestions from "./components/ProjectQuestions";
-import Alert from "./components/Alert";
-import FormDialog from "./components/FormDialog";
-import Help from "./components/Help";
-
-import aws_exports from './aws-exports';
-Amplify.configure(aws_exports);
-API.configure(aws_exports);
-
-
+      import ProjectSteps from "./components/ProjectSteps";
+      import ProjectQuestions from "./components/ProjectQuestions";
+      import Alert from "./components/Alert";
+      import FormDialog from "./components/FormDialog";
+      import Help from "./components/Help";
+      
+      import aws_exports from './aws-exports';
+      Amplify.configure(aws_exports);
+      API.configure(aws_exports);
+      
+      
 const useStyles = makeStyles(theme => ({
+        progress: {
+          margin: theme.spacing(2),
+        },
   root: {
     width: "100%"
   },
@@ -643,7 +647,9 @@ class App extends Component {
       <div>
      
         {this.state.projects.length === 0 ? (
-          <div>Loading</div>
+          <h1>Loading...
+            <CircularProgress className={classes.progress} />
+            </h1>
         ) : (
             <div>
               <ProjectInfo
