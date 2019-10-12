@@ -99,7 +99,8 @@ class App extends Component {
       text: "",
       form: false,
       help: false,
-      projectInfoEdit: false
+      projectInfoEdit: false,
+      changed : false
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(this);
@@ -140,7 +141,7 @@ class App extends Component {
         project.steps[stepNumber].questions[questionNumber].answer = answer;
         projects[currentProject] = project;
         this.setState(prevState => {
-          return { ...prevState, projects: projects };
+          return { ...prevState, projects: projects, changed:true };
         });
       }
     }
@@ -152,18 +153,15 @@ class App extends Component {
       console.log(`handleProjectInfoChange(${Object.keys(changedProjectInfo)})`);
       const projectKeys = Object.keys(project);
       const changedKeys = Object.keys(changedProjectInfo);
-      let changed = false;
       changedKeys.forEach(key => {
         if (projectKeys.includes(key)) {
-          changed = true;
           project[key] = changedProjectInfo[key]
         }
       })
       projects[currentProject] = project;
       this.setState(prevState => {
-        return { ...prevState, projects: projects, projectInfoEdit: false };
+        return { ...prevState, projects: projects, projectInfoEdit: false, changed: true };
       });
-      if (!changed) this.forceUpdate();
     }
   }
 
@@ -222,7 +220,8 @@ class App extends Component {
           help: false,
           commandString: "",
           currentStep: currentStep,
-          currentProject: currentProject
+          currentProject: currentProject,
+          changed:true
         };
       });
 
@@ -274,7 +273,8 @@ class App extends Component {
           help: false,
           commandString: "",
           currentStep: currentStep,
-          currentProject: currentProject
+          currentProject: currentProject,
+          changed: true
         };
       });
     }
@@ -304,7 +304,8 @@ class App extends Component {
                     help: false,
                     commandString: "",
                     currentStep: currentStep,
-                    currentProject: currentProject
+                    currentProject: currentProject,
+                    changed:true
                   };
                 });
               console.log(`Project add ${response.data.id}`)
@@ -334,7 +335,8 @@ class App extends Component {
                   help: false,
                   commandString: "",
                   currentStep: currentStep,
-                  currentProject: currentProject
+                  currentProject: currentProject,
+                  changed:true
                 };
               });
             })
@@ -620,6 +622,23 @@ class App extends Component {
   render() {
     const classes = useStyles;
     let { projects, currentProject, currentStep } = this.state;
+    if (this.state.changed) {
+      axios
+            .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
+            .then(response => { 
+              console.log(`Project saved ${response.data}`)
+              
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  changed:false
+                };
+              });
+            })
+            .catch(error => {
+              console.log(`Project Save Error ${error}`)
+            });
+    }
     return (
       <div>
      
