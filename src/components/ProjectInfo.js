@@ -56,36 +56,6 @@ class ProjectInfo extends Component {
       visibility: this.state.saveButton ? "visible" : "hidden"
     };
 
-    const textField = (label, field, text) => {
-      if (edit) {
-        return (
-          <TextField
-            id={`outlined-${field}`}
-            label={label}
-            name={field}
-            defaultValue={text}
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5, width: 300 }}
-            onChange={this.handleInputChange}
-          />
-        )
-      } else
-        return (
-          <TextField
-            id={`outlined-${field}`}
-            label={label}
-            name={field}
-            value={text}
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5, width: 300 }}
-            onChange={this.handleInputChange}
-          />
-        )
-    }
 
     return (
       <Paper className={classes.paper}>
@@ -101,7 +71,17 @@ class ProjectInfo extends Component {
             typeOfMenu="project"
             menuIndex={1}
             handleMenu={handleMenu} />
-          {textField("Name", "name", project.name)}
+          <TextField
+            id={`outlined-${project.name}`}
+            label="Name"
+            name={project.name}
+            value={project.name}
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            style={{ paddingRight: 5, width: 300 }}
+            onChange={this.handleInputChange}
+          />
           <Button
             type="submit"
             name="submit"
@@ -122,10 +102,38 @@ class ProjectInfo extends Component {
             Cancel
           </Button>
           <br />
-          {textField("Sponsor", "sponsor", project.sponsor)}
-          {textField("Manager", "projectManager", project.projectManager)}
-          {textField("Type", "projectType", project.projectType)}
-
+          <TextField
+            id={`outlined-${project.sponsor}`}
+            label={"Sponsor"}
+            name={project.sponsor}
+            value={project.sponsor}
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+            style={{ paddingRight: 5, width: 300 }}
+            onChange={this.handleInputChange}
+          /><TextField
+          id={`outlined-${project.projectManager}`}
+          label="Project Manager"
+          name={project.projectManager}
+          value={project.projectManager}
+          className={classes.textField}
+          margin="normal"
+          variant="outlined"
+          style={{ paddingRight: 5, width: 300 }}
+          onChange={this.handleInputChange}
+          />
+          <TextField
+        id={`outlined-${project.projectType}`}
+        label="Project Type"
+        name={project.projectType}
+        value={project.projectType}
+        className={classes.textField}
+        margin="normal"
+        variant="outlined"
+        style={{ paddingRight: 5, width: 300 }}
+        onChange={this.handleInputChange}
+      />
           <TextField
             id="outlined-creator"
             label="Creator"
@@ -138,15 +146,48 @@ class ProjectInfo extends Component {
             variant="outlined"
             onChange={this.handleInputChange}
           />
-          {textField("Start", "start", "2019/09/01")}
-          {textField("End", "end", "2019/09/01")}
-
+          <TextField
+        id={`outlined-start`}
+        label="Start"
+        name={project.start}
+        value={project.start}
+        className={classes.textField}
+        margin="normal"
+        variant="outlined"
+        style={{ paddingRight: 5, width: 300 }}
+        onChange={this.handleInputChange}
+      />
+          <TextField
+        id={`outlined-end`}
+        label="End"
+        name={project.end}
+        value={project.end}
+        className={classes.textField}
+        margin="normal"
+        variant="outlined"
+        style={{ paddingRight: 5, width: 300 }}
+        onChange={this.handleInputChange}
+      />
+          
           <br />
           <TextField
             id="outlined-full-width"
             label="Presenting problem / Opportunity"
             name="problemOpportunity"
             value={project.problemOpportunity}
+            disabled={!edit}
+            margin="normal"
+            variant="outlined"
+            multiline={true}
+            style={{ width: 600 }}
+            onChange={this.handleInputChange}
+          />
+          <br />
+          <TextField
+            id="outlined-full-width"
+            label="Notes"
+            name="note"
+            value={project.note}
             disabled={!edit}
             margin="normal"
             variant="outlined"

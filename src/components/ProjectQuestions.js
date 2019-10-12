@@ -116,7 +116,7 @@ export default function ProjectQuestions({
           <TableRow>
             <StyledTableCell>
               <h2>
-                {currentStep + 1}) {project.steps[currentStep].stepLabel} {utils.percentageQuestionsYes(project.steps[currentStep].questions)}
+                {currentStep + 1}) {project.steps[currentStep].name} {utils.percentageQuestionsYes(project.steps[currentStep].questions)}
               </h2>
             </StyledTableCell>
             <StyledTableCell>Yes%</StyledTableCell>

@@ -213,6 +213,18 @@ class App extends Component {
         default:
       }
       projects[currentProject] = project;
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          projects: projects,
+          alert: false,
+          form: false,
+          help: false,
+          commandString: "",
+          currentStep: currentStep,
+          currentProject: currentProject
+        };
+      });
 
     } else if (actionObject === "STEP") {
       switch (actionVerb) {
@@ -253,6 +265,18 @@ class App extends Component {
         default:
       }
       projects[currentProject] = project;
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          projects: projects,
+          alert: false,
+          form: false,
+          help: false,
+          commandString: "",
+          currentStep: currentStep,
+          currentProject: currentProject
+        };
+      });
     }
 
     if (actionObject === "PROJECT") {
@@ -263,13 +287,27 @@ class App extends Component {
           newProject.start = new Date().toISOString();
           newProject.end = new Date().toISOString();
           newProject.creator = this.state.currentUser;
-          projects.push(newProject);
-          currentStep = 0;
-          currentProject = projects.length - 1;
+          
           axios
             .post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject )
             .then(response => { 
-              console.log(`Project add ${response}`)
+                newProject.id = response.data.id;  
+                projects.push(newProject);
+                currentStep = 0;
+                currentProject = projects.length - 1;
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    projects: projects,
+                    alert: false,
+                    form: false,
+                    help: false,
+                    commandString: "",
+                    currentStep: currentStep,
+                    currentProject: currentProject
+                  };
+                });
+              console.log(`Project add ${response.data.id}`)
             })
             .catch(error => {
               console.log(`Project add Error ${error}`)
@@ -285,30 +323,31 @@ class App extends Component {
             .delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`)
             .then(response => { 
               console.log(`Project Delete ${response}`)
+              projects.splice(currentProject, 1)
+              currentProject = 0;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  form: false,
+                  help: false,
+                  commandString: "",
+                  currentStep: currentStep,
+                  currentProject: currentProject
+                };
+              });
             })
             .catch(error => {
               console.log(`Project Delete Error ${error}`)
             });
-          projects.splice(currentProject, 1)
-          currentProject = 0;
           break;
         case "HELP":
           break;
         default:
       }
     }
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        projects: projects,
-        alert: false,
-        form: false,
-        help: false,
-        commandString: "",
-        currentStep: currentStep,
-        currentProject: currentProject
-      };
-    });
+    
   }
   handleNo(e) {
     console.log(`handleNo(${this.state.commandString}`)
@@ -589,8 +628,8 @@ class App extends Component {
         ) : (
             <div>
               <ProjectInfo
-                projects={projects}
-                currentProject={currentProject}
+                projects={this.state.projects}
+                currentProject={this.state.currentProject}
                 handleProjectInfoChange={this.handleProjectInfoChange}
                 edit={this.state.projectInfoEdit}
                 handleMenu={this.handleMenu}
