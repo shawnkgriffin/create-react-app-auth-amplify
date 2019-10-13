@@ -8,7 +8,8 @@ class ProjectInfo extends Component {
     super(props);
     this.state = {
       saveButton: false,
-      value: ""
+      value: "",
+      name :""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +18,7 @@ class ProjectInfo extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    event.stopPropagation();
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const id = target.id;
@@ -29,12 +31,15 @@ class ProjectInfo extends Component {
 
   handleCancelClick(event) {
     event.preventDefault();
-    this.setState({ saveButton: false });
+    event.stopPropagation();
+   this.setState({ saveButton: false });
     let newProjectInfo = {};
     this.props.handleProjectInfoChange(newProjectInfo)
   }
   handleInputChange(event) {
-    const target = event.target;
+    event.preventDefault();
+    event.stopPropagation();
+   const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     const id = target.id;
@@ -72,10 +77,10 @@ class ProjectInfo extends Component {
             menuIndex={1}
             handleMenu={handleMenu} />
           <TextField
-            id={`outlined-${project.name}`}
+            id={`outlined-name`}
             label="Name"
-            name={project.name}
-            value={project.name}
+            name="name"
+            value={this.state.name}
             className={classes.textField}
             margin="normal"
             variant="outlined"

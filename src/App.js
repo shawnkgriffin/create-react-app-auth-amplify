@@ -125,6 +125,9 @@ class App extends Component {
       
 }
   handleQuestionChange(e) {
+    e.preventDefault();
+    e.stopPropagation();
+   
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
@@ -144,13 +147,28 @@ class App extends Component {
       ) {
         project.steps[stepNumber].questions[questionNumber].answer = answer;
         projects[currentProject] = project;
-        this.setState(prevState => {
-          return { ...prevState, projects: projects, changed:true };
-        });
+        axios
+            .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
+            .then(response => { 
+              console.log(`Project saved ${response.data}`)
+              
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  changed:false
+                }; 
+              });
+            })
+            .catch(error => {
+              console.log(`Project Save Error ${error}`)
+            });
+        
       }
     }
   }
   handleProjectInfoChange(changedProjectInfo) {
+    
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
