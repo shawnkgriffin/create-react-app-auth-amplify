@@ -9,7 +9,10 @@ import ListIcon from "@material-ui/icons/List";
 import EventIcon from "@material-ui/icons/Event";
 import SubjectIcon from "@material-ui/icons/Subject";
 import { DisplayFormikState } from "./helper";
-
+const buttonStyle = {
+  marginTop: 15,
+  marginLeft: 5,
+};
 export const ProjectInfo = props => {
   const {
     values: {
@@ -99,6 +102,7 @@ export const ProjectInfo = props => {
         variant="contained"
         color="primary"
         disabled={!isValid}
+        style={buttonStyle}
       >
         Save
       </Button>

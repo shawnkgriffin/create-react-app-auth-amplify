@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { ProjectInfo } from "./components/ProjectInfo";
+import ProjectMenu from "./components/ProjectMenu";
       import ProjectSteps from "./components/ProjectSteps";
       import ProjectQuestions from "./components/ProjectQuestions";
       import Alert from "./components/Alert";
@@ -723,7 +724,14 @@ class App extends Component {
             </h1>
         ) : (
             <div>
+              <ProjectMenu
+            projects={projects}
+            currentProject={currentProject}
+            typeOfMenu="project"
+            menuIndex={1}
+            handleMenu={this.handleMenu} />
               <Formik
+                enableReinitialize
               render={props => <ProjectInfo {...props} />}
               initialValues={values}
               validationSchema={projectInfoValidationSchema}
