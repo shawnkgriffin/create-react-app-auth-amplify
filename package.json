@@ -9,9 +9,11 @@
     "aws-amplify": "^1.1.6",
     "aws-amplify-react": "^2.0.7",
     "axios": "^0.19.0",
+    "formik": "^1.5.8",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
