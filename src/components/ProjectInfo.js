@@ -221,7 +221,7 @@ export const ProjectInfo = props => {
         }}
       />
 
-      <DisplayFormikState {...props} />
+      {/* <DisplayFormikState {...props} /> */}
     </form>
   );
 };
