@@ -9,6 +9,7 @@ import ListIcon from "@material-ui/icons/List";
 import EventIcon from "@material-ui/icons/Event";
 import SubjectIcon from "@material-ui/icons/Subject";
 import { DisplayFormikState } from "./helper";
+
 export const ProjectInfo = props => {
   const {
     values: {
@@ -95,16 +96,17 @@ export const ProjectInfo = props => {
       <Button
         type="submit"
         margin="normal"
-        variant="raised"
+        variant="contained"
         color="primary"
         disabled={!isValid}
       >
         Save
       </Button>
+      
       <br />
       <TextField
         id="outlined-name"
-        name="Sponsor"
+        name="sponsor"
         variant="outlined"
         helperText={touched.sponsor ? errors.sponsor : ""}
         error={touched.sponsor && Boolean(errors.sponsor)}
@@ -122,7 +124,7 @@ export const ProjectInfo = props => {
       />
       <TextField
         id="outlined-name"
-        name="Project Manager"
+        name="projectManager"
         variant="outlined"
         helperText={touched.projectManager ? errors.projectManager : ""}
         error={touched.projectManager && Boolean(errors.projectManager)}
@@ -140,7 +142,7 @@ export const ProjectInfo = props => {
       />
       <TextField
         id="outlined-name"
-        name="Project Type"
+        name="projectType"
         variant="outlined"
         helperText={touched.projectType ? errors.projectType : ""}
         error={touched.projectType && Boolean(errors.projectType)}
