@@ -306,8 +306,10 @@ class App extends Component {
         case "ADD":
           let newProject = utils.createNewProject();
           newProject.name = newText;
-          newProject.start = new Date().toISOString();
-          newProject.end = new Date().toISOString();
+          let today = new Date();
+          let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
+          newProject.start = today.toLocaleDateString();
+          newProject.end = thirtyDaysFromNow.toLocaleDateString();
           newProject.creator = this.state.currentUser;
           
           axios
@@ -340,6 +342,19 @@ class App extends Component {
           break;
         case "EDITHELP":
           project.help = newText;
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              alert: false,
+              form: false,
+              help: false,
+              commandString: "",
+              currentStep: currentStep,
+              currentProject: currentProject,
+              changed: true
+            };
+          });
           break;
         case "DELETE":
             axios
@@ -358,7 +373,7 @@ class App extends Component {
                   commandString: "",
                   currentStep: currentStep,
                   currentProject: currentProject,
-                  changed:true
+                  changed:false
                 };
               });
             })
