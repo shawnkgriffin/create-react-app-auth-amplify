@@ -1,209 +1,221 @@
-import React, { Component } from "react";
-import Paper from "@material-ui/core/Paper";
-import ProjectMenu from "./ProjectMenu";
-import { TextField, Button } from "@material-ui/core";
+import React from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import NameIcon from "@material-ui/icons/SupervisorAccount";
+import LockIcon from "@material-ui/icons/Lock";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import ListIcon from "@material-ui/icons/List";
+import EventIcon from "@material-ui/icons/Event";
+import SubjectIcon from "@material-ui/icons/Subject";
+import { DisplayFormikState } from "./helper";
+export const ProjectInfo = props => {
+  const {
+    values: {
+      name,
+      problemOpportunity,
+      creator,
+      note,
+      sponsor,
+      projectManager,
+      projectType,
+      start,
+      end
+    },
+    errors,
+    touched,
+    handleSubmit,
+    handleChange,
+    isValid,
+    setFieldTouched
+  } = props;
 
-class ProjectInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      saveButton: false,
-      value: "",
-      name :""
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancelClick = this.handleCancelClick.bind(this);
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const id = target.id;
-    const name = target.name;
-    console.log(`handleSubmit(target:${target},value:${value}, name:${name}, id:${id})`);
-    let newProjectInfo = this.state;
-    this.props.handleProjectInfoChange(newProjectInfo)
-    this.setState({ saveButton: false });
-  }
-
-  handleCancelClick(event) {
-    event.preventDefault();
-    event.stopPropagation();
-   this.setState({ saveButton: false });
-    let newProjectInfo = {};
-    this.props.handleProjectInfoChange(newProjectInfo)
-  }
-  handleInputChange(event) {
-    event.preventDefault();
-    event.stopPropagation();
-   const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-    const id = target.id;
-    console.log(`handleInputChange(target:${target},value:${value}, id:${id})`);
-    this.setState({
-      [name]: value
-    });
-    this.setState({ saveButton: true });
-  }
-  render(props) {
-    let { projects, currentProject, edit, handleMenu, classes } = this.props;
-    edit = true;
-    let project = projects[currentProject];
-    console.log(`ProjectInfo(${project.name})`);
-
-    const buttonStyle = {
-      marginTop: 25,
-      marginLeft: 10,
-      visibility: this.state.saveButton ? "visible" : "hidden"
-    };
-
-
-    return (
-      <Paper className={classes.paper}>
-        <form
-          className={classes.container}
-          noValidate
-          autoComplete="off"
-          onSubmit={this.handleSubmit}
-        >
-          <ProjectMenu
-            projects={projects}
-            currentProject={currentProject}
-            typeOfMenu="project"
-            menuIndex={1}
-            handleMenu={handleMenu} />
-          <TextField
-            id={`outlined-name`}
-            label="Name"
-            name="name"
-            value={this.state.name}
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5, width: 300 }}
-            onChange={this.handleInputChange}
-          />
-          <Button
-            type="submit"
-            name="submit"
-            variant="contained"
-            color="primary"
-            style={buttonStyle}
-          >
-            Save
-          </Button>
-          <Button
-            type="button"
-            name="cancel"
-            variant="contained"
-            color="secondary"
-            style={buttonStyle}
-            onClick={this.handleCancelClick}
-          >
-            Cancel
-          </Button>
-          <br />
-          <TextField
-            id={`outlined-${project.sponsor}`}
-            label={"Sponsor"}
-            name={project.sponsor}
-            value={project.sponsor}
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-            style={{ paddingRight: 5, width: 300 }}
-            onChange={this.handleInputChange}
-          /><TextField
-          id={`outlined-${project.projectManager}`}
-          label="Project Manager"
-          name={project.projectManager}
-          value={project.projectManager}
-          className={classes.textField}
-          margin="normal"
-          variant="outlined"
-          style={{ paddingRight: 5, width: 300 }}
-          onChange={this.handleInputChange}
-          />
-          <TextField
-        id={`outlined-${project.projectType}`}
+  const change = (name, e) => {
+    e.persist();
+    handleChange(e);
+    console.log(errors);
+    setFieldTouched(name, true, false);
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="outlined-name"
+        name="name"
+        variant="outlined"
+        helperText={touched.name ? errors.name : ""}
+        error={touched.name && Boolean(errors.name)}
+        label="Project Name"
+        value={name}
+        style={{ padding: 5, minWidth: 200 }}
+        onChange={change.bind(null, "name")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <AssignmentIcon />
+            </InputAdornment>
+          )
+        }}
+      />
+      <TextField
+        id="outlined-start"
+        name="start"
+        variant="outlined"
+        helperText={touched.start ? errors.start : ""}
+        error={touched.start && Boolean(errors.start)}
+        label="Start Date"
+        value={start}
+        style={{ padding: 5, minWidth: 200 }}
+        onChange={change.bind(null, "start")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <EventIcon />
+            </InputAdornment>
+          )
+        }}
+      />
+      <TextField
+        id="outlined-end"
+        name="end"
+        variant="outlined"
+        helperText={touched.end ? errors.end : ""}
+        error={touched.end && Boolean(errors.end)}
+        label="End Date"
+        value={end}
+        style={{ padding: 5, minWidth: 200 }}
+        onChange={change.bind(null, "end")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="end">
+              <EventIcon />
+            </InputAdornment>
+          )
+        }}
+      />
+      <Button
+        type="submit"
+        margin="normal"
+        variant="raised"
+        color="primary"
+        disabled={!isValid}
+      >
+        Save
+      </Button>
+      <br />
+      <TextField
+        id="outlined-name"
+        name="Sponsor"
+        variant="outlined"
+        helperText={touched.sponsor ? errors.sponsor : ""}
+        error={touched.sponsor && Boolean(errors.sponsor)}
+        label="Sponsor"
+        value={sponsor}
+        style={{ paddingRight: 5, minWidth: 200 }}
+        onChange={change.bind(null, "sponsor")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <NameIcon />
+            </InputAdornment>
+          )
+        }}
+      />
+      <TextField
+        id="outlined-name"
+        name="Project Manager"
+        variant="outlined"
+        helperText={touched.projectManager ? errors.projectManager : ""}
+        error={touched.projectManager && Boolean(errors.projectManager)}
+        label="Project Manager"
+        value={projectManager}
+        style={{ paddingRight: 5, minWidth: 200 }}
+        onChange={change.bind(null, "projectManager")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <NameIcon />
+            </InputAdornment>
+          )
+        }}
+      />
+      <TextField
+        id="outlined-name"
+        name="Project Type"
+        variant="outlined"
+        helperText={touched.projectType ? errors.projectType : ""}
+        error={touched.projectType && Boolean(errors.projectType)}
         label="Project Type"
-        name={project.projectType}
-        value={project.projectType}
-        className={classes.textField}
-        margin="normal"
-        variant="outlined"
-        style={{ paddingRight: 5, width: 300 }}
-        onChange={this.handleInputChange}
+        value={projectType}
+        style={{ padding: 5, minWidth: 200 }}
+        onChange={change.bind(null, "projectType")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <ListIcon />
+            </InputAdornment>
+          )
+        }}
       />
-          <TextField
-            id="outlined-creator"
-            label="Creator"
-            name="creator"
-            disabled
-            className={classes.textField}
-            value={project.creator}
-            margin="normal"
-            style={{ paddingRight: 5 }}
-            variant="outlined"
-            onChange={this.handleInputChange}
-          />
-          <TextField
-        id={`outlined-start`}
-        label="Start"
-        name={project.start}
-        value={project.start}
-        className={classes.textField}
-        margin="normal"
+      <TextField
+        id="outlined-creator"
+        name="creator"
+        disabled
         variant="outlined"
-        style={{ paddingRight: 5, width: 300 }}
-        onChange={this.handleInputChange}
+        style={{ padding: 5, minWidth: 200 }}
+        helperText={touched.creator ? errors.creator : ""}
+        error={touched.creator && Boolean(errors.creator)}
+        label="Creator"
+        value={creator}
+        onChange={change.bind(null, "creator")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <LockIcon />
+            </InputAdornment>
+          )
+        }}
       />
-          <TextField
-        id={`outlined-end`}
-        label="End"
-        name={project.end}
-        value={project.end}
-        className={classes.textField}
-        margin="normal"
+      <br />
+      <TextField
+        id="outlined-problemOpportunity"
+        name="problemOpportunity"
         variant="outlined"
-        style={{ paddingRight: 5, width: 300 }}
-        onChange={this.handleInputChange}
+        multiline
+        helperText={touched.problemOpportunity ? errors.problemOpportunity : ""}
+        error={touched.problemOpportunity && Boolean(errors.problemOpportunity)}
+        label="Problem Opportunity"
+        value={problemOpportunity}
+        style={{ padding: 5, width: "45%" }}
+        onChange={change.bind(null, "problemOpportunity")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SubjectIcon />
+            </InputAdornment>
+          )
+        }}
       />
-          
-          <br />
-          <TextField
-            id="outlined-full-width"
-            label="Presenting problem / Opportunity"
-            name="problemOpportunity"
-            value={project.problemOpportunity}
-            disabled={!edit}
-            margin="normal"
-            variant="outlined"
-            multiline={true}
-            style={{ width: 600 }}
-            onChange={this.handleInputChange}
-          />
-          <br />
-          <TextField
-            id="outlined-full-width"
-            label="Notes"
-            name="note"
-            value={project.note}
-            disabled={!edit}
-            margin="normal"
-            variant="outlined"
-            multiline={true}
-            style={{ width: 600 }}
-            onChange={this.handleInputChange}
-          />
-        </form>
-      </Paper>
-    );
-  }
-}
+      <TextField
+        id="outlined-note"
+        name="note"
+        multiline
+        variant="outlined"
+        helperText={touched.note ? errors.note : ""}
+        error={touched.note && Boolean(errors.note)}
+        label="Note"
+        value={note}
+        style={{ padding: 5, width: "45%" }}
+        onChange={change.bind(null, "note")}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SubjectIcon />
+            </InputAdornment>
+          )
+        }}
+      />
 
-export default ProjectInfo;
+      <DisplayFormikState {...props} />
+    </form>
+  );
+};

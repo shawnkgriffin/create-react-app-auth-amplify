@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Formik } from "formik";
+import * as Yup from "yup";
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
@@ -8,7 +10,7 @@ import * as utils from "./utils/generalUtilities.js";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import ProjectInfo from "./components/ProjectInfo";
+import { ProjectInfo } from "./components/ProjectInfo";
       import ProjectSteps from "./components/ProjectSteps";
       import ProjectQuestions from "./components/ProjectQuestions";
       import Alert from "./components/Alert";
@@ -19,7 +21,21 @@ import ProjectInfo from "./components/ProjectInfo";
       Amplify.configure(aws_exports);
       API.configure(aws_exports);
       
-      
+      const projectInfoValidationSchema = Yup.object({
+        name: Yup.string("Enter a name").required("Name is required"),
+        sponsor: Yup.string("Enter project sponsor's name."),
+        projectManager: Yup.string("Enter project Manager's name."),
+        projectType: Yup.string("Enter project type."),
+        creator: Yup.string("Project creator."),
+        problemOpportunity: Yup.string(
+          "Describe the problem or opportunity this project addresses."
+        ),
+        note: Yup.string("Notes on this project."),
+        start: Yup.date().default(() => new Date()),
+        end: Yup.date()
+          .default(() => new Date())
+          .when("start", (startDate, schema) => startDate && schema.min(startDate))
+      });
 const useStyles = makeStyles(theme => ({
         progress: {
           margin: theme.spacing(2),
@@ -659,6 +675,28 @@ class App extends Component {
   render() {
     const classes = useStyles;
     let { projects, currentProject, currentStep } = this.state;
+    const {
+      name,
+      problemOpportunity,
+      creator,
+      note,
+      sponsor,
+      projectManager,
+      projectType,
+      start,
+      end
+    } = { ...projects[currentProject] };
+    const values = {
+      name,
+      problemOpportunity,
+      creator,
+      note,
+      sponsor,
+      projectManager,
+      projectType,
+      start,
+      end
+    };
     if (this.state.changed) {
       axios
             .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
@@ -685,14 +723,12 @@ class App extends Component {
             </h1>
         ) : (
             <div>
-              <ProjectInfo
-                projects={this.state.projects}
-                currentProject={this.state.currentProject}
-                handleProjectInfoChange={this.handleProjectInfoChange}
-                edit={this.state.projectInfoEdit}
-                handleMenu={this.handleMenu}
-                classes={classes}
-              />
+              <Formik
+              render={props => <ProjectInfo {...props} />}
+              initialValues={values}
+              validationSchema={projectInfoValidationSchema}
+              onSubmit={this.handleProjectInfoChange}
+            />
               <br />
               <ProjectSteps
                 projects={projects}
