@@ -10,7 +10,7 @@ import * as utils from "./utils/generalUtilities.js";
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { ProjectInfo } from "./components/ProjectInfo";
+import ProjectInfo from "./components/ProjectInfo";
 import ProjectMenu from "./components/ProjectMenu";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";

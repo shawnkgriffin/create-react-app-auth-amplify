@@ -13,7 +13,7 @@ const buttonStyle = {
   marginTop: 15,
   marginLeft: 5,
 };
-export const ProjectInfo = props => {
+const ProjectInfo = props => {
   const {
     values: {
       name,
@@ -225,3 +225,5 @@ export const ProjectInfo = props => {
     </form>
   );
 };
+
+export default ProjectInfo;
