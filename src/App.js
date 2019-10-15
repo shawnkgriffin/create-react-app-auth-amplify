@@ -599,7 +599,7 @@ class App extends Component {
       start,
       end
     };
-    if (this.state.changed) db.putProject(projects[currentProject].id);
+    if (this.state.changed) db.putProject(projects[currentProject]);
 
     return (
       <div>
