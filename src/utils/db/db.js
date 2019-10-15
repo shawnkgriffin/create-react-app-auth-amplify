@@ -2,7 +2,7 @@
 import axios from "axios";
 
 axios.create({
-  baseURL:"https://us-central1-project-534d9.cloudfunctions.net/api",
+  baseURL: "https://us-central1-project-534d9.cloudfunctions.net/api",
   responseType: "json"
 });
 
@@ -15,20 +15,28 @@ axios.create({
  * @returns {string} status 200 success.
  **/
 
-function initProject() {
+function initProject(project, callback) {
 
 }
 /**
  * Description
- * @function createProject
+ * @function postProject
  * @param {integer}  
  * @param {function} callback 
  * @param {string}  
  * @returns {string} status 200 success.
  **/
 
-function createProject() {
+function postProject(newProject, callback) {
 
+  axios.post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject)
+    .then(response => {
+      callback(response.data.id)
+      console.log(`Project add ${response.data.id}`)
+    })
+    .catch(error => {
+      console.log(`Project add Error ${error}`)
+    });
 }
 
 /**
@@ -119,31 +127,38 @@ function readProject() {
 }
 /**
 * Description
-* @function readProjects
+* @function getProjects
 * @param {integer}  
 * @param {function} callback 
 * @param {string}  
 * @returns {string} status 200 success.
 **/
 
-async function readProjects  () {
-
-  let response = await axios.get('https://us-central1-project-534d9.cloudfunctions.net/api/projects');
-  console.log(`readProjects(${response}, ${response.data})`)
-  let projects = response.data;
-  
-  return (projects);
+async function getProjects(callback) {
+  axios
+    .get('https://us-central1-project-534d9.cloudfunctions.net/api/projects')
+    .then(data => { callback(data.data) }
+    )
 }
+
 /**
 * Description
-* @function updateProject
+* @function putProject
 * @param {integer}  
 * @param {function} callback 
 * @param {string}  
 * @returns {string} status 200 success.
 **/
 
-function updateProject() {
+function putProject(project) {
+  axios
+    .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${project.id}`, project)
+    .then(response => {
+      console.log(`Project saved ${response.data}`)
+    })
+    .catch(error => {
+      console.log(`Project Save Error ${error}`)
+    });
 
 }
 /**
@@ -155,9 +170,16 @@ function updateProject() {
 * @returns {string} status 200 success.
 **/
 
-function deleteProject() {
+function deleteProject(id) {
+  axios.delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${id}`)
+    .then(response => {
+      console.log(`Project Delete ${JSON.stringify(response, null, 2)}`)
 
+    })
+    .catch(error => {
+      console.log(`Project Delete Error ${error}`)
+    });
 }
 
 
-export { initProject, createProject, readSurvey, readProjects, readProject, updateProject, deleteProject }
+export { initProject, postProject, readSurvey, getProjects, readProject, putProject, deleteProject }

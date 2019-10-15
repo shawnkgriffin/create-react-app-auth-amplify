@@ -1,21 +1,24 @@
+import './App.css';
 import React, { Component } from 'react';
 import { Formik } from "formik";
-import './App.css';
-import { withAuthenticator } from 'aws-amplify-react'
-import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
-
-import axios from "axios";
-import * as utils from "./utils/generalUtilities.js";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import ProjectInfo from "./components/ProjectInfo";
+// Project components
 import ProjectMenu from "./components/ProjectMenu";
+import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
 
+//Project database and utilities
+import * as utils from "./utils/generalUtilities.js";
+import * as db from "./utils/db/db.js";
+
+// AWS components
+import { withAuthenticator } from 'aws-amplify-react'
+import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 API.configure(aws_exports);
@@ -50,14 +53,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get('https://us-central1-project-534d9.cloudfunctions.net/api/projects')
-      .then(data => {
-        console.log(`componentDidMount${data.data}`);
-        this.setState(prevState => {
-          return { ...prevState, projects: data.data };
-        })
+    db.getProjects(projects => {
+      this.setState(prevState => {
+        return { ...prevState, projects: projects };
       })
+
+    })
 
   }
   handleQuestionChange(e) {
@@ -83,22 +84,14 @@ class App extends Component {
       ) {
         project.steps[stepNumber].questions[questionNumber].answer = answer;
         projects[currentProject] = project;
-        axios
-          .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
-          .then(response => {
-            console.log(`Project saved ${response.data}`)
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                projects: projects,
-                changed: false
-              };
-            });
-          })
-          .catch(error => {
-            console.log(`Project Save Error ${error}`)
-          });
+        this.setState(prevState => {
+          return {
+            ...prevState,
+            projects: projects,
+            changed: false
+          };
+        });
+        db.putProject(project);
 
       }
     }
@@ -248,31 +241,26 @@ class App extends Component {
           newProject.end = thirtyDaysFromNow.toLocaleDateString();
           newProject.creator = this.state.currentUser;
 
-          axios
-            .post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject)
-            .then(response => {
-              newProject.id = response.data.id;
-              projects.push(newProject);
-              currentStep = 0;
-              currentProject = projects.length - 1;
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  projects: projects,
-                  alert: false,
-                  form: false,
-                  help: false,
-                  commandString: "",
-                  currentStep: currentStep,
-                  currentProject: currentProject,
-                  changed: true
-                };
-              });
-              console.log(`Project add ${response.data.id}`)
-            })
-            .catch(error => {
-              console.log(`Project add Error ${error}`)
+          db.postProject(newProject, id => {
+            newProject.id = id;
+            projects.push(newProject);
+            currentStep = 0;
+            currentProject = projects.length - 1;
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projects: projects,
+                alert: false,
+                form: false,
+                help: false,
+                commandString: "",
+                currentStep: currentStep,
+                currentProject: currentProject,
+                changed: true
+              };
             });
+            console.log(`Project add ${project.id}`)
+          })
           break;
         case "EDIT":
           break;
@@ -293,29 +281,22 @@ class App extends Component {
           });
           break;
         case "DELETE":
-          axios
-            .delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`)
-            .then(response => {
-              console.log(`Project Delete ${response}`)
-              projects.splice(currentProject, 1)
-              currentProject = 0;
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  projects: projects,
-                  alert: false,
-                  form: false,
-                  help: false,
-                  commandString: "",
-                  currentStep: currentStep,
-                  currentProject: currentProject,
-                  changed: false
-                };
-              });
-            })
-            .catch(error => {
-              console.log(`Project Delete Error ${error}`)
-            });
+          db.deleteProject(projects[currentProject].id);
+          projects.splice(currentProject, 1)
+          currentProject = 0;
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              alert: false,
+              form: false,
+              help: false,
+              commandString: "",
+              currentStep: currentStep,
+              currentProject: currentProject,
+              changed: false
+            };
+          });
           break;
         case "HELP":
           break;
@@ -618,23 +599,8 @@ class App extends Component {
       start,
       end
     };
-    if (this.state.changed) {
-      axios
-        .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
-        .then(response => {
-          console.log(`Project saved ${response.data}`)
+    if (this.state.changed) db.putProject(projects[currentProject].id);
 
-          this.setState(prevState => {
-            return {
-              ...prevState,
-              changed: false
-            };
-          });
-        })
-        .catch(error => {
-          console.log(`Project Save Error ${error}`)
-        });
-    }
     return (
       <div>
 
