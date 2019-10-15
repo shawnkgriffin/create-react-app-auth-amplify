@@ -1,6 +1,23 @@
 import { makeStyles } from "@material-ui/core/styles";
+import * as Yup from "yup";
 
- const projectStyles = makeStyles(theme => ({
+const projectInfoValidationSchema = Yup.object({
+  name: Yup.string("Enter a name").required("Name is required"),
+  sponsor: Yup.string("Enter project sponsor's name."),
+  projectManager: Yup.string("Enter project Manager's name."),
+  projectType: Yup.string("Enter project type."),
+  creator: Yup.string("Project creator."),
+  problemOpportunity: Yup.string(
+    "Describe the problem or opportunity this project addresses."
+  ),
+  note: Yup.string("Notes on this project."),
+  start: Yup.date().default(() => new Date()),
+  end: Yup.date()
+    .default(() => new Date())
+    .when("start", (startDate, schema) => startDate && schema.min(startDate))
+});
+
+const projectStyles = makeStyles(theme => ({
   progress: {
     margin: theme.spacing(2),
   },
@@ -61,7 +78,7 @@ import { makeStyles } from "@material-ui/core/styles";
     bottom: theme.spacing(2),
     right: theme.spacing(3)
   }
- }));
+}));
 
 /**
  * Description
@@ -83,16 +100,16 @@ function parseCommand(commandString) {
 
 }
 function percentageQuestionsYes(questions) {
-  let numberYes = questions.map((question) => (!question.skip && question.answer.toUpperCase() === "YES") ? 1 : 0 ).reduce((acc, val) => acc + val);;
-  let numberSkipped = questions.map((question) => question.skip ? 1 : 0 ).reduce((acc, val) => acc + val);
+  let numberYes = questions.map((question) => (!question.skip && question.answer.toUpperCase() === "YES") ? 1 : 0).reduce((acc, val) => acc + val);;
+  let numberSkipped = questions.map((question) => question.skip ? 1 : 0).reduce((acc, val) => acc + val);
   let numberQuestions = questions.length - numberSkipped;
 
-  if (numberQuestions > 0 ) {
-    let percentageResult = numberYes/numberQuestions*100.
-    return(`(${percentageResult.toFixed(0)}%)`)
+  if (numberQuestions > 0) {
+    let percentageResult = numberYes / numberQuestions * 100.
+    return (`(${percentageResult.toFixed(0)}%)`)
 
   } else {
-    return('?/?')
+    return ('?/?')
   }
 
 }
@@ -101,4 +118,7 @@ function createNewProject() {
   return (project);
 }
 
-export { percentageQuestionsYes, createNewProject, parseCommand, projectStyles }
+export {
+  percentageQuestionsYes, createNewProject,
+  parseCommand, projectStyles, projectInfoValidationSchema
+}

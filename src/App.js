@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Formik } from "formik";
-import * as Yup from "yup";
 import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
@@ -20,23 +19,6 @@ import Help from "./components/Help";
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 API.configure(aws_exports);
-
-const projectInfoValidationSchema = Yup.object({
-  name: Yup.string("Enter a name").required("Name is required"),
-  sponsor: Yup.string("Enter project sponsor's name."),
-  projectManager: Yup.string("Enter project Manager's name."),
-  projectType: Yup.string("Enter project type."),
-  creator: Yup.string("Project creator."),
-  problemOpportunity: Yup.string(
-    "Describe the problem or opportunity this project addresses."
-  ),
-  note: Yup.string("Notes on this project."),
-  start: Yup.date().default(() => new Date()),
-  end: Yup.date()
-    .default(() => new Date())
-    .when("start", (startDate, schema) => startDate && schema.min(startDate))
-});
-const useStyles = utils.projectStyles;
 
 class App extends Component {
   constructor(props) {
@@ -611,7 +593,6 @@ class App extends Component {
     }
   }
   render() {
-    const classes = useStyles;
     let { projects, currentProject, currentStep } = this.state;
     const project = projects[currentProject];
     const projectList = projects.map(project => project.name)
@@ -659,7 +640,7 @@ class App extends Component {
 
         {this.state.projects.length === 0 ? (
           <h1>Loading...
-            <CircularProgress className={classes.progress} />
+            <CircularProgress className={utils.projectStyles.progress} />
           </h1>
         ) : (
             <div>
@@ -673,7 +654,7 @@ class App extends Component {
                 enableReinitialize
                 render={props => <ProjectInfo {...props} />}
                 initialValues={values}
-                validationSchema={projectInfoValidationSchema}
+                validationSchema={utils.projectInfoValidationSchema}
                 onSubmit={this.handleProjectInfoChange}
               />
               <br />
@@ -683,7 +664,7 @@ class App extends Component {
                 currentProject={currentProject}
                 handleStepChange={this.handleStepChange}
                 handleMenu={this.handleMenu}
-                classes={classes}
+                classes={utils.projectStyles}
               />
               <br />
               <Alert
@@ -699,7 +680,7 @@ class App extends Component {
                 text={this.state.text}
                 answerYes={this.handleYes}
                 answerNo={this.handleNo}
-                classes={classes}
+                classes={utils.projectStyles}
               />
               <Help
                 open={this.state.help}
@@ -716,7 +697,7 @@ class App extends Component {
                 currentStep={currentStep}
                 handleQuestionChange={this.handleQuestionChange}
                 handleMenu={this.handleMenu}
-                classes={classes}
+                classes={utils.projectStyles}
               />
             </div>
           )}
