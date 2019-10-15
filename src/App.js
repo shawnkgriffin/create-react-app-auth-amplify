@@ -676,6 +676,8 @@ class App extends Component {
   render() {
     const classes = useStyles;
     let { projects, currentProject, currentStep } = this.state;
+    const project = projects[currentProject];
+    const projectList = projects.map(project => project.name)
     const {
       name,
       problemOpportunity,
@@ -725,21 +727,22 @@ class App extends Component {
         ) : (
             <div>
               <ProjectMenu
-            projects={projects}
-            currentProject={currentProject}
-            typeOfMenu="project"
-            menuIndex={1}
-            handleMenu={this.handleMenu} />
+                projectList={projectList}
+                currentProject={currentProject}
+                typeOfMenu="project"
+                menuIndex={1}
+                handleMenu={this.handleMenu} />
               <Formik
                 enableReinitialize
-              render={props => <ProjectInfo {...props} />}
-              initialValues={values}
-              validationSchema={projectInfoValidationSchema}
-              onSubmit={this.handleProjectInfoChange}
-            />
+                render={props => <ProjectInfo {...props} />}
+                initialValues={values}
+                validationSchema={projectInfoValidationSchema}
+                onSubmit={this.handleProjectInfoChange}
+                />
               <br />
               <ProjectSteps
-                projects={projects}
+                projectList={projectList}
+                project={project}
                 currentProject={currentProject}
                 handleStepChange={this.handleStepChange}
                 handleMenu={this.handleMenu}
@@ -769,7 +772,9 @@ class App extends Component {
                 answerNo={this.handleNo}
               />
               <ProjectQuestions
-                projects={projects}
+                projectList={projectList}
+                questions={project.steps[currentStep].questions}
+                stepName={project.steps[currentStep].name}
                 currentProject={currentProject}
                 currentStep={currentStep}
                 handleQuestionChange={this.handleQuestionChange}

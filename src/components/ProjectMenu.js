@@ -45,7 +45,7 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-export default function CustomizedMenus({ projects, currentProject, typeOfMenu, menuIndex, handleMenu }) {
+function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
   const style = projectMenu ? { marginTop: 20 } : { marginTop: 0 }
@@ -66,7 +66,7 @@ export default function CustomizedMenus({ projects, currentProject, typeOfMenu, 
   
   
   // TODO placeholder till I implement multiple projects. 
-  const projectMenuList = projects.map((project, index) => {
+  const projectMenuList = projectList.map((projectName, index) => {
     return (
       <StyledMenuItem
         key={`project.${index}.Select`}
@@ -76,7 +76,7 @@ export default function CustomizedMenus({ projects, currentProject, typeOfMenu, 
         <ListItemIcon>
           <AssignmentIcon />
         </ListItemIcon>
-        <ListItemText primary={`${index + 1}) ${project.name}`} />
+        <ListItemText primary={`${index + 1}) ${projectName}`} />
       </StyledMenuItem>
     )
   })
@@ -179,3 +179,5 @@ export default function CustomizedMenus({ projects, currentProject, typeOfMenu, 
     </Fragment>
   );
 }
+const ProjectMenu = React.memo(CustomizedMenus);
+export default ProjectMenu;

@@ -34,13 +34,13 @@ const StyledTableRow = withStyles(theme => ({
 }))(TableRow);
 
 export default function ProjectSteps({
-  projects,
+  projectList,
+  project,
   currentProject,
   handleStepChange,
   handleMenu,
   classes
 }) {
-  let project = projects[currentProject];
   // project.stepTypes determines the number of columns. 
   // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
   let stepStrings = [];
@@ -62,7 +62,7 @@ export default function ProjectSteps({
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
                   <ProjectMenu
-                    projects={projects}
+                    projectList={projectList}
                     currentProject={currentProject}
                     typeOfMenu="step"
                     menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu}
