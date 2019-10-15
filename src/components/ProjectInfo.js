@@ -37,7 +37,6 @@ const ProjectInfo = props => {
   const change = (name, e) => {
     e.persist();
     handleChange(e);
-    console.log(errors);
     setFieldTouched(name, true, false);
   };
   return (
