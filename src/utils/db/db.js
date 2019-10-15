@@ -154,10 +154,10 @@ function putProject(project) {
   axios
     .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${project.id}`, project)
     .then(response => {
-      console.log(`Project saved ${response.data}`)
+      console.log(`Project put ${response.data}`)
     })
     .catch(error => {
-      console.log(`Project Save Error ${error}`)
+      console.log(`Project Put Error ${error}`)
     });
 
 }
