@@ -12,35 +12,35 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { ProjectInfo } from "./components/ProjectInfo";
 import ProjectMenu from "./components/ProjectMenu";
-      import ProjectSteps from "./components/ProjectSteps";
-      import ProjectQuestions from "./components/ProjectQuestions";
-      import Alert from "./components/Alert";
-      import FormDialog from "./components/FormDialog";
-      import Help from "./components/Help";
-      
-      import aws_exports from './aws-exports';
-      Amplify.configure(aws_exports);
-      API.configure(aws_exports);
-      
-      const projectInfoValidationSchema = Yup.object({
-        name: Yup.string("Enter a name").required("Name is required"),
-        sponsor: Yup.string("Enter project sponsor's name."),
-        projectManager: Yup.string("Enter project Manager's name."),
-        projectType: Yup.string("Enter project type."),
-        creator: Yup.string("Project creator."),
-        problemOpportunity: Yup.string(
-          "Describe the problem or opportunity this project addresses."
-        ),
-        note: Yup.string("Notes on this project."),
-        start: Yup.date().default(() => new Date()),
-        end: Yup.date()
-          .default(() => new Date())
-          .when("start", (startDate, schema) => startDate && schema.min(startDate))
-      });
+import ProjectSteps from "./components/ProjectSteps";
+import ProjectQuestions from "./components/ProjectQuestions";
+import Alert from "./components/Alert";
+import FormDialog from "./components/FormDialog";
+import Help from "./components/Help";
+
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
+API.configure(aws_exports);
+
+const projectInfoValidationSchema = Yup.object({
+  name: Yup.string("Enter a name").required("Name is required"),
+  sponsor: Yup.string("Enter project sponsor's name."),
+  projectManager: Yup.string("Enter project Manager's name."),
+  projectType: Yup.string("Enter project type."),
+  creator: Yup.string("Project creator."),
+  problemOpportunity: Yup.string(
+    "Describe the problem or opportunity this project addresses."
+  ),
+  note: Yup.string("Notes on this project."),
+  start: Yup.date().default(() => new Date()),
+  end: Yup.date()
+    .default(() => new Date())
+    .when("start", (startDate, schema) => startDate && schema.min(startDate))
+});
 const useStyles = makeStyles(theme => ({
-        progress: {
-          margin: theme.spacing(2),
-        },
+  progress: {
+    margin: theme.spacing(2),
+  },
   root: {
     width: "100%"
   },
@@ -104,10 +104,10 @@ const useStyles = makeStyles(theme => ({
 
 class App extends Component {
   constructor(props) {
-    
+
     super(props);
     this.state = {
-      projects:[],
+      projects: [],
       currentProject: 0,
       currentStep: 0,
       currentUser: "shawn@shawngriffin.com",
@@ -121,7 +121,7 @@ class App extends Component {
       form: false,
       help: false,
       projectInfoEdit: false,
-      changed : false
+      changed: false
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(this);
@@ -131,20 +131,21 @@ class App extends Component {
     this.handleNo = this.handleNo.bind(this);
   }
 
-   componentDidMount() {
+  componentDidMount() {
     axios
       .get('https://us-central1-project-534d9.cloudfunctions.net/api/projects')
       .then(data => {
         console.log(`componentDidMount${data.data}`);
         this.setState(prevState => {
           return { ...prevState, projects: data.data };
-        }) })
-      
-}
+        })
+      })
+
+  }
   handleQuestionChange(e) {
     e.preventDefault();
     e.stopPropagation();
-   
+
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
@@ -165,27 +166,27 @@ class App extends Component {
         project.steps[stepNumber].questions[questionNumber].answer = answer;
         projects[currentProject] = project;
         axios
-            .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
-            .then(response => { 
-              console.log(`Project saved ${response.data}`)
-              
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  projects: projects,
-                  changed:false
-                }; 
-              });
-            })
-            .catch(error => {
-              console.log(`Project Save Error ${error}`)
+          .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
+          .then(response => {
+            console.log(`Project saved ${response.data}`)
+
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projects: projects,
+                changed: false
+              };
             });
-        
+          })
+          .catch(error => {
+            console.log(`Project Save Error ${error}`)
+          });
+
       }
     }
   }
   handleProjectInfoChange(changedProjectInfo) {
-    
+
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
@@ -260,7 +261,7 @@ class App extends Component {
           commandString: "",
           currentStep: currentStep,
           currentProject: currentProject,
-          changed:true
+          changed: true
         };
       });
 
@@ -328,27 +329,27 @@ class App extends Component {
           newProject.start = today.toLocaleDateString();
           newProject.end = thirtyDaysFromNow.toLocaleDateString();
           newProject.creator = this.state.currentUser;
-          
+
           axios
-            .post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject )
-            .then(response => { 
-                newProject.id = response.data.id;  
-                projects.push(newProject);
-                currentStep = 0;
-                currentProject = projects.length - 1;
-                this.setState(prevState => {
-                  return {
-                    ...prevState,
-                    projects: projects,
-                    alert: false,
-                    form: false,
-                    help: false,
-                    commandString: "",
-                    currentStep: currentStep,
-                    currentProject: currentProject,
-                    changed:true
-                  };
-                });
+            .post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject)
+            .then(response => {
+              newProject.id = response.data.id;
+              projects.push(newProject);
+              currentStep = 0;
+              currentProject = projects.length - 1;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  form: false,
+                  help: false,
+                  commandString: "",
+                  currentStep: currentStep,
+                  currentProject: currentProject,
+                  changed: true
+                };
+              });
               console.log(`Project add ${response.data.id}`)
             })
             .catch(error => {
@@ -374,9 +375,9 @@ class App extends Component {
           });
           break;
         case "DELETE":
-            axios
+          axios
             .delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`)
-            .then(response => { 
+            .then(response => {
               console.log(`Project Delete ${response}`)
               projects.splice(currentProject, 1)
               currentProject = 0;
@@ -390,7 +391,7 @@ class App extends Component {
                   commandString: "",
                   currentStep: currentStep,
                   currentProject: currentProject,
-                  changed:false
+                  changed: false
                 };
               });
             })
@@ -403,7 +404,7 @@ class App extends Component {
         default:
       }
     }
-    
+
   }
   handleNo(e) {
     console.log(`handleNo(${this.state.commandString}`)
@@ -634,7 +635,7 @@ class App extends Component {
           case "DELETE":
             //cannot delete last project
             if (projects.length > 1) {
-              
+
               this.setState(prevState => {
                 return {
                   ...prevState, alert: true,
@@ -702,28 +703,28 @@ class App extends Component {
     };
     if (this.state.changed) {
       axios
-            .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
-            .then(response => { 
-              console.log(`Project saved ${response.data}`)
-              
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  changed:false
-                };
-              });
-            })
-            .catch(error => {
-              console.log(`Project Save Error ${error}`)
-            });
+        .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${projects[currentProject].id}`, projects[currentProject])
+        .then(response => {
+          console.log(`Project saved ${response.data}`)
+
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              changed: false
+            };
+          });
+        })
+        .catch(error => {
+          console.log(`Project Save Error ${error}`)
+        });
     }
     return (
       <div>
-     
+
         {this.state.projects.length === 0 ? (
           <h1>Loading...
             <CircularProgress className={classes.progress} />
-            </h1>
+          </h1>
         ) : (
             <div>
               <ProjectMenu
@@ -738,7 +739,7 @@ class App extends Component {
                 initialValues={values}
                 validationSchema={projectInfoValidationSchema}
                 onSubmit={this.handleProjectInfoChange}
-                />
+              />
               <br />
               <ProjectSteps
                 projectList={projectList}
@@ -783,10 +784,10 @@ class App extends Component {
               />
             </div>
           )}
-        </div>
-            
-        );
-      }
+      </div>
+
+    );
+  }
 }
 
 export default withAuthenticator(App, true);
