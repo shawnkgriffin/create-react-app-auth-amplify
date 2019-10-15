@@ -1,3 +1,68 @@
+import { makeStyles } from "@material-ui/core/styles";
+
+ const projectStyles = makeStyles(theme => ({
+  progress: {
+    margin: theme.spacing(2),
+  },
+  root: {
+    width: "100%"
+  },
+  formControl: {
+    marginTop: 5,
+    minWidth: 300,
+    padding: 20,
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200
+  },
+  buttonList: {
+    width: 64,
+    height: 64,
+    paddingTop: 50
+  },
+  button: {
+    margin: theme.spacing(0),
+    width: "100%",
+    overflowX: "auto"
+  },
+  paper: {
+    margin: 10,
+    width: "100%",
+    overflowX: "auto",
+    padding: 20
+  },
+  inputLabel: {
+    padding: 30,
+    margin: 20
+  },
+  table: {
+    marginTop: 10,
+    marginBottom: 10,
+    minWidth: 650
+  },
+  container: {
+    margin: 10,
+    display: "flex",
+    flexWrap: "wrap"
+  },
+  textField: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    width: 400,
+  },
+  dense: {
+    marginTop: theme.spacing(2)
+  },
+  fab: {
+    margin: theme.spacing(2)
+  },
+  absolute: {
+    position: "absolute",
+    bottom: theme.spacing(2),
+    right: theme.spacing(3)
+  }
+ }));
+
 /**
  * Description
  * @function initProject
@@ -36,4 +101,4 @@ function createNewProject() {
   return (project);
 }
 
-export { percentageQuestionsYes, createNewProject, parseCommand }
+export { percentageQuestionsYes, createNewProject, parseCommand, projectStyles }
