@@ -5,7 +5,27 @@ axios.create({
   baseURL: "https://us-central1-project-534d9.cloudfunctions.net/api",
   responseType: "json"
 });
+/**
+* Description
+* @function createNewProject
+* @param {string}  name of project
+* @param {string}  creator of project
+* @returns {project} 
+**/
 
+function createNewProject(name = 'New Project', creator = '', callback) {
+  let newProject = require('./project.json');
+  newProject.name = name;
+  newProject.creator = creator;
+  let today = new Date();
+  let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
+  newProject.start = today.toLocaleDateString();
+  newProject.end = thirtyDaysFromNow.toLocaleDateString();
+  postProject(newProject, id => {
+    newProject.id = id;
+    callback(newProject);
+  })
+}
 /**
  * Description
  * @function initProject
@@ -182,4 +202,4 @@ function deleteProject(id) {
 }
 
 
-export { initProject, postProject, readSurvey, getProjects, readProject, putProject, deleteProject }
+export { createNewProject, initProject, postProject, readSurvey, getProjects, readProject, putProject, deleteProject }
