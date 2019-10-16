@@ -154,9 +154,9 @@ function readProject() {
 * @returns {string} status 200 success.
 **/
 
-async function getProjects(callback) {
+async function getProjects(user, callback) {
   axios
-    .get('https://us-central1-project-534d9.cloudfunctions.net/api/projects')
+    .get(`https://us-central1-project-534d9.cloudfunctions.net/api/userprojects/${user}`)
     .then(data => { callback(data.data) }
     )
 }

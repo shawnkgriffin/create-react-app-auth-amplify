@@ -53,20 +53,40 @@ class App extends Component {
   }
 
   componentDidMount() {
-    db.getProjects(projects => {
-      Auth.currentAuthenticatedUser()
-        .then(user => {
-          console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
-          this.setState(prevState => {
-            return {
-              ...prevState,
-              currentUser: user.attributes.email, //using email for now.
-              projects: projects  
-            };
-          })
+    
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
+        db.getProjects(user.attributes.email, (projects) => {
+          if (projects.length === 0) {
+            db.createNewProject("New Project", user.attributes.email, newProject => {
+              projects.push(newProject);
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  form: false,
+                  help: false,
+                  commandString: "",
+                  currentUser: user.attributes.email, 
+                  currentStep: 0,
+                  currentProject: projects.length - 1,
+                  changed: false
+                };
+              });
+            })
+          } else
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                currentUser: user.attributes.email, //using email for now.
+                projects: projects
+              };
+            })
         })
-        .catch(err => console.log(err))
-    })
+      })
+      .catch(err => console.log(err))
   }
 
   handleQuestionChange(e) {
