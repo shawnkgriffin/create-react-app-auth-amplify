@@ -18,7 +18,7 @@ import * as db from "./utils/db/db.js";
 
 // AWS components
 import { withAuthenticator } from 'aws-amplify-react'
-import Amplify, { API } from 'aws-amplify';  // comment out , { Auth } until needed
+import Amplify, { API, Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 API.configure(aws_exports);
@@ -31,7 +31,7 @@ class App extends Component {
       projects: [],
       currentProject: 0,
       currentStep: 0,
-      currentUser: "shawn@shawngriffin.com",
+      currentUser: "",
       isAuthenticated: false,
       isAuthenticating: true,
       user: null,
@@ -53,14 +53,42 @@ class App extends Component {
   }
 
   componentDidMount() {
-    db.getProjects(projects => {
-      this.setState(prevState => {
-        return { ...prevState, projects: projects };
+    
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
+        db.getProjects(user.attributes.email, (projects) => {
+          if (projects.length === 0) {
+            db.createNewProject("New Project", user.attributes.email, newProject => {
+              projects.push(newProject);
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  form: false,
+                  help: false,
+                  commandString: "",
+                  currentUser: user.attributes.email, 
+                  currentStep: 0,
+                  currentProject: projects.length - 1,
+                  changed: false
+                };
+              });
+            })
+          } else
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                currentUser: user.attributes.email, //using email for now.
+                projects: projects
+              };
+            })
+        })
       })
-
-    })
-
+      .catch(err => console.log(err))
   }
+
   handleQuestionChange(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -233,16 +261,8 @@ class App extends Component {
     if (actionObject === "PROJECT") {
       switch (actionVerb) {
         case "ADD":
-          let newProject = utils.createNewProject();
-          newProject.name = newText;
-          let today = new Date();
-          let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
-          newProject.start = today.toLocaleDateString();
-          newProject.end = thirtyDaysFromNow.toLocaleDateString();
-          newProject.creator = this.state.currentUser;
+          db.createNewProject(newText, this.state.currentUser, newProject => {
 
-          db.postProject(newProject, id => {
-            newProject.id = id;
             projects.push(newProject);
             currentStep = 0;
             currentProject = projects.length - 1;
@@ -260,7 +280,7 @@ class App extends Component {
               };
             });
             console.log(`Project add ${project.id}`)
-          })
+          });
           break;
         case "EDIT":
           break;
