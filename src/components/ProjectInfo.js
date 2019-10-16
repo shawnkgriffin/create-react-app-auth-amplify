@@ -8,6 +8,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import ListIcon from "@material-ui/icons/List";
 import EventIcon from "@material-ui/icons/Event";
 import SubjectIcon from "@material-ui/icons/Subject";
+
 // import { DisplayFormikState } from "./helper";
 const buttonStyle = {
   marginTop: 15,
@@ -59,13 +60,17 @@ const ProjectInfo = props => {
           )
         }}
       />
+      
       <TextField
         id="outlined-start"
         name="start"
+        type="date"
+        dateFormat="MM/DD/YYYY"
         variant="outlined"
         helperText={touched.start ? errors.start : ""}
         error={touched.start && Boolean(errors.start)}
         label="Start Date"
+        placeholder="yyyy-mm-dd"
         value={start}
         style={{ padding: 5, minWidth: 200 }}
         onChange={change.bind(null, "start")}
@@ -76,10 +81,11 @@ const ProjectInfo = props => {
             </InputAdornment>
           )
         }}
-      />
+        />
       <TextField
         id="outlined-end"
         name="end"
+        type="date"
         variant="outlined"
         helperText={touched.end ? errors.end : ""}
         error={touched.end && Boolean(errors.end)}

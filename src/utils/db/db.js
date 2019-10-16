@@ -19,8 +19,9 @@ function createNewProject(name = 'New Project', creator = '', callback) {
   newProject.creator = creator;
   let today = new Date();
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
-  newProject.start = today.toLocaleDateString();
-  newProject.end = thirtyDaysFromNow.toLocaleDateString();
+  newProject.start = today.toLocaleDateString().replace('/','-');
+  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('/','-');;
+
   postProject(newProject, id => {
     newProject.id = id;
     callback(newProject);
