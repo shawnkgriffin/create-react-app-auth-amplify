@@ -83,25 +83,26 @@ export default function ProjectSteps({
       </StyledTableRow >
     );
   }
+  let tableHeaders = [];
+  project.stepTypes.forEach((stepType, stepIndex) => {
+    tableHeaders.push(
+      <StyledTableCell align="center">
+        <h2>{project.stepTypes[stepIndex]}</h2>
+      </StyledTableCell>
+    )
+  })
+
+
   return (
     <Paper className={classes.paper}>
       <Table className={classes.table} size="small">
         <TableHead>
           <TableRow>
-            <StyledTableCell align="center">
-              <h2>{project.stepTypes[0]}</h2>
-            </StyledTableCell>
-            <StyledTableCell align="center">
-              <h2>{project.stepTypes[1]}</h2>
-            </StyledTableCell>
-            <StyledTableCell align="center">
-              <h2>{project.stepTypes[2]}</h2>
-            </StyledTableCell>
+            {tableHeaders}
           </TableRow>
         </TableHead>
         <TableBody>
           {tableRows}
-
         </TableBody>
       </Table>
     </Paper>

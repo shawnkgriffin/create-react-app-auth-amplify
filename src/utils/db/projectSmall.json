@@ -1,0 +1,34 @@
+{
+  "name": "New Project",
+  "problemOpportunity": "Presenting problem / Opportunity",
+  "creator": "Shawn Griffin",
+  "note": "notes",
+  "sponsor": "Stephen Stofanak",
+  "projectManager": "Harry Belafonte",
+  "projectType": "Standard",
+  "start": "2019-09-17T20:03:00.040Z",
+  "end": "Tue Sep 17 2019 13:03:00 GMT-0700 (PDT)2592000000",
+  "stepTypes": [
+    "Define the Project",
+    "Analyze the Project",
+    "Implement the Project"
+  ],
+  "help": "How was this project initiated? Basic PM Slides\nWho will be the sponsor?\n",
+  "steps": [
+    {
+      "name": "Project Background",
+      "note": "Step notes.",
+      "help": "How was this project initiated? Basic PM Slides\n",
+      "questions": [
+        {
+          "name": "Is someone assigned to ensure this step is completed?",
+          "validAnswers": " ",
+          "answer": " ",
+          "note": "Note",
+          "help": " ",
+          "answerHistory": []
+        }
+      ]
+    }
+  ]
+}

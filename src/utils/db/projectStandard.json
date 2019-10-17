@@ -18,7 +18,6 @@
     {
       "name": "Project Background",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -154,7 +153,6 @@
     {
       "name": "Project Launch",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "Help",
       "questions": [
         {
@@ -290,7 +288,6 @@
     {
       "name": "Project Purpose",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "Projects are never done for their own purpose, they are always part of or support a higher goal,",
       "questions": [
         {
@@ -410,7 +407,6 @@
     {
       "name": "Preliminary Schedule",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "\nCreate the initial schedule in an appropriate tool; ",
       "questions": [
         {
@@ -506,7 +502,6 @@
     {
       "name": "Solution Deliverables",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "Step five, project deliverables summary, Projects produce, create, and implement deliverables.",
       "questions": [
         {
@@ -642,7 +637,6 @@
     {
       "name": "Preliminary Approval",
       "note": "Step notes.",
-      "stepType": 0,
       "help": "\nRemember:\nThe further into a project you go, the more expensive the Go – No/Go decision",
       "questions": [
         {
