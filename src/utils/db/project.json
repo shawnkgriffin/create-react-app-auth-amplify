@@ -17,9 +17,7 @@
   "steps": [
     {
       "name": "Project Background",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -27,7 +25,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -35,7 +32,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -43,7 +39,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -51,7 +46,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -59,7 +53,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -67,7 +60,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -75,7 +67,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -83,7 +74,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -91,7 +81,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -99,7 +88,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -107,7 +95,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -115,7 +102,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -123,7 +109,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -131,7 +116,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -139,7 +123,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -147,16 +130,13 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Project Launch",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "Help",
       "questions": [
         {
@@ -164,7 +144,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -172,7 +151,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -180,7 +158,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -188,7 +165,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -196,7 +172,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -204,7 +179,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -212,7 +186,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -220,7 +193,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -228,7 +200,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -236,7 +207,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -244,7 +214,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -252,7 +221,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -260,7 +228,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -268,7 +235,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -276,7 +242,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -284,16 +249,13 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Project Purpose",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "Projects are never done for their own purpose, they are always part of or support a higher goal,",
       "questions": [
         {
@@ -301,7 +263,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -309,7 +270,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -317,7 +277,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -325,7 +284,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -333,7 +291,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -341,7 +298,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -349,7 +305,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -357,7 +312,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -365,7 +319,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -373,7 +326,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -381,7 +333,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -389,7 +340,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -397,7 +347,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -405,16 +354,13 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Preliminary Schedule",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "\nCreate the initial schedule in an appropriate tool; ",
       "questions": [
         {
@@ -422,7 +368,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -430,7 +375,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -438,7 +382,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -446,7 +389,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -454,7 +396,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -462,7 +403,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -470,7 +410,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -478,7 +417,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -486,7 +424,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -494,7 +431,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -502,16 +438,13 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Solution Deliverables",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "Step five, project deliverables summary, Projects produce, create, and implement deliverables.",
       "questions": [
         {
@@ -519,7 +452,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -527,7 +459,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -535,7 +466,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -543,7 +473,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -551,7 +480,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -559,7 +487,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -567,7 +494,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -575,7 +501,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -583,7 +508,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -591,7 +515,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -599,7 +522,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -607,7 +529,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -615,7 +536,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -623,7 +543,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -631,7 +550,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -639,16 +557,13 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Preliminary Approval",
-      "stepType": 0,
       "note": "Step notes.",
-      "skip": false,
       "help": "\nRemember:\nThe further into a project you go, the more expensive the Go – No/Go decision",
       "questions": [
         {
@@ -656,7 +571,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -664,7 +578,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -672,7 +585,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -680,7 +592,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -688,7 +599,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -696,7 +606,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -704,7 +613,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -712,7 +620,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -720,7 +627,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -728,7 +634,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -736,16 +641,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Additional Requirements",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "\n\n\nIdentify the departments and / or groups most impacted by the project and whose requirements will need to be considered and understood in order to ensure project success.  The elements to discuss & gather from each group include their view of the project’s goals, their needs & wants, current business state, key assumptions, technology requirements, quality requirements & organizational considerations. \n\n \n\nGuidance Questions: \n    What do we need before we can start working on this item?\n    What departments will be most impacted by the project?\n    Which department’s requirements will significantly drive the project’s direction?\n    What are each key group’s goals & objectives for the project?\n    How involved does each key group intend to be in the project?\n    How involved does each key group need to be in the project?\n    What are the key group’s needs?\n    What are the key group’s wants?\n    What’s the key group’s current state?\n    What are their assumptions?\n    Why do they believe that…?\n    It appears that they are assuming…?\n    What are the assumptions that appear to be driving resistance within the groups?\n    What are the assumptions that appear to be driving support within the groups?\n    What’s the risk of proceeding with certain assumptions?\n    What are the group’s requirements and specifications?\n    How will we assess and validate the requirements and specifications?\n    What are the technology requirements and specifications?\n    How will we assess and validate the technology requirements and specifications?\n    What are the quality / performance requirements?\n    How will we assess and validate the quality requirements and specifications?\n    How will we know this item has been completed?\n​\n\nStep seven, Additional Requirements, Depending on the project, initial requirements have already been shared during the first six steps. Additional requirements can come from multiple groups, such as customers, management, project sponsor, stakeholders, users of the intended solution, groups impacted by the problem and proposed solution, regulators, citizens, and local, state, and federal government. Identify the groups that will be providing the summary and detailed requirements for your project. Consider meeting with representatives from the key groups, facilitate a session for gathering the following information, group's goals and objective for the project, their needs and wants, their current state, key assumptions, solution requirements, technology requirements, quality requirements, and organizational considerations.  Ask open ended questions, document the requirements, review each requirement, decide which ones will be met, provide feedback to the groups explaining the results of the meetings, decisions and reasons for the actions to be taken. If you would like more detail for this step, say Project Requirements, When you have sufficient information, continue to the next step by saying, Step Eight.\n\n\n",
       "questions": [
         {
@@ -753,7 +656,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -761,7 +663,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -769,7 +670,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -777,7 +677,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -785,7 +684,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -793,7 +691,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -801,7 +698,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -809,7 +705,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -817,7 +712,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -825,7 +719,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -833,7 +726,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -841,7 +733,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -849,7 +740,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -857,7 +747,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -865,7 +754,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -873,7 +761,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -881,7 +768,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -889,7 +775,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -897,7 +782,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -905,7 +789,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -913,7 +796,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -921,7 +803,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -929,16 +810,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Dependencies",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "Task Dependencies\n\n\n",
       "questions": [
         {
@@ -946,7 +825,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -954,7 +832,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -962,7 +839,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -970,7 +846,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -978,7 +853,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -986,7 +860,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -994,7 +867,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1002,7 +874,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1010,7 +881,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1018,7 +888,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1026,7 +895,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1034,7 +902,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1042,7 +909,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1050,7 +916,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1058,7 +923,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1066,7 +930,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1074,7 +937,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1082,16 +944,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Risk and Mitigation",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "Risk & Mitigation\n\n\n",
       "questions": [
         {
@@ -1099,7 +959,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1107,7 +966,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1115,7 +973,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1123,7 +980,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1131,7 +987,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1139,7 +994,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1147,7 +1001,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1155,7 +1008,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1163,7 +1015,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1171,7 +1022,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1179,7 +1029,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1187,7 +1036,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1195,7 +1043,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1203,7 +1050,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1211,7 +1057,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1219,7 +1064,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1227,16 +1071,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Organizational Impact",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "Organizational Impact & Training Requirements\n\n\n",
       "questions": [
         {
@@ -1244,7 +1086,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1252,7 +1093,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1260,7 +1100,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1268,7 +1107,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1276,7 +1114,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1284,7 +1121,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1292,7 +1128,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1300,7 +1135,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1308,7 +1142,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1316,7 +1149,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1324,7 +1156,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1332,7 +1163,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1340,7 +1170,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1348,7 +1177,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1356,7 +1184,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1364,7 +1191,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1372,16 +1198,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Resource Requirements",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "Resource Requirements\n\n\n",
       "questions": [
         {
@@ -1389,7 +1213,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1397,7 +1220,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1405,7 +1227,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1413,7 +1234,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1421,7 +1241,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1429,7 +1248,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1437,7 +1255,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1445,7 +1262,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1453,7 +1269,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1461,7 +1276,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1469,7 +1283,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1477,7 +1290,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1485,7 +1297,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1493,7 +1304,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1501,7 +1311,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1509,7 +1318,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1517,16 +1325,14 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
     },
     {
       "name": "Updated Approval",
-      "stepType":1,
+      "stepType": 1,
       "note": "Step notes.",
-      "skip": false,
       "help": "Updated Plan Approvel\n\n\n",
       "questions": [
         {
@@ -1534,7 +1340,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1542,7 +1347,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1550,7 +1354,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1558,7 +1361,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1566,7 +1368,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1574,7 +1375,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1582,7 +1382,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1590,7 +1389,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1598,7 +1396,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1606,7 +1403,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1614,7 +1410,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1622,7 +1417,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1630,7 +1424,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1638,7 +1431,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1646,7 +1438,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1654,7 +1445,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1662,7 +1452,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -1671,7 +1460,6 @@
       "name": "Solution Design",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Solution Designs\n\n\n",
       "questions": [
         {
@@ -1679,7 +1467,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1687,7 +1474,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1695,7 +1481,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1703,7 +1488,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1711,7 +1495,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1719,7 +1502,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1727,7 +1509,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1735,7 +1516,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1743,7 +1523,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1751,7 +1530,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1759,7 +1537,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1767,7 +1544,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1775,7 +1551,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1783,7 +1558,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1791,7 +1565,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1799,7 +1572,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1807,7 +1579,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1815,7 +1586,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1823,7 +1593,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -1832,7 +1601,6 @@
       "name": "Solution Development",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Solution Developed\n\n\n",
       "questions": [
         {
@@ -1840,7 +1608,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1848,7 +1615,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1856,7 +1622,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1864,7 +1629,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1872,7 +1636,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1880,7 +1643,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1888,7 +1650,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1896,7 +1657,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1904,7 +1664,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1912,7 +1671,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1920,7 +1678,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1928,7 +1685,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1936,7 +1692,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1944,7 +1699,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1952,7 +1706,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1960,7 +1713,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1968,7 +1720,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1976,7 +1727,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1984,7 +1734,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -1992,7 +1741,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2000,7 +1748,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2009,7 +1756,6 @@
       "name": "Solution Testing",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Testing\n\n",
       "questions": [
         {
@@ -2017,7 +1763,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2025,7 +1770,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2033,7 +1777,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2041,7 +1784,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2049,7 +1791,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2057,7 +1798,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2065,7 +1805,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2073,7 +1812,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2081,7 +1819,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2089,7 +1826,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2097,7 +1833,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2105,7 +1840,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2113,7 +1847,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2121,7 +1854,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2129,7 +1861,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2137,7 +1868,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2145,7 +1875,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2153,7 +1882,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2161,7 +1889,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2170,7 +1897,6 @@
       "name": "Behavior Deliverables Developed",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Behavior Deliverables Developed\n\n\n",
       "questions": [
         {
@@ -2178,7 +1904,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2186,7 +1911,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2194,7 +1918,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2202,7 +1925,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2210,7 +1932,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2218,7 +1939,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2226,7 +1946,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2234,7 +1953,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2242,7 +1960,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2250,7 +1967,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2258,7 +1974,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2266,7 +1981,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2274,7 +1988,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2282,7 +1995,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2290,7 +2002,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2298,7 +2009,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2306,7 +2016,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2315,7 +2024,6 @@
       "name": "Behavior Deiverables Delivered",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Behavior Deliverables Delivered\n\n\n",
       "questions": [
         {
@@ -2323,7 +2031,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2331,7 +2038,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2339,7 +2045,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2347,7 +2052,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2355,7 +2059,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2363,7 +2066,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2371,7 +2073,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2379,7 +2080,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2387,7 +2087,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2395,7 +2094,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2403,7 +2101,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2412,7 +2109,6 @@
       "name": "Pilot",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Pilot\n\n\n",
       "questions": [
         {
@@ -2420,7 +2116,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2428,7 +2123,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2436,7 +2130,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2444,7 +2137,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2452,7 +2144,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2460,7 +2151,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2468,7 +2158,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2476,7 +2165,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2484,7 +2172,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2492,7 +2179,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2500,7 +2186,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2508,7 +2193,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2516,7 +2200,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2524,7 +2207,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2533,7 +2215,6 @@
       "name": "Implement",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Implement\n\n\n",
       "questions": [
         {
@@ -2541,7 +2222,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2549,7 +2229,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2557,7 +2236,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2565,7 +2243,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2573,7 +2250,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2581,7 +2257,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2589,7 +2264,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2597,7 +2271,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2605,7 +2278,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2613,7 +2285,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2621,7 +2292,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2629,7 +2299,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2637,7 +2306,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2645,7 +2313,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2653,7 +2320,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]
@@ -2662,7 +2328,6 @@
       "name": "Post-op",
       "stepType": 2,
       "note": "Step notes.",
-      "skip": false,
       "help": "Post-op\n\n\n",
       "questions": [
         {
@@ -2670,7 +2335,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2678,7 +2342,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2686,7 +2349,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2694,7 +2356,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2702,7 +2363,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2710,7 +2370,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2718,7 +2377,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2726,7 +2384,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2734,7 +2391,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2742,7 +2398,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2750,7 +2405,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         },
         {
@@ -2758,7 +2412,6 @@
           "validAnswers": " ",
           "answer": " ",
           "help": " ",
-          "skip": false,
           "answerHistory": []
         }
       ]

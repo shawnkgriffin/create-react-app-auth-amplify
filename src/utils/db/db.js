@@ -19,9 +19,9 @@ function createNewProject(name = 'New Project', creator = '', callback) {
   newProject.creator = creator;
   let today = new Date();
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
-  newProject.start = today.toLocaleDateString().replace('/','-');
-  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('/','-');;
-
+  newProject.start = today.toLocaleDateString().replace('/\//g','-');
+  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('/\//g','-');;
+  console.log(`createNewProject(newProject,${JSON.stringify(newProject,null,2)}`)
   postProject(newProject, id => {
     newProject.id = id;
     callback(newProject);
@@ -49,14 +49,14 @@ function initProject(project, callback) {
  **/
 
 function postProject(newProject, callback) {
-
+  console.log(`postProject(newProject,${JSON.stringify(newProject,null,2)}`)
   axios.post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject)
     .then(response => {
       callback(response.data.id)
-      console.log(`Project add ${response.data.id}`)
+      console.log(`Project add response${response.data.id}`)
     })
     .catch(error => {
-      console.log(`Project add Error ${error}`)
+      console.error(`Project add Error ${error}`)
     });
 }
 
@@ -120,32 +120,8 @@ function convertCSVtoJSON() {
   });
   return (project);
 }
-/**
-* Description
-* @function readSurvey
-* @param {integer}  
-* @param {function} callback 
-* @param {string}  
-* @returns {string} status 200 success.
-**/
 
-function readSurvey() {
-  return (convertCSVtoJSON());
-}
-/**
-* Description
-* @function readProject
-* @param {integer}  
-* @param {function} callback 
-* @param {string}  
-* @returns {string} status 200 success.
-**/
 
-function readProject() {
-  let project = require('./project.json');
-  let newProject = Object.create(project)
-  return (newProject);
-}
 /**
 * Description
 * @function getProjects
@@ -172,6 +148,8 @@ async function getProjects(user, callback) {
 **/
 
 function putProject(project) {
+  console.log(`putProject(project,${JSON.stringify(project,null,2)}`)
+
   axios
     .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${project.id}`, project)
     .then(response => {
@@ -203,4 +181,4 @@ function deleteProject(id) {
 }
 
 
-export { createNewProject, initProject, postProject, readSurvey, getProjects, readProject, putProject, deleteProject }
+export { createNewProject, initProject, postProject, getProjects, putProject, deleteProject, convertCSVtoJSON }

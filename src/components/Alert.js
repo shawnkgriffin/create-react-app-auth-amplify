@@ -6,7 +6,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
-export default function AlertDialog({ open, title, text, answerYes, answerNo }) {
+export default function AlertDialog({ open, title, text, alertYesButton, answerYes, answerNo }) {
   // const [open, setOpen] = React.useState(false);
 
   const handleYes = () => {
@@ -39,10 +39,12 @@ export default function AlertDialog({ open, title, text, answerYes, answerNo }) 
             {text}
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleYes} color="primary" variant="contained" autoFocus>
-            Yes
+          <DialogActions>
+          {alertYesButton &&
+            <Button onClick={handleYes} color="primary" variant="contained" autoFocus>
+              Yes
           </Button>
+          }
           <Button variant="contained" onClick={handleNo} color="secondary">
             Cancel
           </Button>

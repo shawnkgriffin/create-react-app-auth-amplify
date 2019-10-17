@@ -65,7 +65,6 @@ const ProjectInfo = props => {
         id="outlined-start"
         name="start"
         type="date"
-        dateFormat="MM/DD/YYYY"
         variant="outlined"
         helperText={touched.start ? errors.start : ""}
         error={touched.start && Boolean(errors.start)}

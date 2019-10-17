@@ -37,6 +37,7 @@ class App extends Component {
       user: null,
       commandString: "",
       alert: false,
+      alertYesButton: true,
       title: "",
       text: "",
       form: false,
@@ -53,7 +54,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    
+
     Auth.currentAuthenticatedUser()
       .then(user => {
         console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
@@ -66,10 +67,11 @@ class App extends Component {
                   ...prevState,
                   projects: projects,
                   alert: false,
+                  alertYesButton: true,
                   form: false,
                   help: false,
                   commandString: "",
-                  currentUser: user.attributes.email, 
+                  currentUser: user.attributes.email,
                   currentStep: 0,
                   currentProject: projects.length - 1,
                   changed: false
@@ -128,18 +130,18 @@ class App extends Component {
 
     if (this.state != null) {
       let { projects, currentProject } = this.state;
-      let project = projects[currentProject];
-      console.log(`handleProjectInfoChange(${Object.keys(changedProjectInfo)})`);
+      let project = { ...projects[currentProject] };  // make sure we are using a copy of project.
+      console.log(`handleProjectInfoChange(${JSON.stringify(changedProjectInfo, null, 2)})`);
       const projectKeys = Object.keys(project);
       const changedKeys = Object.keys(changedProjectInfo);
       changedKeys.forEach(key => {
         if (projectKeys.includes(key)) {
+          console.log(`handleProjectInfoChange(${key},current project[key]=${project[key]},update=${changedProjectInfo[key]})`);
           project[key] = changedProjectInfo[key]
         }
       })
-      projects[currentProject] = project;
       this.setState(prevState => {
-        return { ...prevState, projects: projects, projectInfoEdit: false, changed: true };
+        return { ...prevState, projects: projects.splice(currentProject, 1, project), projectInfoEdit: false, changed: true };
       });
     }
   }
@@ -185,7 +187,10 @@ class App extends Component {
           project.steps[currentStep].questions[actionIndex].help = newText;
           break;
         case "DELETE":
-          project.steps[currentStep].questions.splice(actionIndex, 1)
+          if (project.steps.questions.length > 1)
+            project.steps[currentStep].questions.splice(actionIndex, 1)
+          else
+            console.error(`Cannot delete last question ${commandString}`)
           break;
         default:
       }
@@ -195,6 +200,7 @@ class App extends Component {
           ...prevState,
           projects: projects,
           alert: false,
+          alertYesButton: true,
           form: false,
           help: false,
           commandString: "",
@@ -216,7 +222,7 @@ class App extends Component {
             "questions": [
               {
                 "number": "",
-                "question": "First question.",
+                "name": "First question.",
                 "validAnswers": "",
                 "answer": "",
                 "help": "",
@@ -235,8 +241,12 @@ class App extends Component {
           project.steps[actionIndex].help = newText;
           break;
         case "DELETE":
-          project.steps.splice(actionIndex, 1)
-          currentStep = 0;
+          if (project.steps.length > 1) {
+            project.steps.splice(actionIndex, 1)
+            currentStep = 0;
+          }
+          else
+            console.error(`Cannot delete last step ${commandString}`)
           break;
         case "HELP":
           break;
@@ -248,6 +258,7 @@ class App extends Component {
           ...prevState,
           projects: projects,
           alert: false,
+          alertYesButton: true,
           form: false,
           help: false,
           commandString: "",
@@ -271,6 +282,7 @@ class App extends Component {
                 ...prevState,
                 projects: projects,
                 alert: false,
+                alertYesButton: true,
                 form: false,
                 help: false,
                 commandString: "",
@@ -291,6 +303,7 @@ class App extends Component {
               ...prevState,
               projects: projects,
               alert: false,
+              alertYesButton: true,
               form: false,
               help: false,
               commandString: "",
@@ -301,22 +314,27 @@ class App extends Component {
           });
           break;
         case "DELETE":
-          db.deleteProject(projects[currentProject].id);
-          projects.splice(currentProject, 1)
-          currentProject = 0;
-          this.setState(prevState => {
-            return {
-              ...prevState,
-              projects: projects,
-              alert: false,
-              form: false,
-              help: false,
-              commandString: "",
-              currentStep: currentStep,
-              currentProject: currentProject,
-              changed: false
-            };
-          });
+          if (projects.length > 1) {
+            db.deleteProject(projects[currentProject].id);
+            projects.splice(currentProject, 1)
+            currentProject = 0;
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projects: projects,
+                alert: false,
+                alertYesButton: true,
+                form: false,
+                help: false,
+                commandString: "",
+                currentStep: currentStep,
+                currentProject: currentProject,
+                changed: false
+              };
+            });
+          }
+          else
+            console.error(`Cannot delete last project ${commandString}`)
           break;
         case "HELP":
           break;
@@ -331,6 +349,7 @@ class App extends Component {
       return {
         ...prevState,
         alert: false,
+        alertYesButton: true,
         form: false,
         help: false,
         title: "",
@@ -387,7 +406,9 @@ class App extends Component {
 
               this.setState(prevState => {
                 return {
-                  ...prevState, alert: true,
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: true,
                   title: "Delete the following question?",
                   text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].name}`,
                   commandString: commandString
@@ -396,9 +417,11 @@ class App extends Component {
             } else {
               this.setState(prevState => {
                 return {
-                  ...prevState, alert: true,
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: false,
                   title: "Cannot delete the last question.",
-                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].question}`,
+                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].name}`,
                   commandString: commandString
                 };
               });
@@ -464,7 +487,9 @@ class App extends Component {
             if (project.steps.length > 1) {
               this.setState(prevState => {
                 return {
-                  ...prevState, alert: true,
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: true,
                   title: "Delete the following step?",
                   text: `${actionIndex + 1}) ${project.steps[actionIndex].name}`,
                   commandString: commandString
@@ -476,6 +501,7 @@ class App extends Component {
                 return {
                   ...prevState,
                   alert: true,
+                  alertYesButton: false,
                   title: "Cannot delete the last step.",
                   text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].name}`,
                   commandString: ""
@@ -557,7 +583,9 @@ class App extends Component {
 
               this.setState(prevState => {
                 return {
-                  ...prevState, alert: true,
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: true,
                   title: "Delete the following project?",
                   text: `${currentProject + 1}) ${project.name}`,
                   commandString: commandString
@@ -569,6 +597,7 @@ class App extends Component {
                 return {
                   ...prevState,
                   alert: true,
+                  alertYesButton: false,
                   title: "Cannot delete the last project.",
                   text: `Cannot delete ${currentProject + 1}) ${project.name}`,
                   commandString: ""
@@ -656,6 +685,7 @@ class App extends Component {
               <Alert
                 open={this.state.alert}
                 title={this.state.title}
+                alertYesButton={this.state.alertYesButton}
                 text={this.state.text}
                 answerYes={this.handleYes}
                 answerNo={this.handleNo}
