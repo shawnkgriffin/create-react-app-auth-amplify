@@ -130,19 +130,20 @@ class App extends Component {
 
     if (this.state != null) {
       let { projects, currentProject } = this.state;
-      let project = { ...projects[currentProject] };  // make sure we are using a copy of project.
+      let project = { ...projects[currentProject], ...changedProjectInfo };
+      
       console.log(`handleProjectInfoChange(${JSON.stringify(changedProjectInfo, null, 2)})`);
-      const projectKeys = Object.keys(project);
-      const changedKeys = Object.keys(changedProjectInfo);
-      changedKeys.forEach(key => {
-        if (projectKeys.includes(key)) {
-          console.log(`handleProjectInfoChange(${key},current project[key]=${project[key]},update=${changedProjectInfo[key]})`);
-          project[key] = changedProjectInfo[key]
-        }
-      })
-      this.setState(prevState => {
-        return { ...prevState, projects: projects.splice(currentProject, 1, project), projectInfoEdit: false, changed: true };
-      });
+      
+      projects[currentProject] = project;
+        this.setState(prevState => {
+          return {
+            ...prevState,
+            projects: projects,
+            changed: false
+          };
+        });
+        db.putProject(project);
+      
     }
   }
 
@@ -169,12 +170,11 @@ class App extends Component {
       switch (actionVerb) {
         case "ADD":
           const newQuestion = {
-            "number": "",
             "name": newText,
             "validAnswers": "",
+            "note":"",
             "answer": "",
             "help": "",
-            "skip": false,
             "answerHistory": []
           }
           actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
@@ -187,7 +187,7 @@ class App extends Component {
           project.steps[currentStep].questions[actionIndex].help = newText;
           break;
         case "DELETE":
-          if (project.steps.questions.length > 1)
+          if (project.steps[currentStep].questions.length > 1)
             project.steps[currentStep].questions.splice(actionIndex, 1)
           else
             console.error(`Cannot delete last question ${commandString}`)
