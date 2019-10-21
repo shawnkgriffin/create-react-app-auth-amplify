@@ -47,10 +47,20 @@ export default function ProjectSteps({
   project.stepTypes.map((stepType, index) => stepStrings[index] = []);
 
   // Build each Step label for each step type as we have to lay them out in rows.  
-  project.steps.map((step, index) => stepStrings[step.stepType].push({ stepIndex: index, stepString: `${index + 1}) ${step.name} ${utils.percentageQuestionsYes(step.questions)}` }));
+  project.steps.forEach((step, index) => {
+    if (!isNaN(step.stepType)) step.stepType = project.stepTypes[step.stepType]; // handle older versions with stepType= index. 
+    let stepTypeIndex = project.stepTypes.indexOf(step.stepType);
+    if (stepTypeIndex < 0 || stepTypeIndex >= project.stepTypes.length) {
+      stepTypeIndex = 0;
+    }
+    stepStrings[stepTypeIndex].push({
+      stepIndex: index,
+      stepString: `${index + 1}) ${step.name} ${utils.percentageQuestionsYes(step.questions)}`
+    });
+  })
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
 
-  let tableRows = []; // the three columns have different numbers of steps associated with them
+  let tableRows = []; // the columns have different numbers of steps associated with them
   for (let rowIndex = 0; rowIndex < maxStepTableRows; rowIndex++) {
     tableRows.push(
       <StyledTableRow key={`Row${rowIndex}`}>
