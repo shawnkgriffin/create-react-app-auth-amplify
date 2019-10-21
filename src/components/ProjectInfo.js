@@ -212,7 +212,7 @@ const ProjectInfo = props => {
         variant="outlined"
         helperText={touched.note ? errors.note : ""}
         error={touched.note && Boolean(errors.note)}
-        label="Note"
+        label="Project Notes"
         value={note}
         style={{ padding: 5, width: "45%" }}
         onChange={change.bind(null, "note")}

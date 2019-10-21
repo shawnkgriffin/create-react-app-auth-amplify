@@ -7,7 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
-import TextField from "@material-ui/core/TextField";
+
 import ProjectMenu from "./ProjectMenu";
 import * as utils from "../utils/generalUtilities.js";
 
@@ -98,20 +98,7 @@ export default function ProjectQuestions({
 
   return (
     <Paper className={classes.paper}>
-      <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="outlined-full-width"
-          label="Step 1 Notes"
-          style={{ margin: 8 }}
-          placeholder="Enter Step 1 Notes here."
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true
-          }}
-        />
-      </form>
+      
       <Table className={classes.table} size="small">
         <TableHead>
           <TableRow>

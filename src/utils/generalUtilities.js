@@ -16,6 +16,9 @@ const projectInfoValidationSchema = Yup.object({
     .default(() => new Date())
     .when("start", (startDate, schema) => startDate && schema.min(startDate))
 });
+const stepNoteValidationSchema = Yup.object({
+  note: Yup.string("Enter step notes.")
+});
 
 const projectStyles = makeStyles(theme => ({
   progress: {
@@ -117,5 +120,5 @@ function percentageQuestionsYes(questions) {
 
 export {
   percentageQuestionsYes,
-  parseCommand, projectStyles, projectInfoValidationSchema
+  parseCommand, projectStyles, projectInfoValidationSchema,stepNoteValidationSchema
 }

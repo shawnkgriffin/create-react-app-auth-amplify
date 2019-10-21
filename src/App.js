@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 import { Formik } from "formik";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+
 // Project components
 import ProjectMenu from "./components/ProjectMenu";
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";
+import ProjectStepNote from "./components/ProjectStepNote";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
@@ -22,6 +24,7 @@ import Amplify, { API, Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 API.configure(aws_exports);
+
 
 class App extends Component {
   constructor(props) {
@@ -43,9 +46,11 @@ class App extends Component {
       form: false,
       help: false,
       projectInfoEdit: false,
-      changed: false
+      changed: false,
+      currentStepNote: ""
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    this.handleStepNoteSubmit = this.handleStepNoteSubmit.bind(this);
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(this);
     this.handleStepChange = this.handleStepChange.bind(this);
     this.handleMenu = this.handleMenu.bind(this);
@@ -128,25 +133,48 @@ class App extends Component {
       }
     }
   }
+
+  handleStepNoteSubmit(response) {
+    if (this.state != null) {
+      let { projects, currentProject, currentStep } = this.state;
+      let project = projects[currentProject];
+      project.steps[currentStep].note = response.note;
+      projects[currentProject] = project;
+      
+      db.putProject(project, response => {
+        //TODO handle error 
+        console.log(`db.putProject(project, ${response.status}`)
+      });
+
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          projects: projects,
+          changed: false,
+          currentStepNote: "",
+          isStepNoteSubmitValid: false
+        };
+      });
+    }
+  }
+
   handleProjectInfoChange(changedProjectInfo) {
 
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = { ...projects[currentProject], ...changedProjectInfo };
-      
+
       console.log(`handleProjectInfoChange(${JSON.stringify(changedProjectInfo, null, 2)})`);
-      
+
       projects[currentProject] = project;
-        this.setState(prevState => {
-          return {
-            ...prevState,
-            projects: projects,
-            changed: false
-          };
-        });
-      db.putProject(project, response => {
-          console.log(response)
-        });
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          projects: projects,
+          changed: true
+        };
+      });
+      
     }
   }
 
@@ -175,7 +203,7 @@ class App extends Component {
           const newQuestion = {
             "name": newText,
             "validAnswers": "",
-            "note":"",
+            "note": "",
             "answer": "",
             "help": "",
             "answerHistory": []
@@ -651,7 +679,7 @@ class App extends Component {
       start,
       end
     };
-    if (this.state.changed) db.putProject(projects[currentProject], response =>console.log(response));
+    if (this.state.changed) db.putProject(projects[currentProject], response => console.log(response));
 
     return (
       <div>
@@ -707,6 +735,15 @@ class App extends Component {
                 text={this.state.text}
                 answerYes={this.handleYes}
                 answerNo={this.handleNo}
+              />
+              <Formik
+                enableReinitialize
+                render={props => <ProjectStepNote {...props} />}
+                initialValues={{
+                  note: project.steps[currentStep].note,
+                currentStep}}
+                validationSchema={utils.stepNoteValidationSchema}
+                onSubmit={this.handleStepNoteSubmit}
               />
               <ProjectQuestions
                 projectList={projectList}
