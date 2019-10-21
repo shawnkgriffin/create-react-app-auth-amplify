@@ -21,7 +21,6 @@ function createNewProject(name = 'New Project', creator = '', callback) {
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
   newProject.start = today.toLocaleDateString().replace('/\//g','-');
   newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('/\//g','-');;
-  console.log(`createNewProject(newProject,${JSON.stringify(newProject,null,2)}`)
   postProject(newProject, id => {
     newProject.id = id;
     callback(newProject);
@@ -49,14 +48,12 @@ function initProject(project, callback) {
  **/
 
 function postProject(newProject, callback) {
-  console.log(`postProject(newProject,${JSON.stringify(newProject,null,2)}`)
   axios.post(`https://us-central1-project-534d9.cloudfunctions.net/api/project`, newProject)
     .then(response => {
       callback(response.data.id)
-      console.log(`Project add response${response.data.id}`)
     })
     .catch(error => {
-      console.error(`Project add Error ${error}`)
+      callback(error);
     });
 }
 
@@ -141,42 +138,41 @@ async function getProjects(user, callback) {
 /**
 * Description
 * @function putProject
-* @param {integer}  
+* @param {project}  
 * @param {function} callback 
 * @param {string}  
 * @returns {string} status 200 success.
 **/
 
-function putProject(project) {
-  console.log(`putProject(project,${JSON.stringify(project,null,2)}`)
+function putProject(project, callback) {
 
   axios
     .put(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${project.id}`, project)
     .then(response => {
-      console.log(`Project put ${response.data}`)
+      callback(response)
     })
     .catch(error => {
-      console.log(`Project Put Error ${error}`)
+      callback(response)
     });
-
-}
-/**
-* Description
-* @function deleteProject
-* @param {integer}  
-* @param {function} callback 
-* @param {string}  
-* @returns {string} status 200 success.
-**/
-
-function deleteProject(id) {
-  axios.delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${id}`)
+    
+  }
+  /**
+   * Description
+   * @function deleteProject
+   * @param {integer}  
+   * @param {function} callback 
+   * @param {string}  
+   * @returns {string} status 200 success.
+   **/
+  
+  function deleteProject(id, callback) {
+    axios.delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${id}`)
     .then(response => {
-      console.log(`Project Delete ${JSON.stringify(response, null, 2)}`)
-
+      callback(response)
+      
     })
     .catch(error => {
-      console.log(`Project Delete Error ${error}`)
+      callback(error)
     });
 }
 
