@@ -152,7 +152,7 @@ function putProject(project, callback) {
       callback(response)
     })
     .catch(error => {
-      callback(response)
+      callback(error)
     });
     
   }

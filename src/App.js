@@ -121,7 +121,9 @@ class App extends Component {
             changed: false
           };
         });
-        db.putProject(project);
+        db.putProject(project, response => {
+          console.log(response)
+        });
 
       }
     }
@@ -142,8 +144,9 @@ class App extends Component {
             changed: false
           };
         });
-        db.putProject(project);
-      
+      db.putProject(project, response => {
+          console.log(response)
+        });
     }
   }
 
@@ -315,7 +318,7 @@ class App extends Component {
           break;
         case "DELETE":
           if (projects.length > 1) {
-            db.deleteProject(projects[currentProject].id);
+            db.deleteProject(projects[currentProject].id, response => console.log(response));
             projects.splice(currentProject, 1)
             currentProject = 0;
             this.setState(prevState => {
@@ -648,7 +651,7 @@ class App extends Component {
       start,
       end
     };
-    if (this.state.changed) db.putProject(projects[currentProject]);
+    if (this.state.changed) db.putProject(projects[currentProject], response =>console.log(response));
 
     return (
       <div>
