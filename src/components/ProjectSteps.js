@@ -11,16 +11,21 @@ import Input from "@material-ui/core/Input";
 import * as utils from "../utils/generalUtilities.js";
 
 const stepLabelStyle = {
-  width: 300,
+  width: "90%",
   fontSize: 16
 };
 
 const StyledTableCell = withStyles(theme => ({
   head: {
+    align:"left",
+    padding: "6px 6px 6px 6px",
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white
   },
   body: {
+    whiteSpace: "noWrap",
+    align: "left",
+    padding: "6px 6px 6px 6px",
     fontSize: 16
   }
 }))(TableCell);
@@ -67,7 +72,7 @@ export default function ProjectSteps({
         {project.stepTypes.map((stepType, stepIndex) => {
           return (
 
-            < TableCell variant="body" key={rowIndex * project.stepTypes.length + stepIndex}>
+            < StyledTableCell variant="body" key={rowIndex * project.stepTypes.length + stepIndex} >
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
@@ -75,6 +80,7 @@ export default function ProjectSteps({
                     projectList={projectList}
                     currentProject={currentProject}
                     typeOfMenu="step"
+                    style={{ width: "5%" }}
                     menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu}
                   />
 
@@ -86,7 +92,7 @@ export default function ProjectSteps({
                   />
                 </Fragment>
               }
-            </TableCell>
+            </StyledTableCell>
           )
         })}
 
@@ -96,8 +102,8 @@ export default function ProjectSteps({
   let tableHeaders = [];
   project.stepTypes.forEach((stepType, stepIndex) => {
     tableHeaders.push(
-      <StyledTableCell align="left" key={`TableStepHeader${stepIndex}`}>
-        <h2>{project.stepTypes[stepIndex]}</h2>
+      <StyledTableCell   key={`TableStepHeader${stepIndex}`}>
+        <h2>  {project.stepTypes[stepIndex]}</h2>
       </StyledTableCell>
     )
   })
@@ -105,7 +111,7 @@ export default function ProjectSteps({
 
   return (
     <Paper className={classes.paper}>
-      <Table className={classes.table} size="small">
+      <Table className={classes.table} size="small" style={{ minWidth: 750 }}>
         <TableHead>
           <TableRow>
             {tableHeaders}

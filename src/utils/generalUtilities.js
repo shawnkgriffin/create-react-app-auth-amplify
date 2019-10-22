@@ -67,8 +67,7 @@ const projectStyles = makeStyles(theme => ({
   },
   textField: {
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2),
-    width: 400,
+    marginRight: theme.spacing(2)
   },
   dense: {
     marginTop: theme.spacing(2)

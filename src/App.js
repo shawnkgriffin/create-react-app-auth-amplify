@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import { Formik } from "formik";
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 // Project components
 import ProjectMenu from "./components/ProjectMenu";
@@ -25,6 +25,15 @@ import aws_exports from './aws-exports';
 Amplify.configure(aws_exports);
 API.configure(aws_exports);
 
+const theme = createMuiTheme({
+
+  overrides: {
+    // Style sheet name ⚛️
+    sizeSmall: { padding: "6px 6px 6px 6x" }
+    
+  },
+      
+});
 
 class App extends Component {
   constructor(props) {
@@ -140,7 +149,7 @@ class App extends Component {
       let project = projects[currentProject];
       project.steps[currentStep].note = response.note;
       projects[currentProject] = project;
-      
+
       db.putProject(project, response => {
         //TODO handle error 
         console.log(`db.putProject(project, ${response.status}`)
@@ -174,7 +183,7 @@ class App extends Component {
           changed: true
         };
       });
-      
+
     }
   }
 
@@ -683,84 +692,87 @@ class App extends Component {
 
     return (
       <div>
+        <MuiThemeProvider theme={theme}>
 
-        {this.state.projects.length === 0 ? (
-          <h1>Loading...
+          {this.state.projects.length === 0 ? (
+            <h1>Loading...
             <CircularProgress className={utils.projectStyles.progress} />
-          </h1>
-        ) : (
-            <div>
-              <ProjectMenu
-                projectList={projectList}
-                currentProject={currentProject}
-                typeOfMenu="project"
-                menuIndex={1}
-                handleMenu={this.handleMenu} />
-              <Formik
-                enableReinitialize
-                render={props => <ProjectInfo {...props} />}
-                initialValues={values}
-                validationSchema={utils.projectInfoValidationSchema}
-                onSubmit={this.handleProjectInfoChange}
-              />
-              <br />
-              <ProjectSteps
-                projectList={projectList}
-                project={project}
-                currentProject={currentProject}
-                handleStepChange={this.handleStepChange}
-                handleMenu={this.handleMenu}
-                classes={utils.projectStyles}
-              />
-              <br />
-              <Alert
-                open={this.state.alert}
-                title={this.state.title}
-                alertYesButton={this.state.alertYesButton}
-                text={this.state.text}
-                answerYes={this.handleYes}
-                answerNo={this.handleNo}
-              />
-              <FormDialog
-                open={this.state.form}
-                title={this.state.title}
-                text={this.state.text}
-                answerYes={this.handleYes}
-                answerNo={this.handleNo}
-                classes={utils.projectStyles}
-              />
-              <Help
-                open={this.state.help}
-                title={this.state.title}
-                text={this.state.text}
-                answerYes={this.handleYes}
-                answerNo={this.handleNo}
-              />
-              <Formik
-                enableReinitialize
-                render={props => <ProjectStepNote {...props} />}
-                initialValues={{
-                  note: project.steps[currentStep].note,
-                currentStep}}
-                validationSchema={utils.stepNoteValidationSchema}
-                onSubmit={this.handleStepNoteSubmit}
-              />
-              <ProjectQuestions
-                projectList={projectList}
-                questions={project.steps[currentStep].questions}
-                stepName={project.steps[currentStep].name}
-                currentProject={currentProject}
-                currentStep={currentStep}
-                handleQuestionChange={this.handleQuestionChange}
-                handleMenu={this.handleMenu}
-                classes={utils.projectStyles}
-              />
-            </div>
-          )}
+            </h1>
+          ) : (
+              <div>
+                <ProjectMenu
+                  projectList={projectList}
+                  currentProject={currentProject}
+                  typeOfMenu="project"
+                  menuIndex={1}
+                  handleMenu={this.handleMenu} />
+                <Formik
+                  enableReinitialize
+                  render={props => <ProjectInfo {...props} />}
+                  initialValues={values}
+                  validationSchema={utils.projectInfoValidationSchema}
+                  onSubmit={this.handleProjectInfoChange}
+                />
+                <br />
+                <ProjectSteps
+                  projectList={projectList}
+                  project={project}
+                  currentProject={currentProject}
+                  handleStepChange={this.handleStepChange}
+                  handleMenu={this.handleMenu}
+                  classes={utils.projectStyles}
+                />
+                <br />
+                <Alert
+                  open={this.state.alert}
+                  title={this.state.title}
+                  alertYesButton={this.state.alertYesButton}
+                  text={this.state.text}
+                  answerYes={this.handleYes}
+                  answerNo={this.handleNo}
+                />
+                <FormDialog
+                  open={this.state.form}
+                  title={this.state.title}
+                  text={this.state.text}
+                  answerYes={this.handleYes}
+                  answerNo={this.handleNo}
+                  classes={utils.projectStyles}
+                />
+                <Help
+                  open={this.state.help}
+                  title={this.state.title}
+                  text={this.state.text}
+                  answerYes={this.handleYes}
+                  answerNo={this.handleNo}
+                />
+                <Formik
+                  enableReinitialize
+                  render={props => <ProjectStepNote {...props} />}
+                  initialValues={{
+                    note: project.steps[currentStep].note,
+                    currentStep
+                  }}
+                  validationSchema={utils.stepNoteValidationSchema}
+                  onSubmit={this.handleStepNoteSubmit}
+                />
+                <ProjectQuestions
+                  projectList={projectList}
+                  questions={project.steps[currentStep].questions}
+                  stepName={project.steps[currentStep].name}
+                  currentProject={currentProject}
+                  handleQuestionChange={this.handleQuestionChange}
+                  currentStep={currentStep}
+                  handleMenu={this.handleMenu}
+                  classes={utils.projectStyles}
+                />
+              </div>
+            )}
+        </MuiThemeProvider>
       </div>
 
     );
   }
-}
 
+}
 export default withAuthenticator(App, true);

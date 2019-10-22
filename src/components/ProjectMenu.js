@@ -48,7 +48,7 @@ const StyledMenuItem = withStyles(theme => ({
 function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
-  const style = projectMenu ? { marginTop: 20 } : { marginTop: 0 }
+  const style = projectMenu ? { margin: "10px 0px 10px 10px" } : { marginTop: 0 }
   
   const handleClick = event => {
     setAnchorEl(event.currentTarget);

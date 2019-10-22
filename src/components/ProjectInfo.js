@@ -11,8 +11,7 @@ import SubjectIcon from "@material-ui/icons/Subject";
 
 // import { DisplayFormikState } from "./helper";
 const buttonStyle = {
-  marginTop: 15,
-  marginLeft: 5,
+  margin: 10
 };
 const ProjectInfo = props => {
   const {
@@ -40,8 +39,9 @@ const ProjectInfo = props => {
     handleChange(e);
     setFieldTouched(name, true, false);
   };
+  
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <TextField
         id="outlined-name"
         name="name"
@@ -50,7 +50,7 @@ const ProjectInfo = props => {
         error={touched.name && Boolean(errors.name)}
         label="Project Name"
         value={name}
-        style={{ padding: 5, minWidth: 200 }}
+        style={{ padding: 0, minWidth: 200 }}
         onChange={change.bind(null, "name")}
         InputProps={{
           startAdornment: (
@@ -70,7 +70,7 @@ const ProjectInfo = props => {
         error={touched.start && Boolean(errors.start)}
         label="Start Date"
         value={start}
-        style={{ padding: 5, minWidth: 200 }}
+        style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "start")}
         InputProps={{
           startAdornment: (
@@ -89,7 +89,7 @@ const ProjectInfo = props => {
         error={touched.end && Boolean(errors.end)}
         label="End Date"
         value={end}
-        style={{ padding: 5, minWidth: 200 }}
+        style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "end")}
         InputProps={{
           startAdornment: (
@@ -155,7 +155,7 @@ const ProjectInfo = props => {
         error={touched.projectType && Boolean(errors.projectType)}
         label="Project Type"
         value={projectType}
-        style={{ padding: 5, minWidth: 200 }}
+        style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "projectType")}
         InputProps={{
           startAdornment: (
@@ -170,7 +170,7 @@ const ProjectInfo = props => {
         name="creator"
         disabled
         variant="outlined"
-        style={{ padding: 5, minWidth: 200 }}
+        style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
         helperText={touched.creator ? errors.creator : ""}
         error={touched.creator && Boolean(errors.creator)}
         label="Creator"
@@ -194,7 +194,7 @@ const ProjectInfo = props => {
         error={touched.problemOpportunity && Boolean(errors.problemOpportunity)}
         label="Problem Opportunity"
         value={problemOpportunity}
-        style={{ padding: 5, width: "45%" }}
+        style={{ padding: "0px 0px 10px 5px", width: "45%" }}
         onChange={change.bind(null, "problemOpportunity")}
         InputProps={{
           startAdornment: (
@@ -213,7 +213,7 @@ const ProjectInfo = props => {
         error={touched.note && Boolean(errors.note)}
         label="Project Notes"
         value={note}
-        style={{ padding: 5, width: "45%" }}
+        style={{ padding: "0px 0px 10px 5px", width: "45%" }}
         onChange={change.bind(null, "note")}
         InputProps={{
           startAdornment: (
