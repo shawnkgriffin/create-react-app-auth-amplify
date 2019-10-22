@@ -505,7 +505,7 @@
       ]
     },
     {
-      "name": "Solution Deliverables",
+      "name": "Deliverables",
       "note": "Step notes.",
       "stepType": "Define the Project",
       "help": "Step five, project deliverables summary, Projects produce, create, and implement deliverables.",
@@ -543,7 +543,7 @@
           "answerHistory": []
         },
         {
-          "name": "Have the solution deliverables been identified?",
+          "name": "Have the Deliverables been identified?",
           "validAnswers": " ",
           "answer": " ",
           "note": "Note",
@@ -739,7 +739,7 @@
     {
       "name": "Deliverable #1",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -755,7 +755,7 @@
     {
       "name": "Deliverable #2",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -771,7 +771,7 @@
     {
       "name": "Deliverable #3",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -787,7 +787,7 @@
     {
       "name": "Deliverable #4",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -803,7 +803,7 @@
     {
       "name": "Deliverable #5",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -819,7 +819,7 @@
     {
       "name": "Communication",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -835,7 +835,7 @@
     {
       "name": "Documentation, Training and Coaching",
       "note": "Step notes.",
-      "stepType": "Solution Deliverables",
+      "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
         {
@@ -1079,7 +1079,7 @@
           "answerHistory": []
         },
         {
-          "name": "Have all the solution deliverables been identified and validated?",
+          "name": "Have all the Deliverables been identified and validated?",
           "validAnswers": " ",
           "answer": " ",
           "note": "Note",
