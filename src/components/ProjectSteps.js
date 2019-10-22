@@ -80,7 +80,6 @@ export default function ProjectSteps({
                     projectList={projectList}
                     currentProject={currentProject}
                     typeOfMenu="step"
-                    style={{ width: "5%" }}
                     menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu}
                   />
 
