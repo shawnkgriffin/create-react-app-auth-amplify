@@ -96,7 +96,7 @@ export default function ProjectSteps({
   let tableHeaders = [];
   project.stepTypes.forEach((stepType, stepIndex) => {
     tableHeaders.push(
-      <StyledTableCell align="center" key={`TableStepHeader${stepIndex}`}>
+      <StyledTableCell align="left" key={`TableStepHeader${stepIndex}`}>
         <h2>{project.stepTypes[stepIndex]}</h2>
       </StyledTableCell>
     )
