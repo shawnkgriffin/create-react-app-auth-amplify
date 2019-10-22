@@ -19,8 +19,8 @@ function createNewProject(name = 'New Project', creator = '', callback) {
   newProject.creator = creator;
   let today = new Date();
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
-  newProject.start = today.toLocaleDateString().replace('///g','-');
-  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('///g','-');;
+  newProject.start = today.toLocaleDateString().replace('///g', '-');
+  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('///g', '-');;
   postProject(newProject, id => {
     newProject.id = id;
     callback(newProject);
@@ -131,7 +131,21 @@ function convertCSVtoJSON() {
 async function getProjects(user, callback) {
   axios
     .get(`https://us-central1-project-534d9.cloudfunctions.net/api/userprojects/${user}`)
-    .then(data => { callback(data.data) }
+    .then(data => {
+      let projects = data.data;
+      projects.forEach(project => {
+        project.steps.forEach(step => {
+          if (step.started === undefined) {
+            step.started = false;
+            step.startedDate = "";
+            step.completed = false;
+            step.completedDate = "";
+            step.assignedTo = "";
+          }
+        })
+      })
+      callback(projects);
+    }
     )
 }
 
@@ -154,22 +168,22 @@ function putProject(project, callback) {
     .catch(error => {
       callback(error)
     });
-    
-  }
-  /**
-   * Description
-   * @function deleteProject
-   * @param {integer}  
-   * @param {function} callback 
-   * @param {string}  
-   * @returns {string} status 200 success.
-   **/
-  
-  function deleteProject(id, callback) {
-    axios.delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${id}`)
+
+}
+/**
+ * Description
+ * @function deleteProject
+ * @param {integer}  
+ * @param {function} callback 
+ * @param {string}  
+ * @returns {string} status 200 success.
+ **/
+
+function deleteProject(id, callback) {
+  axios.delete(`https://us-central1-project-534d9.cloudfunctions.net/api/project/${id}`)
     .then(response => {
       callback(response)
-      
+
     })
     .catch(error => {
       callback(error)
