@@ -751,6 +751,11 @@ class App extends Component {
                   render={props => <ProjectStepNote {...props} />}
                   initialValues={{
                     note: project.steps[currentStep].note,
+                    started: project.steps[currentStep].started,
+                    startedDate: project.steps[currentStep].startedDate,
+                    completed: project.steps[currentStep].completed,
+                    completedDate: project.steps[currentStep].completedDate,
+                    assignedTo: project.steps[currentStep].assignedTo,
                     currentStep
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
