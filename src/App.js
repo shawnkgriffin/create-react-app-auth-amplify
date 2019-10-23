@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 // Project components
-import ProjectMenu from "./components/ProjectStepQuestionMenu";
+import ProjectMenu from "./components/ProjectMenu";
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";

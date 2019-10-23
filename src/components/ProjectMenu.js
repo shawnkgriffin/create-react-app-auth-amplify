@@ -11,6 +11,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import HelpIcon from "@material-ui/icons/Help";
 import { Divider } from "@material-ui/core";
 
@@ -113,39 +114,8 @@ function CustomizedMenus({ projectList, currentProject, templateEditor, menuInde
             </ListItemIcon>
             <ListItemText primary={`Add a new project.`} />
           </StyledMenuItem>
-        {!projectMenu &&
-          <StyledMenuItem
-            key={"1"}
-            id={`project.${menuIndex}.Add.Above`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a project above this one.`} />
-          </StyledMenuItem>
-        }
-        {!projectMenu &&
-          <StyledMenuItem
-            key={"2"}
-            id={`project.${menuIndex}.Add.Below`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a project below this one.`} />
-          </StyledMenuItem>
-        }
-        <StyledMenuItem
-          key={"3"}
-          id={`project.${menuIndex}.Edit`}
-          onClick={handleSelect}>
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Edit this project.`} />
-        </StyledMenuItem>
+     
+          
         <StyledMenuItem
           key={"4"}
           id={`project.${menuIndex}.EditHelp`}
@@ -166,6 +136,12 @@ function CustomizedMenus({ projectList, currentProject, templateEditor, menuInde
             <HelpIcon />
           </ListItemIcon>
           <ListItemText primary="Guidance." />
+        </StyledMenuItem>
+        <StyledMenuItem key={"7"} disabled id={`template.${menuIndex}.Add`} onClick={handleSelect}>
+          <ListItemIcon>
+            <AccountTreeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Save this project as a template." />
         </StyledMenuItem>
       </StyledMenu>
     </Fragment>
