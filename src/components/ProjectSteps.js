@@ -60,7 +60,7 @@ export default function ProjectSteps({
     }
     stepStrings[stepTypeIndex].push({
       stepIndex: index,
-      stepString: `${index + 1}) ${step.name} ${utils.percentageQuestionsYes(step.questions)}`
+      stepString: `${step.name} ${utils.percentageQuestionsYes(step.questions)}`
     });
   })
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
