@@ -191,6 +191,8 @@ const ProjectInfo = props => {
         name="problemOpportunity"
         variant="outlined"
         multiline
+        rows="2"
+        rowsMax= "2"
         helperText={touched.problemOpportunity ? errors.problemOpportunity : ""}
         error={touched.problemOpportunity && Boolean(errors.problemOpportunity)}
         label="Problem Opportunity"
@@ -209,6 +211,8 @@ const ProjectInfo = props => {
         id="outlined-note"
         name="note"
         multiline
+        rows="2"
+        rowsMax= "2"
         variant="outlined"
         helperText={touched.note ? errors.note : ""}
         error={touched.note && Boolean(errors.note)}

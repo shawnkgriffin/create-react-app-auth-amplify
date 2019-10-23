@@ -166,6 +166,8 @@ const ProjectStepInfo = props => {
         id="outlined-note"
         name="note"
         multiline
+        rows="2"
+        rowsMax= "2"
         variant="outlined"
         helperText={touched.note ? errors.note : ""}
         error={touched.note && Boolean(errors.note)}
