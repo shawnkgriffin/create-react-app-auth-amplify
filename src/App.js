@@ -755,7 +755,8 @@ class App extends Component {
                     startedDate: project.steps[currentStep].startedDate,
                     completed: project.steps[currentStep].completed,
                     completedDate: project.steps[currentStep].completedDate,
-                    assignedTo: project.steps[currentStep].assignedTo
+                    assignedTo: project.steps[currentStep].assignedTo,
+                    stepLabel:`${project.steps[currentStep].name} ${utils.percentageQuestionsYes(project.steps[currentStep].questions)} `
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}

@@ -9,7 +9,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
 
 import ProjectMenu from "./ProjectMenu";
-import * as utils from "../utils/generalUtilities.js";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -102,11 +101,7 @@ export default function ProjectQuestions({
       <Table className={classes.table} size="small">
         <TableHead>
           <TableRow>
-            <StyledTableCell>
-              <h2>
-                {currentStep + 1}) {stepName} {utils.percentageQuestionsYes(questions)}
-              </h2>
-            </StyledTableCell>
+            <StyledTableCell></StyledTableCell>
             <StyledTableCell>Yes%</StyledTableCell>
             <StyledTableCell>No</StyledTableCell>
             <StyledTableCell>Later</StyledTableCell>

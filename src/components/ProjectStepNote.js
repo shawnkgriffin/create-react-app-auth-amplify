@@ -8,7 +8,19 @@ import NameIcon from "@material-ui/icons/SupervisorAccount";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as utils from '../utils/generalUtilities'
+import { Table } from "@material-ui/core";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import { withStyles } from "@material-ui/core/styles";
 
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white
+  }
+}))(TableCell);
 // import { DisplayFormikState } from "./helper";
 
 const buttonStyle = {
@@ -24,7 +36,8 @@ const ProjectStepNote = props => {
       startedDate,
       completed,
       completedDate,
-      assignedTo
+      assignedTo,
+      stepLabel
     },
     errors,
     touched,
@@ -51,8 +64,19 @@ const ProjectStepNote = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
 
+    <form onSubmit={handleSubmit}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>
+              <h1>{stepLabel}</h1>
+            </StyledTableCell>
+          </TableRow>
+        </TableHead>
+      </Table>
+      <br />
+      <br />
       <TextField
         id="outlined-name"
         name="assignedTo"
