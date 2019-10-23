@@ -18,7 +18,7 @@
   "steps": [
     {
       "name": "Project Background",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "How was this project initiated? Basic PM Slides\n",
       "started": false,
@@ -143,7 +143,7 @@
     },
     {
       "name": "Project Launch",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "Help",
       "questions": [
@@ -263,7 +263,7 @@
     },
     {
       "name": "Project Purpose",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "Projects are never done for their own purpose, they are always part of or support a higher goal,",
       "questions": [
@@ -367,7 +367,7 @@
     },
     {
       "name": "Preliminary Schedule",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "\nCreate the initial schedule in an appropriate tool; ",
       "questions": [
@@ -447,7 +447,7 @@
     },
     {
       "name": "Deliverables",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "Step five, project deliverables summary, Projects produce, create, and implement deliverables.",
       "questions": [
@@ -575,7 +575,7 @@
     },
     {
       "name": "Preliminary Approval",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Define the Project",
       "help": "\nRemember:\nThe further into a project you go, the more expensive the Go – No/Go decision",
       "questions": [
@@ -655,7 +655,7 @@
     },
     {
       "name": "Deliverable #1",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -671,7 +671,7 @@
     },
     {
       "name": "Deliverable #2",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -687,7 +687,7 @@
     },
     {
       "name": "Deliverable #3",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -703,7 +703,7 @@
     },
     {
       "name": "Deliverable #4",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -719,7 +719,7 @@
     },
     {
       "name": "Deliverable #5",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -735,7 +735,7 @@
     },
     {
       "name": "Communication",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -751,7 +751,7 @@
     },
     {
       "name": "Documentation, Training and Coaching",
-      "note": "Step notes.",
+      "note": "Note.",
       "stepType": "Deliverables",
       "help": "How was this project initiated? Basic PM Slides\n",
       "questions": [
@@ -768,7 +768,7 @@
     {
       "name": "Additional Requirements",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "\n\n\nIdentify the departments and / or groups most impacted by the project and whose requirements will need to be considered and understood in order to ensure project success.  The elements to discuss & gather from each group include their view of the project’s goals, their needs & wants, current business state, key assumptions, technology requirements, quality requirements & organizational considerations. \n\n \n\nGuidance Questions: \n    What do we need before we can start working on this item?\n    What departments will be most impacted by the project?\n    Which department’s requirements will significantly drive the project’s direction?\n    What are each key group’s goals & objectives for the project?\n    How involved does each key group intend to be in the project?\n    How involved does each key group need to be in the project?\n    What are the key group’s needs?\n    What are the key group’s wants?\n    What’s the key group’s current state?\n    What are their assumptions?\n    Why do they believe that…?\n    It appears that they are assuming…?\n    What are the assumptions that appear to be driving resistance within the groups?\n    What are the assumptions that appear to be driving support within the groups?\n    What’s the risk of proceeding with certain assumptions?\n    What are the group’s requirements and specifications?\n    How will we assess and validate the requirements and specifications?\n    What are the technology requirements and specifications?\n    How will we assess and validate the technology requirements and specifications?\n    What are the quality / performance requirements?\n    How will we assess and validate the quality requirements and specifications?\n    How will we know this item has been completed?\n​\n\nStep seven, Additional Requirements, Depending on the project, initial requirements have already been shared during the first six steps. Additional requirements can come from multiple groups, such as customers, management, project sponsor, stakeholders, users of the intended solution, groups impacted by the problem and proposed solution, regulators, citizens, and local, state, and federal government. Identify the groups that will be providing the summary and detailed requirements for your project. Consider meeting with representatives from the key groups, facilitate a session for gathering the following information, group's goals and objective for the project, their needs and wants, their current state, key assumptions, solution requirements, technology requirements, quality requirements, and organizational considerations.  Ask open ended questions, document the requirements, review each requirement, decide which ones will be met, provide feedback to the groups explaining the results of the meetings, decisions and reasons for the actions to be taken. If you would like more detail for this step, say Project Requirements, When you have sufficient information, continue to the next step by saying, Step Eight.\n\n\n",
       "questions": [
         {
@@ -944,7 +944,7 @@
     {
       "name": "Dependencies",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Task Dependencies\n\n\n",
       "questions": [
         {
@@ -1080,7 +1080,7 @@
     {
       "name": "Risk and Mitigation",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Risk & Mitigation\n\n\n",
       "questions": [
         {
@@ -1208,7 +1208,7 @@
     {
       "name": "Organizational Impact",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Organizational Impact & Training Requirements\n\n\n",
       "questions": [
         {
@@ -1336,7 +1336,7 @@
     {
       "name": "Resource Requirements",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Resource Requirements\n\n\n",
       "questions": [
         {
@@ -1464,7 +1464,7 @@
     {
       "name": "Updated Approval",
       "stepType": "Analyze the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Updated Plan Approvel\n\n\n",
       "questions": [
         {
@@ -1592,7 +1592,7 @@
     {
       "name": "Solution Design",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Solution Designs\n\n\n",
       "questions": [
         {
@@ -1736,7 +1736,7 @@
     {
       "name": "Solution Development",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Solution Developed\n\n\n",
       "questions": [
         {
@@ -1896,7 +1896,7 @@
     {
       "name": "Solution Testing",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Testing\n\n",
       "questions": [
         {
@@ -2040,7 +2040,7 @@
     {
       "name": "Behavior Deliverables Developed",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Behavior Deliverables Developed\n\n\n",
       "questions": [
         {
@@ -2168,7 +2168,7 @@
     {
       "name": "Behavior Deiverables Delivered",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Behavior Deliverables Delivered\n\n\n",
       "questions": [
         {
@@ -2248,7 +2248,7 @@
     {
       "name": "Pilot",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Pilot\n\n\n",
       "questions": [
         {
@@ -2352,7 +2352,7 @@
     {
       "name": "Implement",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Implement\n\n\n",
       "questions": [
         {
@@ -2464,7 +2464,7 @@
     {
       "name": "Post-op",
       "stepType": "Implement the Project",
-      "note": "Step notes.",
+      "note": "Note.",
       "help": "Post-op\n\n\n",
       "questions": [
         {
