@@ -146,11 +146,11 @@ class App extends Component {
   handleStepNoteSubmit(response) {
     if (this.state != null) {
       let { projects, currentProject, currentStep } = this.state;
-      let project = projects[currentProject];
-      project.steps[currentStep].note = response.note;
-      projects[currentProject] = project;
+      let step = projects[currentProject].steps[currentStep];
+      step = { ...step, ...response };
+      projects[currentProject].steps[currentStep] = step;
 
-      db.putProject(project, response => {
+      db.putProject(projects[currentProject], response => {
         //TODO handle error 
         console.log(`db.putProject(project, ${response.status}`)
       });
@@ -755,8 +755,7 @@ class App extends Component {
                     startedDate: project.steps[currentStep].startedDate,
                     completed: project.steps[currentStep].completed,
                     completedDate: project.steps[currentStep].completedDate,
-                    assignedTo: project.steps[currentStep].assignedTo,
-                    currentStep
+                    assignedTo: project.steps[currentStep].assignedTo
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}
