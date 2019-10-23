@@ -9,7 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as utils from '../utils/generalUtilities'
 
-import { DisplayFormikState } from "./helper";
+// import { DisplayFormikState } from "./helper";
 
 const buttonStyle = {
   marginTop: 15,
@@ -45,7 +45,6 @@ const ProjectStepNote = props => {
       else if (name === 'completed') {
         setFieldValue('completedDate', utils.formatDate(today));
       }
-      console.log(`change = (${name}) `)
     }
     handleChange(e);
     setFieldTouched(name, true, false);
@@ -170,7 +169,7 @@ const ProjectStepNote = props => {
         Save
       </Button>
 
-      <DisplayFormikState {...props} />
+      {/* <DisplayFormikState {...props} /> */}
     </form>
   );
 };
