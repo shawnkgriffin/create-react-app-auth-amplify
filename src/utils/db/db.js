@@ -1,10 +1,13 @@
 
 import axios from "axios";
+import * as utils from '../generalUtilities'
 
 axios.create({
   baseURL: "https://us-central1-project-534d9.cloudfunctions.net/api",
   responseType: "json"
 });
+
+
 /**
 * Description
 * @function createNewProject
@@ -19,8 +22,8 @@ function createNewProject(name = 'New Project', creator = '', callback) {
   newProject.creator = creator;
   let today = new Date();
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
-  newProject.start = today.toLocaleDateString().replace('///g', '-');
-  newProject.end = thirtyDaysFromNow.toLocaleDateString().replace('///g', '-');;
+  newProject.start = utils.formatDate(today);
+  newProject.end = utils.formatDate(thirtyDaysFromNow);
   postProject(newProject, id => {
     newProject.id = id;
     callback(newProject);

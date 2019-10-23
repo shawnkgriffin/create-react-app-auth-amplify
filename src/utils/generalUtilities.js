@@ -1,5 +1,26 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as Yup from "yup";
+/**
+* Description
+* @function formatDate
+* @param {date}  date
+* @returns {string} YYY-MM-DD
+**/
+function formatDate(date) {
+
+  let dd = date.getDate();
+  let mm = date.getMonth() + 1;
+  const yyyy = date.getFullYear();
+  if (dd < 10) {
+    dd = `0${dd}`;
+  }
+
+  if (mm < 10) {
+    mm = `0${mm}`;
+  }
+  return (`${yyyy}-${mm}-${dd}`);
+
+}
 
 const projectInfoValidationSchema = Yup.object({
   name: Yup.string("Enter a name").required("Name is required"),
@@ -119,5 +140,9 @@ function percentageQuestionsYes(questions) {
 
 export {
   percentageQuestionsYes,
-  parseCommand, projectStyles, projectInfoValidationSchema,stepNoteValidationSchema
+  parseCommand,
+  projectStyles,
+  projectInfoValidationSchema,
+  stepNoteValidationSchema,
+  formatDate
 }

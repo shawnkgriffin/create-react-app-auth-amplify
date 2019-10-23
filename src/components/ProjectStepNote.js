@@ -7,9 +7,9 @@ import EventIcon from "@material-ui/icons/Event";
 import NameIcon from "@material-ui/icons/SupervisorAccount";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import * as utils from '../utils/generalUtilities'
 
-
-// import { DisplayFormikState } from "./helper";
+import { DisplayFormikState } from "./helper";
 
 const buttonStyle = {
   marginTop: 15,
@@ -30,16 +30,27 @@ const ProjectStepNote = props => {
     touched,
     handleSubmit,
     handleChange,
+    setFieldValue,
     isValid,
     setFieldTouched
   } = props;
 
   const change = (name, e) => {
     e.persist();
-    if (e.target.checked) { console.log(`change = (${name}) `) }
+    if (e.target.checked) {
+      const today = new Date();
+      if (name === 'started') {
+        setFieldValue('startedDate', utils.formatDate(today));
+      }
+      else if (name === 'completed') {
+        setFieldValue('completedDate', utils.formatDate(today));
+      }
+      console.log(`change = (${name}) `)
+    }
     handleChange(e);
     setFieldTouched(name, true, false);
   };
+
   return (
     <form onSubmit={handleSubmit}>
 
@@ -159,8 +170,7 @@ const ProjectStepNote = props => {
         Save
       </Button>
 
-      {/* command604
-      <DisplayFormikState {...props} /> */}
+      <DisplayFormikState {...props} />
     </form>
   );
 };
