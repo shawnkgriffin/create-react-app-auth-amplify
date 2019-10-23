@@ -137,6 +137,10 @@ async function getProjects(user, callback) {
     .then(data => {
       let projects = data.data;
       projects.forEach(project => {
+        if (project.template === undefined) {
+          project.templateName = "Basic Project";
+          project.template = false;
+        }
         project.steps.forEach(step => {
           if (step.started === undefined) {
             step.started = false;

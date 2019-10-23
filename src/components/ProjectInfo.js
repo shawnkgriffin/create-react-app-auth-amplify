@@ -22,7 +22,7 @@ const ProjectInfo = props => {
       note,
       sponsor,
       projectManager,
-      projectType,
+      templateName,
       start,
       end
     },
@@ -149,14 +149,15 @@ const ProjectInfo = props => {
       />
       <TextField
         id="outlined-name"
-        name="projectType"
+        disabled
+        name="templateName"
         variant="outlined"
-        helperText={touched.projectType ? errors.projectType : ""}
-        error={touched.projectType && Boolean(errors.projectType)}
-        label="Project Type"
-        value={projectType}
+        helperText={touched.templateName ? errors.templateName : ""}
+        error={touched.templateName && Boolean(errors.templateName)}
+        label="Project Template"
+        value={templateName}
         style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
-        onChange={change.bind(null, "projectType")}
+        onChange={change.bind(null, "templateName")}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

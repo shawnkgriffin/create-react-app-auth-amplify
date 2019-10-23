@@ -8,7 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
 
-import ProjectMenu from "./ProjectMenu";
+import ProjectMenu from "./ProjectStepQuestionMenu";
 
 const StyledTableCell = withStyles(theme => ({
   head: {

@@ -27,11 +27,10 @@ const buttonStyle = {
   marginTop: 15,
   marginLeft: 5,
 };
-const ProjectStepNote = props => {
+const ProjectStepInfo = props => {
   const {
     values: {
       note,
-      currentStep,
       started,
       startedDate,
       completed,
@@ -170,7 +169,7 @@ const ProjectStepNote = props => {
         variant="outlined"
         helperText={touched.note ? errors.note : ""}
         error={touched.note && Boolean(errors.note)}
-        label={`Step ${currentStep + 1} Notes`}
+        label={`Notes`}
         value={note}
         style={{ padding: 5, width: "85%" }}
         onChange={change.bind(null, "note")}
@@ -198,4 +197,4 @@ const ProjectStepNote = props => {
   );
 };
 
-export default ProjectStepNote;
+export default ProjectStepInfo;

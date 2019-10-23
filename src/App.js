@@ -5,11 +5,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 // Project components
-import ProjectMenu from "./components/ProjectMenu";
+import ProjectMenu from "./components/ProjectStepQuestionMenu";
 import ProjectInfo from "./components/ProjectInfo";
 import ProjectSteps from "./components/ProjectSteps";
 import ProjectQuestions from "./components/ProjectQuestions";
-import ProjectStepNote from "./components/ProjectStepNote";
+import ProjectStepInfo from "./components/ProjectStepInfo";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
@@ -249,7 +249,7 @@ class App extends Component {
         };
       });
 
-    } else if (actionObject === "STEP") {
+    } else if (actionObject === "STEP" || actionObject === "DELIVERABLE") {
       switch (actionVerb) {
         case "ADD":
           const newStep = {
@@ -423,7 +423,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit question #${actionIndex + 1}) below.`,
+                title: `Edit question #${actionIndex + 1}) here.`,
                 text: project.steps[currentStep].questions[actionIndex].name,
                 commandString: commandString
               }
@@ -434,7 +434,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit guidance for #${actionIndex + 1}) below.`,
+                title: `Edit guidance for #${actionIndex + 1}) here.`,
                 text: project.steps[currentStep].questions[actionIndex].help,
                 commandString: commandString
               }
@@ -482,14 +482,14 @@ class App extends Component {
             break;
         }
 
-      if (actionObject === "STEP")
+      if (actionObject === "STEP" || actionObject === "DELIVERABLE")
         switch (actionVerb) {
 
           case "ADD":
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
-                ...prevState, form: true, title: `Add step #${actionIndex + 1})`, text: "",
+                ...prevState, form: true, title: `Add a ${actionObject.toLowerCase()} here.`, text: "",
                 commandString: commandString
               }
             });
@@ -501,7 +501,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit step #${actionIndex + 1}) below.`,
+                title: `Edit the ${actionObject.toLowerCase()} here.`,
                 text: project.steps[actionIndex].name,
                 commandString: commandString
               };
@@ -514,7 +514,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit guidance for step #${actionIndex + 1}) below.`,
+                title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
                 text: project.steps[actionIndex].help,
                 commandString: commandString
               };
@@ -529,8 +529,8 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   alertYesButton: true,
-                  title: "Delete the following step?",
-                  text: `${actionIndex + 1}) ${project.steps[actionIndex].name}`,
+                  title: `Delete the following ${actionObject.toLowerCase()}?`,
+                  text: `${project.steps[actionIndex].name}`,
                   commandString: commandString
                 };
               });
@@ -541,8 +541,8 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   alertYesButton: false,
-                  title: "Cannot delete the last step.",
-                  text: `Cannot delete ${actionIndex + 1}) ${project.steps[actionIndex].name}`,
+                  title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
+                  text: `Cannot delete ${project.steps[actionIndex].name}`,
                   commandString: ""
                 };
               });
@@ -672,7 +672,7 @@ class App extends Component {
       note,
       sponsor,
       projectManager,
-      projectType,
+      templateName,
       start,
       end
     } = { ...projects[currentProject] };
@@ -683,7 +683,7 @@ class App extends Component {
       note,
       sponsor,
       projectManager,
-      projectType,
+      templateName,
       start,
       end
     };
@@ -747,7 +747,7 @@ class App extends Component {
                 />
                 <Formik
                   enableReinitialize
-                  render={props => <ProjectStepNote {...props} />}
+                  render={props => <ProjectStepInfo {...props} />}
                   initialValues={{
                     note: project.steps[currentStep].note,
                     started: project.steps[currentStep].started,

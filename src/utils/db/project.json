@@ -5,9 +5,10 @@
   "note": "notes",
   "sponsor": "Stephen Stofanak",
   "projectManager": "Harry Belafonte",
-  "projectType": "Standard",
-  "start": "2019-09-17T20:03:00.040Z",
-  "end": "Tue Sep 17 2019 13:03:00 GMT-0700 (PDT)2592000000",
+  "templateName": "Standard",
+  "template": false,
+  "start": "2019-09-17",
+  "end": "2019-10-17",
   "stepTypes": [
     "Define the Project",
     "Deliverables",
