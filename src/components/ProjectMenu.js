@@ -65,7 +65,6 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
   };
   
   
-  // TODO placeholder till I implement multiple projects. 
   const projectMenuList = projectList.map((projectName, index) => {
     return (
       <StyledMenuItem

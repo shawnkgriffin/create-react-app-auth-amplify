@@ -191,8 +191,7 @@ class App extends Component {
     if (this.state != null) {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
-      const stepString = e.target.value.split(")");
-      const stepNumber = parseInt(stepString[0], 10) - 1;
+      const stepNumber = parseInt(e.target.id, 10);
 
       if (stepNumber >= 0 && stepNumber < project.steps.length) {
         this.setState(prevState => {

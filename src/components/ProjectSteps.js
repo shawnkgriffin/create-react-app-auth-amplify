@@ -79,14 +79,16 @@ export default function ProjectSteps({
                   <ProjectMenu
                     projectList={projectList}
                     currentProject={currentProject}
-                    typeOfMenu="step"
-                    menuIndex={stepStrings[stepIndex][rowIndex].stepIndex} handleMenu={handleMenu}
+                    typeOfMenu={stepType === 'Deliverables' ? 'deliverable' : "step"}
+                    menuIndex={stepStrings[stepIndex][rowIndex].stepIndex}
+                    handleMenu={handleMenu}
                   />
 
                   <Input
                     onClick={handleStepChange}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
+                    id={`${stepStrings[stepIndex][rowIndex].stepIndex}`}
                     style={stepLabelStyle}
                   />
                 </Fragment>
