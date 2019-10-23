@@ -6,7 +6,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import ProjectMenu from "./ProjectStepQuestionMenu";
+import ProjectStepQuestionMenu from "./ProjectStepQuestionMenu";
 import Input from "@material-ui/core/Input";
 import * as utils from "../utils/generalUtilities.js";
 
@@ -76,7 +76,7 @@ export default function ProjectSteps({
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
-                  <ProjectMenu
+                  <ProjectStepQuestionMenu
                     projectList={projectList}
                     currentProject={currentProject}
                     typeOfMenu={stepType === 'Deliverables' ? 'deliverable' : "step"}

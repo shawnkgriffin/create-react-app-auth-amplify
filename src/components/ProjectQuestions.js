@@ -7,8 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Radio from "@material-ui/core/Radio";
-
-import ProjectMenu from "./ProjectStepQuestionMenu";
+import ProjectStepQuestionMenu from "./ProjectStepQuestionMenu";
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -46,7 +45,7 @@ export default function ProjectQuestions({
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
           <TableCell>
-            <ProjectMenu
+            <ProjectStepQuestionMenu
               projectList={projectList}
               currentProject={currentProject}
               typeOfMenu="question"

@@ -45,10 +45,9 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
+function CustomizedMenus({ projectList, currentProject, templateEditor, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
-  const style = projectMenu ? { margin: "10px 0px 10px 10px" } : { marginTop: 0 }
+  const style =  { margin: "10px 0px 10px 10px" }
   
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -102,73 +101,67 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {projectMenu &&
-          projectMenuList
-        }
-        {projectMenu &&
+          {projectMenuList}
           <Divider />
-        }
-        {projectMenu &&
           <StyledMenuItem
             key={"2"}
-            id={`${typeOfMenu}.${menuIndex}.Add`}
+            id={`project.${menuIndex}.Add`}
             onClick={handleSelect}
           >
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            <ListItemText primary={`Add a new ${typeOfMenu}.`} />
+            <ListItemText primary={`Add a new project.`} />
           </StyledMenuItem>
-        }
         {!projectMenu &&
           <StyledMenuItem
             key={"1"}
-            id={`${typeOfMenu}.${menuIndex}.Add.Above`}
+            id={`project.${menuIndex}.Add.Above`}
             onClick={handleSelect}
           >
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} above this one.`} />
+            <ListItemText primary={`Add a project above this one.`} />
           </StyledMenuItem>
         }
         {!projectMenu &&
           <StyledMenuItem
             key={"2"}
-            id={`${typeOfMenu}.${menuIndex}.Add.Below`}
+            id={`project.${menuIndex}.Add.Below`}
             onClick={handleSelect}
           >
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
+            <ListItemText primary={`Add a project below this one.`} />
           </StyledMenuItem>
         }
         <StyledMenuItem
           key={"3"}
-          id={`${typeOfMenu}.${menuIndex}.Edit`}
+          id={`project.${menuIndex}.Edit`}
           onClick={handleSelect}>
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>
-          <ListItemText primary={`Edit this ${typeOfMenu}.`} />
+          <ListItemText primary={`Edit this project.`} />
         </StyledMenuItem>
         <StyledMenuItem
           key={"4"}
-          id={`${typeOfMenu}.${menuIndex}.EditHelp`}
+          id={`project.${menuIndex}.EditHelp`}
           onClick={handleSelect}>
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>
-          <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
+          <ListItemText primary={`Edit guidance for this project.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+        <StyledMenuItem key={"5"} id={`project.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
-          <ListItemText primary={`Delete this ${typeOfMenu}`} />
+          <ListItemText primary={`Delete this project`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"6"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
+        <StyledMenuItem key={"6"} id={`project.${menuIndex}.Help`} onClick={handleSelect}>
           <ListItemIcon>
             <HelpIcon />
           </ListItemIcon>
@@ -178,5 +171,5 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
     </Fragment>
   );
 }
-const ProjectStepQuestionMenu = React.memo(CustomizedMenus);
-export default ProjectStepQuestionMenu;
+const ProjectMenu = React.memo(CustomizedMenus);
+export default ProjectMenu;
