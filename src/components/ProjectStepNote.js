@@ -9,7 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
-import { DisplayFormikState } from "./helper";
+// import { DisplayFormikState } from "./helper";
 
 const buttonStyle = {
   marginTop: 15,
@@ -159,7 +159,8 @@ const ProjectStepNote = props => {
         Save
       </Button>
 
-      <DisplayFormikState {...props} />
+      {/* command604
+      <DisplayFormikState {...props} /> */}
     </form>
   );
 };
