@@ -137,7 +137,7 @@ function CustomizedMenus({ projectList, currentProject, templateEditor, menuInde
           </ListItemIcon>
           <ListItemText primary="Guidance." />
         </StyledMenuItem>
-        <StyledMenuItem key={"7"} disabled id={`template.${menuIndex}.Add`} onClick={handleSelect}>
+        <StyledMenuItem key={"7"}  id={`template.${menuIndex}.Save`} onClick={handleSelect}>
           <ListItemIcon>
             <AccountTreeIcon />
           </ListItemIcon>

@@ -61,7 +61,7 @@ function postProject(newProject, callback) {
 }
 
 /**
-* Description
+ * Description
 * @function convertCSVtoJSON
 * @returns {project} json structure for questions.
 **/
@@ -151,9 +151,84 @@ async function getProjects(user, callback) {
           }
         })
       })
-      callback(projects);
+
+      callback(projects.filter(project => !project.template));
     }
     )
+}
+/**
+ * Description
+ * @function getTemplates
+ * @param {integer}  
+ * @param {function} callback 
+ * @param {string}  
+ * @returns {string} status 200 success.
+ **/
+
+async function getTemplates(user, callback) {
+  axios
+  .get(`https://us-central1-project-534d9.cloudfunctions.net/api/templates`)
+  .then(data => {
+    let templates = data.data;
+    templates.forEach(template => {
+      if (template.template === undefined) {
+        template.templateName = "Basic template";
+        template.template = false;
+      }
+      template.steps.forEach(step => {
+        if (step.started === undefined) {
+          step.started = false;
+          step.startedDate = "";
+          step.completed = false;
+          step.completedDate = "";
+          step.assignedTo = "";
+        }
+      })
+    })
+
+    callback(templates);
+  }
+  )
+}
+/**
+* Description
+* @function createTemplate
+* @param {string}  name of project
+* @param {string}  creator of project
+* @returns {project} 
+**/
+
+function createTemplate(templateName = 'New Template', project = {}, creator = '', callback) {
+  let newTemplate = JSON.parse(JSON.stringify(project));
+
+  //remove any data from the template
+  newTemplate.name = '';
+  newTemplate.problemOpportunity = '';
+  newTemplate.creator = creator;
+  newTemplate.note = '';
+  newTemplate.sponsor = '';
+  newTemplate.projectManager = '';
+  newTemplate.templateName = templateName;
+  newTemplate.template = true;
+  newTemplate.start = '';
+  newTemplate.end = '';
+  newTemplate.steps.forEach(step => {
+    step.note = "";
+    step.assignedTo = "";
+    step.started = false;
+    step.completed = false;
+    step.startedDate = "";
+    step.completedDate = "";
+    step.questions.forEach(question => {
+      question.answer = "";
+      question.answerHistory = [];
+    })
+  })
+
+  postProject(newTemplate, id => {
+    newTemplate.id = id;
+    callback(newTemplate);
+  })
 }
 
 /**
@@ -198,4 +273,4 @@ function deleteProject(id, callback) {
 }
 
 
-export { createNewProject, initProject, postProject, getProjects, putProject, deleteProject, convertCSVtoJSON }
+export { createNewProject, initProject, postProject, getProjects, putProject, deleteProject, getTemplates, createTemplate, convertCSVtoJSON }

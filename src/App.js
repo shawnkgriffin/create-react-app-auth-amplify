@@ -30,9 +30,9 @@ const theme = createMuiTheme({
   overrides: {
     // Style sheet name ⚛️
     sizeSmall: { padding: "6px 6px 6px 6x" }
-    
+
   },
-      
+
 });
 
 class App extends Component {
@@ -41,6 +41,7 @@ class App extends Component {
     super(props);
     this.state = {
       projects: [],
+      templates: [],
       currentProject: 0,
       currentStep: 0,
       currentUser: "",
@@ -72,34 +73,39 @@ class App extends Component {
     Auth.currentAuthenticatedUser()
       .then(user => {
         console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
-        db.getProjects(user.attributes.email, (projects) => {
-          if (projects.length === 0) {
-            db.createNewProject("New Project", user.attributes.email, newProject => {
-              projects.push(newProject);
+        db.getTemplates(user.attributes.email,(templates) => {
+
+          db.getProjects(user.attributes.email, (projects) => {
+            if (projects.length === 0) {
+              db.createNewProject("New Project", user.attributes.email, newProject => {
+                projects.push(newProject);
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    projects: projects,
+                    alert: false,
+                    alertYesButton: true,
+                    form: false,
+                    help: false,
+                    commandString: "",
+                    currentUser: user.attributes.email,
+                    currentStep: 0,
+                    currentProject: projects.length - 1,
+                    changed: false,
+                    templates: templates
+                  };
+                });
+              })
+            } else
               this.setState(prevState => {
                 return {
                   ...prevState,
+                  currentUser: user.attributes.email, //using email for now.
                   projects: projects,
-                  alert: false,
-                  alertYesButton: true,
-                  form: false,
-                  help: false,
-                  commandString: "",
-                  currentUser: user.attributes.email,
-                  currentStep: 0,
-                  currentProject: projects.length - 1,
-                  changed: false
+                  templates: templates
                 };
-              });
-            })
-          } else
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                currentUser: user.attributes.email, //using email for now.
-                projects: projects
-              };
-            })
+              })
+          })
         })
       })
       .catch(err => console.log(err))
@@ -202,7 +208,7 @@ class App extends Component {
   }
   handleYes(newText) {
     console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
-    let { projects, currentStep, currentProject, commandString } = this.state;
+    let { projects, currentStep, currentProject, commandString, templates } = this.state;
     let project = projects[currentProject];
     let { actionObject, actionIndex, actionVerb, actionLocation } = utils.parseCommand(commandString);
     if (actionObject === "QUESTION") {
@@ -331,6 +337,76 @@ class App extends Component {
               };
             });
             console.log(`Project add ${project.id}`)
+          });
+          break;
+        case "EDIT":
+          break;
+        case "EDITHELP":
+          project.help = newText;
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              alert: false,
+              alertYesButton: true,
+              form: false,
+              help: false,
+              commandString: "",
+              currentStep: currentStep,
+              currentProject: currentProject,
+              changed: true
+            };
+          });
+          break;
+        case "DELETE":
+          if (projects.length > 1) {
+            db.deleteProject(projects[currentProject].id, response => console.log(response));
+            projects.splice(currentProject, 1)
+            currentProject = 0;
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projects: projects,
+                alert: false,
+                alertYesButton: true,
+                form: false,
+                help: false,
+                commandString: "",
+                currentStep: currentStep,
+                currentProject: currentProject,
+                changed: false
+              };
+            });
+          }
+          else
+            console.error(`Cannot delete last project ${commandString}`)
+          break;
+        case "HELP":
+          break;
+        default:
+      }
+    }
+    if (actionObject === "TEMPLATE") {
+      switch (actionVerb) {
+        case "SAVE":
+
+          db.createTemplate(newText, projects[currentProject], this.state.currentUser, newTemplate => {
+
+            templates.push(newTemplate);
+            
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                alert: false,
+                alertYesButton: true,
+                form: false,
+                help: false,
+                commandString: "",
+                changed: false,
+                templates: templates
+              };
+            });
+            console.log(`Template Save ${newTemplate.id}`)
           });
           break;
         case "EDIT":
@@ -659,6 +735,102 @@ class App extends Component {
           default:
         }
       }
+
+      if (actionObject === "TEMPLATE") {
+        switch (actionVerb) {
+
+          case "SAVE":
+            actionIndex = projects.length;
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Enter name for template.`,
+                commandString: commandString
+              }
+            });
+            break;
+          case "SELECT":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                currentProject: actionIndex,
+                title: "",
+                text: "",
+                commandString: ""
+              };
+            });
+            break;
+
+          case "EDIT":
+
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projectInfoEdit: true,
+                title: "",
+                text: "",
+                commandString: ""
+              };
+            });
+            break;
+
+          case "EDITHELP":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Edit guidance for project "${project.name}" below.`,
+                text: project.help,
+                commandString: commandString
+              };
+            });
+
+            break;
+
+          case "DELETE":
+            //cannot delete last project
+            if (projects.length > 1) {
+
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: true,
+                  title: "Delete the following project?",
+                  text: `${currentProject + 1}) ${project.name}`,
+                  commandString: commandString
+                };
+              });
+            }
+            else {
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  alert: true,
+                  alertYesButton: false,
+                  title: "Cannot delete the last project.",
+                  text: `Cannot delete ${currentProject + 1}) ${project.name}`,
+                  commandString: ""
+                };
+              });
+            }
+            break;
+
+          case "HELP":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                help: true,
+                title: project.name,
+                text: project.help.length > 1 ? project.help : "Sorry, no guidance is available."
+              };
+            });
+
+            break;
+          default:
+        }
+      }
     }
   }
   render() {
@@ -755,7 +927,7 @@ class App extends Component {
                     completed: project.steps[currentStep].completed,
                     completedDate: project.steps[currentStep].completedDate,
                     assignedTo: project.steps[currentStep].assignedTo,
-                    stepLabel:`${project.steps[currentStep].name} ${utils.percentageQuestionsYes(project.steps[currentStep].questions)} `
+                    stepLabel: `${project.steps[currentStep].name} ${utils.percentageQuestionsYes(project.steps[currentStep].questions)} `
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}
