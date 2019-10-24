@@ -53,7 +53,9 @@ class App extends Component {
       alertYesButton: true,
       title: "",
       text: "",
+      textLabel:"",
       form: false,
+      formType:'',
       help: false,
       projectInfoEdit: false,
       changed: false,
@@ -206,7 +208,8 @@ class App extends Component {
       }
     }
   }
-  handleYes(newText) {
+  handleYes(response) {
+    let newText = response.text;
     console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
     let { projects, currentStep, currentProject, commandString, templates } = this.state;
     let project = projects[currentProject];
@@ -247,6 +250,7 @@ class App extends Component {
           alert: false,
           alertYesButton: true,
           form: false,
+          formType:'',
           help: false,
           commandString: "",
           currentStep: currentStep,
@@ -305,6 +309,7 @@ class App extends Component {
           alert: false,
           alertYesButton: true,
           form: false,
+          formType: '',
           help: false,
           commandString: "",
           currentStep: currentStep,
@@ -317,8 +322,9 @@ class App extends Component {
     if (actionObject === "PROJECT") {
       switch (actionVerb) {
         case "ADD":
+          // TODO use template selected to create project
           db.createNewProject(newText, this.state.currentUser, newProject => {
-
+            
             projects.push(newProject);
             currentStep = 0;
             currentProject = projects.length - 1;
@@ -420,6 +426,7 @@ class App extends Component {
               alert: false,
               alertYesButton: true,
               form: false,
+              formType:'',
               help: false,
               commandString: "",
               currentStep: currentStep,
@@ -440,6 +447,7 @@ class App extends Component {
                 alert: false,
                 alertYesButton: true,
                 form: false,
+                formType:'',
                 help: false,
                 commandString: "",
                 currentStep: currentStep,
@@ -469,7 +477,8 @@ class App extends Component {
         help: false,
         title: "",
         text: "",
-        commandString: ""
+        commandString: "",
+        formType:''
       };
     });
   }
@@ -649,7 +658,10 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Add new project #${actionIndex + 1})`, text: "",
+                formType: 'TEMPLATE',
+                textLabel:'New Project Name',
+                title: `Add new project #${actionIndex + 1})`,
+                text: "",
                 commandString: commandString
               }
             });
@@ -745,6 +757,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
+                textLabel:'Template Name',
                 title: `Enter name for template.`,
                 commandString: commandString
               }
@@ -837,6 +850,7 @@ class App extends Component {
     let { projects, currentProject, currentStep } = this.state;
     const project = projects[currentProject];
     const projectList = projects.map(project => project.name)
+    
     const {
       name,
       problemOpportunity,
@@ -906,6 +920,9 @@ class App extends Component {
                   open={this.state.form}
                   title={this.state.title}
                   text={this.state.text}
+                  formType={this.state.formType}
+                  textLabel={this.state.textLabel}
+                  templateList = {this.state.templates.map(template => template.templateName)}
                   answerYes={this.handleYes}
                   answerNo={this.handleNo}
                   classes={utils.projectStyles}
