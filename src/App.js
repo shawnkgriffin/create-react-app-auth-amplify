@@ -87,7 +87,10 @@ class App extends Component {
                     projects: projects,
                     alert: false,
                     alertYesButton: true,
+                    text: "",
+                    textLabel:"",
                     form: false,
+                    formType:'',
                     help: false,
                     commandString: "",
                     currentUser: user.attributes.email,
@@ -209,7 +212,7 @@ class App extends Component {
     }
   }
   handleYes(response) {
-    let newText = response.text;
+    let newText = response.newText;
     console.log(`handleYes(e=${newText},commandString=${this.state.commandString}`)
     let { projects, currentStep, currentProject, commandString, templates } = this.state;
     let project = projects[currentProject];
@@ -475,6 +478,7 @@ class App extends Component {
         alertYesButton: true,
         form: false,
         help: false,
+        textLabel:"",
         title: "",
         text: "",
         commandString: "",
@@ -498,7 +502,9 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Add question #${actionIndex + 1})`, text: "",
+                title: `Add question #${actionIndex + 1})`,
+                text: "",
+                textLabel:"New Question",
                 commandString: commandString
               }
             });
@@ -509,6 +515,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit question #${actionIndex + 1}) here.`,
+                textLabel:"Question",
                 text: project.steps[currentStep].questions[actionIndex].name,
                 commandString: commandString
               }
@@ -520,6 +527,7 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit guidance for #${actionIndex + 1}) here.`,
+                textLabel:"Guidance",
                 text: project.steps[currentStep].questions[actionIndex].help,
                 commandString: commandString
               }
@@ -534,6 +542,7 @@ class App extends Component {
                   alert: true,
                   alertYesButton: true,
                   title: "Delete the following question?",
+                  textLabel:'Question',
                   text: `${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].name}`,
                   commandString: commandString
                 };
@@ -545,6 +554,7 @@ class App extends Component {
                   alert: true,
                   alertYesButton: false,
                   title: "Cannot delete the last question.",
+                  textLabel:'Question',
                   text: `Cannot delete ${actionIndex + 1}) ${project.steps[currentStep].questions[actionIndex].name}`,
                   commandString: commandString
                 };
@@ -558,6 +568,7 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title: project.steps[currentStep].questions[actionIndex].name,
+                textLabel:'Guidance',
                 text: project.steps[currentStep].questions[actionIndex].help.length > 1 ? project.steps[currentStep].questions[actionIndex].help : "Sorry, no guidance is available."
               };
             });
@@ -574,59 +585,67 @@ class App extends Component {
             actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
             this.setState(prevState => {
               return {
-                ...prevState, form: true, title: `Add a ${actionObject.toLowerCase()} here.`, text: "",
+                ...prevState,
+                form: true,
+                textLabel:`${actionObject.toLowerCase()}`,
+                title: `Add a ${actionObject.toLowerCase()} here.`,
+                text: "",
                 commandString: commandString
               }
             });
             break;
-
-          case "EDIT":
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit the ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].name,
-                commandString: commandString
-              };
-            });
-            break;
-
-          case "EDITHELP":
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].help,
-                commandString: commandString
-              };
-            });
-            break;
-
-          case "DELETE":
-            //cannot delete last step
-            if (project.steps.length > 1) {
+            
+            case "EDIT":
+              
               this.setState(prevState => {
                 return {
                   ...prevState,
-                  alert: true,
-                  alertYesButton: true,
-                  title: `Delete the following ${actionObject.toLowerCase()}?`,
-                  text: `${project.steps[actionIndex].name}`,
+                  form: true,
+                  textLabel:`${actionObject.toLowerCase()}`,
+                  title: `Edit the ${actionObject.toLowerCase()} here.`,
+                  text: project.steps[actionIndex].name,
                   commandString: commandString
                 };
               });
-            }
-            else {
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  alert: true,
-                  alertYesButton: false,
-                  title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
+              break;
+              
+              case "EDITHELP":
+                
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    form: true,
+                    textLabel:`Guidance`,
+                    title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
+                    text: project.steps[actionIndex].help,
+                    commandString: commandString
+                  };
+                });
+                break;
+                
+                case "DELETE":
+                  //cannot delete last step
+                  if (project.steps.length > 1) {
+                    this.setState(prevState => {
+                      return {
+                        ...prevState,
+                        textLabel:`${actionObject.toLowerCase()}`,
+                        alert: true,
+                        alertYesButton: true,
+                        title: `Delete the following ${actionObject.toLowerCase()}?`,
+                        text: `${project.steps[actionIndex].name}`,
+                        commandString: commandString
+                      };
+                    });
+                  }
+                  else {
+                    this.setState(prevState => {
+                      return {
+                        ...prevState,
+                        alert: true,
+                        alertYesButton: false,
+                        title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
+                        textLabel:`${actionObject.toLowerCase()}`,
                   text: `Cannot delete ${project.steps[actionIndex].name}`,
                   commandString: ""
                 };
@@ -641,6 +660,7 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title: project.steps[actionIndex].name,
+                textLabel:"Guidance",
                 text: project.steps[actionIndex].help.length > 1 ? project.steps[actionIndex].help : "Sorry, no guidance is available."
 
               };
@@ -672,6 +692,8 @@ class App extends Component {
                 ...prevState,
                 currentProject: actionIndex,
                 title: "",
+                textLabel: "",
+                formType:"",
                 text: "",
                 commandString: ""
               };
@@ -686,6 +708,8 @@ class App extends Component {
                 projectInfoEdit: true,
                 title: "",
                 text: "",
+                textLabel: "",
+                formType:"",
                 commandString: ""
               };
             });
@@ -697,6 +721,8 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 title: `Edit guidance for project "${project.name}" below.`,
+                textLabel: "Guidance",
+                formType:"",
                 text: project.help,
                 commandString: commandString
               };
@@ -714,6 +740,8 @@ class App extends Component {
                   alert: true,
                   alertYesButton: true,
                   title: "Delete the following project?",
+                  textLabel: "Project",
+                formType:"",
                   text: `${currentProject + 1}) ${project.name}`,
                   commandString: commandString
                 };
@@ -725,6 +753,8 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   alertYesButton: false,
+                  textLabel: "Project",
+                  formType:"",
                   title: "Cannot delete the last project.",
                   text: `Cannot delete ${currentProject + 1}) ${project.name}`,
                   commandString: ""
@@ -738,6 +768,8 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
+                textLabel: "Guidance",
+                formType:"",
                 title: project.name,
                 text: project.help.length > 1 ? project.help : "Sorry, no guidance is available."
               };
@@ -757,52 +789,16 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                textLabel:'Template Name',
+                textLabel: 'Template Name',
+                formType:"",
                 title: `Enter name for template.`,
                 commandString: commandString
               }
             });
             break;
-          case "SELECT":
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                currentProject: actionIndex,
-                title: "",
-                text: "",
-                commandString: ""
-              };
-            });
-            break;
-
-          case "EDIT":
-
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                projectInfoEdit: true,
-                title: "",
-                text: "",
-                commandString: ""
-              };
-            });
-            break;
-
-          case "EDITHELP":
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Edit guidance for project "${project.name}" below.`,
-                text: project.help,
-                commandString: commandString
-              };
-            });
-
-            break;
 
           case "DELETE":
-            //cannot delete last project
+            //TODO Delete a template
             if (projects.length > 1) {
 
               this.setState(prevState => {

@@ -12,13 +12,16 @@ const style = {
 };
 
 export default function FormDialog({ open, title, text, textLabel, formType, templateList, answerYes, answerNo, classes }) {
-  const [values, setValues] = React.useState({ text: text, template: templateList[0] });
+  const [values, setValues] = React.useState({ newText: text, template: templateList[0] });
 
   const handleYes = () => {
     answerYes(values);
+    setValues({ ...values, newText: "", template: "" });
   };
+
   const handleNo = () => {
     answerNo();
+    setValues({ ...values, newText: "", template: "" });
   };
 
 
@@ -39,7 +42,7 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
               select
               variant="outlined"
               label="Template"
-              value={values.template}
+              value={templateList[0]}
               onChange={handleChange("template")}
               style={{ width: "195px" }}
             >
@@ -58,9 +61,9 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
             id="name"
             type="text"
             multiline={numberLines > 0}
-            defaultValue={values.text}
+            defaultValue={text}
             fullWidth
-            onChange={handleChange('text')}
+            onChange={handleChange('newText')}
             style={style}
           />
         </DialogContent>

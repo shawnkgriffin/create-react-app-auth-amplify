@@ -11,7 +11,8 @@ export default function AlertDialog({ open, title, text, alertYesButton, answerY
 
   const handleYes = () => {
     console.log(`Alert.handleYes`)
-    answerYes();
+    let values ={text:"Yes"}
+    answerYes(values);
   };
   const handleNo = () => {
     console.log(`Alert.handleNo`)
