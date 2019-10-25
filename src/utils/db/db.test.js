@@ -1,16 +1,21 @@
 import * as db from './db.js'
 let createdProject = {};
+let projects = [];
+let template = require('./project.json');
+template.template = true;
+template.templateName = 'Test Template'
+const timeStamp = new Date().toLocaleString();
 
 // test create a new project
 test('a new project is created', done => {
   const testEmail = 'test@test.com';
-  const testProjectName = 'Test Project';
+  const testProjectName = `Test Project${timeStamp}`;
   function callback(newProject) {
     expect(newProject.name).toBe(testProjectName);
     done();
     createdProject = newProject;
   }
-  db.createNewProject(testProjectName, testEmail, callback);
+  db.createNewProject(testProjectName, testEmail, template, callback);
 });
 
 // test update a new project
