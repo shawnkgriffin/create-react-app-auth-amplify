@@ -5,9 +5,9 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import NameIcon from "@material-ui/icons/SupervisorAccount";
 import LockIcon from "@material-ui/icons/Lock";
 import AssignmentIcon from "@material-ui/icons/Assignment";
-import ListIcon from "@material-ui/icons/List";
 import EventIcon from "@material-ui/icons/Event";
 import SubjectIcon from "@material-ui/icons/Subject";
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
@@ -177,7 +177,7 @@ const ProjectInfo = props => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <ListIcon />
+              <AccountTreeIcon />
             </InputAdornment>
           )
         }}
