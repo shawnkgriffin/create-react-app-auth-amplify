@@ -11,7 +11,6 @@ import EditIcon from "@material-ui/icons/Edit";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import HelpIcon from "@material-ui/icons/Help";
 import { Divider } from "@material-ui/core";
 
@@ -137,12 +136,7 @@ function CustomizedMenus({ projectList, currentProject, templateEditor, menuInde
           </ListItemIcon>
           <ListItemText primary="Guidance." />
         </StyledMenuItem>
-        <StyledMenuItem key={"7"}  id={`template.${menuIndex}.Save`} onClick={handleSelect}>
-          <ListItemIcon>
-            <AccountTreeIcon />
-          </ListItemIcon>
-          <ListItemText primary="Save this project as a template." />
-        </StyledMenuItem>
+       
       </StyledMenu>
     </Fragment>
   );

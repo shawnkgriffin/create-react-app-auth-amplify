@@ -8,8 +8,11 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import ListIcon from "@material-ui/icons/List";
 import EventIcon from "@material-ui/icons/Event";
 import SubjectIcon from "@material-ui/icons/Subject";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 // import { DisplayFormikState } from "./helper";
+
 const buttonStyle = {
   margin: 10
 };
@@ -22,6 +25,7 @@ const ProjectInfo = props => {
       note,
       sponsor,
       projectManager,
+      template,
       templateName,
       start,
       end
@@ -147,9 +151,21 @@ const ProjectInfo = props => {
           )
         }}
       />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={template}
+            onChange={change.bind(null, "started")}
+            value="checkedB"
+            name={`template`}
+            color="primary"
+          />
+        }
+        label="Template?"
+      />
       <TextField
         id="outlined-name"
-        disabled
+        disabled = {!template}
         name="templateName"
         variant="outlined"
         helperText={touched.templateName ? errors.templateName : ""}

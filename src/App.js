@@ -47,10 +47,12 @@ class App extends Component {
       currentUser: "",
       isAuthenticated: false,
       isAuthenticating: true,
+      authEditTemplate:false,
       user: null,
       commandString: "",
       alert: false,
       alertYesButton: true,
+      permissionEditTemplate:false,
       title: "",
       text: "",
       textLabel:"",
@@ -75,12 +77,20 @@ class App extends Component {
     Auth.currentAuthenticatedUser()
       .then(user => {
         console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
-        db.getTemplates(user.attributes.email,(templates) => {
-
+        
+        //TODO when auth switched to google set up permissions.
+        const authEditTemplate = user.attributes.email === 'shawn@shawngriffin.com' ||
+          user.attributes.email === 'stephen@continuousbusinesschange.com';
+        
+        db.getTemplates(user.attributes.email, (templates) => {
+          
           db.getProjects(user.attributes.email, (projects) => {
             if (projects.length === 0) {
-              db.createNewProject("New Project", user.attributes.email, newProject => {
+              db.createNewProject("New Project", user.attributes.email, templates[0], newProject => {
                 projects.push(newProject);
+
+                if (authEditTemplate) templates.forEach(template => projects.push(template));
+
                 this.setState(prevState => {
                   return {
                     ...prevState,
@@ -92,6 +102,7 @@ class App extends Component {
                     form: false,
                     formType:'',
                     help: false,
+                    authEditTemplate,
                     commandString: "",
                     currentUser: user.attributes.email,
                     currentStep: 0,
@@ -101,15 +112,18 @@ class App extends Component {
                   };
                 });
               })
-            } else
+            } else {
+              if (authEditTemplate) templates.forEach(template => projects.push(template));
               this.setState(prevState => {
                 return {
                   ...prevState,
                   currentUser: user.attributes.email, //using email for now.
                   projects: projects,
+                  authEditTemplate,
                   templates: templates
                 };
               })
+            }
           })
         })
       })
@@ -853,7 +867,12 @@ class App extends Component {
   render() {
     let { projects, currentProject, currentStep } = this.state;
     const project = projects[currentProject];
-    const projectList = projects.map(project => project.name)
+    const projectList = projects.map(project => {
+      if (project.template)
+        return (`Template (${project.templateName})`)
+      else
+        return (project.name);
+    })
     
     const {
       name,
@@ -863,6 +882,7 @@ class App extends Component {
       sponsor,
       projectManager,
       templateName,
+      template,
       start,
       end
     } = { ...projects[currentProject] };
@@ -874,6 +894,7 @@ class App extends Component {
       sponsor,
       projectManager,
       templateName,
+      template,
       start,
       end
     };
