@@ -325,8 +325,16 @@ class App extends Component {
     if (actionObject === "PROJECT") {
       switch (actionVerb) {
         case "ADD":
+
+          // Figure out which template to use.
+          let templateIndex = 0;
+          if (typeof response.template !== 'undefined') {
+            templateIndex = this.state.templates.findIndex(template => template.templateName === response.template)
+            if (templateIndex === -1) templateIndex = 0;
+            console.log(`AddProject(${response.template}, ${templateIndex})`)
+          }
           // TODO use template selected to create project
-          db.createNewProject(newText, this.state.currentUser, newProject => {
+          db.createNewProject(newText, this.state.currentUser, this.state.templates[templateIndex], newProject => {
             
             projects.push(newProject);
             currentStep = 0;

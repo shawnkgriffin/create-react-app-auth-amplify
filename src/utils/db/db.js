@@ -16,8 +16,10 @@ axios.create({
 * @returns {project} 
 **/
 
-function createNewProject(name = 'New Project', creator = '', callback) {
-  let newProject = require('./project.json');
+function createNewProject(name = 'New Project', creator = '', template = null, callback) {
+  let newProject = require('./project.json')
+  if (template !== null)
+    newProject = JSON.parse(JSON.stringify(template));
   newProject.name = name;
   newProject.creator = creator;
   let today = new Date();

@@ -42,7 +42,7 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
               select
               variant="outlined"
               label="Template"
-              value={templateList[0]}
+              value={values.template}
               onChange={handleChange("template")}
               style={{ width: "195px" }}
             >
