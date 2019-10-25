@@ -22,6 +22,7 @@ function createNewProject(name = 'New Project', creator = '', template = null, c
     newProject = JSON.parse(JSON.stringify(template));
   newProject.name = name;
   newProject.creator = creator;
+  newProject.template = false;
   let today = new Date();
   let thirtyDaysFromNow = new Date(new Date().setDate(today.getDate() + 30));
   newProject.start = utils.formatDate(today);
@@ -187,7 +188,12 @@ async function getTemplates(user, callback) {
         }
       })
     })
-
+    if (templates.length === 0) {
+      console.err(`db.getTemplates ! no templates returned.`)
+      let newProject = require('./project.json')
+      newProject.template = true;
+      templates.push(newProject)
+    }
     callback(templates);
   }
   )
