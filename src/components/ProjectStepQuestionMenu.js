@@ -48,7 +48,7 @@ const StyledMenuItem = withStyles(theme => ({
 function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
-  const style = projectMenu ? { margin: "10px 0px 10px 10px", color: "inherit" } : { marginTop: 0,color: "inherit" }
+  const style = projectMenu ? { margin: "10px 0px 10px 10px", color: "inherit" } : { marginTop: 0, color: "inherit" }
   let directions = [];
   switch (typeOfMenu.toUpperCase()) {
     case 'PROJECT':
@@ -99,7 +99,6 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
-          colorInherit
           aria-haspopup="true"
           padding-top="30px"
           onClick={handleClick}
