@@ -14,10 +14,14 @@ const stepLabelStyle = {
   width: "90%",
   fontSize: 16
 };
-
+const stepHeadLabelStyle = {
+  width: "90%",
+  fontSize: 16,
+  color: "white"
+};
 const StyledTableCell = withStyles(theme => ({
   head: {
-    align:"left",
+    align: "left",
     padding: "6px 6px 6px 6px",
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white
@@ -28,7 +32,8 @@ const StyledTableCell = withStyles(theme => ({
     padding: "6px 6px 6px 6px",
     fontSize: 16
   }
-}))(TableCell);
+}
+))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
   root: {
@@ -82,6 +87,7 @@ export default function ProjectSteps({
                     typeOfMenu={stepType === 'Deliverables' ? 'deliverable' : "step"}
                     menuIndex={stepStrings[stepIndex][rowIndex].stepIndex}
                     handleMenu={handleMenu}
+                    
                   />
 
                   <Input
@@ -103,9 +109,26 @@ export default function ProjectSteps({
   let tableHeaders = [];
   project.stepTypes.forEach((stepType, stepIndex) => {
     tableHeaders.push(
-      <StyledTableCell   key={`TableStepHeader${stepIndex}`}>
-        <h2>  {project.stepTypes[stepIndex]}</h2>
-      </StyledTableCell>
+      < StyledTableCell variant="head" key={`phase${stepIndex}`} >
+      <Fragment>
+      <ProjectStepQuestionMenu
+        projectList={projectList}
+        currentProject={currentProject}
+        typeOfMenu={ "phase"}
+        menuIndex={stepIndex}
+            handleMenu={handleMenu}
+            style ={stepHeadLabelStyle}
+            />
+
+      <Input 
+        onClick={handleStepChange}
+        disableUnderline
+        value={project.stepTypes[stepIndex]}
+        id={`${project.stepTypes[stepIndex]}`}
+        style ={stepHeadLabelStyle}
+        />
+    </Fragment>
+        </StyledTableCell>
     )
   })
 

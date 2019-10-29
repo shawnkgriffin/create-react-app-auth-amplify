@@ -48,12 +48,25 @@ const StyledMenuItem = withStyles(theme => ({
 function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
-  const style = projectMenu ? { margin: "10px 0px 10px 10px" } : { marginTop: 0 }
-  
+  const style = projectMenu ? { margin: "10px 0px 10px 10px", color: "inherit" } : { marginTop: 0,color: "inherit" }
+  let directions = [];
+  switch (typeOfMenu.toUpperCase()) {
+    case 'PROJECT':
+      case 'PHASE':
+      directions = ['to the left of', 'to the right of'];
+      break;  
+    case 'STEP':
+    case 'DELIVERABLE':
+    case 'QUESTION':
+        directions = ['above', 'below'];
+      break;
+    default:
+      break;
+  }
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleSelect = (event, value) => {
     event.preventDefault();
     console.log(`CustomizedMenus.handleSelect(${event.currentTarget.id})`);
@@ -63,8 +76,8 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
-  
+
+
   const projectMenuList = projectList.map((projectName, index) => {
     return (
       <StyledMenuItem
@@ -86,6 +99,7 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
+          colorInherit
           aria-haspopup="true"
           padding-top="30px"
           onClick={handleClick}
@@ -129,7 +143,7 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} above this one.`} />
+            <ListItemText primary={`Add a ${typeOfMenu} ${directions[0]} this one.`} />
           </StyledMenuItem>
         }
         {!projectMenu &&
@@ -141,7 +155,7 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} below this one.`} />
+            <ListItemText primary={`Add a ${typeOfMenu} ${directions[1]} this one.`} />
           </StyledMenuItem>
         }
         <StyledMenuItem
