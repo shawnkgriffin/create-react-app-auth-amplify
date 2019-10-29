@@ -47,6 +47,7 @@ export default function ProjectSteps({
   projectList,
   project,
   currentProject,
+  currentStep,
   handleStepChange,
   handleMenu,
   classes
@@ -77,7 +78,9 @@ export default function ProjectSteps({
         {project.stepTypes.map((stepType, stepIndex) => {
           return (
 
-            < StyledTableCell variant="body" key={rowIndex * project.stepTypes.length + stepIndex} >
+            < StyledTableCell
+              key={rowIndex * project.stepTypes.length + stepIndex}
+              variant={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? "head" : "body"}>
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
@@ -87,7 +90,7 @@ export default function ProjectSteps({
                     typeOfMenu={stepType === 'Deliverables' ? 'deliverable' : "step"}
                     menuIndex={stepStrings[stepIndex][rowIndex].stepIndex}
                     handleMenu={handleMenu}
-                    
+
                   />
 
                   <Input
@@ -95,7 +98,7 @@ export default function ProjectSteps({
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
                     id={`${stepStrings[stepIndex][rowIndex].stepIndex}`}
-                    style={stepLabelStyle}
+                    style={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? stepHeadLabelStyle : stepLabelStyle}
                   />
                 </Fragment>
               }
@@ -110,25 +113,25 @@ export default function ProjectSteps({
   project.stepTypes.forEach((stepType, stepIndex) => {
     tableHeaders.push(
       < StyledTableCell variant="head" key={`phase${stepIndex}`} >
-      <Fragment>
-      <ProjectStepQuestionMenu
-        projectList={projectList}
-        currentProject={currentProject}
-        typeOfMenu={ "phase"}
-        menuIndex={stepIndex}
+        <Fragment>
+          <ProjectStepQuestionMenu
+            projectList={projectList}
+            currentProject={currentProject}
+            typeOfMenu={"phase"}
+            menuIndex={stepIndex}
             handleMenu={handleMenu}
-            style ={stepHeadLabelStyle}
-            />
+            style={stepHeadLabelStyle}
+          />
 
-      <Input 
-        onClick={handleStepChange}
-        disableUnderline
-        value={project.stepTypes[stepIndex]}
-        id={`${project.stepTypes[stepIndex]}`}
-        style ={stepHeadLabelStyle}
-        />
-    </Fragment>
-        </StyledTableCell>
+          <Input
+            onClick={handleStepChange}
+            disableUnderline
+            value={project.stepTypes[stepIndex]}
+            id={`${project.stepTypes[stepIndex]}`}
+            style={stepHeadLabelStyle}
+          />
+        </Fragment>
+      </StyledTableCell>
     )
   })
 

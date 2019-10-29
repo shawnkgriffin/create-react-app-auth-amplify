@@ -928,6 +928,7 @@ class App extends Component {
                   projectList={projectList}
                   project={project}
                   currentProject={currentProject}
+                  currentStep={currentStep}
                   handleStepChange={this.handleStepChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
