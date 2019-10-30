@@ -12,15 +12,22 @@ import * as utils from "../utils/generalUtilities.js";
 
 const stepLabelStyle = {
   width: "90%",
-  fontSize: 16
+  fontSize: 16,
+  color:"gray"
 };
 const stepHeadLabelStyle = {
   width: "90%",
   fontSize: 16,
   color: "white"
 };
+const stepSelectedStyle = {
+  width: "90%",
+  fontSize: 16,
+  color: "black"
+};
 const StyledTableCell = withStyles(theme => ({
   head: {
+    whiteSpace: "noWrap",
     align: "left",
     padding: "6px 6px 6px 6px",
     backgroundColor: theme.palette.common.black,
@@ -81,7 +88,8 @@ export default function ProjectSteps({
             < StyledTableCell
               key={rowIndex * project.stepTypes.length + stepIndex}
               id={`cell-step${rowIndex}.${stepIndex}`}
-              variant={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? "head" : "body"}>
+              variant="body"
+            >
               {
                 rowIndex < stepStrings[stepIndex].length &&
                 <Fragment>
@@ -98,8 +106,8 @@ export default function ProjectSteps({
                     onClick={handleStepChange}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
-                    id={`step-input${rowIndex}.${stepIndex}`}
-                    style={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? stepHeadLabelStyle : stepLabelStyle}
+                    id={`step-input${rowIndex}.${stepIndex}.step#${stepStrings[stepIndex][rowIndex].stepIndex}`}
+                    style={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? stepSelectedStyle : stepLabelStyle}
                   />
                 </Fragment>
               }

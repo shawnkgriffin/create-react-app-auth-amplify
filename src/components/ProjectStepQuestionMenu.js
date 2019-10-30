@@ -168,6 +168,7 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
         </StyledMenuItem>
         <StyledMenuItem
           key={"4"}
+          disabled={typeOfMenu.toUpperCase() === "PHASE"}
           id={`${typeOfMenu}.${menuIndex}.EditHelp`}
           onClick={handleSelect}>
           <ListItemIcon>
