@@ -214,6 +214,7 @@ class App extends Component {
 
   handleStepChange(e) {
     if (this.state != null) {
+      console.log(`handleStepChange(${e.target.id})`)
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
       const stepNumber = parseInt(e.target.id, 10);
@@ -313,6 +314,66 @@ class App extends Component {
           }
           else
             console.error(`Cannot delete last step ${commandString}`)
+          break;
+        case "HELP":
+          break;
+        default:
+      }
+      projects[currentProject] = project;
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          projects: projects,
+          alert: false,
+          alertYesButton: true,
+          form: false,
+          formType: '',
+          help: false,
+          commandString: "",
+          currentStep: currentStep,
+          currentProject: currentProject,
+          changed: true
+        };
+      });
+    }
+    if (actionObject === "PHASE" ) {
+      switch (actionVerb) {
+        case "ADD":
+          
+          actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+          project.stepTypes.splice(actionIndex, 0, newText);
+          const newStep = {
+            "name": 'New Step',
+            "stepType": newText,
+            "skip": false,
+            "help": "",
+            "questions": [
+              {
+                "number": "",
+                "name": "First question.",
+                "validAnswers": "",
+                "answer": "",
+                "help": "",
+                "skip": false,
+                "answerHistory": []
+              }]
+          };
+          project.steps.push(newStep);
+          break;
+        case "EDIT":
+          project.stepTypes[actionIndex] = newText;
+          break;
+        case "EDITHELP":
+          // project.stepTypes[actionIndex].help = newText;
+          break;
+        case "DELETE":
+          if (project.stepTypes.length > 1) {
+            project.steps= project.steps.filter(step => step.stepType !== newText)
+            project.stepTypes.splice(actionIndex, 1)
+            currentStep = 0;
+          }
+          else
+            console.error(`Cannot delete last phase ${commandString}`)
           break;
         case "HELP":
           break;
@@ -701,6 +762,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
+                formType: 'PHASE',
                 textLabel:`${actionObject.toLowerCase()}`,
                 title: `Add a ${actionObject.toLowerCase()} ${location}.`,
                 text: "",
@@ -738,7 +800,7 @@ class App extends Component {
                 break;
                 
                 case "DELETE":
-                  //cannot delete last step
+                  //cannot delete last phase
                   if (project.stepTypes.length > 1) {
                     this.setState(prevState => {
                       return {
@@ -746,7 +808,8 @@ class App extends Component {
                         textLabel:`${actionObject.toLowerCase()}`,
                         alert: true,
                         alertYesButton: true,
-                        title: `Delete the following ${actionObject.toLowerCase()}?`,
+                        title: `Delete the following ${actionObject.toLowerCase()}?
+                        WARNING ALL STEPS AND QUESTIONS FOR THIS PHASE WILL BE DELETED!`,
                         text: `${project.stepTypes[actionIndex]}`,
                         commandString: commandString
                       };
