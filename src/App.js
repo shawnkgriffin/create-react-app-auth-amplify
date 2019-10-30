@@ -222,7 +222,7 @@ class App extends Component {
 
       if (stepNumber >= 0 && stepNumber < project.steps.length) {
         this.setState(prevState => {
-          return { ...prevState, currentStep: stepNumber };
+          return { ...prevState, changed:false, currentStep: stepNumber };
         });
       }
     }
