@@ -217,7 +217,8 @@ class App extends Component {
       console.log(`handleStepChange(${e.target.id})`)
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
-      const stepNumber = parseInt(e.target.id, 10);
+      const stepInfo = e.target.id.split("#");
+      const stepNumber = parseInt(stepInfo[stepInfo.length-1], 10);
 
       if (stepNumber >= 0 && stepNumber < project.steps.length) {
         this.setState(prevState => {
