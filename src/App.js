@@ -361,6 +361,10 @@ class App extends Component {
           project.steps.push(newStep);
           break;
         case "EDIT":
+          project.steps.forEach(step => {
+            if (step.stepType === project.stepTypes[actionIndex])
+              step.stepType = newText
+          })
           project.stepTypes[actionIndex] = newText;
           break;
         case "EDITHELP":
