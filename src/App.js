@@ -691,6 +691,98 @@ class App extends Component {
           default:
         }
 
+      if (actionObject === "PHASE")
+        switch (actionVerb) {
+
+          case "ADD":
+            actionIndex = actionIndex + (actionLocation === "ABOVE" ? 0 : 1);
+            const location = actionLocation === "ABOVE" ? 'to the left.' :'to the right.'
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                textLabel:`${actionObject.toLowerCase()}`,
+                title: `Add a ${actionObject.toLowerCase()} ${location}.`,
+                text: "",
+                commandString: commandString
+              }
+            });
+            break;
+            
+            case "EDIT":
+              
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  form: true,
+                  textLabel:`${actionObject.toLowerCase()}`,
+                  title: `Edit the ${actionObject.toLowerCase()} here.`,
+                  text: project.stepTypes[actionIndex],
+                  commandString: commandString
+                };
+              });
+              break;
+              
+              case "EDITHELP":
+                
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    form: true,
+                    textLabel:`Guidance`,
+                    title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
+                    text: project.steps[actionIndex].help,
+                    commandString: commandString
+                  };
+                });
+                break;
+                
+                case "DELETE":
+                  //cannot delete last step
+                  if (project.stepTypes.length > 1) {
+                    this.setState(prevState => {
+                      return {
+                        ...prevState,
+                        textLabel:`${actionObject.toLowerCase()}`,
+                        alert: true,
+                        alertYesButton: true,
+                        title: `Delete the following ${actionObject.toLowerCase()}?`,
+                        text: `${project.stepTypes[actionIndex]}`,
+                        commandString: commandString
+                      };
+                    });
+                  }
+                  else {
+                    this.setState(prevState => {
+                      return {
+                        ...prevState,
+                        alert: true,
+                        alertYesButton: false,
+                        title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
+                        textLabel:`${actionObject.toLowerCase()}`,
+                  text: `Cannot delete ${project.stepTypes[actionIndex]}`,
+                  commandString: ""
+                };
+              });
+            }
+            break;
+
+          case "HELP":
+            console.log("Help")
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                help: true,
+                title: project.steps[actionIndex].name,
+                textLabel:"Guidance",
+                text: project.steps[actionIndex].help.length > 1 ? project.steps[actionIndex].help : "Sorry, no guidance is available."
+
+              };
+            });
+            break;
+          default:
+        }
+
       if (actionObject === "PROJECT") {
         switch (actionVerb) {
 

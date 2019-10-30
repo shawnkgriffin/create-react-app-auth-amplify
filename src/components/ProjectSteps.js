@@ -80,6 +80,7 @@ export default function ProjectSteps({
 
             < StyledTableCell
               key={rowIndex * project.stepTypes.length + stepIndex}
+              id={`cell-step${rowIndex}.${stepIndex}`}
               variant={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? "head" : "body"}>
               {
                 rowIndex < stepStrings[stepIndex].length &&
@@ -97,7 +98,7 @@ export default function ProjectSteps({
                     onClick={handleStepChange}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
-                    id={`${stepStrings[stepIndex][rowIndex].stepIndex}`}
+                    id={`step-input${rowIndex}.${stepIndex}`}
                     style={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? stepHeadLabelStyle : stepLabelStyle}
                   />
                 </Fragment>

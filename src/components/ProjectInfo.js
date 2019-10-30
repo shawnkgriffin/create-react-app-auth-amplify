@@ -54,6 +54,7 @@ const ProjectInfo = props => {
         error={touched.name && Boolean(errors.name)}
         label="Project Name"
         value={name}
+        text={name}
         style={{ padding: 0, minWidth: 200 }}
         onChange={change.bind(null, "name")}
         InputProps={{

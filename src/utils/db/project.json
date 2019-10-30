@@ -15,6 +15,12 @@
     "Analyze the Project",
     "Implement the Project"
   ],
+  "phases": [
+    { "name": "Define the Project", "help": "Phase help." },
+    { "name": "Deliverables", "help": "Phase help." },
+    { "name": "Analyze the Projec", "help": "Phase help." },
+    { "name": "Implement the Project", "help": "Phase help." }
+  ],
   "help": "How was this project initiated? Basic PM Slides\nWho will be the sponsor?\n",
   "steps": [
     {

@@ -44,14 +44,14 @@ export default function ProjectQuestions({
     (question, index) => {
       return (
         <StyledTableRow key={`${currentStep}.${index}`}>
-          <TableCell>
+          <TableCell id={`question${index}`}>
             <ProjectStepQuestionMenu
               projectList={projectList}
               currentProject={currentProject}
               typeOfMenu="question"
               menuIndex={index}
               handleMenu={handleMenu} />
-            {index + 1}) {question.name}
+            {`${index + 1}) ${question.name}`}
           </TableCell>
           <TableCell>
             <Radio
