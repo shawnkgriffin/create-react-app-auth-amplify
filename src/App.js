@@ -212,17 +212,16 @@ class App extends Component {
     }
   }
 
-  handleStepChange(e) {
+  handleStepChange(newStepIndex) {
     if (this.state != null) {
-      console.log(`handleStepChange(${e.target.id})`)
+      console.log(`handleStepChange(${newStepIndex})`)
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
-      const stepInfo = e.target.id.split("#");
-      const stepNumber = parseInt(stepInfo[stepInfo.length-1], 10);
+      
 
-      if (stepNumber >= 0 && stepNumber < project.steps.length) {
+      if (newStepIndex >= 0 && newStepIndex < project.steps.length) {
         this.setState(prevState => {
-          return { ...prevState, changed:false, currentStep: stepNumber };
+          return { ...prevState, changed:false, currentStep: newStepIndex };
         });
       }
     }

@@ -50,6 +50,8 @@ const StyledTableRow = withStyles(theme => ({
   }
 }))(TableRow);
 
+
+
 export default function ProjectSteps({
   projectList,
   project,
@@ -59,6 +61,8 @@ export default function ProjectSteps({
   handleMenu,
   classes
 }) {
+
+  
   // project.stepTypes determines the number of columns. 
   // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
   let stepStrings = [];
@@ -77,6 +81,14 @@ export default function ProjectSteps({
     });
   })
   const maxStepTableRows = Math.max(...stepStrings.map(stepType => stepType.length));
+
+  function handleClick(e) {
+    let cellInfo = e.target.id.split('.')
+    let currentStep = stepStrings[parseInt(cellInfo[2], 10)][parseInt(cellInfo[1], 10)].stepIndex
+    if (currentStep < 0 || currentStep >= project.steps.length) currentStep = 0;
+    console.log(`${e.target.id}`, currentStep)
+    handleStepChange(currentStep)
+  }
 
   let tableRows = []; // the columns have different numbers of steps associated with them
   for (let rowIndex = 0; rowIndex < maxStepTableRows; rowIndex++) {
@@ -103,10 +115,10 @@ export default function ProjectSteps({
                   />
 
                   <Input
-                    onClick={handleStepChange}
+                    onClick={handleClick}
                     disableUnderline
                     value={stepStrings[stepIndex][rowIndex].stepString}
-                    id={`step-input${rowIndex}.${stepIndex}.step#${stepStrings[stepIndex][rowIndex].stepIndex}`}
+                    id={`step-input.${rowIndex}.${stepIndex}`}
                     style={rowIndex < stepStrings[stepIndex].length && stepStrings[stepIndex][rowIndex].stepIndex === currentStep ? stepSelectedStyle : stepLabelStyle}
                   />
                 </Fragment>
