@@ -372,7 +372,7 @@ class App extends Component {
           break;
         case "DELETE":
           if (project.stepTypes.length > 1) {
-            project.steps= project.steps.filter(step => step.stepType !== newText)
+            project.steps= project.steps.filter(step => step.stepType !== project.stepTypes[actionIndex])
             project.stepTypes.splice(actionIndex, 1)
             currentStep = 0;
           }

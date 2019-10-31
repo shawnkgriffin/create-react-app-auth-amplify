@@ -148,7 +148,7 @@ export default function ProjectSteps({
             onClick={handleStepChange}
             disableUnderline
             value={project.stepTypes[stepIndex]}
-            id={`${project.stepTypes[stepIndex]}`}
+            id={`step-type.${stepIndex}`}
             style={stepHeadLabelStyle}
           />
         </Fragment>
