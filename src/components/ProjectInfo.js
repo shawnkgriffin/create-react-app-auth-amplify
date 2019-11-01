@@ -55,7 +55,7 @@ const ProjectInfo = props => {
         label="Project Name"
         value={name}
         text={name}
-        style={{ padding: 0, minWidth: 200 }}
+        style={{padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "name")}
         InputProps={{
           startAdornment: (
@@ -124,7 +124,7 @@ const ProjectInfo = props => {
         error={touched.sponsor && Boolean(errors.sponsor)}
         label="Sponsor"
         value={sponsor}
-        style={{ paddingRight: 5, minWidth: 200 }}
+        style={{ padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "sponsor")}
         InputProps={{
           startAdornment: (
@@ -142,7 +142,7 @@ const ProjectInfo = props => {
         error={touched.projectManager && Boolean(errors.projectManager)}
         label="Project Manager"
         value={projectManager}
-        style={{ paddingRight: 5, minWidth: 200 }}
+        style={{padding: "0px 0px 10px 5px", minWidth: 200 }}
         onChange={change.bind(null, "projectManager")}
         InputProps={{
           startAdornment: (
@@ -151,18 +151,6 @@ const ProjectInfo = props => {
             </InputAdornment>
           )
         }}
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={template}
-            onChange={change.bind(null, "started")}
-            value="checkedB"
-            name={`template`}
-            color="primary"
-          />
-        }
-        label="Template?"
       />
       <TextField
         id="outlined-name"
@@ -202,13 +190,26 @@ const ProjectInfo = props => {
           )
         }}
       />
+        <FormControlLabel
+          style={{padding: "0px 0px 10px 5px" }}
+          control={
+            <Checkbox
+              checked={template}
+              onChange={change.bind(null, "started")}
+              value="checkedB"
+              name={`template`}
+              color="primary"
+            />
+          }
+          label="Template?"
+        />
       <br />
       <TextField
         id="outlined-problemOpportunity"
         name="problemOpportunity"
         variant="outlined"
         multiline
-        rows="2"
+        rows="1"
         rowsMax= "2"
         helperText={touched.problemOpportunity ? errors.problemOpportunity : ""}
         error={touched.problemOpportunity && Boolean(errors.problemOpportunity)}
@@ -228,7 +229,7 @@ const ProjectInfo = props => {
         id="outlined-note"
         name="note"
         multiline
-        rows="2"
+        rows="1"
         rowsMax= "2"
         variant="outlined"
         helperText={touched.note ? errors.note : ""}
