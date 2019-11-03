@@ -6,7 +6,6 @@ import NameIcon from "@material-ui/icons/SupervisorAccount";
 import LockIcon from "@material-ui/icons/Lock";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import EventIcon from "@material-ui/icons/Event";
-import SubjectIcon from "@material-ui/icons/Subject";
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -20,9 +19,7 @@ const ProjectInfo = props => {
   const {
     values: {
       name,
-      problemOpportunity,
       creator,
-      note,
       sponsor,
       projectManager,
       template,
@@ -203,49 +200,7 @@ const ProjectInfo = props => {
           }
           label="Template?"
         />
-      <br />
-      <TextField
-        id="outlined-problemOpportunity"
-        name="problemOpportunity"
-        variant="outlined"
-        multiline
-        rows="1"
-        rowsMax= "2"
-        helperText={touched.problemOpportunity ? errors.problemOpportunity : ""}
-        error={touched.problemOpportunity && Boolean(errors.problemOpportunity)}
-        label="Problem Opportunity"
-        value={problemOpportunity}
-        style={{ padding: "0px 0px 10px 5px", width: "45%" }}
-        onChange={change.bind(null, "problemOpportunity")}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SubjectIcon />
-            </InputAdornment>
-          )
-        }}
-      />
-      <TextField
-        id="outlined-note"
-        name="note"
-        multiline
-        rows="1"
-        rowsMax= "2"
-        variant="outlined"
-        helperText={touched.note ? errors.note : ""}
-        error={touched.note && Boolean(errors.note)}
-        label="Project Notes"
-        value={note}
-        style={{ padding: "0px 0px 10px 5px", width: "45%" }}
-        onChange={change.bind(null, "note")}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SubjectIcon />
-            </InputAdornment>
-          )
-        }}
-      />
+      
 
       {/* <DisplayFormikState {...props} /> */}
     </form>
