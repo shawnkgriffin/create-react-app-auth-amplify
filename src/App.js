@@ -1094,9 +1094,7 @@ class App extends Component {
 
     const {
       name,
-      problemOpportunity,
       creator,
-      note,
       sponsor,
       projectManager,
       templateName,
@@ -1106,9 +1104,7 @@ class App extends Component {
     } = { ...projects[currentProject] };
     const values = {
       name,
-      problemOpportunity,
       creator,
-      note,
       sponsor,
       projectManager,
       templateName,
