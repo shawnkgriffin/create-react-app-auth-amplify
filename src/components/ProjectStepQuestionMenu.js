@@ -8,11 +8,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
-import AssignmentIcon from "@material-ui/icons/Assignment";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import HelpIcon from "@material-ui/icons/Help";
-import { Divider } from "@material-ui/core";
 
 const StyledMenu = withStyles({
   paper: {
@@ -45,20 +43,18 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, handleMenu }) {
+function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const projectMenu = typeOfMenu.toUpperCase() === "PROJECT";
-  const style = projectMenu ? { margin: "10px 0px 10px 10px", color: "inherit" } : { marginTop: 0, color: "inherit" }
+  const style = { marginTop: 0, color: "inherit" }
   let directions = [];
   switch (typeOfMenu.toUpperCase()) {
-    case 'PROJECT':
-      case 'PHASE':
+    case 'PHASE':
       directions = ['to the left of', 'to the right of'];
-      break;  
+      break;
     case 'STEP':
     case 'DELIVERABLE':
     case 'QUESTION':
-        directions = ['above', 'below'];
+      directions = ['above', 'below'];
       break;
     default:
       break;
@@ -76,22 +72,6 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-
-  const projectMenuList = projectList.map((projectName, index) => {
-    return (
-      <StyledMenuItem
-        key={`project.${index}.Select`}
-        id={`project.${index}.Select`}
-        onClick={handleSelect}
-      >
-        <ListItemIcon>
-          <AssignmentIcon />
-        </ListItemIcon>
-        <ListItemText primary={`${index + 1}) ${projectName}`} />
-      </StyledMenuItem>
-    )
-  })
 
   return (
     <Fragment>
@@ -115,48 +95,30 @@ function CustomizedMenus({ projectList, currentProject, typeOfMenu, menuIndex, h
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {projectMenu &&
-          projectMenuList
-        }
-        {projectMenu &&
-          <Divider />
-        }
-        {projectMenu &&
-          <StyledMenuItem
-            key={"2"}
-            id={`${typeOfMenu}.${menuIndex}.Add`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a new ${typeOfMenu}.`} />
-          </StyledMenuItem>
-        }
-        {!projectMenu &&
-          <StyledMenuItem
-            key={"1"}
-            id={`${typeOfMenu}.${menuIndex}.Add.Above`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} ${directions[0]} this one.`} />
-          </StyledMenuItem>
-        }
-        {!projectMenu &&
-          <StyledMenuItem
-            key={"2"}
-            id={`${typeOfMenu}.${menuIndex}.Add.Below`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Add a ${typeOfMenu} ${directions[1]} this one.`} />
-          </StyledMenuItem>
-        }
+
+
+
+        <StyledMenuItem
+          key={"1"}
+          id={`${typeOfMenu}.${menuIndex}.Add.Above`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <AddIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Add a ${typeOfMenu} ${directions[0]} this one.`} />
+        </StyledMenuItem>
+
+        <StyledMenuItem
+          key={"2"}
+          id={`${typeOfMenu}.${menuIndex}.Add.Below`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <AddIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Add a ${typeOfMenu} ${directions[1]} this one.`} />
+        </StyledMenuItem>
         <StyledMenuItem
           key={"3"}
           id={`${typeOfMenu}.${menuIndex}.Edit`}
