@@ -286,6 +286,7 @@ class App extends Component {
             "stepNumber": 20,
             "skip": false,
             "help": "",
+            note:"",
             "questions": [
               {
                 "number": "",

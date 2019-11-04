@@ -167,6 +167,9 @@ async function getProjects(user, callback) {
             step.completedDate = "";
             step.assignedTo = "";
           }
+          if (step.note === undefined) {
+            step.note = '';
+          }
         })
       })
 
