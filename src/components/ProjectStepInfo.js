@@ -2,7 +2,6 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import SubjectIcon from "@material-ui/icons/Subject";
 import EventIcon from "@material-ui/icons/Event";
 import NameIcon from "@material-ui/icons/SupervisorAccount";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -30,7 +29,6 @@ const buttonStyle = {
 const ProjectStepInfo = props => {
   const {
     values: {
-      note,
       started,
       startedDate,
       completed,
@@ -162,27 +160,7 @@ const ProjectStepInfo = props => {
           }}
         />
       }
-      <TextField
-        id="outlined-note"
-        name="note"
-        multiline
-        rows="2"
-        rowsMax= "2"
-        variant="outlined"
-        helperText={touched.note ? errors.note : ""}
-        error={touched.note && Boolean(errors.note)}
-        label={`Notes`}
-        value={note}
-        style={{ padding: 5, width: "85%" }}
-        onChange={change.bind(null, "note")}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SubjectIcon />
-            </InputAdornment>
-          )
-        }}
-      />
+      
       <Button
         type="submit"
         margin="normal"

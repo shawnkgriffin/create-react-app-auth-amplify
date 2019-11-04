@@ -1193,7 +1193,6 @@ class App extends Component {
                   enableReinitialize
                   render={props => <ProjectStepInfo {...props} />}
                   initialValues={{
-                    note: project.steps[currentStep].note,
                     started: project.steps[currentStep].started,
                     startedDate: project.steps[currentStep].startedDate,
                     completed: project.steps[currentStep].completed,
