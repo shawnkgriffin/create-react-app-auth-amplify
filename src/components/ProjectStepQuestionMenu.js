@@ -47,12 +47,16 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const style = { marginTop: 0, color: "inherit" }
   let directions = [];
+  let hasNotes = false;
   switch (typeOfMenu.toUpperCase()) {
     case 'PHASE':
       directions = ['to the left of', 'to the right of'];
       break;
     case 'STEP':
     case 'DELIVERABLE':
+      hasNotes = true;
+      directions = ['above', 'below'];
+      break;
     case 'QUESTION':
       directions = ['above', 'below'];
       break;
@@ -95,9 +99,6 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-
-
-
         <StyledMenuItem
           key={"1"}
           id={`${typeOfMenu}.${menuIndex}.Add.Above`}
@@ -138,13 +139,25 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           </ListItemIcon>
           <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"5"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+        {hasNotes &&
+          <StyledMenuItem
+          key={"5"}
+          disabled={typeOfMenu.toUpperCase() === "PHASE"}
+          id={`${typeOfMenu}.${menuIndex}.Notes`}
+          onClick={handleSelect}>
+          <ListItemIcon>
+            <EditIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
+        </StyledMenuItem>
+        }
+        <StyledMenuItem key={"6"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
           <ListItemText primary={`Delete this ${typeOfMenu}`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"6"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
+        <StyledMenuItem key={"7"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
           <ListItemIcon>
             <HelpIcon />
           </ListItemIcon>

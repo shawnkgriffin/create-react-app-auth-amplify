@@ -307,6 +307,9 @@ class App extends Component {
         case "EDITHELP":
           project.steps[actionIndex].help = newText;
           break;
+        case "NOTES":
+          project.steps[actionIndex].note = newText;
+          break;
         case "DELETE":
           if (project.steps.length > 1) {
             project.steps.splice(actionIndex, 1)
@@ -742,6 +745,18 @@ class App extends Component {
             });
             break;
 
+            case "NOTES":
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    form: true,
+                    textLabel: `Notes`,
+                    title: `Edit notes for this ${actionObject.toLowerCase()} here.`,
+                    text: project.steps[actionIndex].note,
+                    commandString: commandString
+                  };
+                });
+                break;
           case "DELETE":
             //cannot delete last step
             if (project.steps.length > 1) {
