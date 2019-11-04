@@ -438,6 +438,7 @@ class App extends Component {
             console.log(`Project add ${project.id}`)
           });
           break;
+
         case "EDIT":
           break;
         case "PROBLEMOPPORTUNITY":
@@ -745,18 +746,18 @@ class App extends Component {
             });
             break;
 
-            case "NOTES":
-                this.setState(prevState => {
-                  return {
-                    ...prevState,
-                    form: true,
-                    textLabel: `Notes`,
-                    title: `Edit notes for this ${actionObject.toLowerCase()} here.`,
-                    text: project.steps[actionIndex].note,
-                    commandString: commandString
-                  };
-                });
-                break;
+          case "NOTES":
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                textLabel: `Notes`,
+                title: `Edit notes for this ${actionObject.toLowerCase()} here.`,
+                text: project.steps[actionIndex].note,
+                commandString: commandString
+              };
+            });
+            break;
           case "DELETE":
             //cannot delete last step
             if (project.steps.length > 1) {
@@ -925,6 +926,30 @@ class App extends Component {
                 text: "",
                 commandString: ""
               };
+            });
+            break;
+
+          case "COPY":
+
+            db.copyProject(projects[currentProject], newProject => {
+              projects.push(newProject);
+              currentStep = 0;
+              currentProject = projects.length - 1;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  alertYesButton: true,
+                  form: false,
+                  help: false,
+                  commandString: "",
+                  currentStep: currentStep,
+                  currentProject: currentProject,
+                  changed: true
+                };
+              });
+              console.log(`Project copy ${project.id}`)
             });
             break;
 

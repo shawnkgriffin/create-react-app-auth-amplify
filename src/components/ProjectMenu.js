@@ -114,8 +114,18 @@ return (
         </ListItemIcon>
         <ListItemText primary={`Add a new project.`} />
       </StyledMenuItem>
+      <StyledMenuItem
+        key={"3"}
+        id={`project.${menuIndex}.Copy`}
+        onClick={handleSelect}
+      >
+        <ListItemIcon>
+          <AddIcon />
+        </ListItemIcon>
+        <ListItemText primary={`Copy this project.`} />
+      </StyledMenuItem>
 
-      <StyledMenuItem key={"7"} id={`project.${menuIndex}.Delete`} onClick={handleSelect}>
+      <StyledMenuItem key={"4"} id={`project.${menuIndex}.Delete`} onClick={handleSelect}>
         <ListItemIcon>
           <DeleteIcon />
         </ListItemIcon>

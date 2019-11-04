@@ -7,7 +7,22 @@ axios.create({
   responseType: "json"
 });
 
+/**
+* Description
+* @function copyProject
+* @param {object}  project
+* @returns {project} deep copy of project.
+**/
 
+function copyProject(oldProject, callback) {
+  
+  let projectCopy = JSON.parse(JSON.stringify(oldProject));
+  projectCopy.name = `${oldProject.name} (copy)`;
+  postProject(projectCopy, id => {
+    projectCopy.id = id;
+    callback(projectCopy);
+  })
+}
 /**
 * Description
 * @function createNewProject
@@ -281,4 +296,4 @@ function deleteProject(id, callback) {
 }
 
 
-export { createNewProject, initProject, postProject, getProjects, putProject, deleteProject, getTemplates, createTemplate, convertCSVtoJSON }
+export { createNewProject, copyProject, initProject, postProject, getProjects, putProject, deleteProject, getTemplates, createTemplate, convertCSVtoJSON }
