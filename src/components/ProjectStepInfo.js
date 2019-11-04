@@ -73,9 +73,8 @@ const ProjectStepInfo = props => {
         </TableHead>
       </Table>
       <br />
-      <br />
       <TextField
-        id="outlined-name"
+        id="outlined-step-name"
         name="assignedTo"
         variant="outlined"
         helperText={touched.assignedTo ? errors.assignedTo : ""}
@@ -106,7 +105,7 @@ const ProjectStepInfo = props => {
       />
       {started &&
         <TextField
-          id="outlined-start"
+          id="outlined-step-start"
           name="startedDate"
           type="date"
           variant="outlined"
@@ -141,7 +140,7 @@ const ProjectStepInfo = props => {
       }
       {started && completed &&
         <TextField
-          id="outlined-start"
+          id="outlined-step-completed"
           name="completedDate"
           type="date"
           variant="outlined"
