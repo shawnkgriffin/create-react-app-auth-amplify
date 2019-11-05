@@ -13,22 +13,34 @@ import ProjectStepInfo from "./components/ProjectStepInfo";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
+import Login from "./components/Login";
 
 //Project database and utilities
 import * as utils from "./utils/generalUtilities.js";
 import * as db from "./utils/db/db.js";
 
-// AWS components
-import { withAuthenticator } from 'aws-amplify-react'
-import Amplify, { API, Auth } from 'aws-amplify';
-import aws_exports from './aws-exports';
-Amplify.configure(aws_exports);
-API.configure(aws_exports);
+// Firebase components
+// import app from 'firebase/app';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import {
+  FirebaseAuthProvider,
+  IfFirebaseAuthed
+} from "@react-firebase/auth";
+
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+}
 
 const theme = createMuiTheme({
 
   overrides: {
-    // Style sheet name ⚛️
+    // Style sheet name
     sizeSmall: { padding: "6px 6px 6px 6x" }
 
   },
@@ -74,60 +86,61 @@ class App extends Component {
 
   componentDidMount() {
 
-    Auth.currentAuthenticatedUser()
-      .then(user => {
-        console.log(`Auth.currentAuthenticatedUser()${user.attributes.email}`);
+    const user = {
+      attributes: {
+        email: 'shawn@shawngriffin.com'
+      }
+    }
 
-        //TODO when auth switched to google set up permissions.
-        const authEditTemplate = user.attributes.email === 'shawn@shawngriffin.com' ||
-          user.attributes.email === 'stephen@continuousbusinesschange.com';
+    //TODO when auth switched to google set up permissions.
+    const authEditTemplate = user.attributes.email === 'shawn@shawngriffin.com' ||
+      user.attributes.email === 'stephen@continuousbusinesschange.com';
 
-        db.getTemplates(user.attributes.email, (templates) => {
+    db.getTemplates(user.attributes.email, (templates) => {
 
-          db.getProjects(user.attributes.email, (projects) => {
-            if (projects.length === 0) {
-              db.createNewProject("New Project", user.attributes.email, templates[0], newProject => {
-                projects.push(newProject);
+      db.getProjects(user.attributes.email, (projects) => {
+        if (projects.length === 0) {
+          db.createNewProject("New Project", user.attributes.email, templates[0], newProject => {
+            projects.push(newProject);
 
-                if (authEditTemplate) templates.forEach(template => projects.push(template));
+            if (authEditTemplate) templates.forEach(template => projects.push(template));
 
-                this.setState(prevState => {
-                  return {
-                    ...prevState,
-                    projects: projects,
-                    alert: false,
-                    alertYesButton: true,
-                    text: "",
-                    textLabel: "",
-                    form: false,
-                    formType: '',
-                    help: false,
-                    authEditTemplate,
-                    commandString: "",
-                    currentUser: user.attributes.email,
-                    currentStep: 0,
-                    currentProject: projects.length - 1,
-                    changed: false,
-                    templates: templates
-                  };
-                });
-              })
-            } else {
-              if (authEditTemplate) templates.forEach(template => projects.push(template));
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  currentUser: user.attributes.email, //using email for now.
-                  projects: projects,
-                  authEditTemplate,
-                  templates: templates
-                };
-              })
-            }
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                projects: projects,
+                alert: false,
+                alertYesButton: true,
+                text: "",
+                textLabel: "",
+                form: false,
+                formType: '',
+                help: false,
+                authEditTemplate,
+                commandString: "",
+                currentUser: user.attributes.email,
+                currentStep: 0,
+                currentProject: projects.length - 1,
+                changed: false,
+                templates: templates
+              };
+            });
           })
-        })
+        } else {
+          if (authEditTemplate) templates.forEach(template => projects.push(template));
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              currentUser: user.attributes.email, //using email for now.
+              projects: projects,
+              authEditTemplate,
+              templates: templates
+            };
+          })
+        }
       })
-      .catch(err => console.log(err))
+    })
+
   }
 
   handleQuestionChange(e) {
@@ -286,7 +299,7 @@ class App extends Component {
             "stepNumber": 20,
             "skip": false,
             "help": "",
-            note:"",
+            note: "",
             "questions": [
               {
                 "number": "",
@@ -1156,96 +1169,101 @@ class App extends Component {
     if (this.state.changed) db.putProject(projects[currentProject], response => console.log(response));
 
     return (
-      <div>
-        <MuiThemeProvider theme={theme}>
+      <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
+        <Login firebase={firebase} />
+        <IfFirebaseAuthed>
+          <div>
+            <MuiThemeProvider theme={theme}>
 
-          {this.state.projects.length === 0 ? (
-            <h1>Loading...
+              {this.state.projects.length === 0 ? (
+                <h1>Loading...
             <CircularProgress className={utils.projectStyles.progress} />
-            </h1>
-          ) : (
-              <div>
-                <ProjectMenu
-                  projectList={projectList}
-                  currentProject={currentProject}
-                  typeOfMenu="project"
-                  menuIndex={1}
-                  handleMenu={this.handleMenu} />
-                <Formik
-                  enableReinitialize
-                  render={props => <ProjectInfo {...props} />}
-                  initialValues={values}
-                  validationSchema={utils.projectInfoValidationSchema}
-                  onSubmit={this.handleProjectInfoChange}
-                />
-                <br />
-                <ProjectSteps
-                  projectList={projectList}
-                  project={project}
-                  currentProject={currentProject}
-                  currentStep={currentStep}
-                  handleStepChange={this.handleStepChange}
-                  handleMenu={this.handleMenu}
-                  classes={utils.projectStyles}
-                />
-                <br />
-                <Alert
-                  open={this.state.alert}
-                  title={this.state.title}
-                  alertYesButton={this.state.alertYesButton}
-                  text={this.state.text}
-                  answerYes={this.handleYes}
-                  answerNo={this.handleNo}
-                />
-                <FormDialog
-                  open={this.state.form}
-                  title={this.state.title}
-                  text={this.state.text}
-                  formType={this.state.formType}
-                  textLabel={this.state.textLabel}
-                  templateList={this.state.templates.map(template => template.templateName)}
-                  answerYes={this.handleYes}
-                  answerNo={this.handleNo}
-                  classes={utils.projectStyles}
-                />
-                <Help
-                  open={this.state.help}
-                  title={this.state.title}
-                  text={this.state.text}
-                  answerYes={this.handleYes}
-                  answerNo={this.handleNo}
-                />
-                <Formik
-                  enableReinitialize
-                  render={props => <ProjectStepInfo {...props} />}
-                  initialValues={{
-                    started: project.steps[currentStep].started,
-                    startedDate: project.steps[currentStep].startedDate,
-                    completed: project.steps[currentStep].completed,
-                    completedDate: project.steps[currentStep].completedDate,
-                    assignedTo: project.steps[currentStep].assignedTo,
-                    stepLabel: `${project.steps[currentStep].name} ${utils.percentageQuestionsYes(project.steps[currentStep].questions)} `
-                  }}
-                  validationSchema={utils.stepNoteValidationSchema}
-                  onSubmit={this.handleStepNoteSubmit}
-                />
-                <ProjectQuestions
-                  projectList={projectList}
-                  questions={project.steps[currentStep].questions}
-                  stepName={project.steps[currentStep].name}
-                  currentProject={currentProject}
-                  handleQuestionChange={this.handleQuestionChange}
-                  currentStep={currentStep}
-                  handleMenu={this.handleMenu}
-                  classes={utils.projectStyles}
-                />
-              </div>
-            )}
-        </MuiThemeProvider>
-      </div>
+                </h1>
+              ) : (
+                  <div>
+                    <ProjectMenu
+                      projectList={projectList}
+                      currentProject={currentProject}
+                      typeOfMenu="project"
+                      menuIndex={1}
+                      handleMenu={this.handleMenu} />
+                    <Formik
+                      enableReinitialize
+                      render={props => <ProjectInfo {...props} />}
+                      initialValues={values}
+                      validationSchema={utils.projectInfoValidationSchema}
+                      onSubmit={this.handleProjectInfoChange}
+                    />
+                    <br />
+                    <ProjectSteps
+                      projectList={projectList}
+                      project={project}
+                      currentProject={currentProject}
+                      currentStep={currentStep}
+                      handleStepChange={this.handleStepChange}
+                      handleMenu={this.handleMenu}
+                      classes={utils.projectStyles}
+                    />
+                    <br />
+                    <Alert
+                      open={this.state.alert}
+                      title={this.state.title}
+                      alertYesButton={this.state.alertYesButton}
+                      text={this.state.text}
+                      answerYes={this.handleYes}
+                      answerNo={this.handleNo}
+                    />
+                    <FormDialog
+                      open={this.state.form}
+                      title={this.state.title}
+                      text={this.state.text}
+                      formType={this.state.formType}
+                      textLabel={this.state.textLabel}
+                      templateList={this.state.templates.map(template => template.templateName)}
+                      answerYes={this.handleYes}
+                      answerNo={this.handleNo}
+                      classes={utils.projectStyles}
+                    />
+                    <Help
+                      open={this.state.help}
+                      title={this.state.title}
+                      text={this.state.text}
+                      answerYes={this.handleYes}
+                      answerNo={this.handleNo}
+                    />
+                    <Formik
+                      enableReinitialize
+                      render={props => <ProjectStepInfo {...props} />}
+                      initialValues={{
+                        started: project.steps[currentStep].started,
+                        startedDate: project.steps[currentStep].startedDate,
+                        completed: project.steps[currentStep].completed,
+                        completedDate: project.steps[currentStep].completedDate,
+                        assignedTo: project.steps[currentStep].assignedTo,
+                        stepLabel: `${project.steps[currentStep].name} ${utils.percentageQuestionsYes(project.steps[currentStep].questions)} `
+                      }}
+                      validationSchema={utils.stepNoteValidationSchema}
+                      onSubmit={this.handleStepNoteSubmit}
+                    />
+                    <ProjectQuestions
+                      projectList={projectList}
+                      questions={project.steps[currentStep].questions}
+                      stepName={project.steps[currentStep].name}
+                      currentProject={currentProject}
+                      handleQuestionChange={this.handleQuestionChange}
+                      currentStep={currentStep}
+                      handleMenu={this.handleMenu}
+                      classes={utils.projectStyles}
+                    />
+                  </div>
+                )}
+            </MuiThemeProvider>
+          </div>
+        </IfFirebaseAuthed>
+      </FirebaseAuthProvider>
 
     );
   }
 
 }
-export default withAuthenticator(App, true);
+export default App;
