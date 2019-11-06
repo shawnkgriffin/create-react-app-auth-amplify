@@ -12,6 +12,7 @@ import ProjectStepInfo from "./components/ProjectStepInfo";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
+import SignIn from "./components/SignIn";
 import ButtonAppBar from "./components/ButtonAppBar";
 
 //Project database and utilities
@@ -24,7 +25,8 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import {
   FirebaseAuthProvider,
-  IfFirebaseAuthed
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed
 } from "@react-firebase/auth";
 
 const firebaseConfig = {
@@ -1176,6 +1178,11 @@ class App extends Component {
           typeOfMenu="project"
           menuIndex={1}
           handleMenu={this.handleMenu}/>
+        <IfFirebaseUnAuthed>
+          <SignIn
+            firebase={firebase}
+          />
+        </IfFirebaseUnAuthed>
         <IfFirebaseAuthed>
           <div>
             <MuiThemeProvider theme={theme}>

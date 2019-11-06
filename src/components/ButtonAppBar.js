@@ -52,7 +52,9 @@ export default function ButtonAppBar({ firebase, projectList, currentProject, me
           {user && user.photoURL &&
             <Avatar alt={user.displayName} src={user.photoURL} className={classes.avatar} />
           }
-          <LogoutButton firebase={firebase} />
+          {user &&
+            <LogoutButton firebase={firebase} />
+          }
         </Toolbar>
       </AppBar>
       <br />

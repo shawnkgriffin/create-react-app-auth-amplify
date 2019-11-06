@@ -12,11 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
-import { Link } from 'react-router-dom'
-import ReactLoading from 'react-loading';
 import { Grid, AppBar, Toolbar } from '@material-ui/core';
+import GoogleButton from 'react-google-button'
 
 const styles = theme => ({
   main: {
@@ -63,8 +60,6 @@ class SignIn extends Component {
 	}
   handleLogin = e => {
     let _email, _password;
-    _email = $('#email').val();
-   _password = $('#password').val();
     e.preventDefault();
     this.setState({
       isLoading : true
@@ -73,23 +68,18 @@ class SignIn extends Component {
     console.log(_email)
   };
   render() {
-    const responseGoogle = (response) => {
-      console.log(response);
-    }
-    const responseFacebook = (response) => {
-      console.log(response);
-    }
+    
   return (
     <React.Fragment> 
     <main className={this.props.classes.main}>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={this.props.classes.appBar}>
+      {/* <AppBar position="absolute" color="default" className={this.props.classes.appBar}>
         <Toolbar style={{'display':'flex','justifyContent':'center'}}>
           <Typography variant="h4" color="primary" noWrap >
             Sign in
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Paper className={this.props.classes.paper} >
         <Avatar className={this.props.classes.avatar}>
           <LockOutlinedIcon />
@@ -131,24 +121,21 @@ class SignIn extends Component {
             
           </Button>
         </form>
-        <Grid container spacing={12}>
-          <Grid item xs={12}>
-            <GoogleLogin
-              clientId="700207001787-jhdc1dimgk89ej6qk8avog6811hb30el.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
+          <Grid
+            container
+            spacing={12}
+            direction="row"
+            justify="center"
+            alignItems="center">
+          <Grid item xs={12} >
+            <GoogleButton
+              onClick={() => {
+                const googleAuthProvider = new this.props.firebase.auth.GoogleAuthProvider();
+                this.props.firebase.auth().signInWithPopup(googleAuthProvider);
+              }}
             />
           </Grid>
-          <Grid item xs={12} style={{'marginTop':'10px'}}>
-            <FacebookLogin
-              appId="307164699984573"
-              autoLoad={true}
-              textButton='FaceBook'
-              fields="name,email,picture"
-              callback={responseFacebook} 
-            />
-          </Grid>
+         
         </Grid>
        
       </Paper>
