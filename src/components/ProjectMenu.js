@@ -45,10 +45,12 @@ const StyledMenuItem = withStyles(theme => ({
   }
 }))(MenuItem);
 
-function CustomizedMenus({ projectList, currentProject, templateEditor, menuIndex, handleMenu }) {
+function CustomizedMenus({ firebase, projectList, currentProject, templateEditor, menuIndex, handleMenu }) {
+  const user = firebase.auth().currentUser;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const style = { margin: "10px 0px 10px 10px" }
 
+  
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -62,23 +64,25 @@ function CustomizedMenus({ projectList, currentProject, templateEditor, menuInde
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const projectMenuList = projectList.map((projectName, index) => {
-    return (
+  const projectMenuList = user
+    ? projectList.map((projectName, index) => {
+      return (
       
-      <StyledMenuItem
-      key={`project.${index}.Select`}
-      id={`project.${index}.Select`}
-      onClick={handleSelect}
-    >
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary={`${index + 1}) ${projectName}`} />
-      </StyledMenuItem>
+        <StyledMenuItem
+          key={`project.${index}.Select`}
+          id={`project.${index}.Select`}
+          onClick={handleSelect}
+          
+        >
+          <ListItemIcon>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary={`${index + 1}) ${projectName}`} />
+        </StyledMenuItem>
 
-  )
-})
+      )
+    })
+    : [];
 
 return (
   <Fragment>
@@ -97,6 +101,7 @@ return (
     </Tooltip>
     <StyledMenu
       id="customized-menu"
+      disabled = {!user}
       anchorEl={anchorEl}
       keepMounted
       open={Boolean(anchorEl)}
@@ -108,6 +113,7 @@ return (
         key={"2"}
         id={`project.${menuIndex}.Add`}
         onClick={handleSelect}
+        disabled={!user}
       >
         <ListItemIcon>
           <AddIcon />
@@ -118,6 +124,7 @@ return (
         key={"3"}
         id={`project.${menuIndex}.Copy`}
         onClick={handleSelect}
+        disabled={!user}
       >
         <ListItemIcon>
           <AddIcon />
@@ -125,7 +132,7 @@ return (
         <ListItemText primary={`Copy this project.`} />
       </StyledMenuItem>
 
-      <StyledMenuItem key={"4"} id={`project.${menuIndex}.Delete`} onClick={handleSelect}>
+      <StyledMenuItem disabled={!user} key={"4"} id={`project.${menuIndex}.Delete`} onClick={handleSelect}>
         <ListItemIcon>
           <DeleteIcon />
         </ListItemIcon>
@@ -135,6 +142,7 @@ return (
 
       <StyledMenuItem
         key={"5"}
+        disabled={!user}
         id={`project.${menuIndex}.ProblemOpportunity`}
         onClick={handleSelect}>
         <ListItemIcon>
@@ -144,6 +152,7 @@ return (
       </StyledMenuItem>
       <StyledMenuItem
         key={"6"}
+        disabled={!user}
         id={`project.${menuIndex}.ProjectNotes`}
         onClick={handleSelect}>
         <ListItemIcon>
@@ -151,7 +160,7 @@ return (
         </ListItemIcon>
         <ListItemText primary={`Project Notes.`} />
       </StyledMenuItem>
-      <StyledMenuItem key={"8"} id={`project.${menuIndex}.Help`} onClick={handleSelect}>
+      <StyledMenuItem disabled={!user} key={"8"} id={`project.${menuIndex}.Help`} onClick={handleSelect}>
         <ListItemIcon>
           <HelpIcon />
         </ListItemIcon>

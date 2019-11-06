@@ -12,7 +12,7 @@ import ProjectMenu from "./ProjectMenu";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    paddingBottom :"5"
+    paddingBottom: "5"
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -22,18 +22,19 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ButtonAppBar({ firebase, projectList, typeOfMenu, currentProject, menuIndex, handleMenu }) {
+export default function ButtonAppBar({ firebase, projectList, currentProject, menuIndex, handleMenu }) {
   const classes = useStyles();
-
+  
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{paddingBottom:"5"}}>
+      <AppBar position="static" style={{ paddingBottom: "5" }}>
         <Toolbar>
           <ProjectMenu
+            firebase={firebase}
             projectList={projectList}
             currentProject={currentProject}
             menuIndex={menuIndex}
-            handleMenu={handleMenu}/>
+            handleMenu={handleMenu} />
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton> */}
@@ -43,6 +44,7 @@ export default function ButtonAppBar({ firebase, projectList, typeOfMenu, curren
           <Login firebase={firebase} />
         </Toolbar>
       </AppBar>
+      <br />
     </div>
   );
 }
