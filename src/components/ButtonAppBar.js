@@ -3,13 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Login from "./Login";
+import Badge from '@material-ui/core/Badge';
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import Avatar from '@material-ui/core/Avatar';
+import LogoutButton from "./LogoutButton";
 import ProjectMenu from "./ProjectMenu";
 
 const useStyles = makeStyles(theme => ({
+  avatar: {
+    margin: 10,
+  },
   root: {
     flexGrow: 1,
     paddingBottom: "5"
@@ -24,10 +28,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar({ firebase, projectList, currentProject, menuIndex, handleMenu }) {
   const classes = useStyles();
-  
+  const user = firebase.auth().currentUser;
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ paddingBottom: "5" }}>
+      <AppBar position="static" >
         <Toolbar>
           <ProjectMenu
             firebase={firebase}
@@ -35,13 +39,20 @@ export default function ButtonAppBar({ firebase, projectList, currentProject, me
             currentProject={currentProject}
             menuIndex={menuIndex}
             handleMenu={handleMenu} />
-          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
             Project Assistant
           </Typography>
-          <Login firebase={firebase} />
+          {user &&
+          <IconButton aria-label="show projects" color="inherit">
+          <Badge badgeContent={projectList.length} color="secondary">
+              <AssignmentIcon />
+          </Badge>
+        </IconButton>
+          }
+          {user && user.photoURL &&
+            <Avatar alt={user.displayName} src={user.photoURL} className={classes.avatar} />
+          }
+          <LogoutButton firebase={firebase} />
         </Toolbar>
       </AppBar>
       <br />
