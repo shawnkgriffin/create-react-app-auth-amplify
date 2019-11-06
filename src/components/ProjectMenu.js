@@ -10,7 +10,7 @@ import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import DeleteIcon from "@material-ui/icons/Delete";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
 import { Divider } from "@material-ui/core";
 
@@ -92,7 +92,7 @@ return (
         size="small"
         style={style}
       >
-        <MoreVertIcon />
+        <MenuIcon style= {{color:"white", paddingRight : "5"}}/>
       </IconButton>
     </Tooltip>
     <StyledMenu

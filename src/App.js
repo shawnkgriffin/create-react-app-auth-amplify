@@ -13,7 +13,7 @@ import ProjectStepInfo from "./components/ProjectStepInfo";
 import Alert from "./components/Alert";
 import FormDialog from "./components/FormDialog";
 import Help from "./components/Help";
-import Login from "./components/Login";
+import ButtonAppBar from "./components/ButtonAppBar";
 
 //Project database and utilities
 import * as utils from "./utils/generalUtilities.js";
@@ -1170,7 +1170,13 @@ class App extends Component {
 
     return (
       <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
-        <Login firebase={firebase} />
+        <ButtonAppBar
+          firebase={firebase}
+          projectList={projectList}
+          currentProject={currentProject}
+          typeOfMenu="project"
+          menuIndex={1}
+          handleMenu={this.handleMenu}/>
         <IfFirebaseAuthed>
           <div>
             <MuiThemeProvider theme={theme}>
@@ -1181,12 +1187,7 @@ class App extends Component {
                 </h1>
               ) : (
                   <div>
-                    <ProjectMenu
-                      projectList={projectList}
-                      currentProject={currentProject}
-                      typeOfMenu="project"
-                      menuIndex={1}
-                      handleMenu={this.handleMenu} />
+                    
                     <Formik
                       enableReinitialize
                       render={props => <ProjectInfo {...props} />}
