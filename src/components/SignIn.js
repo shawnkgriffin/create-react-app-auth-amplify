@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { Grid, AppBar, Toolbar } from '@material-ui/core';
+import { Grid} from '@material-ui/core';
 import GoogleButton from 'react-google-button'
 
 const styles = theme => ({
@@ -73,13 +73,7 @@ class SignIn extends Component {
     <React.Fragment> 
     <main className={this.props.classes.main}>
       <CssBaseline />
-      {/* <AppBar position="absolute" color="default" className={this.props.classes.appBar}>
-        <Toolbar style={{'display':'flex','justifyContent':'center'}}>
-          <Typography variant="h4" color="primary" noWrap >
-            Sign in
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
+      
       <Paper className={this.props.classes.paper} >
         <Avatar className={this.props.classes.avatar}>
           <LockOutlinedIcon />
