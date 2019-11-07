@@ -49,6 +49,11 @@ export default function SignIn({ firebase }) {
 
   const [values, setValues] = React.useState({ name: "", email: "", password: "", passwordConfirmation: "", signUp: false });
 
+  let isInvalid =
+    (values.signUp && (values.password !== values.passwordConfirmation)) ||
+    values.password === '' ||
+    values.email === '';
+  
   const handleSubmit = () => {
     console.log(`handleSubmit${values}`)
     if (values.signUp) {
@@ -74,6 +79,10 @@ export default function SignIn({ firebase }) {
 
   const handleChange = prop => event => {
     setValues({ ...values, [prop]: event.target.type === 'checkbox' ? event.target.checked : event.target.value });
+    isInvalid =
+    (values.signUp && (values.password !== values.passwordConfirmation)) ||
+    values.password === '' ||
+    values.email === '';
     console.log(JSON.stringify(values, null, 2))
   };
 
@@ -106,8 +115,8 @@ export default function SignIn({ firebase }) {
             </FormControl>
             {values.signUp &&
               <FormControl margin="normal" required fullWidth>
-                <InputLabel htmlFor="passwordConfirmation ">Password Confirmation </InputLabel>
-                <Input onChange={handleChange('passwordConfirmation ')} name="passwordConfirmation " type="passwordConfirmation " id="passwordConfirmation " autoComplete="current-password" />
+                <InputLabel htmlFor="password">Password Confirmation </InputLabel>
+                <Input onChange={handleChange('passwordConfirmation ')} name="passwordConfirmation " type="password" id="passwordConfirmation " autoComplete="current-password" />
               </FormControl>
             }
 
@@ -121,6 +130,7 @@ export default function SignIn({ firebase }) {
               variant="contained"
               color="primary"
               className={classes.submit}
+              disabled ={isInvalid}
             >
               {values.signUp ? "Sign Up" : "Sign in"}
             </Button>
