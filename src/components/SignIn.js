@@ -1,5 +1,4 @@
-import React, { Component }  from 'react';
-import PropTypes from 'prop-types';
+import React  from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,7 +14,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Grid} from '@material-ui/core';
 import GoogleButton from 'react-google-button'
 
-const styles = theme => ({
+const classes = theme => ({
   main: {
     width: 'auto',
     display: 'block', // Fix IE 11 issue.
@@ -49,70 +48,62 @@ const styles = theme => ({
 });
 
 
-class SignIn extends Component { 
+export default function SignIn({ firebase } ){
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true
-    }
-	}
-  handleLogin = e => {
-    let _email, _password;
-    e.preventDefault();
-    this.setState({
-      isLoading : true
-    })
-    this.props.loginUser(_email, _password);
-    console.log(_email)
+  const [values, setValues] = React.useState({ name: "", email:"", password:"", passwordConfirmation:"", signUp : false });
+
+  const handleSubmit = () => {
+    console.log(`handleSubmit${values}`)
+    setValues({ ...values, newText: "", template: "" });
   };
-  render() {
-    
+
+  const handleChange = prop => event => {
+    console.log(JSON.stringify(values, null, 2))
+    setValues({ ...values, [prop]: event.target.type === 'checkbox' ? event.target.checked : event.target.value });
+  };
+
   return (
     <React.Fragment> 
-    <main className={this.props.classes.main}>
+    <main className={classes.main}>
       <CssBaseline />
       
-      <Paper className={this.props.classes.paper} >
-        <Avatar className={this.props.classes.avatar}>
+      <Paper className={classes.paper} >
+        <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={this.props.classes.form} onSubmit={this.handleLogin}>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="email">Email Address</InputLabel>
-            <Input id="email" name="email" autoComplete="email" autoFocus />
+            <Input onChange={handleChange('email')}id="email" name="email" autoComplete="email" autoFocus />
           </FormControl>
           <FormControl margin="normal" required fullWidth>
             <InputLabel htmlFor="password">Password</InputLabel>
-            <Input name="password" type="password" id="password" autoComplete="current-password" />
+            <Input onChange={handleChange('password')}name="password" type="password" id="password" autoComplete="current-password" />
           </FormControl>
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            {values.signUp &&
+            <FormControl margin="normal" required fullWidth>
+            <InputLabel htmlFor="passwordConfirmation ">Password Confirmation </InputLabel>
+            <Input onChange={handleChange('passwordConfirmation ')}name="passwordConfirmation " type="passwordConfirmation " id="passwordConfirmation " autoComplete="current-password" />
+          </FormControl>
+          }
+          
+            <FormControlLabel
+              control={<Checkbox onChange={handleChange('signUp')} value="signUp" color="primary" />}
+            label="New User"
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={this.props.classes.submit}
+            className={classes.submit}
           >
-           
-            {this.state.isLoading ? ' Sign in':'Loadingâ¦' }
+          {values.signUp ? "Sign Up" : "Sign in"}
           </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={this.props.classes.submit}
-          >
-          Sign up
-         
-            
-          </Button>
+          
         </form>
           <Grid
             container
@@ -123,8 +114,8 @@ class SignIn extends Component {
           <Grid item xs={12} >
             <GoogleButton
               onClick={() => {
-                const googleAuthProvider = new this.props.firebase.auth.GoogleAuthProvider();
-                this.props.firebase.auth().signInWithPopup(googleAuthProvider);
+                const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithPopup(googleAuthProvider);
               }}
             />
           </Grid>
@@ -138,13 +129,3 @@ class SignIn extends Component {
     
   );
 }
-}
-
-
-
-SignIn.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SignIn);
-
