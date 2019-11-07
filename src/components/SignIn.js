@@ -30,7 +30,9 @@ const classes = makeStyles({
     padding: `100px 100px 100px`,
   },
   avatar: {
-    margin: "4px"
+    margin: "4px",
+    color: "white",
+    backgroundColor:"blue"
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -87,7 +89,7 @@ export default function SignIn({ firebase }) {
           flexDirection: 'column',
           alignItems: 'center',
           padding: `100px 100px 100px`, }}>
-          <Avatar className={classes.avatar}style={{color:"blue"}}>
+          <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
