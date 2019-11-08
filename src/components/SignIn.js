@@ -116,7 +116,7 @@ export default function SignIn({ firebase }) {
             {values.signUp &&
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="password">Password Confirmation </InputLabel>
-                <Input onChange={handleChange('passwordConfirmation ')} name="passwordConfirmation " type="password" id="passwordConfirmation " autoComplete="current-password" />
+                <Input onChange={handleChange('passwordConfirmation')} name="passwordConfirmation " type="password" id="passwordConfirmation " autoComplete="current-password" />
               </FormControl>
             }
 

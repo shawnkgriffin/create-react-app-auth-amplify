@@ -17,6 +17,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+let db = firebase.firestore();
 
 // login user
 test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
@@ -30,7 +31,6 @@ test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
     });
 });
 
-let db = firebase.firestore();
 
 // We are setting up data that we can check between tests 
 let createdProject = {};
