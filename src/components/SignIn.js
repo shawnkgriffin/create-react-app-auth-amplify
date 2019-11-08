@@ -54,8 +54,9 @@ export default function SignIn({ firebase }) {
     values.password === '' ||
     values.email === '';
   
-  const handleSubmit = () => {
-    console.log(`handleSubmit${values}`)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(`handleSubmit${JSON.stringify(values, null, 2)}`)
     if (values.signUp) {
       // verify email, password confirmation
       firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
@@ -66,15 +67,14 @@ export default function SignIn({ firebase }) {
     }
     else {
       //TODO validate fields. 
-      firebase.auth().signInWithWithEmailAndPassword(values.email, values.password)
+      firebase.auth().signInWithEmailAndPassword(values.email, values.password)
         .then(console.log(`SignIn as ${values.email}`))
         .catch(function (error) {
           // Handle Errors here.
-          console.log(`SignIn signInWithWithEmailAndPassword failed ${error.code}, ${error.message}`);
+          console.log(`SignIn signInWithEmailAndPassword failed ${error.code}, ${error.message}`);
           // ...
         });
     }
-    setValues({ ...values, newText: "", template: "" });
   };
 
   const handleChange = prop => event => {
