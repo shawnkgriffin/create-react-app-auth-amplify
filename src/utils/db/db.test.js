@@ -1,10 +1,10 @@
-import * as db from './db.js'
 const dotenv = require('dotenv');
 dotenv.config();
 // Firebase components
 // import app from 'firebase/app';
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -17,52 +17,152 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+
 // login user
 test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
   const testEmail = process.env.REACT_APP_TEST_EMAIL;
-  
+
   //TODO validate fields. 
   firebase.auth().signInWithEmailAndPassword(process.env.REACT_APP_TEST_EMAIL, process.env.REACT_APP_TEST_PASSWORD)
     .then(data => {
       expect(data.user.email).toBe(testEmail);
-    done();
+      done();
     });
 });
 
+let db = firebase.firestore();
+
+// We are setting up data that we can check between tests 
 let createdProject = {};
 let projects = [];
 let template = require('./project.json');
 template.template = true;
 template.templateName = 'Test Template'
 const timeStamp = new Date().toLocaleString();
+let newProject = JSON.parse(JSON.stringify(template));
+newProject.id = '';
+newProject.creator = process.env.REACT_APP_TEST_EMAIL;
+newProject.name = `Test Project${timeStamp}`;
 
 // test create a new project
 test('a new project is created', done => {
-  const testEmail = 'test@test.com';
-  const testProjectName = `Test Project${timeStamp}`;
-  function callback(newProject) {
-    expect(newProject.name).toBe(testProjectName);
-    done();
-    createdProject = newProject;
-  }
-  db.createNewProject(testProjectName, testEmail, template, callback);
+  db.collection('projects').add(newProject)
+    .then(function (docRef) {
+      expect(docRef.id.length).toBeGreaterThan(0);
+      newProject.id = docRef.id;
+      done();
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+      done();
+    });
 });
 
-// test update a new project
+// read projects and make sure you get back the one you created 
+test('read projects and make sure new one is there', done => {
+  let projectFound = false;
+
+  db.collection("projects")
+    .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        if (doc.id === newProject.id) projectFound = true;
+      });
+      expect(projectFound).toBeTruthy();
+      done();
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+
+
+});
+//update a project
+
+// read projects and make sure you get back the one you created 
 test('update a project', done => {
-  const testProjectName = 'Test Project Update';
-  createdProject.name = testProjectName;
-  function callback(response) {
-    expect(response.status).toBe(200);
-    done();
-  }
-  db.putProject(createdProject, callback);
+  const oldProjectName = newProject.name;
+  const newProjectName = 'new project name';
+  newProject.name = newProjectName;
+
+  db.collection("projects")
+    .doc(newProject.id)
+    .set(newProject)
+    .then(() => {
+      let projectFound = false;
+
+      db.collection("projects")
+        .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            if (doc.id === newProject.id) {
+              let checkProject = doc.data();
+              projectFound = checkProject.name === newProjectName;
+            }
+          });
+          expect(projectFound).toBeTruthy();
+          done();
+        })
+        .catch(function (error) {
+          console.log("Error getting documents: ", error);
+        });
+
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+
+
 });
-// test delete a project
-test('delete a project', done => {
-  function callback(response) {
-    expect(response.status).toBe(200);
-    done();
-  }
-  db.deleteProject(createdProject.id, callback);
+
+// read projects and make sure you get back the one you created 
+test('delete project', done => {
+
+  db.collection("projects")
+    .doc(newProject.id)
+    .delete()
+    .then(() => {
+      let projectFound = false;
+
+      db.collection("projects")
+        .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach(doc => {
+            if (doc.id === newProject.id) projectFound = true;
+          });
+          expect(projectFound).toBeFalsy();
+          done();
+        })
+        .catch(function (error) {
+          console.log("Error getting documents: ", error);
+        });
+
+    })
+    .catch(function (error) {
+      console.log("Error getting documents: ", error);
+    });
+
+
 });
+
+// // test update a new project
+// test('update a project', done => {
+//   const testProjectName = 'Test Project Update';
+//   createdProject.name = testProjectName;
+//   function callback(response) {
+//     expect(response.status).toBe(200);
+//     done();
+//   }
+//   db.putProject(createdProject, callback);
+// });
+// // test delete a project
+// test('delete a project', done => {
+//   function callback(response) {
+//     expect(response.status).toBe(200);
+//     done();
+//   }
+//   db.deleteProject(createdProject.id, callback);
+// });

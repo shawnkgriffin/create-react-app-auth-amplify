@@ -7,7 +7,7 @@ axios.create({
   responseType: "json"
 });
 
-let database = null;
+let db = null;
 
 /**
 * Description
@@ -18,7 +18,8 @@ let database = null;
 * @returns {string} status 200 success.
 **/
 function dbInit(firebase) {
-  database = firebase.database();
+  db = firebase.database();
+  return (200);
 }
 
 /**
