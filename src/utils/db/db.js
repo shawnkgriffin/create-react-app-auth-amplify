@@ -7,6 +7,20 @@ axios.create({
   responseType: "json"
 });
 
+let database = null;
+
+/**
+* Description
+* @function dbInit()
+* @param {firebase}  
+* @param {function} callback 
+* @param {string}  
+* @returns {string} status 200 success.
+**/
+function dbInit(firebase) {
+  database = firebase.database();
+}
+
 /**
 * Description
 * @function copyProject
@@ -299,4 +313,4 @@ function deleteProject(id, callback) {
 }
 
 
-export { createNewProject, copyProject, initProject, postProject, getProjects, putProject, deleteProject, getTemplates, createTemplate, convertCSVtoJSON }
+export { createNewProject, dbInit, copyProject, initProject, postProject, getProjects, putProject, deleteProject, getTemplates, createTemplate, convertCSVtoJSON }
