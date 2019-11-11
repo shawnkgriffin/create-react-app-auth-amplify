@@ -1,5 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.config();
 // Firebase components
 // import app from 'firebase/app';
 import * as firebase from "firebase/app";
