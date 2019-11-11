@@ -16,21 +16,7 @@ const firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig);
-
 let db = firebase.firestore();
-
-// login user
-test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
-  const testEmail = process.env.REACT_APP_TEST_EMAIL;
-
-  //TODO validate fields. 
-  firebase.auth().signInWithEmailAndPassword(process.env.REACT_APP_TEST_EMAIL, process.env.REACT_APP_TEST_PASSWORD)
-    .then(data => {
-      expect(data.user.email).toBe(testEmail);
-      done();
-    });
-});
-
 
 // We are setting up data that we can check between tests 
 let createdProject = {};
@@ -44,21 +30,47 @@ newProject.id = '';
 newProject.creator = process.env.REACT_APP_TEST_EMAIL;
 newProject.name = `Test Project${timeStamp}`;
 
-// test create a new project
-test('a new project is created', done => {
+// test create a new project should fail
+test('new project create fails without authorizationw', done => {
   db.collection('projects').add(newProject)
-    .then(function (docRef) {
-      expect(docRef.id.length).toBeGreaterThan(0);
-      newProject.id = docRef.id;
-      done();
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
+  .then(function (docRef) {
+    expect(docRef.id.length).toBeGreaterThan(0);
+    newProject.id = docRef.id;
+    done();
+  })
+  .catch(function (error) {
+    expect(error).toBeTruthy();
+    done();
+  });
+});
+
+// login user
+test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
+  const testEmail = process.env.REACT_APP_TEST_EMAIL;
+
+  //TODO validate fields. 
+  firebase.auth().signInWithEmailAndPassword(process.env.REACT_APP_TEST_EMAIL, process.env.REACT_APP_TEST_PASSWORD)
+    .then(data => {
+      expect(data.user.email).toBe(testEmail);
       done();
     });
 });
 
-// read projects and make sure you get back the one you created 
+// test create a new project should succeed
+test('a new project is created', done => {
+  db.collection('projects').add(newProject)
+  .then(function (docRef) {
+    expect(docRef.id.length).toBeGreaterThan(0);
+    newProject.id = docRef.id;
+    done();
+  })
+  .catch(function (error) {
+    console.error("Error adding document: ", error);
+    done();
+  });
+});
+
+// read projects and make sure you get back the one you created
 test('read projects and make sure new one is there', done => {
   let projectFound = false;
 
