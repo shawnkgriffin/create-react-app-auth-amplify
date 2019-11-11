@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  subtitle: { 
+    paddingRight: "5px"
+  }
 }));
 
 export default function ButtonAppBar({ firebase, projectList, currentProject, menuIndex, handleMenu }) {
@@ -48,6 +51,16 @@ export default function ButtonAppBar({ firebase, projectList, currentProject, me
               <AssignmentIcon />
           </Badge>
         </IconButton>
+          }
+          {user && user.displayName &&
+            <Typography variant="subtitle1" className={classes.subtitle}>
+           {user.displayName}
+          </Typography>
+          }
+          {user && !user.photoURL && !user.displayName &&
+            <Typography variant="subtitle1" className={classes.subtitle}>
+           {user.email}
+          </Typography>
           }
           {user && user.photoURL &&
             <Avatar alt={user.displayName} src={user.photoURL} className={classes.avatar} />
