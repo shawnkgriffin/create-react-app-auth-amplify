@@ -592,9 +592,14 @@ class App extends Component {
           break;
         case 'DELETE':
           if (projects.length > 1) {
-            db.deleteProject(projects[currentProject].id, response =>
-              console.log(response),
-            );
+            db.collection('projects')
+              .doc(projects[currentProject].id)
+              .delete()
+              .catch(function(error) {
+                console.log(
+                  `Error deleting project ${projects[currentProject].id}${error}`,
+                );
+              });
             projects.splice(currentProject, 1);
             currentProject = 0;
             this.setState(prevState => {
