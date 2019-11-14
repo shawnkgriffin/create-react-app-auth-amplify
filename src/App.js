@@ -130,7 +130,7 @@ class App extends Component {
           );
           projects.push(newProject);
         });
-        
+
         this.setState(prevState => {
           return {
             ...prevState,
@@ -1270,6 +1270,9 @@ class App extends Component {
       template,
       start,
       end,
+      percentageComplete: utils.percentageProjectQuestionsYes(
+        projects[currentProject],
+      ),
     };
 
     // if (this.state.changed)

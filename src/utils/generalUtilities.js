@@ -169,6 +169,7 @@ function percentagePhaseQuestionsYes(project, phase) {
 function percentageProjectQuestionsYes(project) {
   let numberYes = 0;
   let numberQuestions = 0;
+  if (!project) return '?/?';
   project.steps.forEach(step => {
     numberYes += step.questions
       .map(question =>

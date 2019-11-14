@@ -27,6 +27,7 @@ const ProjectInfo = props => {
       templateName,
       start,
       end,
+      percentageComplete,
     },
     errors,
     touched,
@@ -50,7 +51,7 @@ const ProjectInfo = props => {
         variant="outlined"
         helperText={touched.name ? errors.name : ''}
         error={touched.name && Boolean(errors.name)}
-        label="Project Name"
+        label={`Project Name ${percentageComplete}`}
         value={name}
         text={name}
         style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
