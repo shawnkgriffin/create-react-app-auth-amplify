@@ -1,13 +1,12 @@
-import { makeStyles } from "@material-ui/core/styles";
-import * as Yup from "yup";
+import { makeStyles } from '@material-ui/core/styles';
+import * as Yup from 'yup';
 /**
-* Description
-* @function formatDate
-* @param {date}  date
-* @returns {string} YYY-MM-DD
-**/
+ * Description
+ * @function formatDate
+ * @param {date}  date
+ * @returns {string} YYY-MM-DD
+ **/
 function formatDate(date) {
-
   let dd = date.getDate();
   let mm = date.getMonth() + 1;
   const yyyy = date.getFullYear();
@@ -18,27 +17,29 @@ function formatDate(date) {
   if (mm < 10) {
     mm = `0${mm}`;
   }
-  return (`${yyyy}-${mm}-${dd}`);
-
+  return `${yyyy}-${mm}-${dd}`;
 }
 
 const projectInfoValidationSchema = Yup.object({
-  name: Yup.string("Enter a name").required("Name is required"),
+  name: Yup.string('Enter a name').required('Name is required'),
   sponsor: Yup.string("Enter project sponsor's name."),
   projectManager: Yup.string("Enter project Manager's name."),
-  projectType: Yup.string("Enter project type."),
-  creator: Yup.string("Project creator."),
+  projectType: Yup.string('Enter project type.'),
+  creator: Yup.string('Project creator.'),
   problemOpportunity: Yup.string(
-    "Describe the problem or opportunity this project addresses."
+    'Describe the problem or opportunity this project addresses.',
   ),
-  note: Yup.string("Notes on this project."),
+  note: Yup.string('Notes on this project.'),
   start: Yup.date().default(() => new Date()),
   end: Yup.date()
     .default(() => new Date())
-    .when("start", (startDate, schema) => startDate && schema.min(startDate))
+    .when(
+      'start',
+      (startDate, schema) => startDate && schema.min(startDate),
+    ),
 });
 const stepNoteValidationSchema = Yup.object({
-  note: Yup.string("Enter step notes.")
+  note: Yup.string('Enter step notes.'),
 });
 
 const projectStyles = makeStyles(theme => ({
@@ -46,7 +47,7 @@ const projectStyles = makeStyles(theme => ({
     margin: theme.spacing(2),
   },
   root: {
-    width: "100%"
+    width: '100%',
   },
   formControl: {
     marginTop: 5,
@@ -54,95 +55,124 @@ const projectStyles = makeStyles(theme => ({
     padding: 20,
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200
+    width: 200,
   },
   buttonList: {
     width: 64,
     height: 64,
-    paddingTop: 50
+    paddingTop: 50,
   },
   button: {
     margin: theme.spacing(0),
-    width: "100%",
-    overflowX: "auto"
+    width: '100%',
+    overflowX: 'auto',
   },
   paper: {
     margin: 10,
-    width: "100%",
-    overflowX: "auto",
-    padding: 20
+    width: '100%',
+    overflowX: 'auto',
+    padding: 20,
   },
   inputLabel: {
     padding: 30,
-    margin: 20
+    margin: 20,
   },
   table: {
     marginTop: 10,
     marginBottom: 10,
-    minWidth: 650
+    minWidth: 650,
   },
   container: {
     margin: 10,
-    display: "flex",
-    flexWrap: "wrap"
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   textField: {
     marginLeft: theme.spacing(2),
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   dense: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   fab: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
   },
   absolute: {
-    position: "absolute",
+    position: 'absolute',
     bottom: theme.spacing(2),
-    right: theme.spacing(3)
-  }
+    right: theme.spacing(3),
+  },
 }));
 
 /**
  * Description
  * @function initProject
- * @param {integer}  
- * @param {function} callback 
- * @param {string}  
+ * @param {integer}
+ * @param {function} callback
+ * @param {string}
  * @returns {string} status 200 success.
  **/
 function parseCommand(commandString) {
-  const commands = commandString.toUpperCase().split(".");
+  const commands = commandString.toUpperCase().split('.');
   let action = {
     actionObject: commands[0],
     actionIndex: parseInt(commands[1], 10),
     actionVerb: commands[2],
-    actionLocation: commands.length === 4 ? commands[3] : ""
-  }
-  return (action);
-
+    actionLocation: commands.length === 4 ? commands[3] : '',
+  };
+  return action;
 }
+
 function percentageQuestionsYes(questions) {
-  let numberYes = questions.map((question) => (!question.skip && question.answer.toUpperCase() === "YES") ? 1 : 0).reduce((acc, val) => acc + val);;
-  let numberSkipped = questions.map((question) => question.skip ? 1 : 0).reduce((acc, val) => acc + val);
-  let numberQuestions = questions.length - numberSkipped;
+  let numberYes = questions
+    .map(question =>
+      !question.skip && question.answer.toUpperCase() === 'YES'
+        ? 1
+        : 0,
+    )
+    .reduce((acc, val) => acc + val);
+
+  let numberQuestions = questions.length;
 
   if (numberQuestions > 0) {
-    let percentageResult = numberYes / numberQuestions * 100.
-    return (`(${percentageResult.toFixed(0)}%)`)
-
+    let percentageResult = (numberYes / numberQuestions) * 100;
+    return `(${percentageResult.toFixed(0)}%)`;
   } else {
-    return ('?/?')
+    return '?/?';
   }
-
 }
 
+function percentagePhaseQuestionsYes(project, phase) {
+  let numberYes = 0;
+  let numberQuestions = 0;
+  project.steps.forEach(step => {
+    if (step.stepType === phase) {
+      numberYes += step.questions
+        .map(question =>
+          !question.skip && question.answer.toUpperCase() === 'YES'
+            ? 1
+            : 0,
+        )
+        .reduce((acc, val) => acc + val);
+
+      numberQuestions += step.questions.length;
+    }
+  });
+
+  if (numberQuestions > 0) {
+    let percentageResult = (numberYes / numberQuestions) * 100;
+    return `(${percentageResult.toFixed(0)}%)`;
+  } else {
+    return '?/?';
+  }
+}
 
 export {
   percentageQuestionsYes,
+  percentagePhaseQuestionsYes,
   parseCommand,
   projectStyles,
   projectInfoValidationSchema,
   stepNoteValidationSchema,
-  formatDate
-}
+  formatDate,
+};

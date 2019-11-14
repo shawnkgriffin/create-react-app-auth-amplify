@@ -130,7 +130,7 @@ class App extends Component {
           );
           projects.push(newProject);
         });
-
+        
         this.setState(prevState => {
           return {
             ...prevState,
