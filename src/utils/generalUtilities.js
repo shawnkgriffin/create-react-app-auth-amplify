@@ -189,6 +189,57 @@ function percentageProjectQuestionsYes(project) {
     return '?/?';
   }
 }
+/**
+ * Description
+ * @function createNewProject
+ * @param {string}  name of project
+ * @param {string}  creator of project
+ * @returns {project}
+ **/
+
+function createNewProject(
+  name = 'New Project',
+  creator = '',
+  template = null,
+) {
+  let newProject = {};
+  if (template !== null)
+    newProject = JSON.parse(JSON.stringify(template));
+  else newProject = require('./db/project.json');
+  newProject.name = name;
+  newProject.creator = creator;
+  newProject.template = false;
+  let today = new Date();
+  let thirtyDaysFromNow = new Date(
+    new Date().setDate(today.getDate() + 30),
+  );
+  newProject.start = formatDate(today);
+  newProject.end = formatDate(thirtyDaysFromNow);
+  return newProject;
+}
+/**
+ * Description
+ * @function createNewTemplate
+ * @param {string}  name of project
+ * @param {string}  creator of project
+ * @param {object}  project to create template from
+ * @returns {project}
+ **/
+
+function createNewTemplate(
+  name = 'New Template',
+  creator = '',
+  project = null,
+) {
+  let newTemplate = {};
+  if (project !== null)
+    newTemplate = JSON.parse(JSON.stringify(project));
+  else newTemplate = require('./db/project.json');
+  newTemplate.name = name;
+  newTemplate.creator = creator;
+  newTemplate.template = true;
+  return newTemplate;
+}
 
 export {
   percentageQuestionsYes,
@@ -199,4 +250,6 @@ export {
   projectInfoValidationSchema,
   stepNoteValidationSchema,
   formatDate,
+  createNewProject,
+  createNewTemplate,
 };

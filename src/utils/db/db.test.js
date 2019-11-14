@@ -32,7 +32,7 @@ newProject.name = `Test Project${timeStamp}`;
 test('new project create fails without authorizationw', done => {
   db.collection('projects')
     .add(newProject)
-    .then(function(docRef) {
+    .then(docRef => {
       expect(docRef.id.length).toBeGreaterThan(0);
       newProject.id = docRef.id;
       done();

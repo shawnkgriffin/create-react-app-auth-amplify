@@ -88,27 +88,12 @@ class App extends Component {
       this.setState(prevState => {
         return {
           ...prevState,
-          projects: [],
-          alert: false,
-          alertYesButton: true,
-          text: '',
-          textLabel: '',
-          form: false,
-          formType: '',
-          help: false,
-          authEditTemplate,
-          commandString: '',
-          user: null,
-          currentStep: 0,
-          currentProject: 0,
-          changed: false,
-          templates: [],
+          user,
         };
       });
       return;
     }
 
-    let templates = [];
     console.log(
       `componentDidMount/onAuthStateChanged(${user.email})`,
     );
@@ -126,34 +111,86 @@ class App extends Component {
           let newProject = doc.data();
           newProject.id = doc.id;
           console.log(
-            `componentDidMount/onAuthStateChanged/db.collection(${newProject.id})`,
+            `componentDidMount/onAuthStateChanged/db.collection projects(${newProject.id})`,
           );
-          projects.push(newProject);
+          if (!newProject.template) projects.push(newProject); // handle templates next
         });
 
-        this.setState(prevState => {
-          return {
-            ...prevState,
-            projects: projects,
-            alert: false,
-            alertYesButton: true,
-            text: '',
-            textLabel: '',
-            form: false,
-            formType: '',
-            help: false,
-            authEditTemplate,
-            commandString: '',
-            user: user,
-            currentStep: 0,
-            currentProject: 0,
-            changed: false,
-            templates: templates,
-          };
-        });
+        if (projects.length === 0) {
+          let newProject = utils.createNewProject(
+            'New Project',
+            user.email,
+          );
+
+          db.collection('projects')
+            .add(newProject)
+            .then(function(docRef) {
+              newProject.id = docRef.id;
+              projects.push(newProject);
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  user,
+                };
+              });
+            });
+        } else
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              user,
+            };
+          });
       })
       .catch(function(error) {
-        console.log('Error getting documents: ', error);
+        console.log('Error getting projects: ', error);
+      });
+
+    // get templates
+    db.collection('projects')
+      .where('template', '==', true)
+      .get()
+      .then(querySnapshot => {
+        let templates = [];
+        querySnapshot.forEach(doc => {
+          let template = doc.data();
+          template.id = doc.id;
+          console.log(
+            `componentDidMount/onAuthStateChanged/db.collection templates(${template.id})`,
+          );
+          templates.push(template);
+        });
+
+        if (templates.length === 0) {
+          let newTemplate = utils.createNewTemplate(
+            'New Template',
+            user.email,
+          );
+
+          db.collection('projects')
+            .add(newTemplate)
+            .then(docRef => {
+              newTemplate.id = docRef.id;
+              templates.push(newTemplate);
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  templates: templates,
+                };
+              });
+            });
+        } else
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              templates: templates,
+            };
+          });
+      })
+      .catch(function(error) {
+        console.log('Error getting templates: ', error);
       });
   }
 
