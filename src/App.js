@@ -547,31 +547,30 @@ class App extends Component {
             );
           }
           // TODO use template selected to create project
-          db.createNewProject(
+          let newProject = utils.createNewProject(
             newText,
-            this.state.user,
+            this.state.user.email,
             this.state.templates[templateIndex],
-            newProject => {
+          );
+          db.collection('projects')
+            .add(newProject)
+            .then(docRef => {
+              newProject.id = docRef.id;
               projects.push(newProject);
-              currentStep = 0;
-              currentProject = projects.length - 1;
               this.setState(prevState => {
                 return {
                   ...prevState,
                   projects: projects,
+                  currentProject: projects.length - 1,
+                  currentStep: 0,
                   alert: false,
                   alertYesButton: true,
                   form: false,
                   help: false,
                   commandString: '',
-                  currentStep: currentStep,
-                  currentProject: currentProject,
-                  changed: true,
                 };
               });
-              console.log(`Project add ${project.id}`);
-            },
-          );
+            });
           break;
 
         case 'EDIT':
