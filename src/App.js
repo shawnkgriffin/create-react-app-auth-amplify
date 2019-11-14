@@ -566,6 +566,7 @@ class App extends Component {
                   alert: false,
                   alertYesButton: true,
                   form: false,
+                  formType: '',
                   help: false,
                   commandString: '',
                 };
