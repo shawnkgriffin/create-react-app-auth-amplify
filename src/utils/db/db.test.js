@@ -1,8 +1,8 @@
 // Firebase components
 // import app from 'firebase/app';
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore"
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -11,17 +11,17 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-}
+};
 
 firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
 
-// We are setting up data that we can check between tests 
+// We are setting up data that we can check between tests
 let createdProject = {};
 let projects = [];
 let template = require('./project.json');
 template.template = true;
-template.templateName = 'Test Template'
+template.templateName = 'Test Template';
 const timeStamp = new Date().toLocaleString();
 let newProject = JSON.parse(JSON.stringify(template));
 newProject.id = '';
@@ -30,24 +30,30 @@ newProject.name = `Test Project${timeStamp}`;
 
 // test create a new project should fail
 test('new project create fails without authorizationw', done => {
-  db.collection('projects').add(newProject)
-  .then(function (docRef) {
-    expect(docRef.id.length).toBeGreaterThan(0);
-    newProject.id = docRef.id;
-    done();
-  })
-  .catch(function (error) {
-    expect(error).toBeTruthy();
-    done();
-  });
+  db.collection('projects')
+    .add(newProject)
+    .then(function(docRef) {
+      expect(docRef.id.length).toBeGreaterThan(0);
+      newProject.id = docRef.id;
+      done();
+    })
+    .catch(function(error) {
+      expect(error).toBeTruthy();
+      done();
+    });
 });
 
 // login user
 test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
   const testEmail = process.env.REACT_APP_TEST_EMAIL;
 
-  //TODO validate fields. 
-  firebase.auth().signInWithEmailAndPassword(process.env.REACT_APP_TEST_EMAIL, process.env.REACT_APP_TEST_PASSWORD)
+  //TODO validate fields.
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(
+      process.env.REACT_APP_TEST_EMAIL,
+      process.env.REACT_APP_TEST_PASSWORD,
+    )
     .then(data => {
       expect(data.user.email).toBe(testEmail);
       done();
@@ -56,24 +62,25 @@ test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
 
 // test create a new project should succeed
 test('a new project is created', done => {
-  db.collection('projects').add(newProject)
-  .then(function (docRef) {
-    expect(docRef.id.length).toBeGreaterThan(0);
-    newProject.id = docRef.id;
-    done();
-  })
-  .catch(function (error) {
-    console.error("Error adding document: ", error);
-    done();
-  });
+  db.collection('projects')
+    .add(newProject)
+    .then(function(docRef) {
+      expect(docRef.id.length).toBeGreaterThan(0);
+      newProject.id = docRef.id;
+      done();
+    })
+    .catch(function(error) {
+      console.error('Error adding document: ', error);
+      done();
+    });
 });
 
 // read projects and make sure you get back the one you created
 test('read projects and make sure new one is there', done => {
   let projectFound = false;
 
-  db.collection("projects")
-    .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+  db.collection('projects')
+    .where('creator', '==', process.env.REACT_APP_TEST_EMAIL)
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach(doc => {
@@ -82,28 +89,26 @@ test('read projects and make sure new one is there', done => {
       expect(projectFound).toBeTruthy();
       done();
     })
-    .catch(function (error) {
-      console.log("Error getting documents: ", error);
+    .catch(function(error) {
+      console.log('Error getting documents: ', error);
     });
-
-
 });
 //update a project
 
-// read projects and make sure you get back the one you created 
+// read projects and make sure you get back the one you created
 test('update a project', done => {
   const oldProjectName = newProject.name;
   const newProjectName = 'new project name';
   newProject.name = newProjectName;
 
-  db.collection("projects")
+  db.collection('projects')
     .doc(newProject.id)
     .set(newProject)
     .then(() => {
       let projectFound = false;
 
-      db.collection("projects")
-        .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+      db.collection('projects')
+        .where('creator', '==', process.env.REACT_APP_TEST_EMAIL)
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
@@ -114,48 +119,38 @@ test('update a project', done => {
           });
           expect(projectFound).toBeTruthy();
           done();
-        })
-        .catch(function (error) {
-          console.log("Error getting documents: ", error);
         });
-
     })
-    .catch(function (error) {
-      console.log("Error getting documents: ", error);
+    .catch(function(error) {
+      console.log('Error getting documents: ', error);
     });
-
-
 });
 
-// read projects and make sure you get back the one you created 
+// read projects and make sure you get back the one you created
 test('delete project', done => {
-
-  db.collection("projects")
+  db.collection('projects')
     .doc(newProject.id)
     .delete()
     .then(() => {
       let projectFound = false;
 
-      db.collection("projects")
-        .where("creator", "==", process.env.REACT_APP_TEST_EMAIL)
+      db.collection('projects')
+        .where('creator', '==', process.env.REACT_APP_TEST_EMAIL)
         .get()
-        .then((querySnapshot) => {
+        .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             if (doc.id === newProject.id) projectFound = true;
           });
           expect(projectFound).toBeFalsy();
           done();
         })
-        .catch(function (error) {
-          console.log("Error getting documents: ", error);
+        .catch(function(error) {
+          console.log('Error getting documents: ', error);
         });
-
     })
-    .catch(function (error) {
-      console.log("Error getting documents: ", error);
+    .catch(function(error) {
+      console.log('Error getting documents: ', error);
     });
-
-
 });
 
 // // test update a new project

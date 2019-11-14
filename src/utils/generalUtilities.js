@@ -136,7 +136,7 @@ function percentageQuestionsYes(questions) {
 
   if (numberQuestions > 0) {
     let percentageResult = (numberYes / numberQuestions) * 100;
-    return `(${percentageResult.toFixed(0)}%)`;
+    return `${percentageResult.toFixed(0)}%`;
   } else {
     return '?/?';
   }
@@ -161,7 +161,7 @@ function percentagePhaseQuestionsYes(project, phase) {
 
   if (numberQuestions > 0) {
     let percentageResult = (numberYes / numberQuestions) * 100;
-    return `(${percentageResult.toFixed(0)}%)`;
+    return `${percentageResult.toFixed(0)}%`;
   } else {
     return '?/?';
   }
@@ -184,7 +184,7 @@ function percentageProjectQuestionsYes(project) {
 
   if (numberQuestions > 0) {
     let percentageResult = (numberYes / numberQuestions) * 100;
-    return `(${percentageResult.toFixed(0)}%)`;
+    return `${percentageResult.toFixed(0)}%`;
   } else {
     return '?/?';
   }

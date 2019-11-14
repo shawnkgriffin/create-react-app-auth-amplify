@@ -9,7 +9,6 @@ import EventIcon from '@material-ui/icons/Event';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import * as utils from '../utils/generalUtilities.js';
 
 // import { DisplayFormikState } from "./helper";
 
@@ -51,7 +50,7 @@ const ProjectInfo = props => {
         variant="outlined"
         helperText={touched.name ? errors.name : ''}
         error={touched.name && Boolean(errors.name)}
-        label={`Project Name ${percentageComplete}`}
+        label={`Project is ${percentageComplete} complete.`}
         value={name}
         text={name}
         style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}

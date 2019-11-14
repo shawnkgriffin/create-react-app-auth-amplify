@@ -197,9 +197,14 @@ class App extends Component {
             changed: false,
           };
         });
-        db.putProject(project, response => {
-          console.log(response);
-        });
+        db.collection('projects')
+          .doc(project.id)
+          .set(project)
+          .catch(function(error) {
+            console.log(
+              `Error writing project ${project.id}${error}`,
+            );
+          });
       }
     }
   }
@@ -211,10 +216,14 @@ class App extends Component {
       step = { ...step, ...response };
       projects[currentProject].steps[currentStep] = step;
 
-      db.putProject(projects[currentProject], response => {
-        //TODO handle error
-        console.log(`db.putProject(project, ${response.status}`);
-      });
+      db.collection('projects')
+        .doc(projects[currentProject].id)
+        .set(projects[currentProject])
+        .catch(function(error) {
+          console.log(
+            `Error writing  project ${projects[currentProject].id}${error}`,
+          );
+        });
 
       this.setState(prevState => {
         return {
@@ -1275,10 +1284,15 @@ class App extends Component {
       ),
     };
 
-    // if (this.state.changed)
-    //   db.putProject(projects[currentProject], response =>
-    //     console.log(response),
-    //   );
+    if (this.state.changed)
+      db.collection('projects')
+        .doc(projects[currentProject].id)
+        .set(projects[currentProject])
+        .catch(function(error) {
+          console.log(
+            `Error writing project ${projects[currentProject].id}${error}`,
+          );
+        });
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -1361,9 +1375,9 @@ class App extends Component {
                     assignedTo: project.steps[currentStep].assignedTo,
                     stepLabel: `${
                       project.steps[currentStep].name
-                    } ${utils.percentageQuestionsYes(
+                    } (${utils.percentageQuestionsYes(
                       project.steps[currentStep].questions,
-                    )} `,
+                    )})`,
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}

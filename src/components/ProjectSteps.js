@@ -78,9 +78,9 @@ export default function ProjectSteps({
     }
     stepStrings[stepTypeIndex].push({
       stepIndex: index,
-      stepString: `${step.name} ${utils.percentageQuestionsYes(
+      stepString: `${step.name} (${utils.percentageQuestionsYes(
         step.questions,
-      )}`,
+      )})`,
     });
   });
   const maxStepTableRows = Math.max(
@@ -168,10 +168,10 @@ export default function ProjectSteps({
             disableUnderline
             value={`${
               project.stepTypes[stepIndex]
-            } ${utils.percentagePhaseQuestionsYes(
+            } (${utils.percentagePhaseQuestionsYes(
               project,
               project.stepTypes[stepIndex],
-            )}`}
+            )})`}
             id={`step-type.${stepIndex}`}
             style={stepHeadLabelStyle}
           />
