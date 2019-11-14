@@ -152,22 +152,3 @@ test('delete project', done => {
       console.log('Error getting documents: ', error);
     });
 });
-
-// // test update a new project
-// test('update a project', done => {
-//   const testProjectName = 'Test Project Update';
-//   createdProject.name = testProjectName;
-//   function callback(response) {
-//     expect(response.status).toBe(200);
-//     done();
-//   }
-//   db.putProject(createdProject, callback);
-// });
-// // test delete a project
-// test('delete a project', done => {
-//   function callback(response) {
-//     expect(response.status).toBe(200);
-//     done();
-//   }
-//   db.deleteProject(createdProject.id, callback);
-// });
