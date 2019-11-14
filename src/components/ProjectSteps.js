@@ -168,7 +168,7 @@ export default function ProjectSteps({
             disableUnderline
             value={`${
               project.stepTypes[stepIndex]
-            }${utils.percentagePhaseQuestionsYes(
+            } ${utils.percentagePhaseQuestionsYes(
               project,
               project.stepTypes[stepIndex],
             )}`}

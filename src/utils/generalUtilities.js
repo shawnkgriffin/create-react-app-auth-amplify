@@ -166,10 +166,33 @@ function percentagePhaseQuestionsYes(project, phase) {
     return '?/?';
   }
 }
+function percentageProjectQuestionsYes(project) {
+  let numberYes = 0;
+  let numberQuestions = 0;
+  project.steps.forEach(step => {
+    numberYes += step.questions
+      .map(question =>
+        !question.skip && question.answer.toUpperCase() === 'YES'
+          ? 1
+          : 0,
+      )
+      .reduce((acc, val) => acc + val);
+
+    numberQuestions += step.questions.length;
+  });
+
+  if (numberQuestions > 0) {
+    let percentageResult = (numberYes / numberQuestions) * 100;
+    return `(${percentageResult.toFixed(0)}%)`;
+  } else {
+    return '?/?';
+  }
+}
 
 export {
   percentageQuestionsYes,
   percentagePhaseQuestionsYes,
+  percentageProjectQuestionsYes,
   parseCommand,
   projectStyles,
   projectInfoValidationSchema,
