@@ -102,54 +102,6 @@ class App extends Component {
       user.email === 'shawn@shawngriffin.com' ||
       user.email === 'stephen@continuousbusinesschange.com';
 
-    db.collection('projects')
-      .where('creator', '==', user.email)
-      .get()
-      .then(querySnapshot => {
-        let projects = [];
-        querySnapshot.forEach(doc => {
-          let newProject = doc.data();
-          newProject.id = doc.id;
-          console.log(
-            `componentDidMount/onAuthStateChanged/db.collection projects(${newProject.id})`,
-          );
-          if (!newProject.template) projects.push(newProject); // handle templates next
-        });
-
-        if (projects.length === 0) {
-          let newProject = utils.createNewProject(
-            'New Project',
-            user.email,
-          );
-
-          db.collection('projects')
-            .add(newProject)
-            .then(function(docRef) {
-              newProject.id = docRef.id;
-              projects.push(newProject);
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  projects: projects,
-                  user,
-                  authEditTemplate,
-                };
-              });
-            });
-        } else
-          this.setState(prevState => {
-            return {
-              ...prevState,
-              projects: projects,
-              user,
-              authEditTemplate,
-            };
-          });
-      })
-      .catch(function(error) {
-        console.log('Error getting projects: ', error);
-      });
-
     // get templates
     db.collection('projects')
       .where('template', '==', true)
@@ -193,6 +145,55 @@ class App extends Component {
       })
       .catch(function(error) {
         console.log('Error getting templates: ', error);
+      });
+
+    // get the users projects
+    db.collection('projects')
+      .where('creator', '==', user.email)
+      .get()
+      .then(querySnapshot => {
+        let projects = [];
+        querySnapshot.forEach(doc => {
+          let project = doc.data();
+          project.id = doc.id;
+          console.log(
+            `componentDidMount/onAuthStateChanged/db.collection projects(${project.id})`,
+          );
+          if (!project.template) projects.push(project); // handle templates next
+        });
+
+        if (projects.length === 0) {
+          let newProject = utils.createNewProject(
+            'New Project',
+            user.email,
+          );
+
+          db.collection('projects')
+            .add(newProject)
+            .then(docRef => {
+              newProject.id = docRef.id;
+              projects.push(newProject);
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  user,
+                  authEditTemplate,
+                };
+              });
+            });
+        } else
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              user,
+              authEditTemplate,
+            };
+          });
+      })
+      .catch(function(error) {
+        console.log('Error getting projects: ', error);
       });
   }
 
