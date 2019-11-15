@@ -27,6 +27,7 @@ const ProjectInfo = props => {
       start,
       end,
       percentageComplete,
+      authEditTemplate,
     },
     errors,
     touched,
@@ -192,19 +193,21 @@ const ProjectInfo = props => {
           ),
         }}
       />
-      <FormControlLabel
-        style={{ padding: '0px 0px 10px 5px' }}
-        control={
-          <Checkbox
-            checked={template}
-            onChange={change.bind(null, 'started')}
-            value="checkedB"
-            name={`template`}
-            color="primary"
-          />
-        }
-        label="Template?"
-      />
+      {authEditTemplate && (
+        <FormControlLabel
+          style={{ padding: '0px 0px 10px 5px' }}
+          control={
+            <Checkbox
+              checked={template}
+              onChange={change.bind(null, 'started')}
+              value="checkedB"
+              name={`template`}
+              color="primary"
+            />
+          }
+          label="Template?"
+        />
+      )}
 
       {/* <DisplayFormikState {...props} /> */}
     </form>

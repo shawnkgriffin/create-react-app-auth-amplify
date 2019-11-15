@@ -132,6 +132,7 @@ class App extends Component {
                   ...prevState,
                   projects: projects,
                   user,
+                  authEditTemplate,
                 };
               });
             });
@@ -141,6 +142,7 @@ class App extends Component {
               ...prevState,
               projects: projects,
               user,
+              authEditTemplate,
             };
           });
       })
@@ -1294,9 +1296,19 @@ class App extends Component {
     }
   }
   render() {
-    let { projects, currentProject, currentStep } = this.state;
+    let {
+      projects,
+      currentProject,
+      currentStep,
+      templates,
+    } = this.state;
     const project = projects[currentProject];
     const projectList = projects.map(project => {
+      if (project.template)
+        return `Template (${project.templateName})`;
+      else return project.name;
+    });
+    const templateList = templates.map(project => {
       if (project.template)
         return `Template (${project.templateName})`;
       else return project.name;
@@ -1324,6 +1336,7 @@ class App extends Component {
       percentageComplete: utils.percentageProjectQuestionsYes(
         projects[currentProject],
       ),
+      authEditTemplate: this.state.authEditTemplate,
     };
 
     if (this.state.changed)
@@ -1341,6 +1354,7 @@ class App extends Component {
         <ButtonAppBar
           firebase={firebase}
           projectList={projectList}
+          templateList={templateList}
           currentProject={currentProject}
           typeOfMenu="project"
           menuIndex={1}
