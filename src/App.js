@@ -1100,7 +1100,19 @@ class App extends Component {
               };
             });
             break;
-
+          case 'SHARE':
+            const shareWithUsers =  projects[currentProject].sharedWith ? projects[currentProject].sharedWith.join(', ') : ''
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                title: `Add users to your project here, separate email addresses with ','.`,
+                textLabel: 'Shared With',
+                text: shareWithUsers,
+                commandString: commandString,
+              };
+            });
+            break;
           case 'COPY':
             db.copyProject(projects[currentProject], newProject => {
               projects.push(newProject);
@@ -1358,7 +1370,6 @@ class App extends Component {
           templateList={templateList}
           currentProject={currentProject}
           typeOfMenu="project"
-          menuIndex={1}
           handleMenu={this.handleMenu}
         />
         {!this.state.user && <SignIn firebase={firebase} />}

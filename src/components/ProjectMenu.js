@@ -50,7 +50,6 @@ function CustomizedMenus({
   projectList,
   currentProject,
   templateEditor,
-  menuIndex,
   handleMenu,
 }) {
   const user = firebase.auth().currentUser;
@@ -116,7 +115,7 @@ function CustomizedMenus({
         <Divider />
         <StyledMenuItem
           key={'2'}
-          id={`project.${menuIndex}.Add`}
+          id={`project.${currentProject}.Add`}
           onClick={handleSelect}
           disabled={!user}
         >
@@ -127,7 +126,7 @@ function CustomizedMenus({
         </StyledMenuItem>
         <StyledMenuItem
           key={'3'}
-          id={`project.${menuIndex}.Copy`}
+          id={`project.${currentProject}.Copy`}
           onClick={handleSelect}
           disabled={!user}
         >
@@ -140,7 +139,7 @@ function CustomizedMenus({
         <StyledMenuItem
           disabled={!user}
           key={'4'}
-          id={`project.${menuIndex}.Delete`}
+          id={`project.${currentProject}.Delete`}
           onClick={handleSelect}
         >
           <ListItemIcon>
@@ -152,7 +151,7 @@ function CustomizedMenus({
         <StyledMenuItem
           disabled={!user}
           key={'7'}
-          id={`project.${menuIndex}.Share`}
+          id={`project.${currentProject}.Share`}
           onClick={handleSelect}
         >
           <ListItemIcon>
@@ -165,7 +164,7 @@ function CustomizedMenus({
         <StyledMenuItem
           key={'5'}
           disabled={!user}
-          id={`project.${menuIndex}.ProblemOpportunity`}
+          id={`project.${currentProject}.ProblemOpportunity`}
           onClick={handleSelect}
         >
           <ListItemIcon>
@@ -176,7 +175,7 @@ function CustomizedMenus({
         <StyledMenuItem
           key={'6'}
           disabled={!user}
-          id={`project.${menuIndex}.ProjectNotes`}
+          id={`project.${currentProject}.ProjectNotes`}
           onClick={handleSelect}
         >
           <ListItemIcon>
@@ -187,7 +186,7 @@ function CustomizedMenus({
         <StyledMenuItem
           disabled={!user}
           key={'8'}
-          id={`project.${menuIndex}.Help`}
+          id={`project.${currentProject}.Help`}
           onClick={handleSelect}
         >
           <ListItemIcon>

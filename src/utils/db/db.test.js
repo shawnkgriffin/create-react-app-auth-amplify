@@ -17,8 +17,6 @@ firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
 
 // We are setting up data that we can check between tests
-let createdProject = {};
-let projects = [];
 let template = require('./project.json');
 template.template = true;
 template.templateName = 'Test Template';
@@ -27,6 +25,7 @@ let newProject = JSON.parse(JSON.stringify(template));
 newProject.id = '';
 newProject.creator = process.env.REACT_APP_TEST_EMAIL;
 newProject.name = `Test Project${timeStamp}`;
+const sharedWithUser = 'test1@test.com';
 
 // test create a new project should fail
 test('new project create fails without authorizationw', done => {
@@ -93,9 +92,8 @@ test('read projects and make sure new one is there', done => {
       console.log('Error getting documents: ', error);
     });
 });
-//update a project
 
-// read projects and make sure you get back the one you created
+// update a project
 test('update a project', done => {
   const oldProjectName = newProject.name;
   const newProjectName = 'new project name';
@@ -126,7 +124,37 @@ test('update a project', done => {
     });
 });
 
-// read projects and make sure you get back the one you created
+// share a project
+test('share a project', done => {
+  newProject.sharedWith = [sharedWithUser];
+  db.collection('projects')
+    .doc(newProject.id)
+    .set(newProject)
+    .then(() => {
+      let projectFound = false;
+
+      db.collection('projects')
+        .where('sharedWith', 'array-contains', sharedWithUser)
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            if (doc.id === newProject.id) {
+              let checkProject = doc.data();
+              projectFound = checkProject.sharedWith.includes(
+                sharedWithUser.toLowerCase(),
+              );
+            }
+          });
+          expect(projectFound).toBeTruthy();
+          done();
+        });
+    })
+    .catch(function(error) {
+      console.log('Error getting documents: ', error);
+    });
+});
+
+// delete a project
 test('delete project', done => {
   db.collection('projects')
     .doc(newProject.id)

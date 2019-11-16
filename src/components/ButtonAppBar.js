@@ -35,7 +35,6 @@ export default function ButtonAppBar({
   projectList,
   templateList,
   currentProject,
-  menuIndex,
   handleMenu,
 }) {
   const classes = useStyles();
@@ -48,7 +47,6 @@ export default function ButtonAppBar({
             firebase={firebase}
             projectList={projectList}
             currentProject={currentProject}
-            menuIndex={menuIndex}
             handleMenu={handleMenu}
           />
           <Typography variant="h6" className={classes.title}>
