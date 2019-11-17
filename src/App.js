@@ -613,6 +613,23 @@ class App extends Component {
             };
           });
           break;
+        case 'SHARE':
+          project.sharedWith = newText.replace(/\n/g, ',').split(',');
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              alert: false,
+              alertYesButton: true,
+              form: false,
+              help: false,
+              commandString: '',
+              currentStep: currentStep,
+              currentProject: currentProject,
+              changed: true,
+            };
+          });
+          break;
         case 'HELP':
           project.help = newText;
           this.setState(prevState => {
@@ -1101,7 +1118,9 @@ class App extends Component {
             });
             break;
           case 'SHARE':
-            const shareWithUsers =  projects[currentProject].sharedWith ? projects[currentProject].sharedWith.join(', ') : ''
+            const shareWithUsers = projects[currentProject].sharedWith
+              ? projects[currentProject].sharedWith.join(', ')
+              : '';
             this.setState(prevState => {
               return {
                 ...prevState,
