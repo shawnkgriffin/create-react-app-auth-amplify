@@ -270,6 +270,9 @@ class App extends Component {
     if (this.state != null) {
       let { projects, currentProject, currentStep } = this.state;
       let step = projects[currentProject].steps[currentStep];
+      
+      // handle the case where the person has clicked off started but completed was still checked
+      if (!response.started) response.completed = false;
       step = { ...step, ...response };
       projects[currentProject].steps[currentStep] = step;
 
