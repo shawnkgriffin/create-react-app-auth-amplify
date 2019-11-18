@@ -203,8 +203,8 @@ function createNewProject(
   creator = '',
   template = null,
 ) {
-  let newProject = JSON.stringify(
-    template ? template : schema.projectSchema,
+  let newProject = JSON.parse(
+    JSON.stringify(template ? template : schema.projectSchema),
   );
   newProject.name = name;
   newProject.creator = creator;
@@ -231,10 +231,9 @@ function createNewTemplate(
   creator = '',
   project = null,
 ) {
-  let newTemplate = {};
-  if (project !== null)
-    newTemplate = JSON.parse(JSON.stringify(project));
-  else newTemplate = require('./db/projectSchema.js');
+  let newTemplate = JSON.parse(
+    JSON.stringify(project ? project : schema.projectSchema),
+  );
   newTemplate.name = name;
   newTemplate.creator = creator;
   newTemplate.template = true;
