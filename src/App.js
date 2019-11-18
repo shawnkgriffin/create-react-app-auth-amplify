@@ -162,17 +162,41 @@ class App extends Component {
           if (!project.template) projects.push(project); // handle templates next
         });
 
-        if (projects.length === 0) {
-          let newProject = utils.createNewProject(
-            'New Project',
-            user.email,
-          );
+        // get shared projects
+        db.collection('projects')
+          .where('sharedWith', 'array-contains', user.email)
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              let project = doc.data();
+              project.id = doc.id;
+              console.log(
+                `componentDidMount/onAuthStateChanged/db.collection projects(${project.id})`,
+              );
+              if (!project.template) projects.push(project); // handle templates next
+            });
 
-          db.collection('projects')
-            .add(newProject)
-            .then(docRef => {
-              newProject.id = docRef.id;
-              projects.push(newProject);
+            if (projects.length === 0) {
+              let newProject = utils.createNewProject(
+                'New Project',
+                user.email,
+              );
+
+              db.collection('projects')
+                .add(newProject)
+                .then(docRef => {
+                  newProject.id = docRef.id;
+                  projects.push(newProject);
+                  this.setState(prevState => {
+                    return {
+                      ...prevState,
+                      projects: projects,
+                      user,
+                      authEditTemplate,
+                    };
+                  });
+                });
+            } else
               this.setState(prevState => {
                 return {
                   ...prevState,
@@ -181,19 +205,10 @@ class App extends Component {
                   authEditTemplate,
                 };
               });
-            });
-        } else
-          this.setState(prevState => {
-            return {
-              ...prevState,
-              projects: projects,
-              user,
-              authEditTemplate,
-            };
+          })
+          .catch(function(error) {
+            console.log('Error getting projects: ', error);
           });
-      })
-      .catch(function(error) {
-        console.log('Error getting projects: ', error);
       });
   }
 
