@@ -64,14 +64,16 @@ export default function ProjectSteps({
     const percentageComplete = utils.percentageQuestionsYes(
       step.questions,
     );
+    const stepColor = step.completed
+      ? 'green'
+      : step.started
+      ? 'blue'
+      : 'black';
+
     stepStrings[stepTypeIndex].push({
       stepIndex: index,
       stepString: `${step.name} (${percentageComplete})`,
-      stepColor: step.completed
-        ? 'green'
-        : step.started
-        ? 'blue'
-        : 'black',
+      stepColor: stepColor,
     });
   });
   const maxStepTableRows = Math.max(
@@ -122,12 +124,18 @@ export default function ProjectSteps({
                     id={`step-input.${rowIndex}.${stepIndex}`}
                     style={{
                       width: '90%',
+                      fontWeight:
+                        rowIndex < stepStrings[stepIndex].length &&
+                        stepStrings[stepIndex][rowIndex].stepIndex ===
+                          currentStep
+                          ? 'bold'
+                          : 'normal',
                       fontSize:
                         rowIndex < stepStrings[stepIndex].length &&
                         stepStrings[stepIndex][rowIndex].stepIndex ===
                           currentStep
-                          ? 16
-                          : 18,
+                          ? 18
+                          : 16,
                       color:
                         stepStrings[stepIndex][rowIndex].stepColor,
                     }}
@@ -146,13 +154,23 @@ export default function ProjectSteps({
       project,
       project.stepTypes[stepIndex],
     );
+    // all work packages started = false => white
+    // all work packages completed = true => lightgreen
+    // else in progress => lightblue
     const stepHeadLabelStyle = {
       width: '90%',
       fontSize: 16,
       color:
-        percentageComplete === '0%'
+        stepStrings[0].findIndex(
+          step => step.stepColor === 'blue',
+        ) === -1 &&
+        stepStrings[0].findIndex(
+          step => step.stepColor === 'green',
+        ) === -1
           ? 'white'
-          : percentageComplete === '100%'
+          : stepStrings[0].findIndex(
+              step => step.stepColor === 'blue',
+            ) === -1
           ? 'lightgreen'
           : 'lightskyblue',
     };

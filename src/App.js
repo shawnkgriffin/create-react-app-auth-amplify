@@ -360,14 +360,7 @@ class App extends Component {
     if (actionObject === 'QUESTION') {
       switch (actionVerb) {
         case 'ADD':
-          const newQuestion = {
-            name: newText,
-            validAnswers: '',
-            note: '',
-            answer: '',
-            help: '',
-            answerHistory: [],
-          };
+          const newQuestion = utils.createNewQuestion(newText);
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
           project.steps[currentStep].questions.splice(

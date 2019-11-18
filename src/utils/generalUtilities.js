@@ -223,7 +223,7 @@ function createNewProject(
  * @param {string}  name of project
  * @param {string}  creator of project
  * @param {object}  project to create template from
- * @returns {project}
+ * @returns {template}
  **/
 
 function createNewTemplate(
@@ -244,7 +244,7 @@ function createNewTemplate(
  * @function createNewStep
  * @param {string}  name of step
  * @param {string}  stepType
- * @returns {project}
+ * @returns {step}
  **/
 
 function createNewStep(name = 'New Step', stepType = '') {
@@ -256,15 +256,13 @@ function createNewStep(name = 'New Step', stepType = '') {
 /**
  * Description
  * @function createNewQuestion
- * @param {string}  name of step
- * @param {string}  stepType
- * @returns {project}
+ * @param {string}  name of question
+ * @returns {question}
  **/
 
-function createNewQuestion(name = 'New Step', stepType = '') {
+function createNewQuestion(name = 'New Step') {
   let newQuestion = JSON.parse(JSON.stringify(schema.questionSchema));
   newQuestion.name = name;
-  newQuestion.stepType = stepType;
   return newQuestion;
 }
 /**

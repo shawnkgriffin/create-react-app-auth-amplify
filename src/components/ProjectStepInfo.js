@@ -68,11 +68,11 @@ const ProjectStepInfo = props => {
               <h1
                 style={{
                   color: `${
-                    percentageComplete === '0%'
-                      ? 'white'
-                      : percentageComplete === '100%'
-                      ? 'green'
-                      : 'blue'
+                    props.values.completed
+                      ? 'lightgreen'
+                      : props.values.started
+                      ? 'lightblue'
+                      : 'white'
                   }`,
                 }}
               >{`${stepLabel} (${percentageComplete})`}</h1>
