@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import * as Yup from 'yup';
+import * as schema from './db/projectSchema.js';
 /**
  * Description
  * @function formatDate
@@ -202,10 +203,9 @@ function createNewProject(
   creator = '',
   template = null,
 ) {
-  let newProject = {};
-  if (template !== null)
-    newProject = JSON.parse(JSON.stringify(template));
-  else newProject = require('./db/project.json');
+  let newProject = JSON.stringify(
+    template ? template : schema.projectSchema,
+  );
   newProject.name = name;
   newProject.creator = creator;
   newProject.template = false;
@@ -234,13 +234,25 @@ function createNewTemplate(
   let newTemplate = {};
   if (project !== null)
     newTemplate = JSON.parse(JSON.stringify(project));
-  else newTemplate = require('./db/project.json');
+  else newTemplate = require('./db/projectSchema.js');
   newTemplate.name = name;
   newTemplate.creator = creator;
   newTemplate.template = true;
   return newTemplate;
 }
-
+/**
+ * Description
+ * @function toTitleCase
+ * @param {string}  phrase
+ * @returns {string} phrase with each first letter capitalized.
+ **/
+const toTitleCase = phrase => {
+  return phrase
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
 export {
   percentageQuestionsYes,
   percentagePhaseQuestionsYes,
@@ -252,4 +264,5 @@ export {
   formatDate,
   createNewProject,
   createNewTemplate,
+  toTitleCase,
 };

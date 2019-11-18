@@ -413,10 +413,7 @@ class App extends Component {
           changed: true,
         };
       });
-    } else if (
-      actionObject === 'STEP' ||
-      actionObject === 'DELIVERABLE'
-    ) {
+    } else if (actionObject === 'WORK PACKAGE') {
       switch (actionVerb) {
         case 'ADD':
           const newStep = {
@@ -480,7 +477,7 @@ class App extends Component {
         };
       });
     }
-    if (actionObject === 'PHASE') {
+    if (actionObject === 'DELIVERABLE') {
       switch (actionVerb) {
         case 'ADD':
           actionIndex =
@@ -905,7 +902,7 @@ class App extends Component {
             break;
         }
 
-      if (actionObject === 'STEP' || actionObject === 'DELIVERABLE')
+      if (actionObject === 'WORK PACKAGE')
         switch (actionVerb) {
           case 'ADD':
             actionIndex =
@@ -1007,7 +1004,7 @@ class App extends Component {
           default:
         }
 
-      if (actionObject === 'PHASE')
+      if (actionObject === 'DELIVERABLE')
         switch (actionVerb) {
           case 'ADD':
             actionIndex =
@@ -1020,7 +1017,7 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                formType: 'PHASE',
+                formType: 'DELIVERABLE',
                 textLabel: `${actionObject.toLowerCase()}`,
                 title: `Add a ${actionObject.toLowerCase()} ${location}.`,
                 text: '',
@@ -1065,7 +1062,7 @@ class App extends Component {
                   alert: true,
                   alertYesButton: true,
                   title: `Delete the following ${actionObject.toLowerCase()}?
-                        WARNING ALL STEPS AND QUESTIONS FOR THIS PHASE WILL BE DELETED!`,
+                        WARNING ALL STEPS AND QUESTIONS FOR THIS DELIVERABLE WILL BE DELETED!`,
                   text: `${project.stepTypes[actionIndex]}`,
                   commandString: commandString,
                 };

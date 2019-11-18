@@ -107,11 +107,7 @@ export default function ProjectSteps({
                   <ProjectStepQuestionMenu
                     projectList={projectList}
                     currentProject={currentProject}
-                    typeOfMenu={
-                      stepType === 'Deliverables'
-                        ? 'deliverable'
-                        : 'step'
-                    }
+                    typeOfMenu={'work package'}
                     menuIndex={
                       stepStrings[stepIndex][rowIndex].stepIndex
                     }
@@ -167,7 +163,7 @@ export default function ProjectSteps({
           <ProjectStepQuestionMenu
             projectList={projectList}
             currentProject={currentProject}
-            typeOfMenu={'phase'}
+            typeOfMenu={'deliverable'}
             menuIndex={stepIndex}
             handleMenu={handleMenu}
           />

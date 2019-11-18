@@ -6,24 +6,33 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import MenuItem from '@material-ui/core/MenuItem';
+import * as utils from '../utils/generalUtilities.js';
 
-const style = {
-  width: 500,
-};
-
-export default function FormDialog({ open, title, text, textLabel, formType, templateList, answerYes, answerNo, classes }) {
-  const [values, setValues] = React.useState({ newText: text, template: templateList[0] });
+export default function FormDialog({
+  open,
+  title,
+  text,
+  textLabel,
+  formType,
+  templateList,
+  answerYes,
+  answerNo,
+  classes,
+}) {
+  const [values, setValues] = React.useState({
+    newText: text,
+    template: templateList[0],
+  });
 
   const handleYes = () => {
     answerYes(values);
-    setValues({ ...values, newText: "", template: "" });
+    setValues({ ...values, newText: '', template: '' });
   };
 
   const handleNo = () => {
     answerNo();
-    setValues({ ...values, newText: "", template: "" });
+    setValues({ ...values, newText: '', template: '' });
   };
-
 
   const handleChange = prop => event => {
     setValues({ ...values, [prop]: event.target.value });
@@ -33,18 +42,22 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
 
   return (
     <div>
-      <Dialog open={open} onClose={handleNo} aria-labelledby="form-dialog-title">
+      <Dialog
+        open={open}
+        onClose={handleNo}
+        aria-labelledby="form-dialog-title"
+      >
         <DialogTitle id="form-dialog-title">{title}</DialogTitle>
         <DialogContent>
-          {formType === 'TEMPLATE' &&
+          {formType === 'TEMPLATE' && (
             <TextField
               required
               select
               variant="outlined"
               label="Template"
               value={values.template}
-              onChange={handleChange("template")}
-              style={{ width: "195px" }}
+              onChange={handleChange('template')}
+              style={{ width: '195px' }}
             >
               {templateList.map((template, index) => (
                 <MenuItem key={index} value={template}>
@@ -52,11 +65,11 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
                 </MenuItem>
               ))}
             </TextField>
-          }
+          )}
           <TextField
             autoFocus
             variant="outlined"
-            label={textLabel}
+            label={utils.toTitleCase(textLabel)}
             margin="dense"
             id="name"
             type="text"
@@ -64,17 +77,27 @@ export default function FormDialog({ open, title, text, textLabel, formType, tem
             defaultValue={text}
             fullWidth
             onChange={handleChange('newText')}
-            style={style}
+            style={{
+              width: '500px',
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleYes} color="primary" variant="contained" autoFocus>
+          <Button
+            onClick={handleYes}
+            color="primary"
+            variant="contained"
+            autoFocus
+          >
             Save
           </Button>
-          <Button variant="contained" onClick={handleNo} color="secondary">
+          <Button
+            variant="contained"
+            onClick={handleNo}
+            color="secondary"
+          >
             Cancel
           </Button>
-
         </DialogActions>
       </Dialog>
     </div>

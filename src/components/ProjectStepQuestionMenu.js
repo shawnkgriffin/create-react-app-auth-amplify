@@ -49,11 +49,11 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   let directions = [];
   let hasNotes = false;
   switch (typeOfMenu.toUpperCase()) {
-    case 'PHASE':
+    case 'DELIVERABLE':
       directions = ['to the left of', 'to the right of'];
       break;
     case 'STEP':
-    case 'DELIVERABLE':
+    case 'WORK PACKAGE':
       hasNotes = true;
       directions = ['above', 'below'];
       break;
@@ -170,7 +170,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
-          <ListItemText primary={`Delete this ${typeOfMenu}`} />
+          <ListItemText primary={`Delete this ${typeOfMenu}.`} />
         </StyledMenuItem>
         <StyledMenuItem
           key={'7'}
