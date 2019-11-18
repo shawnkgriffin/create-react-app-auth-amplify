@@ -30,7 +30,7 @@ const projectSchema = {
       name: 'Project Background',
       note: 'Note.',
       stepType: 'Define the Project',
-      help: 'How was this project initiated? Basic PM Slides\n',
+      help: 'How was this project initiated? Basic PM Slides',
       started: false,
       startedDate: '',
       completed: false,
