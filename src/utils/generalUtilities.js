@@ -241,6 +241,34 @@ function createNewTemplate(
 }
 /**
  * Description
+ * @function createNewStep
+ * @param {string}  name of step
+ * @param {string}  stepType
+ * @returns {project}
+ **/
+
+function createNewStep(name = 'New Step', stepType = '') {
+  let newStep = JSON.parse(JSON.stringify(schema.stepSchema));
+  newStep.name = name;
+  newStep.stepType = stepType;
+  return newStep;
+}
+/**
+ * Description
+ * @function createNewQuestion
+ * @param {string}  name of step
+ * @param {string}  stepType
+ * @returns {project}
+ **/
+
+function createNewQuestion(name = 'New Step', stepType = '') {
+  let newQuestion = JSON.parse(JSON.stringify(schema.questionSchema));
+  newQuestion.name = name;
+  newQuestion.stepType = stepType;
+  return newQuestion;
+}
+/**
+ * Description
  * @function toTitleCase
  * @param {string}  phrase
  * @returns {string} phrase with each first letter capitalized.
@@ -263,5 +291,7 @@ export {
   formatDate,
   createNewProject,
   createNewTemplate,
+  createNewStep,
+  createNewQuestion,
   toTitleCase,
 };

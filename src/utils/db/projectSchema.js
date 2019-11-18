@@ -51,4 +51,35 @@ const projectSchema = {
   ],
 };
 
-export { projectSchema };
+const stepSchema = {
+  name: 'Project Background',
+  note: 'Note.',
+  stepType: 'Define the Project',
+  help: 'How was this project initiated? Basic PM Slides',
+  started: false,
+  startedDate: '',
+  completed: false,
+  completedDate: '',
+  assignedTo: '',
+  questions: [
+    {
+      name:
+        'Do you have what you need before you can start this step?',
+      validAnswers: ' ',
+      answer: ' ',
+      note: 'Note',
+      help: ' ',
+      answerHistory: [],
+    },
+  ],
+};
+
+const questionSchema = {
+  name: 'Do you have what you need before you can start this step?',
+  validAnswers: ' ',
+  answer: ' ',
+  note: 'Note',
+  help: ' ',
+  answerHistory: [],
+};
+export { projectSchema, stepSchema, questionSchema };

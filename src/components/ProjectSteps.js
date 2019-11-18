@@ -67,12 +67,11 @@ export default function ProjectSteps({
     stepStrings[stepTypeIndex].push({
       stepIndex: index,
       stepString: `${step.name} (${percentageComplete})`,
-      stepColor:
-        percentageComplete === '0%'
-          ? 'black'
-          : percentageComplete === '100%'
-          ? 'green'
-          : 'blue',
+      stepColor: step.completed
+        ? 'green'
+        : step.started
+        ? 'blue'
+        : 'black',
     });
   });
   const maxStepTableRows = Math.max(
@@ -154,8 +153,8 @@ export default function ProjectSteps({
         percentageComplete === '0%'
           ? 'white'
           : percentageComplete === '100%'
-          ? 'green'
-          : 'blue',
+          ? 'lightgreen'
+          : 'lightskyblue',
     };
     tableHeaders.push(
       <StyledTableCell variant="head" key={`phase${stepIndex}`}>

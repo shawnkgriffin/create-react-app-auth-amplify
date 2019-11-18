@@ -418,25 +418,11 @@ class App extends Component {
     } else if (actionObject === 'WORK PACKAGE') {
       switch (actionVerb) {
         case 'ADD':
-          const newStep = {
-            name: newText,
-            stepType: project.steps[actionIndex].stepType,
-            stepNumber: 20,
-            skip: false,
-            help: '',
-            note: '',
-            questions: [
-              {
-                number: '',
-                name: 'First question.',
-                validAnswers: '',
-                answer: '',
-                help: '',
-                skip: false,
-                answerHistory: [],
-              },
-            ],
-          };
+          const newStep = utils.createNewStep(
+            newText,
+            project.steps[actionIndex].stepType,
+          );
+
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
           project.steps.splice(actionIndex, 0, newStep);
