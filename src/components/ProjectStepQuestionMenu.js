@@ -1,32 +1,32 @@
-import React, { Fragment } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import Tooltip from "@material-ui/core/Tooltip";
-import MenuItem from "@material-ui/core/MenuItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import AddIcon from "@material-ui/icons/Add";
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import HelpIcon from "@material-ui/icons/Help";
+import React, { Fragment } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import Tooltip from '@material-ui/core/Tooltip';
+import MenuItem from '@material-ui/core/MenuItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import AddIcon from '@material-ui/icons/Add';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import HelpIcon from '@material-ui/icons/Help';
 
 const StyledMenu = withStyles({
   paper: {
-    border: "1px solid #d3d4d5"
-  }
+    border: '1px solid #d3d4d5',
+  },
 })(props => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center"
+      vertical: 'bottom',
+      horizontal: 'center',
     }}
     transformOrigin={{
-      vertical: "top",
-      horizontal: "center"
+      vertical: 'top',
+      horizontal: 'center',
     }}
     {...props}
   />
@@ -34,18 +34,18 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles(theme => ({
   root: {
-    "&:focus": {
+    '&:focus': {
       backgroundColor: theme.palette.primary.main,
-      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white
-      }
-    }
-  }
+      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+        color: theme.palette.common.white,
+      },
+    },
+  },
 }))(MenuItem);
 
 function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const style = { marginTop: 0, color: "inherit" }
+  const style = { marginTop: 0, color: 'inherit' };
   let directions = [];
   let hasNotes = false;
   switch (typeOfMenu.toUpperCase()) {
@@ -69,7 +69,9 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
 
   const handleSelect = (event, value) => {
     event.preventDefault();
-    console.log(`CustomizedMenus.handleSelect(${event.currentTarget.id})`);
+    console.log(
+      `CustomizedMenus.handleSelect(${event.currentTarget.id})`,
+    );
     handleMenu(event.currentTarget.id);
     handleClose();
   };
@@ -79,7 +81,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
 
   return (
     <Fragment>
-      <Tooltip title="Add/Edit/Delete/Help">
+      <Tooltip title="Add/Edit/Delete/Guidance">
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
@@ -100,64 +102,81 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         onClose={handleClose}
       >
         <StyledMenuItem
-          key={"1"}
+          key={'1'}
           id={`${typeOfMenu}.${menuIndex}.Add.Above`}
           onClick={handleSelect}
         >
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText primary={`Add a ${typeOfMenu} ${directions[0]} this one.`} />
+          <ListItemText
+            primary={`Add a ${typeOfMenu} ${directions[0]} this one.`}
+          />
         </StyledMenuItem>
 
         <StyledMenuItem
-          key={"2"}
+          key={'2'}
           id={`${typeOfMenu}.${menuIndex}.Add.Below`}
           onClick={handleSelect}
         >
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText primary={`Add a ${typeOfMenu} ${directions[1]} this one.`} />
+          <ListItemText
+            primary={`Add a ${typeOfMenu} ${directions[1]} this one.`}
+          />
         </StyledMenuItem>
         <StyledMenuItem
-          key={"3"}
+          key={'3'}
           id={`${typeOfMenu}.${menuIndex}.Edit`}
-          onClick={handleSelect}>
+          onClick={handleSelect}
+        >
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>
           <ListItemText primary={`Edit this ${typeOfMenu}.`} />
         </StyledMenuItem>
         <StyledMenuItem
-          key={"4"}
-          disabled={typeOfMenu.toUpperCase() === "PHASE"}
+          key={'4'}
+          disabled={typeOfMenu.toUpperCase() === 'PHASE'}
           id={`${typeOfMenu}.${menuIndex}.EditHelp`}
-          onClick={handleSelect}>
+          onClick={handleSelect}
+        >
           <ListItemIcon>
             <EditIcon />
           </ListItemIcon>
-          <ListItemText primary={`Edit guidance for this ${typeOfMenu}.`} />
+          <ListItemText
+            primary={`Edit guidance for this ${typeOfMenu}.`}
+          />
         </StyledMenuItem>
-        {hasNotes &&
+        {hasNotes && (
           <StyledMenuItem
-          key={"5"}
-          disabled={typeOfMenu.toUpperCase() === "PHASE"}
-          id={`${typeOfMenu}.${menuIndex}.Notes`}
-          onClick={handleSelect}>
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
-        </StyledMenuItem>
-        }
-        <StyledMenuItem key={"6"} id={`${typeOfMenu}.${menuIndex}.Delete`} onClick={handleSelect}>
+            key={'5'}
+            disabled={typeOfMenu.toUpperCase() === 'PHASE'}
+            id={`${typeOfMenu}.${menuIndex}.Notes`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <EditIcon />
+            </ListItemIcon>
+            <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
+          </StyledMenuItem>
+        )}
+        <StyledMenuItem
+          key={'6'}
+          id={`${typeOfMenu}.${menuIndex}.Delete`}
+          onClick={handleSelect}
+        >
           <ListItemIcon>
             <DeleteIcon />
           </ListItemIcon>
           <ListItemText primary={`Delete this ${typeOfMenu}`} />
         </StyledMenuItem>
-        <StyledMenuItem key={"7"} id={`${typeOfMenu}.${menuIndex}.Help`} onClick={handleSelect}>
+        <StyledMenuItem
+          key={'7'}
+          id={`${typeOfMenu}.${menuIndex}.Help`}
+          onClick={handleSelect}
+        >
           <ListItemIcon>
             <HelpIcon />
           </ListItemIcon>

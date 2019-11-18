@@ -90,7 +90,7 @@ function CustomizedMenus({
 
   return (
     <Fragment>
-      <Tooltip title="Add/Edit/Delete/Help">
+      <Tooltip title="Create/Copy/Delete/Share/Opportunity/Notes/Guidance">
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
@@ -122,7 +122,7 @@ function CustomizedMenus({
           <ListItemIcon>
             <AddIcon />
           </ListItemIcon>
-          <ListItemText primary={`Add a new project.`} />
+          <ListItemText primary={`Create a new project.`} />
         </StyledMenuItem>
         <StyledMenuItem
           key={'3'}

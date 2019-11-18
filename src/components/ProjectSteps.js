@@ -10,21 +10,6 @@ import ProjectStepQuestionMenu from './ProjectStepQuestionMenu';
 import Input from '@material-ui/core/Input';
 import * as utils from '../utils/generalUtilities.js';
 
-const stepLabelStyle = {
-  width: '90%',
-  fontSize: 16,
-  color: 'gray',
-};
-const stepHeadLabelStyle = {
-  width: '90%',
-  fontSize: 16,
-  color: 'white',
-};
-const stepSelectedStyle = {
-  width: '90%',
-  fontSize: 16,
-  color: 'black',
-};
 const StyledTableCell = withStyles(theme => ({
   head: {
     whiteSpace: 'noWrap',
@@ -76,11 +61,18 @@ export default function ProjectSteps({
     ) {
       stepTypeIndex = 0;
     }
+    const percentageComplete = utils.percentageQuestionsYes(
+      step.questions,
+    );
     stepStrings[stepTypeIndex].push({
       stepIndex: index,
-      stepString: `${step.name} (${utils.percentageQuestionsYes(
-        step.questions,
-      )})`,
+      stepString: `${step.name} (${percentageComplete})`,
+      stepColor:
+        percentageComplete === '0%'
+          ? 'black'
+          : percentageComplete === '100%'
+          ? 'green'
+          : 'blue',
     });
   });
   const maxStepTableRows = Math.max(
@@ -133,13 +125,17 @@ export default function ProjectSteps({
                       stepStrings[stepIndex][rowIndex].stepString
                     }
                     id={`step-input.${rowIndex}.${stepIndex}`}
-                    style={
-                      rowIndex < stepStrings[stepIndex].length &&
-                      stepStrings[stepIndex][rowIndex].stepIndex ===
-                        currentStep
-                        ? stepSelectedStyle
-                        : stepLabelStyle
-                    }
+                    style={{
+                      width: '90%',
+                      fontSize:
+                        rowIndex < stepStrings[stepIndex].length &&
+                        stepStrings[stepIndex][rowIndex].stepIndex ===
+                          currentStep
+                          ? 16
+                          : 18,
+                      color:
+                        stepStrings[stepIndex][rowIndex].stepColor,
+                    }}
                   />
                 </Fragment>
               )}
@@ -151,6 +147,20 @@ export default function ProjectSteps({
   }
   let tableHeaders = [];
   project.stepTypes.forEach((stepType, stepIndex) => {
+    const percentageComplete = utils.percentagePhaseQuestionsYes(
+      project,
+      project.stepTypes[stepIndex],
+    );
+    const stepHeadLabelStyle = {
+      width: '90%',
+      fontSize: 16,
+      color:
+        percentageComplete === '0%'
+          ? 'white'
+          : percentageComplete === '100%'
+          ? 'green'
+          : 'blue',
+    };
     tableHeaders.push(
       <StyledTableCell variant="head" key={`phase${stepIndex}`}>
         <Fragment>
@@ -160,18 +170,12 @@ export default function ProjectSteps({
             typeOfMenu={'phase'}
             menuIndex={stepIndex}
             handleMenu={handleMenu}
-            style={stepHeadLabelStyle}
           />
 
           <Input
             onClick={handleStepChange}
             disableUnderline
-            value={`${
-              project.stepTypes[stepIndex]
-            } (${utils.percentagePhaseQuestionsYes(
-              project,
-              project.stepTypes[stepIndex],
-            )})`}
+            value={`${project.stepTypes[stepIndex]} (${percentageComplete})`}
             id={`step-type.${stepIndex}`}
             style={stepHeadLabelStyle}
           />

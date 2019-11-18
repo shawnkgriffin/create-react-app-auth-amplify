@@ -1475,11 +1475,10 @@ class App extends Component {
                     completedDate:
                       project.steps[currentStep].completedDate,
                     assignedTo: project.steps[currentStep].assignedTo,
-                    stepLabel: `${
-                      project.steps[currentStep].name
-                    } (${utils.percentageQuestionsYes(
+                    stepLabel: project.steps[currentStep].name,
+                    percentageComplete: utils.percentageQuestionsYes(
                       project.steps[currentStep].questions,
-                    )})`,
+                    ),
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}
