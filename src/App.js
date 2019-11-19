@@ -68,7 +68,6 @@ class App extends Component {
       help: false,
       projectInfoEdit: false,
       changed: false,
-      currentStepNote: '',
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleStepNoteSubmit = this.handleStepNoteSubmit.bind(this);
@@ -269,31 +268,43 @@ class App extends Component {
   handleStepNoteSubmit(response) {
     if (this.state != null) {
       let { projects, currentProject, currentStep } = this.state;
-      let step = projects[currentProject].steps[currentStep];
-      
+      let project = projects[currentProject];
+      let step = project.steps[currentStep];
+
       // handle the case where the person has clicked off started but completed was still checked
       if (!response.started) response.completed = false;
       step = { ...step, ...response };
       projects[currentProject].steps[currentStep] = step;
-
+      console.log(
+        `handleStepNoteSubmit(${JSON.stringify(
+          response,
+          null,
+          2,
+        )},currentProject=${currentProject}, projects[currentProject].id${
+          projects[currentProject].id
+        } project${JSON.stringify(
+          projects[currentProject],
+          null,
+          2,
+        )}`,
+      );
       db.collection('projects')
         .doc(projects[currentProject].id)
         .set(projects[currentProject])
+        .then(() =>
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              projects: projects,
+              changed: false,
+            };
+          }),
+        )
         .catch(function(error) {
           console.log(
             `Error writing  project ${projects[currentProject].id}${error}`,
           );
         });
-
-      this.setState(prevState => {
-        return {
-          ...prevState,
-          projects: projects,
-          changed: false,
-          currentStepNote: '',
-          isStepNoteSubmitValid: false,
-        };
-      });
     }
   }
 
