@@ -219,6 +219,20 @@ function createNewProject(
 }
 /**
  * Description
+ * @function copyProject
+ * @param {string}  name of project
+ * @param {string}  creator of project
+ * @returns {project}
+ **/
+
+function copyProject(creator = '', oldProject = null) {
+  let newProject = JSON.parse(JSON.stringify(oldProject));
+  newProject.name = oldProject.name.concat(' (Copy)');
+  newProject.creator = creator;
+  return newProject;
+}
+/**
+ * Description
  * @function createNewTemplate
  * @param {string}  name of project
  * @param {string}  creator of project
@@ -288,6 +302,7 @@ export {
   stepNoteValidationSchema,
   formatDate,
   createNewProject,
+  copyProject,
   createNewTemplate,
   createNewStep,
   createNewQuestion,

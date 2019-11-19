@@ -1140,26 +1140,30 @@ class App extends Component {
             });
             break;
           case 'COPY':
-            db.copyProject(projects[currentProject], newProject => {
-              projects.push(newProject);
-              currentStep = 0;
-              currentProject = projects.length - 1;
-              this.setState(prevState => {
-                return {
-                  ...prevState,
-                  projects: projects,
-                  alert: false,
-                  alertYesButton: true,
-                  form: false,
-                  help: false,
-                  commandString: '',
-                  currentStep: currentStep,
-                  currentProject: currentProject,
-                  changed: true,
-                };
+            let newProject = utils.copyProject(
+              this.state.user.email,
+              projects[currentProject],
+            );
+            db.collection('projects')
+              .add(newProject)
+              .then(docRef => {
+                newProject.id = docRef.id;
+                projects.push(newProject);
+                this.setState(prevState => {
+                  return {
+                    ...prevState,
+                    projects: projects,
+                    currentProject: projects.length - 1,
+                    currentStep: 0,
+                    alert: false,
+                    alertYesButton: true,
+                    form: false,
+                    formType: '',
+                    help: false,
+                    commandString: '',
+                  };
+                });
               });
-              console.log(`Project copy ${project.id}`);
-            });
             break;
 
           case 'EDIT':
