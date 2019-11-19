@@ -161,14 +161,14 @@ export default function ProjectSteps({
       width: '90%',
       fontSize: 16,
       color:
-        stepStrings[0].findIndex(
+        stepStrings[stepIndex].findIndex(
           step => step.stepColor === 'blue',
         ) === -1 &&
-        stepStrings[0].findIndex(
+        stepStrings[stepIndex].findIndex(
           step => step.stepColor === 'green',
         ) === -1
           ? 'white'
-          : stepStrings[0].findIndex(
+          : stepStrings[stepIndex].findIndex(
               step => step.stepColor === 'blue',
             ) === -1
           ? 'lightgreen'
