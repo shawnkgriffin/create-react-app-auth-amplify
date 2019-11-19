@@ -118,6 +118,7 @@ export default function ProjectSteps({
                   <Input
                     onClick={handleClick}
                     disableUnderline
+                    multiline
                     value={
                       stepStrings[stepIndex][rowIndex].stepString
                     }
