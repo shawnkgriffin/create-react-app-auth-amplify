@@ -60,7 +60,11 @@ export default function ButtonAppBar({
             <Tooltip title="Total Number Of Projects">
               <IconButton aria-label="show projects" color="inherit">
                 <Badge
-                  badgeContent={`${projectList.length}P`}
+                  badgeContent={`${
+                    authEditTemplate
+                      ? projectList.length - templateList.length
+                      : projectList.length
+                  }P`}
                   color="secondary"
                 >
                   <AssignmentIcon />
