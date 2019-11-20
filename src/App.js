@@ -144,6 +144,13 @@ class App extends Component {
                   newProject.id = docRef.id;
                   projects.push(newProject);
                   this.setState(prevState => {
+                    projects.sort((p1, p2) =>
+                      p1.name < p2.name
+                        ? -1
+                        : p1.name === p2.name
+                        ? 0
+                        : 1,
+                    );
                     return {
                       ...prevState,
                       projects: projects,
@@ -154,6 +161,17 @@ class App extends Component {
                 });
             } else
               this.setState(prevState => {
+                projects.sort((p1, p2) =>
+                  p1.name < p2.name
+                    ? -1
+                    : p1.name === p2.name
+                    ? 0
+                    : 1,
+                );
+                if (this.state.templates.length && authEditTemplate)
+                  this.state.templates.forEach(template =>
+                    projects.push(template),
+                  );
                 return {
                   ...prevState,
                   projects: projects,
@@ -194,6 +212,13 @@ class App extends Component {
               newTemplate.id = docRef.id;
               templates.push(newTemplate);
               this.setState(prevState => {
+                templates.sort((p1, p2) =>
+                  p1.name < p2.name
+                    ? -1
+                    : p1.name === p2.name
+                    ? 0
+                    : 1,
+                );
                 return {
                   ...prevState,
                   templates: templates,
@@ -202,6 +227,9 @@ class App extends Component {
             });
         } else
           this.setState(prevState => {
+            templates.sort((p1, p2) =>
+              p1.name < p2.name ? -1 : p1.name === p2.name ? 0 : 1,
+            );
             return {
               ...prevState,
               templates: templates,
@@ -358,6 +386,12 @@ class App extends Component {
       `handleYes(e=${newText},commandString=${this.state.commandString}`,
     );
     let {
+      actionObject,
+      actionIndex,
+      actionVerb,
+      actionLocation,
+    } = utils.parseCommand(this.state.commandString);
+    let {
       projects,
       currentStep,
       currentProject,
@@ -365,12 +399,7 @@ class App extends Component {
       templates,
     } = this.state;
     let project = projects[currentProject];
-    let {
-      actionObject,
-      actionIndex,
-      actionVerb,
-      actionLocation,
-    } = utils.parseCommand(commandString);
+
     if (actionObject === 'QUESTION') {
       switch (actionVerb) {
         case 'ADD':
@@ -584,8 +613,6 @@ class App extends Component {
             });
           break;
 
-        case 'EDIT':
-          break;
         case 'PROBLEMOPPORTUNITY':
           project.problemOpportunity = newText;
           this.setState(prevState => {
@@ -796,6 +823,7 @@ class App extends Component {
       } = utils.parseCommand(commandString);
       let { projects, currentStep, currentProject } = this.state;
       let project = projects[currentProject];
+
       if (actionObject === 'QUESTION')
         switch (actionVerb) {
           case 'ADD':
@@ -1347,13 +1375,10 @@ class App extends Component {
     } = this.state;
     const project = projects[currentProject];
     const projectList = projects.map(project => {
-      if (project.template)
-        return `Template (${project.templateName})`;
-      else return project.name;
+      return project.name;
     });
     const templateList = templates.map(project => {
-      if (project.template)
-        return `Template (${project.templateName})`;
+      if (project.template) return `${project.templateName}`;
       else return project.name;
     });
     let numberSharedProjects = 0;

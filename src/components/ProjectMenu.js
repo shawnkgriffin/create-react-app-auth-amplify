@@ -77,34 +77,47 @@ function CustomizedMenus({
 
   const projectMenuList = user
     ? projectList.map((projectName, index) => {
-        return (
-          <StyledMenuItem
-            key={`project.${index}.Select`}
-            id={`project.${index}.Select`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary={`${index + 1}) ${projectName}`} />
-          </StyledMenuItem>
-        );
-      })
-    : [];
-  const templateMenuList = user
-    ? templateList.map((templateName, index) => {
-        return (
-          <StyledMenuItem
-            key={`template.${index}.Select`}
-            id={`template.${index}.Select`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary={`${index + 1}) ${templateName}`} />
-          </StyledMenuItem>
-        );
+        if (index === projectList.length - templateList.length)
+          return (
+            <div>
+              <Divider />
+              <Typography
+                color="textSecondary"
+                display="block"
+                variant="subtitle1"
+                style={{ paddingLeft: '10px', paddingTop: '10px' }}
+              >
+                Templates
+              </Typography>
+              <StyledMenuItem
+                key={`project.${index}.Select`}
+                id={`project.${index}.Select`}
+                onClick={handleSelect}
+              >
+                <ListItemIcon>
+                  <AssignmentIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary={`${index + 1}) ${projectName}`}
+                />
+              </StyledMenuItem>
+            </div>
+          );
+        else
+          return (
+            <StyledMenuItem
+              key={`project.${index}.Select`}
+              id={`project.${index}.Select`}
+              onClick={handleSelect}
+            >
+              <ListItemIcon>
+                <AssignmentIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={`${index + 1}) ${projectName}`}
+              />
+            </StyledMenuItem>
+          );
       })
     : [];
 
@@ -131,30 +144,18 @@ function CustomizedMenus({
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Fragment>
-          <Divider />
+        <div>
           <Typography
             color="textSecondary"
             display="block"
-            variant="caption"
+            variant="subtitle1"
+            style={{ paddingLeft: '10px' }}
           >
             My Projects
           </Typography>
-        </Fragment>
+        </div>
         {projectMenuList}
-        {user && authEditTemplate && (
-          <Fragment>
-            <Divider />
-            <Typography
-              color="textSecondary"
-              display="block"
-              variant="caption"
-            >
-              Templates
-            </Typography>
-          </Fragment>
         )}
-        {user && authEditTemplate && templateMenuList}
         <Divider />
         <StyledMenuItem
           key={'2'}
@@ -178,7 +179,6 @@ function CustomizedMenus({
           </ListItemIcon>
           <ListItemText primary={`Copy this project.`} />
         </StyledMenuItem>
-
         <StyledMenuItem
           disabled={!user}
           key={'4'}
@@ -190,7 +190,6 @@ function CustomizedMenus({
           </ListItemIcon>
           <ListItemText primary={`Delete this project`} />
         </StyledMenuItem>
-
         <StyledMenuItem
           disabled={!user}
           key={'7'}
@@ -203,7 +202,6 @@ function CustomizedMenus({
           <ListItemText primary={`Share this project`} />
         </StyledMenuItem>
         <Divider />
-
         <StyledMenuItem
           key={'5'}
           disabled={!user}
