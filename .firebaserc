@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "project-assistant-beta"
+    "default": "project-assistant-beta",
+    "assistant-production": "project-534d9"
   }
 }

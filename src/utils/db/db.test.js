@@ -3,6 +3,10 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import * as schema from './projectSchema.js';
+import * as importData from './backup-production-191120';
+
+console.log(`Importing ${importData.projects.length}`);
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -17,7 +21,7 @@ firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
 
 // We are setting up data that we can check between tests
-let template = require('./project.json');
+let template = JSON.parse(JSON.stringify(schema.projectSchema));
 template.template = true;
 template.templateName = 'Test Template';
 const timeStamp = new Date().toLocaleString();
@@ -57,6 +61,25 @@ test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
       expect(data.user.email).toBe(testEmail);
       done();
     });
+});
+
+// test import one project should succeed
+test('import project', done => {
+  importData.projects.forEach((project, projectIndex) => {
+    db.collection('projects')
+      .doc(project.id)
+      .set(project)
+      .then(() => {
+        if (projectIndex == importData.projects.length - 1) {
+          expect(1).toEqual(1);
+          done();
+        }
+      })
+      .catch(function(error) {
+        console.error('Error importing document: ', error);
+        done();
+      });
+  });
 });
 
 // test create a new project should succeed
