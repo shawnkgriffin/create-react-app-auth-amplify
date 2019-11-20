@@ -13,6 +13,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import MenuIcon from '@material-ui/icons/Menu';
 import HelpIcon from '@material-ui/icons/Help';
 import { Divider } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const StyledMenu = withStyles({
   paper: {
@@ -48,8 +49,10 @@ const StyledMenuItem = withStyles(theme => ({
 function CustomizedMenus({
   firebase,
   projectList,
+  templateList,
   currentProject,
   templateEditor,
+  authEditTemplate,
   handleMenu,
 }) {
   const user = firebase.auth().currentUser;
@@ -71,6 +74,7 @@ function CustomizedMenus({
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const projectMenuList = user
     ? projectList.map((projectName, index) => {
         return (
@@ -83,6 +87,22 @@ function CustomizedMenus({
               <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary={`${index + 1}) ${projectName}`} />
+          </StyledMenuItem>
+        );
+      })
+    : [];
+  const templateMenuList = user
+    ? templateList.map((templateName, index) => {
+        return (
+          <StyledMenuItem
+            key={`template.${index}.Select`}
+            id={`template.${index}.Select`}
+            onClick={handleSelect}
+          >
+            <ListItemIcon>
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary={`${index + 1}) ${templateName}`} />
           </StyledMenuItem>
         );
       })
@@ -111,7 +131,30 @@ function CustomizedMenus({
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
+        <Fragment>
+          <Divider />
+          <Typography
+            color="textSecondary"
+            display="block"
+            variant="caption"
+          >
+            My Projects
+          </Typography>
+        </Fragment>
         {projectMenuList}
+        {user && authEditTemplate && (
+          <Fragment>
+            <Divider />
+            <Typography
+              color="textSecondary"
+              display="block"
+              variant="caption"
+            >
+              Templates
+            </Typography>
+          </Fragment>
+        )}
+        {user && authEditTemplate && templateMenuList}
         <Divider />
         <StyledMenuItem
           key={'2'}

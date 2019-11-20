@@ -36,6 +36,7 @@ export default function ButtonAppBar({
   templateList,
   currentProject,
   handleMenu,
+  authEditTemplate,
   numberSharedProjects,
 }) {
   const classes = useStyles();
@@ -47,8 +48,10 @@ export default function ButtonAppBar({
           <ProjectMenu
             firebase={firebase}
             projectList={projectList}
+            templateList={templateList}
             currentProject={currentProject}
             handleMenu={handleMenu}
+            authEditTemplate={authEditTemplate}
           />
           <Typography variant="h6" className={classes.title}>
             Project Assistant

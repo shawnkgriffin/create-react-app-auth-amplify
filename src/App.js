@@ -1403,7 +1403,7 @@ class App extends Component {
           projectList={projectList}
           templateList={templateList}
           currentProject={currentProject}
-          typeOfMenu="project"
+          authEditTemplate={this.state.authEditTemplate}
           handleMenu={this.handleMenu}
           numberSharedProjects={numberSharedProjects}
         />
