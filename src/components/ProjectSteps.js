@@ -171,7 +171,10 @@ export default function ProjectSteps({
           ? 'white'
           : stepStrings[stepIndex].findIndex(
               step => step.stepColor === 'blue',
-            ) === -1
+            ) === -1 &&
+            stepStrings[stepIndex].findIndex(
+              step => step.stepColor === 'black',
+            )
           ? 'lightgreen'
           : 'lightskyblue',
     };
