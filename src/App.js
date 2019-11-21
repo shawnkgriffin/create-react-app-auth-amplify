@@ -20,6 +20,7 @@ import ButtonAppBar from './components/ButtonAppBar';
 
 //Project database and utilities
 import * as utils from './utils/generalUtilities.js';
+import * as schema from './utils/db/projectSchema';
 
 // Firebase components
 // import app from 'firebase/app';
@@ -507,24 +508,10 @@ class App extends Component {
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
           project.stepTypes.splice(actionIndex, 0, newText);
-          const newStep = {
-            name: 'New Step',
-            stepType: newText,
-            skip: false,
-            help: '',
-            questions: [
-              {
-                number: '',
-                name: 'First question.',
-                validAnswers: '',
-                answer: '',
-                help: '',
-                skip: false,
-                answerHistory: [],
-              },
-            ],
-          };
+          let newStep = JSON.parse(JSON.stringify(schema.stepSchema));
+          newStep.stepType = newText;
           project.steps.push(newStep);
+          currentStep = project.steps.length;
           break;
         case 'EDIT':
           project.steps.forEach(step => {
@@ -1085,7 +1072,7 @@ class App extends Component {
                   alert: true,
                   alertYesButton: true,
                   title: `Delete the following ${actionObject.toLowerCase()}?
-                        WARNING ALL STEPS AND QUESTIONS FOR THIS DELIVERABLE WILL BE DELETED!`,
+                        WARNING ALL WORK PACKAGES AND QUESTIONS FOR THIS DELIVERABLE WILL BE DELETED!`,
                   text: `${project.stepTypes[actionIndex]}`,
                   commandString: commandString,
                 };
@@ -1501,7 +1488,7 @@ class App extends Component {
                     completedDate:
                       project.steps[currentStep].completedDate,
                     assignedTo: project.steps[currentStep].assignedTo,
-                    stepLabel: project.steps[currentStep].name,
+                    name: project.steps[currentStep].name,
                     percentageComplete: utils.percentageQuestionsYes(
                       project.steps[currentStep].questions,
                     ),

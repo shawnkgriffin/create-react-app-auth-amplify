@@ -33,7 +33,7 @@ const ProjectStepInfo = props => {
       completed,
       completedDate,
       assignedTo,
-      stepLabel,
+      name,
       percentageComplete,
     },
     errors,
@@ -75,7 +75,7 @@ const ProjectStepInfo = props => {
                       : 'white'
                   }`,
                 }}
-              >{`${stepLabel} (${percentageComplete})`}</h1>
+              >{`${name} (${percentageComplete})`}</h1>
             </StyledTableCell>
           </TableRow>
         </TableHead>

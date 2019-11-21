@@ -52,8 +52,8 @@ const projectSchema = {
 };
 
 const stepSchema = {
-  name: 'Project Background',
-  note: 'Note.',
+  name: 'Work Package',
+  note: 'Note',
   stepType: 'Define the Project',
   help: 'How was this project initiated? Basic PM Slides',
   started: false,
