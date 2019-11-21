@@ -22,20 +22,35 @@ export default function FormDialog({
   const [values, setValues] = React.useState({
     newText: text,
     template: templateList[0],
+    disabled: true,
   });
 
   const handleYes = () => {
     answerYes(values);
-    setValues({ ...values, newText: '', template: '' });
+    setValues({
+      ...values,
+      newText: '',
+      template: '',
+      disabled: true,
+    });
   };
 
   const handleNo = () => {
     answerNo();
-    setValues({ ...values, newText: '', template: '' });
+    setValues({
+      ...values,
+      newText: '',
+      template: '',
+      disabled: true,
+    });
   };
 
   const handleChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value });
+    setValues({
+      ...values,
+      [prop]: event.target.value,
+      disabled: false,
+    });
   };
 
   const numberLines = text.split(/\r\n|\r|\n/).length;
@@ -76,6 +91,7 @@ export default function FormDialog({
             multiline={numberLines > 0}
             defaultValue={text}
             fullWidth
+            onClick={handleChange('newText')}
             onChange={handleChange('newText')}
             style={{
               width: '500px',
@@ -88,6 +104,7 @@ export default function FormDialog({
             color="primary"
             variant="contained"
             autoFocus
+            disabled={values.disabled}
           >
             Save
           </Button>
