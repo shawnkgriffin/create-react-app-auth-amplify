@@ -188,6 +188,7 @@ export default function ProjectSteps({
 
           <Input
             onClick={handleStepChange}
+            multiline
             disableUnderline
             value={`${project.stepTypes[stepIndex]} (${percentageComplete})`}
             id={`step-type.${stepIndex}`}
