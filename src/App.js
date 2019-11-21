@@ -144,17 +144,24 @@ class App extends Component {
                 .then(docRef => {
                   newProject.id = docRef.id;
                   projects.push(newProject);
-                  this.setState(prevState => {
-                    projects.sort((p1, p2) =>
-                      p1.name < p2.name
+                  projects.sort((p1, p2) =>
+                    p1.template === p2.template
+                      ? p1.name < p2.name
                         ? -1
                         : p1.name === p2.name
                         ? 0
-                        : 1,
-                    );
+                        : 1
+                      : p1.template
+                      ? 1
+                      : -1,
+                  );
+
+                  this.setState(prevState => {
                     return {
                       ...prevState,
                       projects: projects,
+                      currentProject: 0,
+                      currentStep: 0,
                       user,
                       authEditTemplate,
                     };
@@ -162,20 +169,25 @@ class App extends Component {
                 });
             } else
               this.setState(prevState => {
-                projects.sort((p1, p2) =>
-                  p1.name < p2.name
-                    ? -1
-                    : p1.name === p2.name
-                    ? 0
-                    : 1,
-                );
                 if (this.state.templates.length && authEditTemplate)
                   this.state.templates.forEach(template =>
                     projects.push(template),
                   );
+                projects.sort((p1, p2) =>
+                  p1.template === p2.template
+                    ? p1.name < p2.name
+                      ? -1
+                      : p1.name === p2.name
+                      ? 0
+                      : 1
+                    : p1.template
+                    ? 1
+                    : -1,
+                );
                 return {
                   ...prevState,
                   projects: projects,
+                  currentProject: 0,
                   user,
                   authEditTemplate,
                 };
@@ -340,11 +352,29 @@ class App extends Component {
   handleProjectInfoChange(changedProjectInfo) {
     if (this.state != null) {
       let { projects, currentProject } = this.state;
+
       let project = {
         ...projects[currentProject],
         ...changedProjectInfo,
       };
-
+      const currentProjectId = project.id;
+      projects[currentProject] = project;
+      projects.sort((p1, p2) =>
+        p1.template === p2.template
+          ? p1.name < p2.name
+            ? -1
+            : p1.name === p2.name
+            ? 0
+            : 1
+          : p1.template
+          ? 1
+          : -1,
+      );
+      currentProject = projects.findIndex(
+        project => project.id === currentProjectId,
+      );
+      if (currentProject < 0 || currentProject >= projects.length)
+        currentProject = 0;
       console.log(
         `handleProjectInfoChange(${JSON.stringify(
           changedProjectInfo,
@@ -353,11 +383,11 @@ class App extends Component {
         )})`,
       );
 
-      projects[currentProject] = project;
       this.setState(prevState => {
         return {
           ...prevState,
           projects: projects,
+          currentProject: currentProject,
           changed: true,
         };
       });
@@ -583,11 +613,30 @@ class App extends Component {
             .then(docRef => {
               newProject.id = docRef.id;
               projects.push(newProject);
+              projects.sort((p1, p2) =>
+                p1.template === p2.template
+                  ? p1.name < p2.name
+                    ? -1
+                    : p1.name === p2.name
+                    ? 0
+                    : 1
+                  : p1.template
+                  ? 1
+                  : -1,
+              );
+              currentProject = projects.findIndex(
+                project => project.id === newProject.id,
+              );
+              if (
+                currentProject < 0 ||
+                currentProject >= projects.length
+              )
+                currentProject = 0;
               this.setState(prevState => {
                 return {
                   ...prevState,
                   projects: projects,
-                  currentProject: projects.length - 1,
+                  currentProject: currentProject,
                   currentStep: 0,
                   alert: false,
                   alertYesButton: true,
@@ -1164,11 +1213,30 @@ class App extends Component {
               .then(docRef => {
                 newProject.id = docRef.id;
                 projects.push(newProject);
+                projects.sort((p1, p2) =>
+                  p1.template === p2.template
+                    ? p1.name < p2.name
+                      ? -1
+                      : p1.name === p2.name
+                      ? 0
+                      : 1
+                    : p1.template
+                    ? 1
+                    : -1,
+                );
+                let currentProject = projects.findIndex(
+                  project => project.id === newProject.id,
+                );
+                if (
+                  currentProject < 0 ||
+                  currentProject >= projects.length
+                )
+                  currentProject = 0;
                 this.setState(prevState => {
                   return {
                     ...prevState,
                     projects: projects,
-                    currentProject: projects.length - 1,
+                    currentProject: currentProject,
                     currentStep: 0,
                     alert: false,
                     alertYesButton: true,
