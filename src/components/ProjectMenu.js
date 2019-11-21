@@ -79,7 +79,7 @@ function CustomizedMenus({
     ? projectList.map((projectName, index) => {
         if (index === projectList.length - templateList.length)
           return (
-            <div>
+            <div key={'divider Templates'}>
               <Divider />
               <Typography
                 color="textSecondary"
@@ -144,7 +144,7 @@ function CustomizedMenus({
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <div>
+        <div key={'divider project label'}>
           <Typography
             color="textSecondary"
             display="block"
@@ -156,7 +156,7 @@ function CustomizedMenus({
         </div>
         {projectMenuList}
         )}
-        <Divider />
+        <Divider key={'divider project menu'} />
         <StyledMenuItem
           key={'2'}
           id={`project.${currentProject}.Add`}
@@ -201,7 +201,7 @@ function CustomizedMenus({
           </ListItemIcon>
           <ListItemText primary={`Share this project`} />
         </StyledMenuItem>
-        <Divider />
+        <Divider key={'divider edit project details'} />
         <StyledMenuItem
           key={'5'}
           disabled={!user}
