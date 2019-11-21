@@ -81,15 +81,24 @@ export default function ProjectSteps({
   );
 
   function handleClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
     let cellInfo = e.target.id.split('.');
-    let currentStep =
+    const column = parseInt(cellInfo[2], 10);
+    const row = parseInt(cellInfo[1], 10);
+    if (isNaN(column) || isNaN(row)) {
+      console.log(`ProjectSteps.handleClick(e) invalid`);
+      handleStepChange(0);
+      return;
+    }
+    let newCurrentStep =
       stepStrings[parseInt(cellInfo[2], 10)][
         parseInt(cellInfo[1], 10)
       ].stepIndex;
-    if (currentStep < 0 || currentStep >= project.steps.length)
-      currentStep = 0;
-    console.log(`${e.target.id}`, currentStep);
-    handleStepChange(currentStep);
+    if (newCurrentStep < 0 || newCurrentStep >= project.steps.length)
+      newCurrentStep = 0;
+    console.log(`${e.target.id}`, newCurrentStep);
+    handleStepChange(newCurrentStep);
   }
 
   let tableRows = []; // the columns have different numbers of steps associated with them

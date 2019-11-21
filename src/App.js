@@ -511,7 +511,7 @@ class App extends Component {
           let newStep = JSON.parse(JSON.stringify(schema.stepSchema));
           newStep.stepType = newText;
           project.steps.push(newStep);
-          currentStep = project.steps.length;
+          currentStep = project.steps.length - 1;
           break;
         case 'EDIT':
           project.steps.forEach(step => {
