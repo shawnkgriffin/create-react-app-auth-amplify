@@ -1429,18 +1429,6 @@ class App extends Component {
       templates,
     } = this.state;
     const project = projects[currentProject];
-    const projectList = projects.map(project => {
-      return project.name;
-    });
-    const templateList = templates.map(project => {
-      if (project.template) return `${project.templateName}`;
-      else return project.name;
-    });
-    let numberSharedProjects = 0;
-    if (projects.length && this.user && this.user.email)
-      numberSharedProjects = projects
-        .map(project => (project.creator === this.user.email ? 0 : 1))
-        .reduce((acc, val) => acc + val);
 
     const {
       name,
@@ -1480,12 +1468,11 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <ButtonAppBar
           firebase={firebase}
-          projectList={projectList}
-          templateList={templateList}
+          projects={projects}
+          templates={templates}
           currentProject={currentProject}
           authEditTemplate={this.state.authEditTemplate}
           handleMenu={this.handleMenu}
-          numberSharedProjects={numberSharedProjects}
         />
         {!this.state.user && <SignIn firebase={firebase} />}
         {this.state.user && (
@@ -1508,7 +1495,6 @@ class App extends Component {
                 />
                 <br />
                 <ProjectSteps
-                  projectList={projectList}
                   project={project}
                   currentProject={currentProject}
                   currentStep={currentStep}
@@ -1565,7 +1551,6 @@ class App extends Component {
                   onSubmit={this.handleStepNoteSubmit}
                 />
                 <ProjectQuestions
-                  projectList={projectList}
                   questions={project.steps[currentStep].questions}
                   stepName={project.steps[currentStep].name}
                   currentProject={currentProject}

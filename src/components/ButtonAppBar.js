@@ -32,15 +32,21 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar({
   firebase,
-  projectList,
-  templateList,
+  projects,
+  templates,
   currentProject,
   handleMenu,
   authEditTemplate,
-  numberSharedProjects,
 }) {
   const classes = useStyles();
   const user = firebase.auth().currentUser;
+  const projectList = projects.map(project => {
+    return project.name;
+  });
+  const templateList = templates.map(template => {
+    return `${template.name}`;
+  });
+
   return (
     <div className={classes.root}>
       <AppBar position="static">

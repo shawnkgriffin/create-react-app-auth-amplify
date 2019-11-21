@@ -115,7 +115,6 @@ export default function ProjectSteps({
               {rowIndex < stepStrings[stepIndex].length && (
                 <Fragment>
                   <ProjectStepQuestionMenu
-                    projectList={projectList}
                     currentProject={currentProject}
                     typeOfMenu={'work package'}
                     menuIndex={
