@@ -182,7 +182,7 @@ export default function ProjectSteps({
             ) === -1 &&
             stepStrings[stepIndex].findIndex(
               step => step.stepColor === 'black',
-            )
+            ) === -1
           ? 'lightgreen'
           : 'lightskyblue',
     };
