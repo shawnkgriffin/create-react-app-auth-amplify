@@ -227,31 +227,35 @@ const ProjectInfo = props => {
         row={true}
         value={displayField}
         onChange={handleRadioChange}
-        style={{ paddingLeft: '5px' }}
+        style={{ paddingLeft: '5px', paddingBottom: '0px' }}
       >
         <FormControlLabel
           value="note"
           control={<Radio />}
           label="Note"
           labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="problemOpportunity"
           control={<Radio />}
           label="Problem Opportunity"
           labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="guidance"
           control={<Radio />}
           label="Guidance"
           labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="hide"
           control={<Radio />}
           label="Hide"
           labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
         />
       </RadioGroup>
       {displayField === 'note' && (
