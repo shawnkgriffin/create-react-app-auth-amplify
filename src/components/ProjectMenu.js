@@ -10,6 +10,7 @@ import AddIcon from '@material-ui/icons/Add';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import DeleteIcon from '@material-ui/icons/Delete';
 import NameIcon from '@material-ui/icons/SupervisorAccount';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Divider } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
@@ -174,7 +175,7 @@ function CustomizedMenus({
           disabled={!user}
         >
           <ListItemIcon>
-            <AddIcon />
+            <FileCopyIcon />
           </ListItemIcon>
           <ListItemText primary={`Copy this project.`} />
         </StyledMenuItem>

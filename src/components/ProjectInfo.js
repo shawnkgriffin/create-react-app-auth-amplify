@@ -250,13 +250,15 @@ const ProjectInfo = props => {
           labelPlacement="right"
           style={{ padding: '0px 0px 0px 0px' }}
         />
-        <FormControlLabel
-          value="hide"
-          control={<Radio />}
-          label="Hide"
-          labelPlacement="right"
-          style={{ padding: '0px 0px 0px 0px' }}
-        />
+        {displayField !== 'hide' && (
+          <FormControlLabel
+            value="hide"
+            control={<Radio />}
+            label="Hide"
+            labelPlacement="right"
+            style={{ padding: '0px 0px 0px 0px' }}
+          />
+        )}
       </RadioGroup>
       {displayField === 'note' && (
         <TextField
