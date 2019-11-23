@@ -4,17 +4,20 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import NameIcon from '@material-ui/icons/SupervisorAccount';
 import LockIcon from '@material-ui/icons/Lock';
+import HelpIcon from '@material-ui/icons/Help';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import EventIcon from '@material-ui/icons/Event';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
-// import { DisplayFormikState } from "./helper";
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+// import { DisplayFormikState } from './helper';
 
 const buttonStyle = {
   margin: 10,
 };
+
 const ProjectInfo = props => {
   const {
     values: {
@@ -28,6 +31,9 @@ const ProjectInfo = props => {
       end,
       authEditTemplate,
       percentageComplete,
+      note,
+      problemOpportunity,
+      help,
     },
     errors,
     touched,
@@ -41,6 +47,12 @@ const ProjectInfo = props => {
     e.persist();
     handleChange(e);
     setFieldTouched(name, true, false);
+  };
+
+  const [displayField, setDisplayField] = React.useState('hide');
+
+  const handleRadioChange = event => {
+    setDisplayField(event.target.value);
   };
 
   return (
@@ -208,7 +220,128 @@ const ProjectInfo = props => {
           label="Template?"
         />
       )}
-
+      <br />
+      <RadioGroup
+        aria-label="gender"
+        name="radio-group-form-problem-guidance"
+        row={true}
+        value={displayField}
+        onChange={handleRadioChange}
+        style={{ paddingLeft: '5px' }}
+      >
+        <FormControlLabel
+          value="note"
+          control={<Radio />}
+          label="Note"
+          labelPlacement="right"
+        />
+        <FormControlLabel
+          value="problemOpportunity"
+          control={<Radio />}
+          label="Problem Opportunity"
+          labelPlacement="right"
+        />
+        <FormControlLabel
+          value="guidance"
+          control={<Radio />}
+          label="Guidance"
+          labelPlacement="right"
+        />
+        <FormControlLabel
+          value="hide"
+          control={<Radio />}
+          label="Hide"
+          labelPlacement="right"
+        />
+      </RadioGroup>
+      {displayField === 'note' && (
+        <TextField
+          id="outlined-note"
+          name="note"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 400,
+            width: '95%',
+          }}
+          helperText={touched.note ? errors.note : ''}
+          error={touched.note && Boolean(errors.note)}
+          label="Note"
+          value={note}
+          onChange={change.bind(null, 'note')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AssignmentIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'guidance' && (
+        <TextField
+          id="outlined-help"
+          name="help"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 800,
+            width: '95%',
+          }}
+          helperText={touched.help ? errors.help : ''}
+          error={touched.help && Boolean(errors.help)}
+          label="Guidance"
+          value={help}
+          onChange={change.bind(null, 'help')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <HelpIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'problemOpportunity' && (
+        <TextField
+          id="outlined-problemOpportunity"
+          name="problemOpportunity"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 800,
+            width: '95%',
+          }}
+          helperText={
+            touched.problemOpportunity
+              ? errors.problemOpportunity
+              : ''
+          }
+          error={
+            touched.problemOpportunity &&
+            Boolean(errors.problemOpportunity)
+          }
+          label="Problem Opportunity"
+          value={problemOpportunity}
+          onChange={change.bind(null, 'problemOpportunity')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AssignmentIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
       {/* <DisplayFormikState {...props} /> */}
     </form>
   );

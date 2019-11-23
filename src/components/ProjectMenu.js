@@ -7,11 +7,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import DeleteIcon from '@material-ui/icons/Delete';
+import NameIcon from '@material-ui/icons/SupervisorAccount';
 import MenuIcon from '@material-ui/icons/Menu';
-import HelpIcon from '@material-ui/icons/Help';
 import { Divider } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
@@ -123,7 +122,7 @@ function CustomizedMenus({
 
   return (
     <Fragment>
-      <Tooltip title="Create/Copy/Delete/Share/Opportunity/Notes/Guidance">
+      <Tooltip title="Create/Copy/Share/Delete">
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
@@ -181,6 +180,17 @@ function CustomizedMenus({
         </StyledMenuItem>
         <StyledMenuItem
           disabled={!user}
+          key={'7'}
+          id={`project.${currentProject}.Share`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <NameIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Share this project`} />
+        </StyledMenuItem>
+        <StyledMenuItem
+          disabled={!user}
           key={'4'}
           id={`project.${currentProject}.Delete`}
           onClick={handleSelect}
@@ -189,51 +199,6 @@ function CustomizedMenus({
             <DeleteIcon />
           </ListItemIcon>
           <ListItemText primary={`Delete this project`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          disabled={!user}
-          key={'7'}
-          id={`project.${currentProject}.Share`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <DeleteIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Share this project`} />
-        </StyledMenuItem>
-        <Divider key={'divider edit project details'} />
-        <StyledMenuItem
-          key={'5'}
-          disabled={!user}
-          id={`project.${currentProject}.ProblemOpportunity`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Problem opportunity statement.`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          key={'6'}
-          disabled={!user}
-          id={`project.${currentProject}.ProjectNotes`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Project Notes.`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          disabled={!user}
-          key={'8'}
-          id={`project.${currentProject}.Help`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <HelpIcon />
-          </ListItemIcon>
-          <ListItemText primary="Guidance." />
         </StyledMenuItem>
       </StyledMenu>
     </Fragment>

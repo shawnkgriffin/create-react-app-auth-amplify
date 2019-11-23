@@ -1439,6 +1439,9 @@ class App extends Component {
       template,
       start,
       end,
+      note,
+      problemOpportunity,
+      help,
     } = { ...projects[currentProject] };
     const values = {
       name,
@@ -1453,6 +1456,9 @@ class App extends Component {
         projects[currentProject],
       ),
       authEditTemplate: this.state.authEditTemplate,
+      note,
+      problemOpportunity,
+      help,
     };
 
     if (this.state.changed)
@@ -1492,6 +1498,7 @@ class App extends Component {
                   initialValues={values}
                   validationSchema={utils.projectInfoValidationSchema}
                   onSubmit={this.handleProjectInfoChange}
+                  handleMenu={this.handleMenu}
                 />
                 <br />
                 <ProjectSteps
