@@ -63,24 +63,24 @@ test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
     });
 });
 
-// test import one project should succeed
-test('import project', done => {
-  importData.projects.forEach((project, projectIndex) => {
-    db.collection('projects')
-      .doc(project.id)
-      .set(project)
-      .then(() => {
-        if (projectIndex == importData.projects.length - 1) {
-          expect(1).toEqual(1);
-          done();
-        }
-      })
-      .catch(function(error) {
-        console.error('Error importing document: ', error);
-        done();
-      });
-  });
-});
+// import data from backups ONLY USE IF NECESSARY
+// test('import project', done => {
+//   importData.projects.forEach((project, projectIndex) => {
+//     db.collection('projects')
+//       .doc(project.id)
+//       .set(project)
+//       .then(() => {
+//         if (projectIndex == importData.projects.length - 1) {
+//           expect(1).toEqual(1);
+//           done();
+//         }
+//       })
+//       .catch(function(error) {
+//         console.error('Error importing document: ', error);
+//         done();
+//       });
+//   });
+// });
 
 // test create a new project should succeed
 test('a new project is created', done => {
