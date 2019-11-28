@@ -21,19 +21,21 @@ const buttonStyle = {
 const ProjectInfo = props => {
   const {
     values: {
-      name,
       creator,
-      sponsor,
-      projectManager,
-      template,
-      templateName,
-      start,
       end,
-      authEditTemplate,
-      percentageComplete,
+      goalsAndObjectives,
+      help,
+      name,
       note,
       problemOpportunity,
-      help,
+      projectManager,
+      projectPriorities,
+      sponsor,
+      start,
+      template,
+      templateName,
+      percentageComplete,
+      authEditTemplate,
     },
     errors,
     touched,
@@ -232,14 +234,28 @@ const ProjectInfo = props => {
         <FormControlLabel
           value="note"
           control={<Radio />}
-          label="Note"
+          label="Notes"
           labelPlacement="right"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="problemOpportunity"
           control={<Radio />}
-          label="Problem Opportunity"
+          label="Problem/Opportunity"
+          labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
+        />
+        <FormControlLabel
+          value="goalsAndObjectives"
+          control={<Radio />}
+          label="Goals & Objectives"
+          labelPlacement="right"
+          style={{ padding: '0px 0px 0px 0px' }}
+        />
+        <FormControlLabel
+          value="projectPriorities"
+          control={<Radio />}
+          label="Project Priorities"
           labelPlacement="right"
           style={{ padding: '0px 0px 0px 0px' }}
         />
@@ -339,6 +355,72 @@ const ProjectInfo = props => {
           label="Problem Opportunity"
           value={problemOpportunity}
           onChange={change.bind(null, 'problemOpportunity')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AssignmentIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'goalsAndObjectives' && (
+        <TextField
+          id="outlined-goalsAndObjectives"
+          name="goalsAndObjectives"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 800,
+            width: '95%',
+          }}
+          helperText={
+            touched.goalsAndObjectives
+              ? errors.goalsAndObjectives
+              : ''
+          }
+          error={
+            touched.goalsAndObjectives &&
+            Boolean(errors.goalsAndObjectives)
+          }
+          label="Goals & Objectives"
+          value={goalsAndObjectives}
+          onChange={change.bind(null, 'goalsAndObjectives')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AssignmentIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'projectPriorities' && (
+        <TextField
+          id="outlined-projectPriorities"
+          name="projectPriorities"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 800,
+            width: '95%',
+          }}
+          helperText={
+            touched.projectPriorities ? errors.projectPriorities : ''
+          }
+          error={
+            touched.projectPriorities &&
+            Boolean(errors.projectPriorities)
+          }
+          label="Project Priorities"
+          value={projectPriorities}
+          onChange={change.bind(null, 'projectPriorities')}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

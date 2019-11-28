@@ -1464,34 +1464,38 @@ class App extends Component {
     const project = projects[currentProject];
 
     const {
-      name,
       creator,
-      sponsor,
-      projectManager,
-      templateName,
-      template,
-      start,
       end,
+      goalsAndObjectives,
+      help,
+      name,
       note,
       problemOpportunity,
-      help,
+      projectManager,
+      projectPriorities,
+      sponsor,
+      start,
+      template,
+      templateName,
     } = { ...projects[currentProject] };
     const values = {
-      name,
       creator,
-      sponsor,
-      projectManager,
-      templateName,
-      template,
-      start,
       end,
+      goalsAndObjectives,
+      help,
+      name,
+      note,
+      problemOpportunity,
+      projectManager,
+      projectPriorities,
+      sponsor,
+      start,
+      template,
+      templateName,
       percentageComplete: utils.percentageProjectQuestionsYes(
         projects[currentProject],
       ),
       authEditTemplate: this.state.authEditTemplate,
-      note,
-      problemOpportunity,
-      help,
     };
 
     if (this.state.changed)
@@ -1533,15 +1537,16 @@ class App extends Component {
                   onSubmit={this.handleProjectInfoChange}
                   handleMenu={this.handleMenu}
                 />
-                <br />
+                {/* <br />
                 <ProjectSteps
                   project={project}
                   currentProject={currentProject}
+                  currentDeliverable={currentDeliverable}
                   currentWorkPackage={currentWorkPackage}
                   handleStepChange={this.handleStepChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
-                />
+                /> */}
                 <br />
                 <Alert
                   open={this.state.alert}
