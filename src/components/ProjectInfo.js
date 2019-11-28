@@ -242,35 +242,35 @@ const ProjectInfo = props => {
           value="note"
           control={<Radio />}
           label="Notes"
-          labelPlacement="right"
+          labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="problemOpportunity"
           control={<Radio />}
           label="Problem/Opportunity"
-          labelPlacement="right"
+          labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="goalsAndObjectives"
           control={<Radio />}
           label="Goals & Objectives"
-          labelPlacement="right"
+          labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="projectPriorities"
           control={<Radio />}
           label="Project Priorities"
-          labelPlacement="right"
+          labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         <FormControlLabel
           value="guidance"
           control={<Radio />}
           label="Guidance"
-          labelPlacement="right"
+          labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
         {displayField !== 'hide' && (
@@ -278,7 +278,7 @@ const ProjectInfo = props => {
             value="hide"
             control={<Radio />}
             label="Hide"
-            labelPlacement="right"
+            labelPlacement="end"
             style={{ padding: '0px 0px 0px 0px' }}
           />
         )}

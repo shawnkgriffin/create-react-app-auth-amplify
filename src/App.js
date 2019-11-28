@@ -1537,7 +1537,7 @@ class App extends Component {
                   onSubmit={this.handleProjectInfoChange}
                   handleMenu={this.handleMenu}
                 />
-                {/* <br />
+                <br />
                 <ProjectSteps
                   project={project}
                   currentProject={currentProject}
@@ -1546,7 +1546,7 @@ class App extends Component {
                   handleStepChange={this.handleStepChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
-                /> */}
+                />
                 <br />
                 <Alert
                   open={this.state.alert}

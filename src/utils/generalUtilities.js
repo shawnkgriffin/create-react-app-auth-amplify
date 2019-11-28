@@ -146,10 +146,10 @@ function percentageQuestionsYes(questions) {
   }
 }
 
-function percentageDeliverablesQuestionsYes(deliverable) {
+function percentageDeliverableQuestionsYes(deliverable) {
   let numberYes = 0;
   let numberQuestions = 0;
-  deliverable.workPackage.forEach(workPackage => {
+  deliverable.workPackages.forEach(workPackage => {
     numberYes += workPackage.questions
       .map(question =>
         !question.skip && question.answer.toUpperCase() === 'YES'
@@ -378,7 +378,7 @@ const toTitleCase = phrase => {
 };
 export {
   percentageQuestionsYes,
-  percentageDeliverablesQuestionsYes,
+  percentageDeliverableQuestionsYes,
   percentageProjectQuestionsYes,
   parseCommand,
   projectStyles,

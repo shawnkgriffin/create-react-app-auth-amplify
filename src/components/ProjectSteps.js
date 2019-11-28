@@ -38,48 +38,12 @@ export default function ProjectSteps({
   projectList,
   project,
   currentProject,
-  currentStep,
+  currentDeliverable,
+  currentWorkPackage,
   handleStepChange,
   handleMenu,
   classes,
 }) {
-  // project.stepTypes determines the number of columns.
-  // stepStrings will be a stepTypes.length array of {stepIndex: original index, stepString: what to display in tablecell}
-  let stepStrings = [];
-  project.stepTypes.map(
-    (stepType, index) => (stepStrings[index] = []),
-  );
-
-  // Build each Step label for each step type as we have to lay them out in rows.
-  project.steps.forEach((step, index) => {
-    if (!isNaN(step.stepType))
-      step.stepType = project.stepTypes[step.stepType]; // handle older versions with stepType= index.
-    let stepTypeIndex = project.stepTypes.indexOf(step.stepType);
-    if (
-      stepTypeIndex < 0 ||
-      stepTypeIndex >= project.stepTypes.length
-    ) {
-      stepTypeIndex = 0;
-    }
-    const percentageComplete = utils.percentageQuestionsYes(
-      step.questions,
-    );
-    const stepColor = step.completed
-      ? 'green'
-      : step.started
-      ? 'blue'
-      : 'black';
-
-    stepStrings[stepTypeIndex].push({
-      stepIndex: index,
-      stepString: `${step.name} (${percentageComplete})`,
-      stepColor: stepColor,
-    });
-  });
-  const maxStepTableRows = Math.max(
-    ...stepStrings.map(stepType => stepType.length),
-  );
-
   function handleClick(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -92,7 +56,7 @@ export default function ProjectSteps({
       return;
     }
     let newCurrentStep =
-      stepStrings[parseInt(cellInfo[2], 10)][
+      deliverableRows[parseInt(cellInfo[2], 10)][
         parseInt(cellInfo[1], 10)
       ].stepIndex;
     if (newCurrentStep < 0 || newCurrentStep >= project.steps.length)
@@ -101,24 +65,62 @@ export default function ProjectSteps({
     handleStepChange(newCurrentStep);
   }
 
+  let deliverableRows = [];
+  // project.deliverables determines the number of columns.
+  // deliverableRows will be a table with the contents of each workpackage in the table.
+  project.deliverables.map(
+    (deliverable, index) => (deliverableRows[index] = []),
+  );
+
+  // Build each Step label for each step type as we have to lay them out in rows.
+  project.deliverables.forEach((deliverable, deliverableIndex) => {
+    deliverable.workPackages.forEach(
+      (workPackage, workPackageIndex) => {
+        const percentageComplete = utils.percentageQuestionsYes(
+          workPackage.questions,
+        );
+        const workPackageColor = workPackage.completed
+          ? 'green'
+          : workPackage.started
+          ? 'blue'
+          : 'black';
+
+        deliverableRows[deliverableIndex].push({
+          workPackageIndex: workPackageIndex,
+          deliverableIndex: deliverableIndex,
+          workPackageString: `${workPackage.name} (${percentageComplete})`,
+          workPackageColor: workPackageColor,
+        });
+      },
+    );
+  });
+  const maxWorkPackageRows = Math.max(
+    ...deliverableRows.map(workPackages => workPackages.length),
+  );
+
   let tableRows = []; // the columns have different numbers of steps associated with them
-  for (let rowIndex = 0; rowIndex < maxStepTableRows; rowIndex++) {
+  for (let rowIndex = 0; rowIndex < maxWorkPackageRows; rowIndex++) {
     tableRows.push(
       <StyledTableRow key={`Row${rowIndex}`}>
-        {project.stepTypes.map((stepType, stepIndex) => {
+        {project.deliverables.map((deliverable, deliverableIndex) => {
           return (
             <StyledTableCell
-              key={rowIndex * project.stepTypes.length + stepIndex}
-              id={`cell-step${rowIndex}.${stepIndex}`}
+              key={
+                rowIndex * project.deliverables.length +
+                deliverableIndex
+              }
+              id={`cell-step${rowIndex}.${deliverableIndex}`}
               variant="body"
             >
-              {rowIndex < stepStrings[stepIndex].length && (
+              {rowIndex <
+                deliverableRows[deliverableIndex].length && (
                 <Fragment>
                   <ProjectStepQuestionMenu
                     currentProject={currentProject}
                     typeOfMenu={'work package'}
                     menuIndex={
-                      stepStrings[stepIndex][rowIndex].stepIndex
+                      deliverableRows[deliverableIndex][rowIndex]
+                        .deliverableIndex
                     }
                     handleMenu={handleMenu}
                   />
@@ -128,25 +130,33 @@ export default function ProjectSteps({
                     disableUnderline
                     multiline
                     value={
-                      stepStrings[stepIndex][rowIndex].stepString
+                      deliverableRows[deliverableIndex][rowIndex]
+                        .workPackageString
                     }
-                    id={`step-input.${rowIndex}.${stepIndex}`}
+                    id={`step-input.${rowIndex}.${deliverableIndex}`}
                     style={{
                       width: '90%',
                       fontWeight:
-                        rowIndex < stepStrings[stepIndex].length &&
-                        stepStrings[stepIndex][rowIndex].stepIndex ===
-                          currentStep
+                        rowIndex <
+                          deliverableRows[deliverableIndex].length &&
+                        deliverableRows[deliverableIndex][rowIndex]
+                          .deliverableIndex === currentDeliverable &&
+                        deliverableRows[deliverableIndex][rowIndex]
+                          .workPackageIndex === currentWorkPackage
                           ? 'bold'
                           : 'normal',
                       fontSize:
-                        rowIndex < stepStrings[stepIndex].length &&
-                        stepStrings[stepIndex][rowIndex].stepIndex ===
-                          currentStep
+                        rowIndex <
+                          deliverableRows[deliverableIndex].length &&
+                        deliverableRows[deliverableIndex][rowIndex]
+                          .deliverableIndex === currentDeliverable &&
+                        deliverableRows[deliverableIndex][rowIndex]
+                          .workPackageIndex === currentWorkPackage
                           ? 18
                           : 16,
                       color:
-                        stepStrings[stepIndex][rowIndex].stepColor,
+                        deliverableRows[deliverableIndex][rowIndex]
+                          .workPackageColor,
                     }}
                   />
                 </Fragment>
@@ -158,8 +168,8 @@ export default function ProjectSteps({
     );
   }
   let tableHeaders = [];
-  project.deliverables.forEach((deliverable, stepIndex) => {
-    const percentageComplete = utils.percentageDeliverablesQuestionsYes(
+  project.deliverables.forEach((deliverable, deliverableIndex) => {
+    const percentageComplete = utils.percentageDeliverableQuestionsYes(
       deliverable,
     );
     // all work packages started = false => white
@@ -169,30 +179,33 @@ export default function ProjectSteps({
       width: '90%',
       fontSize: 16,
       color:
-        stepStrings[stepIndex].findIndex(
-          step => step.stepColor === 'blue',
+        deliverableRows[deliverableIndex].findIndex(
+          workPackage => workPackage.workPackageColor === 'blue',
         ) === -1 &&
-        stepStrings[stepIndex].findIndex(
-          step => step.stepColor === 'green',
+        deliverableRows[deliverableIndex].findIndex(
+          workPackage => workPackage.workPackageColor === 'green',
         ) === -1
           ? 'white'
-          : stepStrings[stepIndex].findIndex(
-              step => step.stepColor === 'blue',
+          : deliverableRows[deliverableIndex].findIndex(
+              workPackage => workPackage.workPackageColor === 'blue',
             ) === -1 &&
-            stepStrings[stepIndex].findIndex(
-              step => step.stepColor === 'black',
+            deliverableRows[deliverableIndex].findIndex(
+              workPackage => workPackage.workPackageColor === 'black',
             ) === -1
           ? 'lightgreen'
           : 'lightskyblue',
     };
     tableHeaders.push(
-      <StyledTableCell variant="head" key={`phase${stepIndex}`}>
+      <StyledTableCell
+        variant="head"
+        key={`phase${deliverableIndex}`}
+      >
         <Fragment>
           <ProjectStepQuestionMenu
             projectList={projectList}
             currentProject={currentProject}
             typeOfMenu={'deliverable'}
-            menuIndex={stepIndex}
+            menuIndex={deliverableIndex}
             handleMenu={handleMenu}
           />
 
@@ -200,8 +213,8 @@ export default function ProjectSteps({
             onClick={handleStepChange}
             multiline
             disableUnderline
-            value={`${project.stepTypes[stepIndex]} (${percentageComplete})`}
-            id={`step-type.${stepIndex}`}
+            value={`${project.deliverables[deliverableIndex].name} (${percentageComplete})`}
+            id={`step-type.${deliverableIndex}`}
             style={stepHeadLabelStyle}
           />
         </Fragment>
