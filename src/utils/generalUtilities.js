@@ -107,11 +107,9 @@ const projectStyles = makeStyles(theme => ({
 
 /**
  * Description
- * @function initProject
- * @param {integer}
- * @param {function} callback
- * @param {string}
- * @returns {string} status 200 success.
+ * @function parseCommand
+ * @param {string} commandString object.index.verb.location  project.0.delete workPackage.1.add.above
+ * @returns {object} {actionObject, actionIndex, actionVerb, actionLocation}
  **/
 function parseCommand(commandString) {
   const commands = commandString.toUpperCase().split('.');
@@ -123,9 +121,14 @@ function parseCommand(commandString) {
   };
   return action;
 }
-
+/**
+ * Description
+ * @function percentageQuestionsYes
+ * @param {array} questions
+ * @returns {string}'50%' percentage of questions answered yes.
+ **/
 function percentageQuestionsYes(questions) {
-  let numberYes = questions
+  const numberYes = questions
     .map(question =>
       !question.skip && question.answer.toUpperCase() === 'YES'
         ? 1
@@ -133,40 +136,39 @@ function percentageQuestionsYes(questions) {
     )
     .reduce((acc, val) => acc + val);
 
-  let numberQuestions = questions.length;
+  const numberQuestions = questions.length;
 
   if (numberQuestions > 0) {
-    let percentageResult = (numberYes / numberQuestions) * 100;
+    const percentageResult = (numberYes / numberQuestions) * 100;
     return `${percentageResult.toFixed(0)}%`;
   } else {
     return '?/?';
   }
 }
 
-function percentagePhaseQuestionsYes(project, phase) {
+function percentageDeliverableQuestionsYes(deliverable) {
   let numberYes = 0;
   let numberQuestions = 0;
-  project.steps.forEach(step => {
-    if (step.stepType === phase) {
-      numberYes += step.questions
-        .map(question =>
-          !question.skip && question.answer.toUpperCase() === 'YES'
-            ? 1
-            : 0,
-        )
-        .reduce((acc, val) => acc + val);
+  deliverable.workPackage.forEach(workPackage => {
+    numberYes += workPackage.questions
+      .map(question =>
+        !question.skip && question.answer.toUpperCase() === 'YES'
+          ? 1
+          : 0,
+      )
+      .reduce((acc, val) => acc + val);
 
-      numberQuestions += step.questions.length;
-    }
+    numberQuestions += workPackage.questions.length;
   });
 
   if (numberQuestions > 0) {
-    let percentageResult = (numberYes / numberQuestions) * 100;
+    const percentageResult = (numberYes / numberQuestions) * 100;
     return `${percentageResult.toFixed(0)}%`;
   } else {
     return '?/?';
   }
 }
+
 function percentageProjectQuestionsYes(project) {
   let numberYes = 0;
   let numberQuestions = 0;
@@ -220,13 +222,36 @@ function createNewProject(
 /**
  * Description
  * @function copyProject
- * @param {string}  name of project
+ * @param {object}  name of project
  * @param {string}  creator of project
  * @returns {project}
  **/
 
 function copyProject(creator = '', oldProject = null) {
   let newProject = JSON.parse(JSON.stringify(oldProject));
+  newProject.name = oldProject.name.concat(' (Copy)');
+  newProject.creator = creator;
+  return newProject;
+}
+/**
+ * Description
+ * @function updateProjectSchema
+ * @param {object}  project
+ * @returns {object} project project upgraded to latest schema
+ **/
+
+function updateProjectSchema(oldProject = null) {
+  if (oldProject === null) {
+    console.log(`updateProjectSchema(project === null)`);
+    return null;
+  }
+  let newProject = JSON.parse(JSON.stringify(schema.projectSchema));
+  console.log(
+    `updateProjectSchema for ${oldProject.name} from ${
+      oldProject.version ? oldProject.version : '??'
+    } to ${newProject.version}`,
+  );
+
   newProject.name = oldProject.name.concat(' (Copy)');
   newProject.creator = creator;
   return newProject;
@@ -255,17 +280,33 @@ function createNewTemplate(
 }
 /**
  * Description
- * @function createNewStep
+ * @function createNewDeliverable
  * @param {string}  name of step
  * @param {string}  stepType
  * @returns {step}
  **/
 
-function createNewStep(name = 'New Step', stepType = '') {
-  let newStep = JSON.parse(JSON.stringify(schema.stepSchema));
-  newStep.name = name;
-  newStep.stepType = stepType;
-  return newStep;
+function createNewDeliverable(name = 'New Deliverable') {
+  let newDeliverable = JSON.parse(
+    JSON.stringify(schema.deliverableSchema),
+  );
+  newDeliverable.name = name;
+  return newDeliverable;
+}
+/**
+ * Description
+ * @function createNewWorkPackage
+ * @param {string}  name of step
+ * @param {string}  stepType
+ * @returns {step}
+ **/
+
+function createNewWorkPackage(name = 'New Work Package') {
+  let newWorkPackage = JSON.parse(
+    JSON.stringify(schema.workPackageSchema),
+  );
+  newWorkPackage.name = name;
+  return newWorkPackage;
 }
 /**
  * Description
@@ -294,7 +335,7 @@ const toTitleCase = phrase => {
 };
 export {
   percentageQuestionsYes,
-  percentagePhaseQuestionsYes,
+  percentageDeliverableQuestionsYes,
   percentageProjectQuestionsYes,
   parseCommand,
   projectStyles,
@@ -304,7 +345,9 @@ export {
   createNewProject,
   copyProject,
   createNewTemplate,
-  createNewStep,
+  createNewWorkPackage,
+  createNewDeliverable,
   createNewQuestion,
   toTitleCase,
+  updateProjectSchema,
 };
