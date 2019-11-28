@@ -127,7 +127,14 @@ const ProjectInfo = props => {
       >
         Save
       </Button>
-
+      <Button
+        variant="contained"
+        color="secondary"
+        disabled={!isValid}
+        onClick={props.handleReset}
+      >
+        Cancel
+      </Button>
       <br />
       <TextField
         id="outlined-name"
