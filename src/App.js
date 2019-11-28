@@ -52,7 +52,8 @@ class App extends Component {
       projects: [],
       templates: [],
       currentProject: 0,
-      currentStep: 0,
+      currentDeliverable: 0,
+      currentWorkPackage: 0,
       isAuthenticated: false,
       isAuthenticating: true,
       authEditTemplate: false,
@@ -114,7 +115,9 @@ class App extends Component {
           console.log(
             `componentDidMount/onAuthStateChanged/db.collection projects(${project.id})`,
           );
-          if (!project.template) projects.push(project); // handle templates next
+          if (!project.template)
+            projects.push(utils.updateProjectSchema(project)); // handle templates next
+          console.log(JSON.stringify(project, null, 2));
         });
 
         // get shared projects
@@ -161,7 +164,7 @@ class App extends Component {
                       ...prevState,
                       projects: projects,
                       currentProject: 0,
-                      currentStep: 0,
+                      currentWorkPackage: 0,
                       user,
                       authEditTemplate,
                     };
@@ -308,14 +311,18 @@ class App extends Component {
 
   handleStepNoteSubmit(response) {
     if (this.state != null) {
-      let { projects, currentProject, currentStep } = this.state;
+      let {
+        projects,
+        currentProject,
+        currentWorkPackage,
+      } = this.state;
       let project = projects[currentProject];
-      let step = project.steps[currentStep];
+      let step = project.steps[currentWorkPackage];
 
       // handle the case where the person has clicked off started but completed was still checked
       if (!response.started) response.completed = false;
       step = { ...step, ...response };
-      projects[currentProject].steps[currentStep] = step;
+      projects[currentProject].steps[currentWorkPackage] = step;
       console.log(
         `handleStepNoteSubmit(${JSON.stringify(
           response,
@@ -405,7 +412,7 @@ class App extends Component {
           return {
             ...prevState,
             changed: false,
-            currentStep: newStepIndex,
+            currentWorkPackage: newStepIndex,
           };
         });
       }
@@ -424,7 +431,8 @@ class App extends Component {
     } = utils.parseCommand(this.state.commandString);
     let {
       projects,
-      currentStep,
+      currentWorkPackage,
+      currentDeliverable,
       currentProject,
       commandString,
       templates,
@@ -437,25 +445,25 @@ class App extends Component {
           const newQuestion = utils.createNewQuestion(newText);
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.steps[currentStep].questions.splice(
+          project.steps[currentWorkPackage].questions.splice(
             actionIndex,
             0,
             newQuestion,
           );
           break;
         case 'EDIT':
-          project.steps[currentStep].questions[
+          project.steps[currentWorkPackage].questions[
             actionIndex
           ].name = newText;
           break;
         case 'EDITHELP':
-          project.steps[currentStep].questions[
+          project.steps[currentWorkPackage].questions[
             actionIndex
           ].help = newText;
           break;
         case 'DELETE':
-          if (project.steps[currentStep].questions.length > 1)
-            project.steps[currentStep].questions.splice(
+          if (project.steps[currentWorkPackage].questions.length > 1)
+            project.steps[currentWorkPackage].questions.splice(
               actionIndex,
               1,
             );
@@ -477,7 +485,7 @@ class App extends Component {
           formType: '',
           help: false,
           commandString: '',
-          currentStep: currentStep,
+          currentWorkPackage: currentWorkPackage,
           currentProject: currentProject,
           changed: true,
         };
@@ -485,31 +493,41 @@ class App extends Component {
     } else if (actionObject === 'WORK PACKAGE') {
       switch (actionVerb) {
         case 'ADD':
-          const newStep = utils.createNewStep(
-            newText,
-            project.steps[actionIndex].stepType,
-          );
+          const newWorkPackage = utils.createNewWorkPackage(newText);
 
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.steps.splice(actionIndex, 0, newStep);
-          currentStep = actionIndex;
+          project.deliverables.splice(actionIndex, 0, newWorkPackage);
+          currentWorkPackage = actionIndex;
           break;
         case 'EDIT':
-          project.steps[actionIndex].name = newText;
+          project.deliverables[currentDeliverable].workPackages[
+            actionIndex
+          ].name = newText;
           break;
         case 'EDITHELP':
-          project.steps[actionIndex].help = newText;
+          project.deliverables[currentDeliverable].workPackages[
+            actionIndex
+          ].help = newText;
           break;
         case 'NOTES':
-          project.steps[actionIndex].note = newText;
+          project.deliverables[currentDeliverable].workPackages[
+            actionIndex
+          ].note = newText;
           break;
         case 'DELETE':
-          if (project.steps.length > 1) {
-            project.steps.splice(actionIndex, 1);
-            currentStep = 0;
+          if (
+            project.deliverables[currentDeliverable].workPackages
+              .length > 1
+          ) {
+            project.deliverables[
+              currentDeliverable
+            ].workPackages.splice(actionIndex, 1);
+            currentWorkPackage = 0;
           } else
-            console.error(`Cannot delete last step ${commandString}`);
+            console.error(
+              `Cannot delete last work package ${commandString}`,
+            );
           break;
         case 'HELP':
           break;
@@ -526,7 +544,7 @@ class App extends Component {
           formType: '',
           help: false,
           commandString: '',
-          currentStep: currentStep,
+          currentWorkPackage: currentWorkPackage,
           currentProject: currentProject,
           changed: true,
         };
@@ -537,11 +555,13 @@ class App extends Component {
         case 'ADD':
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.stepTypes.splice(actionIndex, 0, newText);
-          let newStep = JSON.parse(JSON.stringify(schema.stepSchema));
-          newStep.stepType = newText;
-          project.steps.push(newStep);
-          currentStep = project.steps.length - 1;
+          let newDeliverable = JSON.parse(
+            JSON.stringify(schema.deliverableSchema),
+          );
+          newDeliverable.name = newText;
+          project.deliverables.splice(actionIndex, 0, newDeliverable);
+          currentWorkPackage = 0;
+          currentDeliverable = actionIndex;
           break;
         case 'EDIT':
           project.steps.forEach(step => {
@@ -560,7 +580,7 @@ class App extends Component {
                 step.stepType !== project.stepTypes[actionIndex],
             );
             project.stepTypes.splice(actionIndex, 1);
-            currentStep = 0;
+            currentWorkPackage = 0;
           } else
             console.error(
               `Cannot delete last phase ${commandString}`,
@@ -581,7 +601,7 @@ class App extends Component {
           formType: '',
           help: false,
           commandString: '',
-          currentStep: currentStep,
+          currentWorkPackage: currentWorkPackage,
           currentProject: currentProject,
           changed: true,
         };
@@ -637,7 +657,7 @@ class App extends Component {
                   ...prevState,
                   projects: projects,
                   currentProject: currentProject,
-                  currentStep: 0,
+                  currentWorkPackage: 0,
                   alert: false,
                   alertYesButton: true,
                   form: false,
@@ -660,7 +680,7 @@ class App extends Component {
               form: false,
               help: false,
               commandString: '',
-              currentStep: currentStep,
+              currentWorkPackage: currentWorkPackage,
               currentProject: currentProject,
               changed: true,
             };
@@ -677,7 +697,7 @@ class App extends Component {
               form: false,
               help: false,
               commandString: '',
-              currentStep: currentStep,
+              currentWorkPackage: currentWorkPackage,
               currentProject: currentProject,
               changed: true,
             };
@@ -694,7 +714,7 @@ class App extends Component {
               form: false,
               help: false,
               commandString: '',
-              currentStep: currentStep,
+              currentWorkPackage: currentWorkPackage,
               currentProject: currentProject,
               changed: true,
             };
@@ -711,7 +731,7 @@ class App extends Component {
               form: false,
               help: false,
               commandString: '',
-              currentStep: currentStep,
+              currentWorkPackage: currentWorkPackage,
               currentProject: currentProject,
               changed: true,
             };
@@ -738,7 +758,7 @@ class App extends Component {
                 form: false,
                 help: false,
                 commandString: '',
-                currentStep: currentStep,
+                currentWorkPackage: currentWorkPackage,
                 currentProject: currentProject,
                 changed: false,
               };
@@ -790,7 +810,7 @@ class App extends Component {
                 formType: '',
                 help: false,
                 commandString: '',
-                currentStep: currentStep,
+                currentWorkPackage: currentWorkPackage,
                 currentProject: currentProject,
                 changed: true,
               };
@@ -814,7 +834,7 @@ class App extends Component {
                 formType: '',
                 help: false,
                 commandString: '',
-                currentStep: currentStep,
+                currentWorkPackage: currentWorkPackage,
                 currentProject: currentProject,
                 changed: false,
               };
@@ -857,7 +877,11 @@ class App extends Component {
         actionVerb,
         actionLocation,
       } = utils.parseCommand(commandString);
-      let { projects, currentStep, currentProject } = this.state;
+      let {
+        projects,
+        currentWorkPackage,
+        currentProject,
+      } = this.state;
       let project = projects[currentProject];
 
       if (actionObject === 'QUESTION')
@@ -884,8 +908,9 @@ class App extends Component {
                 title: `Edit question #${actionIndex + 1}) here.`,
                 textLabel: 'Question',
                 text:
-                  project.steps[currentStep].questions[actionIndex]
-                    .name,
+                  project.steps[currentWorkPackage].questions[
+                    actionIndex
+                  ].name,
                 commandString: commandString,
               };
             });
@@ -898,14 +923,17 @@ class App extends Component {
                 title: `Edit guidance for #${actionIndex + 1}) here.`,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[currentStep].questions[actionIndex]
-                    .help,
+                  project.steps[currentWorkPackage].questions[
+                    actionIndex
+                  ].help,
                 commandString: commandString,
               };
             });
             break;
           case 'DELETE':
-            if (project.steps[currentStep].questions.length > 1) {
+            if (
+              project.steps[currentWorkPackage].questions.length > 1
+            ) {
               this.setState(prevState => {
                 return {
                   ...prevState,
@@ -914,8 +942,9 @@ class App extends Component {
                   title: 'Delete the following question?',
                   textLabel: 'Question',
                   text: `${actionIndex + 1}) ${
-                    project.steps[currentStep].questions[actionIndex]
-                      .name
+                    project.steps[currentWorkPackage].questions[
+                      actionIndex
+                    ].name
                   }`,
                   commandString: commandString,
                 };
@@ -929,8 +958,9 @@ class App extends Component {
                   title: 'Cannot delete the last question.',
                   textLabel: 'Question',
                   text: `Cannot delete ${actionIndex + 1}) ${
-                    project.steps[currentStep].questions[actionIndex]
-                      .name
+                    project.steps[currentWorkPackage].questions[
+                      actionIndex
+                    ].name
                   }`,
                   commandString: commandString,
                 };
@@ -944,13 +974,15 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title:
-                  project.steps[currentStep].questions[actionIndex]
-                    .name,
+                  project.steps[currentWorkPackage].questions[
+                    actionIndex
+                  ].name,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[currentStep].questions[actionIndex]
-                    .help.length > 1
-                    ? project.steps[currentStep].questions[
+                  project.steps[currentWorkPackage].questions[
+                    actionIndex
+                  ].help.length > 1
+                    ? project.steps[currentWorkPackage].questions[
                         actionIndex
                       ].help
                     : 'Sorry, no guidance is available.',
@@ -1237,7 +1269,7 @@ class App extends Component {
                     ...prevState,
                     projects: projects,
                     currentProject: currentProject,
-                    currentStep: 0,
+                    currentWorkPackage: 0,
                     alert: false,
                     alertYesButton: true,
                     form: false,
@@ -1425,7 +1457,8 @@ class App extends Component {
     let {
       projects,
       currentProject,
-      currentStep,
+      currentDeliverable,
+      currentWorkPackage,
       templates,
     } = this.state;
     const project = projects[currentProject];
@@ -1504,7 +1537,7 @@ class App extends Component {
                 <ProjectSteps
                   project={project}
                   currentProject={currentProject}
-                  currentStep={currentStep}
+                  currentWorkPackage={currentWorkPackage}
                   handleStepChange={this.handleStepChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
@@ -1542,27 +1575,45 @@ class App extends Component {
                   enableReinitialize
                   render={props => <ProjectStepInfo {...props} />}
                   initialValues={{
-                    started: project.steps[currentStep].started,
+                    started:
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].started,
                     startedDate:
-                      project.steps[currentStep].startedDate,
-                    completed: project.steps[currentStep].completed,
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].startedDate,
+                    completed:
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].completed,
                     completedDate:
-                      project.steps[currentStep].completedDate,
-                    assignedTo: project.steps[currentStep].assignedTo,
-                    name: project.steps[currentStep].name,
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage]
+                        .completedDate,
+                    assignedTo:
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].assignedTo,
+                    name:
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].name,
                     percentageComplete: utils.percentageQuestionsYes(
-                      project.steps[currentStep].questions,
+                      project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].questions,
                     ),
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
                   onSubmit={this.handleStepNoteSubmit}
                 />
                 <ProjectQuestions
-                  questions={project.steps[currentStep].questions}
-                  stepName={project.steps[currentStep].name}
+                  questions={
+                    project.deliverables[currentDeliverable]
+                      .workPackages[currentWorkPackage].questions
+                  }
+                  stepName={
+                    project.deliverables[currentDeliverable]
+                      .workPackages[currentWorkPackage].name
+                  }
                   currentProject={currentProject}
                   handleQuestionChange={this.handleQuestionChange}
-                  currentStep={currentStep}
+                  currentWorkPackage={currentWorkPackage}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
                 />

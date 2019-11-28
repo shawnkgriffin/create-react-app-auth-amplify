@@ -5,8 +5,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import * as schema from './projectSchema.js';
 import * as importData from './backup-production-191120';
-
-console.log(`Importing ${importData.projects.length}`);
+import * as utils from '../generalUtilities';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -81,6 +80,18 @@ test(`login user ${process.env.REACT_APP_TEST_EMAIL}`, done => {
 //       });
 //   });
 // });
+
+// upgrade schema backups ONLY USE IF NECESSARY
+test('update schemas', done => {
+  // importData.projects.forEach((project, projectIndex) => {
+  importData.projects.forEach((project, projectIndex) => {
+    let upgradedProject = utils.updateProjectSchema(project);
+    if (projectIndex === importData.projects.length - 1) {
+      expect(1).toEqual(1);
+      done();
+    }
+  });
+});
 
 // test create a new project should succeed
 test('a new project is created', done => {

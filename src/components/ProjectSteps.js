@@ -158,10 +158,9 @@ export default function ProjectSteps({
     );
   }
   let tableHeaders = [];
-  project.stepTypes.forEach((stepType, stepIndex) => {
-    const percentageComplete = utils.percentagePhaseQuestionsYes(
-      project,
-      project.stepTypes[stepIndex],
+  project.deliverables.forEach((deliverable, stepIndex) => {
+    const percentageComplete = utils.percentageDeliverablesQuestionsYes(
+      deliverable,
     );
     // all work packages started = false => white
     // all work packages completed = true => lightgreen

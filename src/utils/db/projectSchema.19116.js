@@ -3,6 +3,7 @@ const projectSchema = {
   end: '2019-10-17',
   help:
     'How was this project initiated? Basic PM Slides\nWho will be the sponsor?\n',
+  id: '',
   name: 'New Project',
   note: 'notes',
   problemOpportunity: 'Presenting problem / Opportunity',

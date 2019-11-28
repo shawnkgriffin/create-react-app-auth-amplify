@@ -1,3 +1,4 @@
+const SCHEMA_VERSION = '191127';
 const questionSchema = {
   name: 'Do you have what you need before you can start this step?',
   validAnswers: ' ',
@@ -80,6 +81,17 @@ const workPackageSchema = {
     },
   ],
 };
+const workPackageSchemaEmpty = {
+  name: '',
+  note: '',
+  help: '',
+  started: false,
+  startedDate: '',
+  completed: false,
+  completedDate: '',
+  assignedTo: '',
+  questions: [],
+};
 const deliverableSchema = {
   name: 'Define the Project',
   note: 'Note',
@@ -91,6 +103,17 @@ const deliverableSchema = {
   assignedTo: '',
   workPackages: [workPackageSchema],
 };
+const deliverableSchemaEmpty = {
+  name: '',
+  note: '',
+  help: '',
+  started: false,
+  startedDate: '',
+  completed: false,
+  completedDate: '',
+  assignedTo: '',
+  workPackages: [],
+};
 
 const projectSchema = {
   creator: 'Shawn Griffin',
@@ -99,6 +122,7 @@ const projectSchema = {
   goalsAndObjectives: 'Goals And Objectives',
   help:
     'How was this project initiated? Basic PM Slides\nWho will be the sponsor?\n',
+  id: '',
   name: 'New Project',
   note: 'notes',
   problemOpportunity: 'Presenting problem / Opportunity',
@@ -109,12 +133,35 @@ const projectSchema = {
   start: '2019-09-17',
   template: false,
   templateName: 'Standard',
-  version: '191127',
+  version: SCHEMA_VERSION,
+};
+const projectSchemaEmpty = {
+  creator: '',
+  deliverables: [],
+  end: '',
+  goalsAndObjectives: '',
+  help: '',
+  id: '',
+  name: '',
+  note: '',
+  problemOpportunity: '',
+  projectManager: '',
+  projectPriorities: '',
+  sharedWith: [],
+  sponsor: '',
+  start: '',
+  template: false,
+  templateName: 'Standard',
+  version: SCHEMA_VERSION,
 };
 
 export {
   projectSchema,
+  projectSchemaEmpty,
   deliverableSchema,
+  deliverableSchemaEmpty,
   workPackageSchema,
+  workPackageSchemaEmpty,
   questionSchema,
+  SCHEMA_VERSION,
 };

@@ -146,7 +146,7 @@ function percentageQuestionsYes(questions) {
   }
 }
 
-function percentageDeliverableQuestionsYes(deliverable) {
+function percentageDeliverablesQuestionsYes(deliverable) {
   let numberYes = 0;
   let numberQuestions = 0;
   deliverable.workPackage.forEach(workPackage => {
@@ -173,16 +173,18 @@ function percentageProjectQuestionsYes(project) {
   let numberYes = 0;
   let numberQuestions = 0;
   if (!project) return '?/?';
-  project.steps.forEach(step => {
-    numberYes += step.questions
-      .map(question =>
-        !question.skip && question.answer.toUpperCase() === 'YES'
-          ? 1
-          : 0,
-      )
-      .reduce((acc, val) => acc + val);
+  project.deliverables.forEach(deliverable => {
+    deliverable.workPackages.forEach(workPackage => {
+      numberYes += workPackage.questions
+        .map(question =>
+          !question.skip && question.answer.toUpperCase() === 'YES'
+            ? 1
+            : 0,
+        )
+        .reduce((acc, val) => acc + val);
 
-    numberQuestions += step.questions.length;
+      numberQuestions += workPackage.questions.length;
+    });
   });
 
   if (numberQuestions > 0) {
@@ -245,15 +247,56 @@ function updateProjectSchema(oldProject = null) {
     console.log(`updateProjectSchema(project === null)`);
     return null;
   }
-  let newProject = JSON.parse(JSON.stringify(schema.projectSchema));
   console.log(
     `updateProjectSchema for ${oldProject.name} from ${
       oldProject.version ? oldProject.version : '??'
-    } to ${newProject.version}`,
+    } to ${schema.SCHEMA_VERSION}`,
+  );
+  if (
+    oldProject.version &&
+    oldProject.version === schema.SCHEMA_VERSION
+  )
+    return oldProject; // already up to date
+
+  // create the project structure
+  let newProject = JSON.parse(
+    JSON.stringify(schema.projectSchemaEmpty),
   );
 
-  newProject.name = oldProject.name.concat(' (Copy)');
-  newProject.creator = creator;
+  // Copy all the values of the project
+  Object.getOwnPropertyNames(newProject).forEach(key => {
+    if (
+      key !== 'deliverables' &&
+      key !== 'version' &&
+      oldProject.hasOwnProperty(key)
+    )
+      newProject[key] = oldProject[key];
+  });
+
+  // create the deliverable structure
+  oldProject.stepTypes.forEach(stepType => {
+    let newDeliverable = JSON.parse(
+      JSON.stringify(schema.deliverableSchemaEmpty),
+    );
+    newDeliverable.name = stepType;
+    newProject.deliverables.push(newDeliverable);
+  });
+
+  console.log(
+    `updateProjectSchema(${JSON.stringify(newProject, null, 2)} `,
+  );
+  // change steps to workPackages
+  oldProject.steps.forEach(step => {
+    let deliverableIndex = newProject.deliverables.findIndex(
+      deliverable => deliverable.name === step.stepType,
+    );
+    if (deliverableIndex === -1) deliverableIndex = 0;
+    let newWorkPackage = JSON.parse(JSON.stringify(step));
+    delete newWorkPackage.stepType; // not needed anymore
+    newProject.deliverables[deliverableIndex].workPackages.push(
+      newWorkPackage,
+    );
+  });
   return newProject;
 }
 /**
@@ -335,7 +378,7 @@ const toTitleCase = phrase => {
 };
 export {
   percentageQuestionsYes,
-  percentageDeliverableQuestionsYes,
+  percentageDeliverablesQuestionsYes,
   percentageProjectQuestionsYes,
   parseCommand,
   projectStyles,
