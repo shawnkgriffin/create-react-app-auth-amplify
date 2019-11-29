@@ -76,7 +76,9 @@ class App extends Component {
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(
       this,
     );
-    this.handleStepChange = this.handleStepChange.bind(this);
+    this.handleWorkPackageChange = this.handleWorkPackageChange.bind(
+      this,
+    );
     this.handleMenu = this.handleMenu.bind(this);
     this.handleYes = this.handleYes.bind(this);
     this.handleNo = this.handleNo.bind(this);
@@ -401,21 +403,32 @@ class App extends Component {
     }
   }
 
-  handleStepChange(newStepIndex) {
+  handleWorkPackageChange(newDeliverable, newWorkPackage) {
     if (this.state != null) {
-      console.log(`handleStepChange(${newStepIndex})`);
+      console.log(
+        `handleWorkPackageChange(${newDeliverable}, ${newWorkPackage})`,
+      );
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
-
-      if (newStepIndex >= 0 && newStepIndex < project.steps.length) {
-        this.setState(prevState => {
-          return {
-            ...prevState,
-            changed: false,
-            currentWorkPackage: newStepIndex,
-          };
-        });
-      }
+      if (
+        newDeliverable < 0 ||
+        newDeliverable >= project.deliverables.length
+      )
+        newDeliverable = 0;
+      if (
+        newWorkPackage < 0 ||
+        newWorkPackage >=
+          project.deliverables[newDeliverable].workPackages.length
+      )
+        newWorkPackage = 0;
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          changed: false,
+          currentDeliverable: newDeliverable,
+          currentWorkPackage: newWorkPackage,
+        };
+      });
     }
   }
   handleYes(response) {
@@ -1543,7 +1556,9 @@ class App extends Component {
                   currentProject={currentProject}
                   currentDeliverable={currentDeliverable}
                   currentWorkPackage={currentWorkPackage}
-                  handleStepChange={this.handleStepChange}
+                  handleWorkPackageChange={
+                    this.handleWorkPackageChange
+                  }
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
                 />

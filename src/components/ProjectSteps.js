@@ -40,7 +40,7 @@ export default function ProjectSteps({
   currentProject,
   currentDeliverable,
   currentWorkPackage,
-  handleStepChange,
+  handleWorkPackageChange,
   handleMenu,
   classes,
 }) {
@@ -48,21 +48,26 @@ export default function ProjectSteps({
     e.preventDefault();
     e.stopPropagation();
     let cellInfo = e.target.id.split('.');
-    const column = parseInt(cellInfo[2], 10);
-    const row = parseInt(cellInfo[1], 10);
-    if (isNaN(column) || isNaN(row)) {
+    let deliverable = parseInt(cellInfo[1], 10);
+    let workPackage = parseInt(cellInfo[2], 10);
+    if (isNaN(deliverable) || isNaN(workPackage)) {
       console.log(`ProjectSteps.handleClick(e) invalid`);
-      handleStepChange(0);
+      handleWorkPackageChange(0, 0);
       return;
     }
-    let newCurrentStep =
-      deliverableRows[parseInt(cellInfo[2], 10)][
-        parseInt(cellInfo[1], 10)
-      ].stepIndex;
-    if (newCurrentStep < 0 || newCurrentStep >= project.steps.length)
-      newCurrentStep = 0;
-    console.log(`${e.target.id}`, newCurrentStep);
-    handleStepChange(newCurrentStep);
+
+    if (deliverable < 0 || deliverable >= project.deliverables.length)
+      deliverable = 0;
+    if (
+      workPackage < 0 ||
+      workPackage >=
+        project.deliverables[deliverable].workPackages.length
+    )
+      workPackage = 0;
+    console.log(
+      `${e.target.id} deliverable ${deliverable} workPackage ${workPackage}`,
+    );
+    handleWorkPackageChange(deliverable, workPackage);
   }
 
   let deliverableRows = [];
@@ -109,7 +114,7 @@ export default function ProjectSteps({
                 rowIndex * project.deliverables.length +
                 deliverableIndex
               }
-              id={`cell-step${rowIndex}.${deliverableIndex}`}
+              id={`cell-step.${deliverableIndex}.${rowIndex}`}
               variant="body"
             >
               {rowIndex <
@@ -133,7 +138,7 @@ export default function ProjectSteps({
                       deliverableRows[deliverableIndex][rowIndex]
                         .workPackageString
                     }
-                    id={`step-input.${rowIndex}.${deliverableIndex}`}
+                    id={`work-package-input.${deliverableIndex}.${rowIndex}`}
                     style={{
                       width: '90%',
                       fontWeight:
@@ -210,11 +215,11 @@ export default function ProjectSteps({
           />
 
           <Input
-            onClick={handleStepChange}
+            onClick={handleWorkPackageChange}
             multiline
             disableUnderline
             value={`${project.deliverables[deliverableIndex].name} (${percentageComplete})`}
-            id={`step-type.${deliverableIndex}`}
+            id={`deliverable.${deliverableIndex}`}
             style={stepHeadLabelStyle}
           />
         </Fragment>
