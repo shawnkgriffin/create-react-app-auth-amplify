@@ -25,7 +25,7 @@ const buttonStyle = {
   marginTop: 15,
   marginLeft: 5,
 };
-const ProjectStepInfo = props => {
+const ProjectWorkPackageInfo = props => {
   const {
     values: {
       started,
@@ -197,4 +197,4 @@ const ProjectStepInfo = props => {
   );
 };
 
-export default ProjectStepInfo;
+export default ProjectWorkPackageInfo;

@@ -11,7 +11,7 @@ import {
 import ProjectInfo from './components/ProjectInfo';
 import ProjectWorkPackages from './components/ProjectWorkPackages';
 import ProjectQuestions from './components/ProjectQuestions';
-import ProjectStepInfo from './components/ProjectStepInfo';
+import ProjectWorkPackageInfo from './components/ProjectWorkPackageInfo';
 import Alert from './components/Alert';
 import FormDialog from './components/FormDialog';
 import Help from './components/Help';
@@ -72,7 +72,9 @@ class App extends Component {
       changed: false,
     };
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
-    this.handleStepNoteSubmit = this.handleStepNoteSubmit.bind(this);
+    this.handleWorkPackageStartEnd = this.handleWorkPackageStartEnd.bind(
+      this,
+    );
     this.handleProjectInfoChange = this.handleProjectInfoChange.bind(
       this,
     );
@@ -119,7 +121,6 @@ class App extends Component {
           );
           if (!project.template)
             projects.push(utils.updateProjectSchema(project)); // handle templates next
-          console.log(JSON.stringify(project, null, 2));
         });
 
         // get shared projects
@@ -311,33 +312,25 @@ class App extends Component {
     }
   }
 
-  handleStepNoteSubmit(response) {
+  handleWorkPackageStartEnd(response) {
     if (this.state != null) {
       let {
         projects,
         currentProject,
+        currentDeliverable,
         currentWorkPackage,
       } = this.state;
-      let project = projects[currentProject];
-      let step = project.steps[currentWorkPackage];
+      let workPackage =
+        projects[currentProject].deliverables[currentDeliverable]
+          .workPackages[currentWorkPackage];
 
       // handle the case where the person has clicked off started but completed was still checked
       if (!response.started) response.completed = false;
-      step = { ...step, ...response };
-      projects[currentProject].steps[currentWorkPackage] = step;
-      console.log(
-        `handleStepNoteSubmit(${JSON.stringify(
-          response,
-          null,
-          2,
-        )},currentProject=${currentProject}, projects[currentProject].id${
-          projects[currentProject].id
-        } project${JSON.stringify(
-          projects[currentProject],
-          null,
-          2,
-        )}`,
-      );
+      workPackage = { ...workPackage, ...response };
+      projects[currentProject].deliverables[
+        currentDeliverable
+      ].workPackages[currentWorkPackage] = workPackage;
+
       db.collection('projects')
         .doc(projects[currentProject].id)
         .set(projects[currentProject])
@@ -384,13 +377,6 @@ class App extends Component {
       );
       if (currentProject < 0 || currentProject >= projects.length)
         currentProject = 0;
-      console.log(
-        `handleProjectInfoChange(${JSON.stringify(
-          changedProjectInfo,
-          null,
-          2,
-        )})`,
-      );
 
       this.setState(prevState => {
         return {
@@ -1474,6 +1460,7 @@ class App extends Component {
       currentWorkPackage,
       templates,
     } = this.state;
+
     const project = projects[currentProject];
 
     const {
@@ -1593,7 +1580,9 @@ class App extends Component {
                 />
                 <Formik
                   enableReinitialize
-                  render={props => <ProjectStepInfo {...props} />}
+                  render={props => (
+                    <ProjectWorkPackageInfo {...props} />
+                  )}
                   initialValues={{
                     started:
                       project.deliverables[currentDeliverable]
@@ -1620,7 +1609,7 @@ class App extends Component {
                     ),
                   }}
                   validationSchema={utils.stepNoteValidationSchema}
-                  onSubmit={this.handleStepNoteSubmit}
+                  onSubmit={this.handleWorkPackageStartEnd}
                 />
                 <ProjectQuestions
                   questions={
