@@ -9,7 +9,7 @@ import {
 
 // Project components
 import ProjectInfo from './components/ProjectInfo';
-import ProjectSteps from './components/ProjectSteps';
+import ProjectWorkPackages from './components/ProjectWorkPackages';
 import ProjectQuestions from './components/ProjectQuestions';
 import ProjectStepInfo from './components/ProjectStepInfo';
 import Alert from './components/Alert';
@@ -1551,7 +1551,7 @@ class App extends Component {
                   handleMenu={this.handleMenu}
                 />
                 <br />
-                <ProjectSteps
+                <ProjectWorkPackages
                   project={project}
                   currentProject={currentProject}
                   currentDeliverable={currentDeliverable}

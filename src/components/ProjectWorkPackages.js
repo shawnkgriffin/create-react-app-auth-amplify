@@ -34,7 +34,7 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
-export default function ProjectSteps({
+export default function ProjectWorkPackages({
   projectList,
   project,
   currentProject,
@@ -51,7 +51,7 @@ export default function ProjectSteps({
     let deliverable = parseInt(cellInfo[1], 10);
     let workPackage = parseInt(cellInfo[2], 10);
     if (isNaN(deliverable) || isNaN(workPackage)) {
-      console.log(`ProjectSteps.handleClick(e) invalid`);
+      console.log(`ProjectWorkPackages.handleClick(e) invalid`);
       handleWorkPackageChange(0, 0);
       return;
     }
