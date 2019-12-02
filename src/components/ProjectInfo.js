@@ -136,100 +136,7 @@ const ProjectInfo = props => {
       >
         Cancel
       </Button>
-      <br />
-      <TextField
-        id="outlined-name"
-        name="sponsor"
-        variant="outlined"
-        helperText={touched.sponsor ? errors.sponsor : ''}
-        error={touched.sponsor && Boolean(errors.sponsor)}
-        label="Sponsor"
-        value={sponsor}
-        style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
-        onChange={change.bind(null, 'sponsor')}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <NameIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <TextField
-        id="outlined-name"
-        name="projectManager"
-        variant="outlined"
-        helperText={
-          touched.projectManager ? errors.projectManager : ''
-        }
-        error={
-          touched.projectManager && Boolean(errors.projectManager)
-        }
-        label="Project Manager"
-        value={projectManager}
-        style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
-        onChange={change.bind(null, 'projectManager')}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <NameIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <TextField
-        id="outlined-name"
-        disabled={!template}
-        name="templateName"
-        variant="outlined"
-        helperText={touched.templateName ? errors.templateName : ''}
-        error={touched.templateName && Boolean(errors.templateName)}
-        label="Project Template"
-        value={templateName}
-        style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
-        onChange={change.bind(null, 'templateName')}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountTreeIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
-      <TextField
-        id="outlined-creator"
-        name="creator"
-        disabled
-        variant="outlined"
-        style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
-        helperText={touched.creator ? errors.creator : ''}
-        error={touched.creator && Boolean(errors.creator)}
-        label="Creator"
-        value={creator}
-        onChange={change.bind(null, 'creator')}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <LockIcon />
-            </InputAdornment>
-          ),
-        }}
-      />
-      {authEditTemplate && (
-        <FormControlLabel
-          style={{ padding: '0px 0px 10px 5px' }}
-          control={
-            <Checkbox
-              checked={template}
-              onChange={change.bind(null, 'started')}
-              value="checkedB"
-              name={`template`}
-              color="primary"
-            />
-          }
-          label="Template?"
-        />
-      )}
+
       <br />
       <RadioGroup
         aria-label="gender"
@@ -243,6 +150,13 @@ const ProjectInfo = props => {
           value="note"
           control={<Radio />}
           label="Notes"
+          labelPlacement="end"
+          style={{ padding: '0px 0px 0px 0px' }}
+        />
+        <FormControlLabel
+          value="team"
+          control={<Radio />}
+          label="Team"
           labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
@@ -291,6 +205,109 @@ const ProjectInfo = props => {
           />
         )}
       </RadioGroup>
+      {displayField === 'team' && (
+        <TextField
+          id="outlined-name"
+          name="sponsor"
+          variant="outlined"
+          helperText={touched.sponsor ? errors.sponsor : ''}
+          error={touched.sponsor && Boolean(errors.sponsor)}
+          label="Sponsor"
+          value={sponsor}
+          style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
+          onChange={change.bind(null, 'sponsor')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <NameIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+
+      {displayField === 'team' && (
+        <TextField
+          id="outlined-name"
+          name="projectManager"
+          variant="outlined"
+          helperText={
+            touched.projectManager ? errors.projectManager : ''
+          }
+          error={
+            touched.projectManager && Boolean(errors.projectManager)
+          }
+          label="Project Manager"
+          value={projectManager}
+          style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
+          onChange={change.bind(null, 'projectManager')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <NameIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+
+      {displayField === 'team' && (
+        <TextField
+          id="outlined-name"
+          disabled={!template}
+          name="templateName"
+          variant="outlined"
+          helperText={touched.templateName ? errors.templateName : ''}
+          error={touched.templateName && Boolean(errors.templateName)}
+          label="Project Template"
+          value={templateName}
+          style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
+          onChange={change.bind(null, 'templateName')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountTreeIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'team' && (
+        <TextField
+          id="outlined-creator"
+          name="creator"
+          disabled
+          variant="outlined"
+          style={{ padding: '0px 0px 10px 5px', minWidth: 200 }}
+          helperText={touched.creator ? errors.creator : ''}
+          error={touched.creator && Boolean(errors.creator)}
+          label="Creator"
+          value={creator}
+          onChange={change.bind(null, 'creator')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <LockIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {authEditTemplate && displayField === 'team' && (
+        <FormControlLabel
+          style={{ padding: '0px 0px 10px 5px' }}
+          control={
+            <Checkbox
+              checked={template}
+              onChange={change.bind(null, 'started')}
+              value="checkedB"
+              name={`template`}
+              color="primary"
+            />
+          }
+          label="Template?"
+        />
+      )}
       {displayField === 'note' && (
         <TextField
           id="outlined-note"
