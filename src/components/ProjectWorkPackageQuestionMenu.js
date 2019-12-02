@@ -44,19 +44,40 @@ const StyledMenuItem = withStyles(theme => ({
   },
 }))(MenuItem);
 
-function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
+function CustomizedMenus({
+  typeOfMenu,
+  menuIndex,
+  handleMenu,
+  copyDeliverable = null,
+  copyWorkPackage = null,
+  copyQuestion = null,
+}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const style = { marginTop: 0, color: 'inherit' };
   let directions = [];
+  let pasteMenu = false;
+  let pasteName = '';
   switch (typeOfMenu.toUpperCase()) {
     case 'DELIVERABLE':
       directions = ['to the left of', 'to the right of'];
+      if (copyDeliverable !== null) {
+        pasteMenu = true;
+        pasteName = copyDeliverable.name;
+      }
       break;
     case 'WORK PACKAGE':
       directions = ['above', 'below'];
+      if (copyWorkPackage !== null) {
+        pasteMenu = true;
+        pasteName = copyWorkPackage.name;
+      }
       break;
     case 'QUESTION':
       directions = ['above', 'below'];
+      if (copyQuestion !== null) {
+        pasteMenu = true;
+        pasteName = copyQuestion.name;
+      }
       break;
     default:
       break;
@@ -124,6 +145,35 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
             primary={`Add a ${typeOfMenu} ${directions[1]} this one.`}
           />
         </StyledMenuItem>
+        {pasteMenu && (
+          <div>
+            <StyledMenuItem
+              key={`${typeOfMenu}.${menuIndex}.Paste.Above`}
+              id={`${typeOfMenu}.${menuIndex}.Paste.Above`}
+              onClick={handleSelect}
+            >
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={`Paste ${typeOfMenu} "${pasteName}" ${directions[0]} this one.`}
+              />
+            </StyledMenuItem>
+
+            <StyledMenuItem
+              key={`${typeOfMenu}.${menuIndex}.Paste.Below`}
+              id={`${typeOfMenu}.${menuIndex}.Paste.Below`}
+              onClick={handleSelect}
+            >
+              <ListItemIcon>
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={`Paste ${typeOfMenu} "${pasteName}" ${directions[1]} this one.`}
+              />
+            </StyledMenuItem>
+          </div>
+        )}
         <StyledMenuItem
           key={`${typeOfMenu}.${menuIndex}.Copy`}
           id={`${typeOfMenu}.${menuIndex}.Copy`}

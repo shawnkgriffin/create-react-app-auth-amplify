@@ -40,6 +40,8 @@ export default function ProjectWorkPackages({
   currentProject,
   currentDeliverable,
   currentWorkPackage,
+  copyDeliverable,
+  copyWorkPackage,
   handleWorkPackageChange,
   handleMenu,
   classes,
@@ -125,6 +127,8 @@ export default function ProjectWorkPackages({
                     typeOfMenu={'work package'}
                     menuIndex={`${deliverableIndex}.${rowIndex}`}
                     handleMenu={handleMenu}
+                    copyDeliverable={copyDeliverable}
+                    copyWorkPackage={copyWorkPackage}
                   />
 
                   <Input
@@ -209,6 +213,8 @@ export default function ProjectWorkPackages({
             typeOfMenu={'deliverable'}
             menuIndex={`${deliverableIndex}`}
             handleMenu={handleMenu}
+            copyDeliverable={copyDeliverable}
+            copyWorkPackage={copyWorkPackage}
           />
 
           <Input

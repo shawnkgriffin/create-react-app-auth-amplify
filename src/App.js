@@ -59,6 +59,7 @@ class App extends Component {
       authEditTemplate: false,
       copyDeliverable: null,
       copyWorkPackage: null,
+      copyQuestion: null,
       user: null,
       commandString: '',
       alert: false,
@@ -914,6 +915,21 @@ class App extends Component {
               };
             });
             break;
+          case 'COPY':
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                copyQuestion: JSON.parse(
+                  JSON.stringify(
+                    project.deliverables[currentDeliverable]
+                      .workPackages[currentWorkPackage].questions[
+                      action.index
+                    ],
+                  ),
+                ),
+              };
+            });
+            break;
           case 'EDIT':
             this.setState(prevState => {
               return {
@@ -1610,6 +1626,8 @@ class App extends Component {
                   currentProject={currentProject}
                   currentDeliverable={currentDeliverable}
                   currentWorkPackage={currentWorkPackage}
+                  copyDeliverable={this.state.copyDeliverable}
+                  copyWorkPackage={this.state.copyWorkPackage}
                   handleWorkPackageChange={
                     this.handleWorkPackageChange
                   }
@@ -1690,6 +1708,7 @@ class App extends Component {
                   currentProject={currentProject}
                   currentDeliverable={currentDeliverable}
                   currentWorkPackage={currentWorkPackage}
+                  copyQuestion={this.state.copyQuestion}
                   handleQuestionChange={this.handleQuestionChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}

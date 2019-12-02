@@ -28,11 +28,11 @@ const StyledTableRow = withStyles(theme => ({
 }))(TableRow);
 
 export default function ProjectQuestions({
-  stepName,
   questions,
   currentProject,
   currentDeliverable,
   currentWorkPackage,
+  copyQuestion,
   handleQuestionChange,
   handleMenu,
   classes,
@@ -48,6 +48,7 @@ export default function ProjectQuestions({
             typeOfMenu="question"
             menuIndex={index}
             handleMenu={handleMenu}
+            copyQuestion={copyQuestion}
           />
           {`${index + 1}) ${question.name}`}
         </TableCell>
