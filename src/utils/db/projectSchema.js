@@ -1,5 +1,10 @@
 // const SCHEMA_VERSION = '191127';
-const SCHEMA_VERSION = '191201'; // Added Learnings
+// changed stepTypes from attribute to object deliverable and wrapped workPackages.
+// changed steps to workPackages
+// added goalsAndObjects, projectPriorities
+
+const SCHEMA_VERSION = '191201';
+// Added Learnings
 const questionSchema = {
   name: 'Do you have what you need before you can start this step?',
   validAnswers: ' ',
@@ -143,7 +148,7 @@ const projectSchemaEmpty = {
   goalsAndObjectives: '',
   help: '',
   id: '',
-  learnings:'',
+  learnings: '',
   name: '',
   note: '',
   problemOpportunity: '',

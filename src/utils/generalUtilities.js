@@ -112,20 +112,25 @@ const projectStyles = makeStyles(theme => ({
  * @returns {object} {actionObject, actionIndex, actionVerb, actionLocation}
  **/
 function parseCommand(commandString) {
-  const commands = commandString.toUpperCase().split('.');
-  const actionObject = commands[0];
-  const actionIndex = parseInt(commands[1], 10);
-  let actionSecondIndex = parseInt(commands[2], 10);
-  if (isNaN(actionSecondIndex)) actionSecondIndex = 0;
-  const actionVerb = commands[2];
-  const actionLocation = commands.length === 4 ? commands[3] : '';
   let action = {
-    actionObject,
-    actionIndex,
-    actionSecondIndex,
-    actionVerb,
-    actionLocation,
+    target: '',
+    index: 0,
+    secondIndex: 0,
+    verb: '',
+    location: '',
   };
+  const commands = commandString.toUpperCase().split('.');
+  action.target = commands[0];
+  action.index = parseInt(commands[1], 10);
+  if (action.target === 'WORK PACKAGE') {
+    action.secondIndex = parseInt(commands[2], 10);
+    if (isNaN(action.secondIndex)) action.secondIndex = 0;
+    action.verb = commands[3];
+    action.location = commands.length === 5 ? commands[4] : '';
+  } else {
+    action.verb = commands[2];
+    action.location = commands.length === 4 ? commands[3] : '';
+  }
   return action;
 }
 /**

@@ -431,12 +431,7 @@ class App extends Component {
     console.log(
       `handleYes(e=${newText},commandString=${this.state.commandString}`,
     );
-    let {
-      actionObject,
-      actionIndex,
-      actionVerb,
-      actionLocation,
-    } = utils.parseCommand(this.state.commandString);
+    let action = utils.parseCommand(this.state.commandString);
     let {
       projects,
       currentWorkPackage,
@@ -447,25 +442,25 @@ class App extends Component {
     } = this.state;
     let project = projects[currentProject];
 
-    if (actionObject === 'QUESTION') {
-      switch (actionVerb) {
+    if (action.target === 'QUESTION') {
+      switch (action.verb) {
         case 'ADD':
           const newQuestion = utils.createNewQuestion(newText);
-          actionIndex =
-            actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
+          action.index =
+            action.index + (action.location === 'ABOVE' ? 0 : 1);
           project.deliverables[currentDeliverable].workPackages[
             currentWorkPackage
-          ].questions.splice(actionIndex, 0, newQuestion);
+          ].questions.splice(action.index, 0, newQuestion);
           break;
         case 'EDIT':
           project.deliverables[currentDeliverable].workPackages[
             currentWorkPackage
-          ].questions[actionIndex].name = newText;
+          ].questions[action.index].name = newText;
           break;
         case 'EDITHELP':
           project.deliverables[currentDeliverable].workPackages[
             currentWorkPackage
-          ].questions[actionIndex].help = newText;
+          ].questions[action.index].help = newText;
           break;
         case 'DELETE':
           if (
@@ -475,7 +470,7 @@ class App extends Component {
           )
             project.deliverables[currentDeliverable].workPackages[
               currentWorkPackage
-            ].questions.splice(actionIndex, 1);
+            ].questions.splice(action.index, 1);
           else
             console.error(
               `Cannot delete last question ${commandString}`,
@@ -499,41 +494,45 @@ class App extends Component {
           changed: true,
         };
       });
-    } else if (actionObject === 'WORK PACKAGE') {
-      switch (actionVerb) {
+    } else if (action.target === 'WORK PACKAGE') {
+      switch (action.verb) {
         case 'ADD':
           const newWorkPackage = utils.createNewWorkPackage(newText);
 
-          actionIndex =
-            actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.deliverables[
-            currentDeliverable
-          ].workPackages.splice(actionIndex, 0, newWorkPackage);
-          currentWorkPackage = actionIndex;
+          action.secondIndex =
+            action.secondIndex +
+            (action.location === 'ABOVE' ? 0 : 1);
+          project.deliverables[action.index].workPackages.splice(
+            action.secondIndex,
+            0,
+            newWorkPackage,
+          );
+          currentDeliverable = action.index;
+          currentWorkPackage = action.secondIndex;
           break;
         case 'EDIT':
-          project.deliverables[currentDeliverable].workPackages[
-            actionIndex
+          project.deliverables[action.index].workPackages[
+            action.secondIndex
           ].name = newText;
           break;
         case 'EDITHELP':
-          project.deliverables[currentDeliverable].workPackages[
-            actionIndex
+          project.deliverables[action.index].workPackages[
+            action.secondIndex
           ].help = newText;
           break;
         case 'NOTES':
-          project.deliverables[currentDeliverable].workPackages[
-            actionIndex
+          project.deliverables[action.index].workPackages[
+            action.secondIndex
           ].note = newText;
           break;
         case 'DELETE':
           if (
-            project.deliverables[currentDeliverable].workPackages
-              .length > 1
+            project.deliverables[action.index].workPackages.length > 1
           ) {
-            project.deliverables[
-              currentDeliverable
-            ].workPackages.splice(actionIndex, 1);
+            project.deliverables[action.index].workPackages.splice(
+              action.secondIndex,
+              1,
+            );
             currentWorkPackage = 0;
           } else
             console.error(
@@ -561,28 +560,32 @@ class App extends Component {
         };
       });
     }
-    if (actionObject === 'DELIVERABLE') {
-      switch (actionVerb) {
+    if (action.target === 'DELIVERABLE') {
+      switch (action.verb) {
         case 'ADD':
-          actionIndex =
-            actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
+          action.index =
+            action.index + (action.location === 'ABOVE' ? 0 : 1);
           let newDeliverable = JSON.parse(
             JSON.stringify(schema.deliverableSchema),
           );
           newDeliverable.name = newText;
-          project.deliverables.splice(actionIndex, 0, newDeliverable);
+          project.deliverables.splice(
+            action.index,
+            0,
+            newDeliverable,
+          );
           currentWorkPackage = 0;
-          currentDeliverable = actionIndex;
+          currentDeliverable = action.index;
           break;
         case 'EDIT':
-          project.deliverables[currentDeliverable].name = newText;
+          project.deliverables[action.index].name = newText;
           break;
         case 'EDITHELP':
-          project.deliverables[currentDeliverable].help = newText;
+          project.deliverables[action.index].help = newText;
           break;
         case 'DELETE':
           if (project.deliverables.length > 1) {
-            project.deliverables.splice(actionIndex, 1);
+            project.deliverables.splice(action.index, 1);
             currentDeliverable = 0;
             currentWorkPackage = 0;
           } else
@@ -612,8 +615,8 @@ class App extends Component {
       });
     }
 
-    if (actionObject === 'PROJECT') {
-      switch (actionVerb) {
+    if (action.target === 'PROJECT') {
+      switch (action.verb) {
         case 'ADD':
           // Figure out which template to use.
           let templateIndex = 0;
@@ -775,8 +778,8 @@ class App extends Component {
         default:
       }
     }
-    if (actionObject === 'TEMPLATE') {
-      switch (actionVerb) {
+    if (action.target === 'TEMPLATE') {
+      switch (action.verb) {
         case 'SAVE':
           db.createTemplate(
             newText,
@@ -874,14 +877,14 @@ class App extends Component {
 
   handleMenu(commandString) {
     if (this.state != null) {
-      console.log(`handleMenu(${commandString})`);
-      let {
-        actionObject,
-        actionIndex,
-        actionSecondIndex,
-        actionVerb,
-        actionLocation,
-      } = utils.parseCommand(commandString);
+      let action = utils.parseCommand(commandString);
+      console.log(
+        `handleMenu(${commandString})=${JSON.stringify(
+          action,
+          null,
+          2,
+        )}`,
+      );
       let {
         projects,
         currentDeliverable,
@@ -890,16 +893,16 @@ class App extends Component {
       } = this.state;
       let project = projects[currentProject];
 
-      if (actionObject === 'QUESTION')
-        switch (actionVerb) {
+      if (action.target === 'QUESTION')
+        switch (action.verb) {
           case 'ADD':
-            actionIndex =
-              actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
+            action.index =
+              action.index + (action.location === 'ABOVE' ? 0 : 1);
             this.setState(prevState => {
               return {
                 ...prevState,
                 form: true,
-                title: `Add question #${actionIndex + 1})`,
+                title: `Add question #${action.index + 1})`,
                 text: '',
                 textLabel: 'New Question',
                 commandString: commandString,
@@ -911,12 +914,12 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit question #${actionIndex + 1}) here.`,
+                title: `Edit question #${action.index + 1}) here.`,
                 textLabel: 'Question',
                 text:
                   project.deliverables[currentDeliverable]
                     .workPackages[currentWorkPackage].questions[
-                    actionIndex
+                    action.index
                   ].name,
                 commandString: commandString,
               };
@@ -927,12 +930,13 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                title: `Edit guidance for #${actionIndex + 1}) here.`,
+                title: `Edit guidance for #${action.index +
+                  1}) here.`,
                 textLabel: 'Guidance',
                 text:
                   project.deliverables[currentDeliverable]
                     .workPackages[currentWorkPackage].questions[
-                    actionIndex
+                    action.index
                   ].help,
                 commandString: commandString,
               };
@@ -951,10 +955,10 @@ class App extends Component {
                   alertYesButton: true,
                   title: 'Delete the following question?',
                   textLabel: 'Question',
-                  text: `${actionIndex + 1}) ${
+                  text: `${action.index + 1}) ${
                     project.deliverables[currentDeliverable]
                       .workPackages[currentWorkPackage].questions[
-                      actionIndex
+                      action.index
                     ].name
                   }`,
                   commandString: commandString,
@@ -968,10 +972,10 @@ class App extends Component {
                   alertYesButton: false,
                   title: 'Cannot delete the last question.',
                   textLabel: 'Question',
-                  text: `Cannot delete ${actionIndex + 1}) ${
+                  text: `Cannot delete ${action.index + 1}) ${
                     project.deliverables[currentDeliverable]
                       .workPackages[currentWorkPackage].questions[
-                      actionIndex
+                      action.index
                     ].name
                   }`,
                   commandString: commandString,
@@ -988,17 +992,17 @@ class App extends Component {
                 title:
                   project.deliverables[currentDeliverable]
                     .workPackages[currentWorkPackage].questions[
-                    actionIndex
+                    action.index
                   ].name,
                 textLabel: 'Guidance',
                 text:
                   project.deliverables[currentDeliverable]
                     .workPackages[currentWorkPackage].questions[
-                    actionIndex
+                    action.index
                   ].help.length > 1
                     ? project.deliverables[currentDeliverable]
                         .workPackages[currentWorkPackage].questions[
-                        actionIndex
+                        action.index
                       ].help
                     : 'Sorry, no guidance is available.',
               };
@@ -1008,17 +1012,19 @@ class App extends Component {
             break;
         }
 
-      if (actionObject === 'WORK PACKAGE')
-        switch (actionVerb) {
+      if (action.target === 'WORK PACKAGE') {
+        console.log('Work Paackage');
+        switch (action.verb) {
           case 'ADD':
-            actionIndex =
-              actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
+            action.secondIndex =
+              action.secondIndex +
+              (action.location === 'ABOVE' ? 0 : 1);
             this.setState(prevState => {
               return {
                 ...prevState,
                 form: true,
-                textLabel: `${actionObject.toLowerCase()}`,
-                title: `Add a ${actionObject.toLowerCase()} here.`,
+                textLabel: `${action.target.toLowerCase()}`,
+                title: `Add a ${action.target.toLowerCase()} here.`,
                 text: '',
                 commandString: commandString,
               };
@@ -1030,11 +1036,12 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                textLabel: `${actionObject.toLowerCase()}`,
-                title: `Edit the ${actionObject.toLowerCase()} here.`,
+                textLabel: `${action.target.toLowerCase()}`,
+                title: `Edit the ${action.target.toLowerCase()} here.`,
                 text:
-                  project.deliverables[currentDeliverable]
-                    .workPackages[actionIndex].name,
+                  project.deliverables[action.index].workPackages[
+                    action.secondIndex
+                  ].name,
                 commandString: commandString,
               };
             });
@@ -1046,10 +1053,11 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 textLabel: `Guidance`,
-                title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
+                title: `Edit guidance for this ${action.target.toLowerCase()} here.`,
                 text:
-                  project.deliverables[actionIndex]
-                    .workPackages[actionSecondIndex].help,
+                  project.deliverables[action.index].workPackages[
+                    action.secondIndex
+                  ].help,
                 commandString: commandString,
               };
             });
@@ -1061,10 +1069,11 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 textLabel: `Notes`,
-                title: `Edit notes for this ${actionObject.toLowerCase()} here.`,
+                title: `Edit notes for this ${action.target.toLowerCase()} here.`,
                 text:
-                  project.deliverables[actionIndex]
-                    .workPackages[actionSecondIndex].note,
+                  project.deliverables[action.index].workPackages[
+                    action.secondIndex
+                  ].note,
                 commandString: commandString,
               };
             });
@@ -1072,17 +1081,21 @@ class App extends Component {
           case 'DELETE':
             //cannot delete last workpackage
             if (
-              project.deliverables[actionIndex].workPackages
-                .length > 1
+              project.deliverables[action.index].workPackages.length >
+              1
             ) {
               this.setState(prevState => {
                 return {
                   ...prevState,
-                  textLabel: `${actionObject.toLowerCase()}`,
+                  textLabel: `${action.target.toLowerCase()}`,
                   alert: true,
                   alertYesButton: true,
-                  title: `Delete the following ${actionObject.toLowerCase()}?`,
-                  text: `${project.deliverables[actionIndex].workPackages[actionSecondIndex].name}`,
+                  title: `Delete the following ${action.target.toLowerCase()}?`,
+                  text: `${
+                    project.deliverables[action.index].workPackages[
+                      action.secondIndex
+                    ].name
+                  }`,
                   commandString: commandString,
                 };
               });
@@ -1092,9 +1105,13 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   alertYesButton: false,
-                  title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
-                  textLabel: `${actionObject.toLowerCase()}`,
-                  text: `Cannot delete ${project.deliverables[actionIndex].workPackages[actionSecondIndex].name}`,
+                  title: `Cannot delete the last ${action.target.toLowerCase()}.`,
+                  textLabel: `${action.target.toLowerCase()}`,
+                  text: `Cannot delete ${
+                    project.deliverables[action.index].workPackages[
+                      action.secondIndex
+                    ].name
+                  }`,
                   commandString: '',
                 };
               });
@@ -1108,34 +1125,40 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title:
-                project.deliverables[actionIndex].workPackages[actionSecondIndex].name,
+                  project.deliverables[action.index].workPackages[
+                    action.secondIndex
+                  ].name,
                 textLabel: 'Guidance',
                 text:
-                project.deliverables[actionIndex].workPackages[actionSecondIndex].help.length > 1
-                    ? project.deliverables[actionIndex].workPackages[actionSecondIndex].help
+                  project.deliverables[action.index].workPackages[
+                    action.secondIndex
+                  ].help.length > 1
+                    ? project.deliverables[action.index].workPackages[
+                        action.secondIndex
+                      ].help
                     : 'Sorry, no guidance is available.',
               };
             });
             break;
           default:
         }
-
-      if (actionObject === 'DELIVERABLE')
-        switch (actionVerb) {
+      }
+      if (action.target === 'DELIVERABLE')
+        switch (action.verb) {
           case 'ADD':
-            actionIndex =
-              actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
+            action.index =
+              action.index + (action.location === 'ABOVE' ? 0 : 1);
             const location =
-              actionLocation === 'ABOVE'
-                ? 'to the left.'
-                : 'to the right.';
+              action.location === 'ABOVE'
+                ? 'to the left'
+                : 'to the right';
             this.setState(prevState => {
               return {
                 ...prevState,
                 form: true,
                 formType: 'DELIVERABLE',
-                textLabel: `${actionObject.toLowerCase()}`,
-                title: `Add a ${actionObject.toLowerCase()} ${location}.`,
+                textLabel: `${action.target.toLowerCase()}`,
+                title: `Add a ${action.target.toLowerCase()} ${location}.`,
                 text: '',
                 commandString: commandString,
               };
@@ -1147,9 +1170,9 @@ class App extends Component {
               return {
                 ...prevState,
                 form: true,
-                textLabel: `${actionObject.toLowerCase()}`,
-                title: `Edit the ${actionObject.toLowerCase()} here.`,
-                text: project.deliverables[actionIndex].name,
+                textLabel: `${action.target.toLowerCase()}`,
+                title: `Edit the ${action.target.toLowerCase()} here.`,
+                text: project.deliverables[action.index].name,
                 commandString: commandString,
               };
             });
@@ -1161,8 +1184,8 @@ class App extends Component {
                 ...prevState,
                 form: true,
                 textLabel: `Guidance`,
-                title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
-                text: project.deliverables[actionIndex].help,
+                title: `Edit guidance for this ${action.target.toLowerCase()} here.`,
+                text: project.deliverables[action.index].help,
                 commandString: commandString,
               };
             });
@@ -1174,12 +1197,12 @@ class App extends Component {
               this.setState(prevState => {
                 return {
                   ...prevState,
-                  textLabel: `${actionObject.toLowerCase()}`,
+                  textLabel: `${action.target.toLowerCase()}`,
                   alert: true,
                   alertYesButton: true,
-                  title: `Delete the following ${actionObject.toLowerCase()}?
+                  title: `Delete the following ${action.target.toLowerCase()}?
                         WARNING ALL WORK PACKAGES AND QUESTIONS FOR THIS DELIVERABLE WILL BE DELETED!`,
-                  text: `${project.deliverables[actionIndex].name}`,
+                  text: `${project.deliverables[action.index].name}`,
                   commandString: commandString,
                 };
               });
@@ -1189,9 +1212,11 @@ class App extends Component {
                   ...prevState,
                   alert: true,
                   alertYesButton: false,
-                  title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
-                  textLabel: `${actionObject.toLowerCase()}`,
-                  text: `Cannot delete ${project.deliverables[actionIndex].name}`,
+                  title: `Cannot delete the last ${action.target.toLowerCase()}.`,
+                  textLabel: `${action.target.toLowerCase()}`,
+                  text: `Cannot delete ${
+                    project.deliverables[action.index].name
+                  }`,
                   commandString: '',
                 };
               });
@@ -1207,8 +1232,8 @@ class App extends Component {
                 title: project.deliverables[currentDeliverable].name,
                 textLabel: 'Guidance',
                 text:
-                  project.deliverables[actionIndex].help.length > 1
-                    ? project.deliverables[actionIndex].help
+                  project.deliverables[action.index].help.length > 1
+                    ? project.deliverables[action.index].help
                     : 'Sorry, no guidance is available.',
               };
             });
@@ -1216,17 +1241,17 @@ class App extends Component {
           default:
         }
 
-      if (actionObject === 'PROJECT') {
-        switch (actionVerb) {
+      if (action.target === 'PROJECT') {
+        switch (action.verb) {
           case 'ADD':
-            actionIndex = projects.length;
+            action.index = projects.length;
             this.setState(prevState => {
               return {
                 ...prevState,
                 form: true,
                 formType: 'TEMPLATE',
                 textLabel: 'New Project Name',
-                title: `Add new project #${actionIndex + 1})`,
+                title: `Add new project #${action.index + 1})`,
                 text: '',
                 commandString: commandString,
               };
@@ -1236,7 +1261,7 @@ class App extends Component {
             this.setState(prevState => {
               return {
                 ...prevState,
-                currentProject: actionIndex,
+                currentProject: action.index,
                 title: '',
                 textLabel: '',
                 formType: '',
@@ -1387,10 +1412,10 @@ class App extends Component {
         }
       }
 
-      if (actionObject === 'TEMPLATE') {
-        switch (actionVerb) {
+      if (action.target === 'TEMPLATE') {
+        switch (action.verb) {
           case 'SAVE':
-            actionIndex = projects.length;
+            action.index = projects.length;
             this.setState(prevState => {
               return {
                 ...prevState,

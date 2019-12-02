@@ -296,8 +296,6 @@ const ProjectInfo = props => {
           id="outlined-note"
           name="note"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
@@ -323,8 +321,6 @@ const ProjectInfo = props => {
           id="outlined-help"
           name="help"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
@@ -350,8 +346,6 @@ const ProjectInfo = props => {
           id="outlined-problemOpportunity"
           name="problemOpportunity"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
@@ -384,8 +378,6 @@ const ProjectInfo = props => {
           id="outlined-goalsAndObjectives"
           name="goalsAndObjectives"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
@@ -418,8 +410,6 @@ const ProjectInfo = props => {
           id="outlined-projectPriorities"
           name="projectPriorities"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
@@ -450,8 +440,6 @@ const ProjectInfo = props => {
           id="outlined-learnings"
           name="learnings"
           multiline
-          maxRows="10"
-          minRows="1"
           variant="outlined"
           style={{
             padding: '0px 0px 10px 5px',
