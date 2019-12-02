@@ -6,7 +6,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import ProjectStepQuestionMenu from './ProjectStepQuestionMenu';
+import ProjectWorkPackageQuestionMenu from './ProjectWorkPackageQuestionMenu';
 import Input from '@material-ui/core/Input';
 import * as utils from '../utils/generalUtilities.js';
 
@@ -120,13 +120,10 @@ export default function ProjectWorkPackages({
               {rowIndex <
                 deliverableRows[deliverableIndex].length && (
                 <Fragment>
-                  <ProjectStepQuestionMenu
+                  <ProjectWorkPackageQuestionMenu
                     currentProject={currentProject}
                     typeOfMenu={'work package'}
-                    menuIndex={
-                      deliverableRows[deliverableIndex][rowIndex]
-                        .deliverableIndex
-                    }
+                    menuIndex={`${deliverableIndex}.${rowIndex}`}
                     handleMenu={handleMenu}
                   />
 
@@ -206,11 +203,11 @@ export default function ProjectWorkPackages({
         key={`phase${deliverableIndex}`}
       >
         <Fragment>
-          <ProjectStepQuestionMenu
+          <ProjectWorkPackageQuestionMenu
             projectList={projectList}
             currentProject={currentProject}
             typeOfMenu={'deliverable'}
-            menuIndex={deliverableIndex}
+            menuIndex={`${deliverableIndex}`}
             handleMenu={handleMenu}
           />
 

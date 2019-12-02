@@ -1,4 +1,5 @@
-const SCHEMA_VERSION = '191127';
+// const SCHEMA_VERSION = '191127';
+const SCHEMA_VERSION = '191201'; // Added Learnings
 const questionSchema = {
   name: 'Do you have what you need before you can start this step?',
   validAnswers: ' ',
@@ -142,6 +143,7 @@ const projectSchemaEmpty = {
   goalsAndObjectives: '',
   help: '',
   id: '',
+  learnings:'',
   name: '',
   note: '',
   problemOpportunity: '',

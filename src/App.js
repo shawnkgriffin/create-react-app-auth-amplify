@@ -274,24 +274,33 @@ class App extends Component {
       let { projects, currentProject } = this.state;
       let project = projects[currentProject];
       const [
-        stepString,
+        deliverableString,
+        workPackageString,
         questionString,
         answer,
       ] = e.target.value.split('.');
-      const stepNumber = parseInt(stepString, 10);
+      const deliverableIndex = parseInt(deliverableString, 10);
+      const workPackageIndex = parseInt(workPackageString, 10);
       const questionNumber = parseInt(questionString, 10);
       console.log(
-        `handleQuestionChange(${e.target.value},${stepNumber},${questionNumber})`,
+        `handleQuestionChange(${e.target.value},${workPackageIndex},${deliverableIndex},${questionNumber})`,
       );
       if (
-        stepNumber >= 0 &&
-        stepNumber < project.steps.length &&
+        deliverableIndex >= 0 &&
+        deliverableIndex < project.deliverables.length &&
+        workPackageIndex >= 0 &&
+        workPackageIndex <
+          project.deliverables[deliverableIndex].workPackages
+            .length &&
         questionNumber >= 0 &&
-        questionNumber < project.steps[stepNumber].questions.length
+        questionNumber <
+          project.deliverables[deliverableIndex].workPackages[
+            workPackageIndex
+          ].questions.length
       ) {
-        project.steps[stepNumber].questions[
-          questionNumber
-        ].answer = answer;
+        project.deliverables[deliverableIndex].workPackages[
+          workPackageIndex
+        ].questions[questionNumber].answer = answer;
         projects[currentProject] = project;
         this.setState(prevState => {
           return {
@@ -444,28 +453,29 @@ class App extends Component {
           const newQuestion = utils.createNewQuestion(newText);
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.steps[currentWorkPackage].questions.splice(
-            actionIndex,
-            0,
-            newQuestion,
-          );
+          project.deliverables[currentDeliverable].workPackages[
+            currentWorkPackage
+          ].questions.splice(actionIndex, 0, newQuestion);
           break;
         case 'EDIT':
-          project.steps[currentWorkPackage].questions[
-            actionIndex
-          ].name = newText;
+          project.deliverables[currentDeliverable].workPackages[
+            currentWorkPackage
+          ].questions[actionIndex].name = newText;
           break;
         case 'EDITHELP':
-          project.steps[currentWorkPackage].questions[
-            actionIndex
-          ].help = newText;
+          project.deliverables[currentDeliverable].workPackages[
+            currentWorkPackage
+          ].questions[actionIndex].help = newText;
           break;
         case 'DELETE':
-          if (project.steps[currentWorkPackage].questions.length > 1)
-            project.steps[currentWorkPackage].questions.splice(
-              actionIndex,
-              1,
-            );
+          if (
+            project.deliverables[currentDeliverable].workPackages[
+              currentWorkPackage
+            ].questions.length > 1
+          )
+            project.deliverables[currentDeliverable].workPackages[
+              currentWorkPackage
+            ].questions.splice(actionIndex, 1);
           else
             console.error(
               `Cannot delete last question ${commandString}`,
@@ -496,7 +506,9 @@ class App extends Component {
 
           actionIndex =
             actionIndex + (actionLocation === 'ABOVE' ? 0 : 1);
-          project.deliverables.splice(actionIndex, 0, newWorkPackage);
+          project.deliverables[
+            currentDeliverable
+          ].workPackages.splice(actionIndex, 0, newWorkPackage);
           currentWorkPackage = actionIndex;
           break;
         case 'EDIT':
@@ -563,26 +575,19 @@ class App extends Component {
           currentDeliverable = actionIndex;
           break;
         case 'EDIT':
-          project.steps.forEach(step => {
-            if (step.stepType === project.stepTypes[actionIndex])
-              step.stepType = newText;
-          });
-          project.stepTypes[actionIndex] = newText;
+          project.deliverables[currentDeliverable].name = newText;
           break;
         case 'EDITHELP':
-          // project.stepTypes[actionIndex].help = newText;
+          project.deliverables[currentDeliverable].help = newText;
           break;
         case 'DELETE':
-          if (project.stepTypes.length > 1) {
-            project.steps = project.steps.filter(
-              step =>
-                step.stepType !== project.stepTypes[actionIndex],
-            );
-            project.stepTypes.splice(actionIndex, 1);
+          if (project.deliverables.length > 1) {
+            project.deliverables.splice(actionIndex, 1);
+            currentDeliverable = 0;
             currentWorkPackage = 0;
           } else
             console.error(
-              `Cannot delete last phase ${commandString}`,
+              `Cannot delete last deliverable ${commandString}`,
             );
           break;
         case 'HELP':
@@ -873,11 +878,13 @@ class App extends Component {
       let {
         actionObject,
         actionIndex,
+        actionSecondIndex,
         actionVerb,
         actionLocation,
       } = utils.parseCommand(commandString);
       let {
         projects,
+        currentDeliverable,
         currentWorkPackage,
         currentProject,
       } = this.state;
@@ -907,7 +914,8 @@ class App extends Component {
                 title: `Edit question #${actionIndex + 1}) here.`,
                 textLabel: 'Question',
                 text:
-                  project.steps[currentWorkPackage].questions[
+                  project.deliverables[currentDeliverable]
+                    .workPackages[currentWorkPackage].questions[
                     actionIndex
                   ].name,
                 commandString: commandString,
@@ -922,7 +930,8 @@ class App extends Component {
                 title: `Edit guidance for #${actionIndex + 1}) here.`,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[currentWorkPackage].questions[
+                  project.deliverables[currentDeliverable]
+                    .workPackages[currentWorkPackage].questions[
                     actionIndex
                   ].help,
                 commandString: commandString,
@@ -931,7 +940,9 @@ class App extends Component {
             break;
           case 'DELETE':
             if (
-              project.steps[currentWorkPackage].questions.length > 1
+              project.deliverables[currentDeliverable].workPackages[
+                currentWorkPackage
+              ].questions.length > 1
             ) {
               this.setState(prevState => {
                 return {
@@ -941,7 +952,8 @@ class App extends Component {
                   title: 'Delete the following question?',
                   textLabel: 'Question',
                   text: `${actionIndex + 1}) ${
-                    project.steps[currentWorkPackage].questions[
+                    project.deliverables[currentDeliverable]
+                      .workPackages[currentWorkPackage].questions[
                       actionIndex
                     ].name
                   }`,
@@ -957,7 +969,8 @@ class App extends Component {
                   title: 'Cannot delete the last question.',
                   textLabel: 'Question',
                   text: `Cannot delete ${actionIndex + 1}) ${
-                    project.steps[currentWorkPackage].questions[
+                    project.deliverables[currentDeliverable]
+                      .workPackages[currentWorkPackage].questions[
                       actionIndex
                     ].name
                   }`,
@@ -973,15 +986,18 @@ class App extends Component {
                 ...prevState,
                 help: true,
                 title:
-                  project.steps[currentWorkPackage].questions[
+                  project.deliverables[currentDeliverable]
+                    .workPackages[currentWorkPackage].questions[
                     actionIndex
                   ].name,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[currentWorkPackage].questions[
+                  project.deliverables[currentDeliverable]
+                    .workPackages[currentWorkPackage].questions[
                     actionIndex
                   ].help.length > 1
-                    ? project.steps[currentWorkPackage].questions[
+                    ? project.deliverables[currentDeliverable]
+                        .workPackages[currentWorkPackage].questions[
                         actionIndex
                       ].help
                     : 'Sorry, no guidance is available.',
@@ -1016,7 +1032,9 @@ class App extends Component {
                 form: true,
                 textLabel: `${actionObject.toLowerCase()}`,
                 title: `Edit the ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].name,
+                text:
+                  project.deliverables[currentDeliverable]
+                    .workPackages[actionIndex].name,
                 commandString: commandString,
               };
             });
@@ -1029,7 +1047,9 @@ class App extends Component {
                 form: true,
                 textLabel: `Guidance`,
                 title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].help,
+                text:
+                  project.deliverables[actionIndex]
+                    .workPackages[actionSecondIndex].help,
                 commandString: commandString,
               };
             });
@@ -1042,14 +1062,19 @@ class App extends Component {
                 form: true,
                 textLabel: `Notes`,
                 title: `Edit notes for this ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].note,
+                text:
+                  project.deliverables[actionIndex]
+                    .workPackages[actionSecondIndex].note,
                 commandString: commandString,
               };
             });
             break;
           case 'DELETE':
-            //cannot delete last step
-            if (project.steps.length > 1) {
+            //cannot delete last workpackage
+            if (
+              project.deliverables[actionIndex].workPackages
+                .length > 1
+            ) {
               this.setState(prevState => {
                 return {
                   ...prevState,
@@ -1057,7 +1082,7 @@ class App extends Component {
                   alert: true,
                   alertYesButton: true,
                   title: `Delete the following ${actionObject.toLowerCase()}?`,
-                  text: `${project.steps[actionIndex].name}`,
+                  text: `${project.deliverables[actionIndex].workPackages[actionSecondIndex].name}`,
                   commandString: commandString,
                 };
               });
@@ -1069,7 +1094,7 @@ class App extends Component {
                   alertYesButton: false,
                   title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
                   textLabel: `${actionObject.toLowerCase()}`,
-                  text: `Cannot delete ${project.steps[actionIndex].name}`,
+                  text: `Cannot delete ${project.deliverables[actionIndex].workPackages[actionSecondIndex].name}`,
                   commandString: '',
                 };
               });
@@ -1082,11 +1107,12 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
-                title: project.steps[actionIndex].name,
+                title:
+                project.deliverables[actionIndex].workPackages[actionSecondIndex].name,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[actionIndex].help.length > 1
-                    ? project.steps[actionIndex].help
+                project.deliverables[actionIndex].workPackages[actionSecondIndex].help.length > 1
+                    ? project.deliverables[actionIndex].workPackages[actionSecondIndex].help
                     : 'Sorry, no guidance is available.',
               };
             });
@@ -1123,7 +1149,7 @@ class App extends Component {
                 form: true,
                 textLabel: `${actionObject.toLowerCase()}`,
                 title: `Edit the ${actionObject.toLowerCase()} here.`,
-                text: project.stepTypes[actionIndex],
+                text: project.deliverables[actionIndex].name,
                 commandString: commandString,
               };
             });
@@ -1136,7 +1162,7 @@ class App extends Component {
                 form: true,
                 textLabel: `Guidance`,
                 title: `Edit guidance for this ${actionObject.toLowerCase()} here.`,
-                text: project.steps[actionIndex].help,
+                text: project.deliverables[actionIndex].help,
                 commandString: commandString,
               };
             });
@@ -1144,7 +1170,7 @@ class App extends Component {
 
           case 'DELETE':
             //cannot delete last phase
-            if (project.stepTypes.length > 1) {
+            if (project.deliverables.length > 1) {
               this.setState(prevState => {
                 return {
                   ...prevState,
@@ -1153,7 +1179,7 @@ class App extends Component {
                   alertYesButton: true,
                   title: `Delete the following ${actionObject.toLowerCase()}?
                         WARNING ALL WORK PACKAGES AND QUESTIONS FOR THIS DELIVERABLE WILL BE DELETED!`,
-                  text: `${project.stepTypes[actionIndex]}`,
+                  text: `${project.deliverables[actionIndex].name}`,
                   commandString: commandString,
                 };
               });
@@ -1165,7 +1191,7 @@ class App extends Component {
                   alertYesButton: false,
                   title: `Cannot delete the last ${actionObject.toLowerCase()}.`,
                   textLabel: `${actionObject.toLowerCase()}`,
-                  text: `Cannot delete ${project.stepTypes[actionIndex]}`,
+                  text: `Cannot delete ${project.deliverables[actionIndex].name}`,
                   commandString: '',
                 };
               });
@@ -1178,11 +1204,11 @@ class App extends Component {
               return {
                 ...prevState,
                 help: true,
-                title: project.steps[actionIndex].name,
+                title: project.deliverables[currentDeliverable].name,
                 textLabel: 'Guidance',
                 text:
-                  project.steps[actionIndex].help.length > 1
-                    ? project.steps[actionIndex].help
+                  project.deliverables[actionIndex].help.length > 1
+                    ? project.deliverables[actionIndex].help
                     : 'Sorry, no guidance is available.',
               };
             });
@@ -1269,6 +1295,7 @@ class App extends Component {
                     projects: projects,
                     currentProject: currentProject,
                     currentWorkPackage: 0,
+                    currentDeliverable: 0,
                     alert: false,
                     alertYesButton: true,
                     form: false,
@@ -1293,34 +1320,6 @@ class App extends Component {
               };
             });
             break;
-
-          case 'PROBLEMOPPORTUNITY':
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Problem/Opportunity statement for "${project.name}".`,
-                textLabel: 'Problem/Opportunity',
-                formType: '',
-                text: project.problemOpportunity,
-                commandString: commandString,
-              };
-            });
-            break;
-          case 'PROJECTNOTES':
-            this.setState(prevState => {
-              return {
-                ...prevState,
-                form: true,
-                title: `Project notes for "${project.name}".`,
-                textLabel: 'Project Notes',
-                formType: '',
-                text: project.note,
-                commandString: commandString,
-              };
-            });
-            break;
-
           case 'DELETE':
             //cannot delete last project
             if (projects.length > 1) {
@@ -1468,6 +1467,7 @@ class App extends Component {
       end,
       goalsAndObjectives,
       help,
+      learnings,
       name,
       note,
       problemOpportunity,
@@ -1484,6 +1484,7 @@ class App extends Component {
       goalsAndObjectives,
       help,
       name,
+      learnings,
       note,
       problemOpportunity,
       projectManager,
@@ -1616,13 +1617,14 @@ class App extends Component {
                     project.deliverables[currentDeliverable]
                       .workPackages[currentWorkPackage].questions
                   }
-                  stepName={
+                  workPackageName={
                     project.deliverables[currentDeliverable]
                       .workPackages[currentWorkPackage].name
                   }
                   currentProject={currentProject}
-                  handleQuestionChange={this.handleQuestionChange}
+                  currentDeliverable={currentDeliverable}
                   currentWorkPackage={currentWorkPackage}
+                  handleQuestionChange={this.handleQuestionChange}
                   handleMenu={this.handleMenu}
                   classes={utils.projectStyles}
                 />

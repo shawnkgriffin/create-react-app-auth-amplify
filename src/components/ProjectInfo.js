@@ -25,6 +25,7 @@ const ProjectInfo = props => {
       end,
       goalsAndObjectives,
       help,
+      learnings,
       name,
       note,
       problemOpportunity,
@@ -262,7 +263,14 @@ const ProjectInfo = props => {
         <FormControlLabel
           value="projectPriorities"
           control={<Radio />}
-          label="Project Priorities"
+          label="Priorities"
+          labelPlacement="end"
+          style={{ padding: '0px 0px 0px 0px' }}
+        />
+        <FormControlLabel
+          value="learnings"
+          control={<Radio />}
+          label="Learnings"
           labelPlacement="end"
           style={{ padding: '0px 0px 0px 0px' }}
         />
@@ -428,6 +436,33 @@ const ProjectInfo = props => {
           label="Project Priorities"
           value={projectPriorities}
           onChange={change.bind(null, 'projectPriorities')}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AssignmentIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+      )}
+      {displayField === 'learnings' && (
+        <TextField
+          id="outlined-learnings"
+          name="learnings"
+          multiline
+          maxRows="10"
+          minRows="1"
+          variant="outlined"
+          style={{
+            padding: '0px 0px 10px 5px',
+            minWidth: 800,
+            width: '95%',
+          }}
+          helperText={touched.learnings ? errors.learnings : ''}
+          error={touched.learnings && Boolean(errors.learnings)}
+          label="Learnings"
+          value={learnings}
+          onChange={change.bind(null, 'learnings')}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

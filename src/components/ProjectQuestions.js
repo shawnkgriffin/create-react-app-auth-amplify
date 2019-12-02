@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Radio from '@material-ui/core/Radio';
-import ProjectStepQuestionMenu from './ProjectStepQuestionMenu';
+import ProjectWorkPackageQuestionMenu from './ProjectWorkPackageQuestionMenu';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -31,16 +31,19 @@ export default function ProjectQuestions({
   stepName,
   questions,
   currentProject,
-  currentStep,
+  currentDeliverable,
+  currentWorkPackage,
   handleQuestionChange,
   handleMenu,
   classes,
 }) {
   const tableRows = questions.map((question, index) => {
     return (
-      <StyledTableRow key={`${currentStep}.${index}`}>
+      <StyledTableRow
+        key={`${currentDeliverable}.${currentWorkPackage}.${index}`}
+      >
         <TableCell id={`question${index}`}>
-          <ProjectStepQuestionMenu
+          <ProjectWorkPackageQuestionMenu
             currentProject={currentProject}
             typeOfMenu="question"
             menuIndex={index}
@@ -52,9 +55,9 @@ export default function ProjectQuestions({
           <Radio
             color={'primary'}
             checked={question.answer.toUpperCase() === 'YES'}
-            key={`${currentStep}.${index}.YES`}
-            value={`${currentStep}.${index}.YES`}
-            name={`${currentStep}.${index}.YES`}
+            key={`${currentDeliverable}.${currentWorkPackage}.${index}.YES`}
+            value={`${currentDeliverable}.${currentWorkPackage}.${index}.YES`}
+            name={`${currentDeliverable}.${currentWorkPackage}.${index}.YES`}
             inputProps={{ 'aria-label': 'A' }}
             onChange={handleQuestionChange}
             disableRipple
@@ -64,9 +67,9 @@ export default function ProjectQuestions({
           <Radio
             color={'primary'}
             checked={question.answer.toUpperCase() === 'NO'}
-            key={`${currentStep}.${index}.NO`}
-            value={`${currentStep}.${index}.NO`}
-            name={`${currentStep}.${index}.NO`}
+            key={`${currentDeliverable}.${currentWorkPackage}.${index}.NO`}
+            value={`${currentDeliverable}.${currentWorkPackage}.${index}.NO`}
+            name={`${currentDeliverable}.${currentWorkPackage}.${index}.NO`}
             inputProps={{ 'aria-label': 'A' }}
             onChange={handleQuestionChange}
             disableRipple
@@ -76,9 +79,9 @@ export default function ProjectQuestions({
           <Radio
             color={'primary'}
             checked={question.answer.toUpperCase() === 'LATER'}
-            value={`${currentStep}.${index}.LATER`}
-            key={`${currentStep}.${index}.LATER`}
-            name={`${currentStep}.${index}.LATER`}
+            value={`${currentDeliverable}.${currentWorkPackage}.${index}.LATER`}
+            key={`${currentDeliverable}.${currentWorkPackage}.${index}.LATER`}
+            name={`${currentDeliverable}.${currentWorkPackage}.${index}.LATER`}
             inputProps={{ 'aria-label': 'A' }}
             onChange={handleQuestionChange}
             disableRipple

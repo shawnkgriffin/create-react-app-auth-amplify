@@ -113,11 +113,18 @@ const projectStyles = makeStyles(theme => ({
  **/
 function parseCommand(commandString) {
   const commands = commandString.toUpperCase().split('.');
+  const actionObject = commands[0];
+  const actionIndex = parseInt(commands[1], 10);
+  let actionSecondIndex = parseInt(commands[2], 10);
+  if (isNaN(actionSecondIndex)) actionSecondIndex = 0;
+  const actionVerb = commands[2];
+  const actionLocation = commands.length === 4 ? commands[3] : '';
   let action = {
-    actionObject: commands[0],
-    actionIndex: parseInt(commands[1], 10),
-    actionVerb: commands[2],
-    actionLocation: commands.length === 4 ? commands[3] : '',
+    actionObject,
+    actionIndex,
+    actionSecondIndex,
+    actionVerb,
+    actionLocation,
   };
   return action;
 }
@@ -258,6 +265,12 @@ function updateProjectSchema(oldProject = null) {
   )
     return oldProject; // already up to date
 
+  // upgrading 191127
+  if (oldProject.version && oldProject.version === '191127') {
+    oldProject.learnings = '';
+    return oldProject;
+  }
+
   // create the project structure
   let newProject = JSON.parse(
     JSON.stringify(schema.projectSchemaEmpty),
@@ -282,9 +295,6 @@ function updateProjectSchema(oldProject = null) {
     newProject.deliverables.push(newDeliverable);
   });
 
-  console.log(
-    `updateProjectSchema(${JSON.stringify(newProject, null, 2)} `,
-  );
   // change steps to workPackages
   oldProject.steps.forEach(step => {
     let deliverableIndex = newProject.deliverables.findIndex(

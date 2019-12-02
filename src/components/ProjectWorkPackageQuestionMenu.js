@@ -52,7 +52,6 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
     case 'DELIVERABLE':
       directions = ['to the left of', 'to the right of'];
       break;
-    case 'STEP':
     case 'WORK PACKAGE':
       hasNotes = true;
       directions = ['above', 'below'];
@@ -186,5 +185,5 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
     </Fragment>
   );
 }
-const ProjectStepQuestionMenu = React.memo(CustomizedMenus);
-export default ProjectStepQuestionMenu;
+const ProjectWorkPackageQuestionMenu = React.memo(CustomizedMenus);
+export default ProjectWorkPackageQuestionMenu;
