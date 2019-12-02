@@ -583,6 +583,9 @@ class App extends Component {
         case 'EDITHELP':
           project.deliverables[action.index].help = newText;
           break;
+        case 'NOTES':
+          project.deliverables[action.index].note = newText;
+          break;
         case 'DELETE':
           if (project.deliverables.length > 1) {
             project.deliverables.splice(action.index, 1);
@@ -1191,6 +1194,18 @@ class App extends Component {
             });
             break;
 
+          case 'NOTES':
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                form: true,
+                textLabel: `Deliverable Notes`,
+                title: `Edit notes for this ${action.target.toLowerCase()} here.`,
+                text: project.deliverables[action.index].note,
+                commandString: commandString,
+              };
+            });
+            break;
           case 'DELETE':
             //cannot delete last phase
             if (project.deliverables.length > 1) {

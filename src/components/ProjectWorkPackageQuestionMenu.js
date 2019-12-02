@@ -47,13 +47,11 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const style = { marginTop: 0, color: 'inherit' };
   let directions = [];
-  let hasNotes = false;
   switch (typeOfMenu.toUpperCase()) {
     case 'DELIVERABLE':
       directions = ['to the left of', 'to the right of'];
       break;
     case 'WORK PACKAGE':
-      hasNotes = true;
       directions = ['above', 'below'];
       break;
     case 'QUESTION':
@@ -80,7 +78,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
 
   return (
     <Fragment>
-      <Tooltip title="Add/Edit/Delete/Guidance">
+      <Tooltip title="Add/Edit/Delete/Notes/Guidance">
         <IconButton
           aria-label="more"
           aria-controls="long-menu"
@@ -148,19 +146,17 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
             primary={`Edit guidance for this ${typeOfMenu}.`}
           />
         </StyledMenuItem>
-        {hasNotes && (
-          <StyledMenuItem
-            key={'5'}
-            disabled={typeOfMenu.toUpperCase() === 'PHASE'}
-            id={`${typeOfMenu}.${menuIndex}.Notes`}
-            onClick={handleSelect}
-          >
-            <ListItemIcon>
-              <EditIcon />
-            </ListItemIcon>
-            <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
-          </StyledMenuItem>
-        )}
+        <StyledMenuItem
+          key={'5'}
+          disabled={typeOfMenu.toUpperCase() === 'PHASE'}
+          id={`${typeOfMenu}.${menuIndex}.Notes`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <EditIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
+        </StyledMenuItem>
         <StyledMenuItem
           key={'6'}
           id={`${typeOfMenu}.${menuIndex}.Delete`}
