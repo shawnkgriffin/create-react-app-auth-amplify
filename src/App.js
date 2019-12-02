@@ -57,6 +57,8 @@ class App extends Component {
       isAuthenticated: false,
       isAuthenticating: true,
       authEditTemplate: false,
+      copyDeliverable: null,
+      copyWorkPackage: null,
       user: null,
       commandString: '',
       alert: false,
@@ -1016,7 +1018,6 @@ class App extends Component {
         }
 
       if (action.target === 'WORK PACKAGE') {
-        console.log('Work Paackage');
         switch (action.verb) {
           case 'ADD':
             action.secondIndex =
@@ -1046,6 +1047,20 @@ class App extends Component {
                     action.secondIndex
                   ].name,
                 commandString: commandString,
+              };
+            });
+            break;
+          case 'COPY':
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                copyWorkPackage: JSON.parse(
+                  JSON.stringify(
+                    project.deliverables[action.index].workPackages[
+                      action.secondIndex
+                    ],
+                  ),
+                ),
               };
             });
             break;
@@ -1164,6 +1179,17 @@ class App extends Component {
                 title: `Add a ${action.target.toLowerCase()} ${location}.`,
                 text: '',
                 commandString: commandString,
+              };
+            });
+            break;
+
+          case 'COPY':
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                copyDeliverable: JSON.parse(
+                  JSON.stringify(project.deliverables[action.index]),
+                ),
               };
             });
             break;
