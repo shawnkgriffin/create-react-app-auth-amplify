@@ -212,7 +212,6 @@ export default function ProjectWorkPackages({
           />
 
           <Input
-            onClick={handleWorkPackageChange}
             multiline
             disableUnderline
             value={`${project.deliverables[deliverableIndex].name} (${percentageComplete})`}

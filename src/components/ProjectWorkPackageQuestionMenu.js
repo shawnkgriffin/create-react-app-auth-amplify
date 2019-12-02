@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import HelpIcon from '@material-ui/icons/Help';
@@ -99,7 +100,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         onClose={handleClose}
       >
         <StyledMenuItem
-          key={'1'}
+          key={`${typeOfMenu}.${menuIndex}.Add.Above`}
           id={`${typeOfMenu}.${menuIndex}.Add.Above`}
           onClick={handleSelect}
         >
@@ -112,7 +113,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
         </StyledMenuItem>
 
         <StyledMenuItem
-          key={'2'}
+          key={`${typeOfMenu}.${menuIndex}.Add.Below`}
           id={`${typeOfMenu}.${menuIndex}.Add.Below`}
           onClick={handleSelect}
         >
@@ -124,7 +125,17 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           />
         </StyledMenuItem>
         <StyledMenuItem
-          key={'3'}
+          key={`${typeOfMenu}.${menuIndex}.Copy`}
+          id={`${typeOfMenu}.${menuIndex}.Copy`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <FileCopyIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Copy this ${typeOfMenu}.`} />
+        </StyledMenuItem>
+        <StyledMenuItem
+          key={`${typeOfMenu}.${menuIndex}.Edit`}
           id={`${typeOfMenu}.${menuIndex}.Edit`}
           onClick={handleSelect}
         >
@@ -134,8 +145,27 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           <ListItemText primary={`Edit this ${typeOfMenu}.`} />
         </StyledMenuItem>
         <StyledMenuItem
-          key={'4'}
-          disabled={typeOfMenu.toUpperCase() === 'PHASE'}
+          key={`${typeOfMenu}.${menuIndex}.Delete`}
+          id={`${typeOfMenu}.${menuIndex}.Delete`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <DeleteIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Delete this ${typeOfMenu}.`} />
+        </StyledMenuItem>
+        <StyledMenuItem
+          key={`${typeOfMenu}.${menuIndex}.Notes`}
+          id={`${typeOfMenu}.${menuIndex}.Notes`}
+          onClick={handleSelect}
+        >
+          <ListItemIcon>
+            <EditIcon />
+          </ListItemIcon>
+          <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
+        </StyledMenuItem>
+        <StyledMenuItem
+          key={`${typeOfMenu}.${menuIndex}.EditHelp`}
           id={`${typeOfMenu}.${menuIndex}.EditHelp`}
           onClick={handleSelect}
         >
@@ -147,28 +177,7 @@ function CustomizedMenus({ typeOfMenu, menuIndex, handleMenu }) {
           />
         </StyledMenuItem>
         <StyledMenuItem
-          key={'5'}
-          disabled={typeOfMenu.toUpperCase() === 'PHASE'}
-          id={`${typeOfMenu}.${menuIndex}.Notes`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <EditIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Notes for this ${typeOfMenu}.`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          key={'6'}
-          id={`${typeOfMenu}.${menuIndex}.Delete`}
-          onClick={handleSelect}
-        >
-          <ListItemIcon>
-            <DeleteIcon />
-          </ListItemIcon>
-          <ListItemText primary={`Delete this ${typeOfMenu}.`} />
-        </StyledMenuItem>
-        <StyledMenuItem
-          key={'7'}
+          key={`${typeOfMenu}.${menuIndex}.Help`}
           id={`${typeOfMenu}.${menuIndex}.Help`}
           onClick={handleSelect}
         >
