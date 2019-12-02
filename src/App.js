@@ -915,6 +915,37 @@ class App extends Component {
               };
             });
             break;
+          case 'PASTE':
+            // check to make sure that we have a copied item
+            let newQuestion = null;
+            if (this.state.copyQuestion !== null) {
+              newQuestion = JSON.parse(
+                JSON.stringify(this.state.copyQuestion),
+              );
+              action.index =
+                action.index + (action.location === 'ABOVE' ? 0 : 1);
+              project.deliverables[currentDeliverable].workPackages[
+                currentWorkPackage
+              ].questions.splice(action.index, 0, newQuestion);
+              projects[currentProject] = project;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  alertYesButton: true,
+                  form: false,
+                  formType: '',
+                  help: false,
+                  commandString: '',
+                  currentWorkPackage: currentWorkPackage,
+                  currentProject: currentProject,
+                  currentQuestion: action.index,
+                  changed: true,
+                };
+              });
+            }
+            break;
           case 'COPY':
             this.setState(prevState => {
               return {
@@ -1051,6 +1082,41 @@ class App extends Component {
             });
             break;
 
+          case 'PASTE':
+            // check to make sure that we have a copied item
+            let newWorkPackage = null;
+            if (this.state.copyWorkPackage !== null) {
+              newWorkPackage = JSON.parse(
+                JSON.stringify(this.state.copyWorkPackage),
+              );
+              action.secondIndex =
+                action.secondIndex +
+                (action.location === 'ABOVE' ? 0 : 1);
+              project.deliverables[action.index].workPackages.splice(
+                action.secondIndex,
+                0,
+                newWorkPackage,
+              );
+              projects[currentProject] = project;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  alertYesButton: true,
+                  form: false,
+                  formType: '',
+                  help: false,
+                  commandString: '',
+                  currentProject: currentProject,
+                  currentDeliverable: action.index,
+                  currentWorkPackage: action.secondIndex,
+                  currentQuestion: 0,
+                  changed: true,
+                };
+              });
+            }
+            break;
           case 'EDIT':
             this.setState(prevState => {
               return {
@@ -1198,7 +1264,40 @@ class App extends Component {
               };
             });
             break;
-
+          case 'PASTE':
+            // check to make sure that we have a copied item
+            let newDeliverable = null;
+            if (this.state.copyDeliverable !== null) {
+              newDeliverable = JSON.parse(
+                JSON.stringify(this.state.copyDeliverable),
+              );
+              action.index =
+                action.index + (action.location === 'ABOVE' ? 0 : 1);
+              project.deliverables.splice(
+                action.index,
+                0,
+                newDeliverable,
+              );
+              projects[currentProject] = project;
+              this.setState(prevState => {
+                return {
+                  ...prevState,
+                  projects: projects,
+                  alert: false,
+                  alertYesButton: true,
+                  form: false,
+                  formType: '',
+                  help: false,
+                  commandString: '',
+                  currentProject: currentProject,
+                  currentDeliverable: action.index,
+                  currentWorkPackage: action.secondIndex,
+                  currentQuestion: 0,
+                  changed: true,
+                };
+              });
+            }
+            break;
           case 'COPY':
             this.setState(prevState => {
               return {
